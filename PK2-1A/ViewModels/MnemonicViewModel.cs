@@ -75,14 +75,15 @@ namespace PK2_1A.ViewModels
             WaterLoadingStartCommand = new DelegateCommand(waterLoadingStart, canWaterLoadingStart);
             WaterLoadingStopCommand = new DelegateCommand(waterLoadingStop, canWaterLoadingStop);
 
-            chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
+         //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         }
 
         private bool canWaterLoadingStart()
         {
-           // return !PD.LoadingWater_in_59A_59B_67Z_67X_41D_41A & !PD.In_SOST_OTS_KL_WV_4_1A_SQH & PD.NS64_status_net != 1 & PD.NS64_status_net != 2;
-            return true;
+            // return !PD.LoadingWater_in_59A_59B_67Z_67X_41D_41A & !PD.In_SOST_OTS_KL_WV_4_1A_SQH & PD.NS64_status_net != 1 & PD.NS64_status_net != 2;
+             return !PD.ZagrVodaComm_Start ;
+           // return true;
         }
 
         private void waterLoadingStart() =>  PD.ZagrVodaComm_Start = true;
@@ -112,30 +113,30 @@ namespace PK2_1A.ViewModels
                     dataPoints = archivRepository.GetMeasurements(DateTime.Now.AddHours(-5), DateTime.Now);
 
 
-                    foreach (KeyValuePair<DateTime, Dictionary<string, string>> entry in dataPoints)
-                    {
-                        try
-                        {
-                            _points.Add(new ThermoChartPoint()
-                            {
-                                DTS = entry.Key,
-                                TE_1_1A = entry.Value.ContainsKey("TE_1_1A") ? float.Parse(entry.Value["TE_1_1A"], CultureInfo.InvariantCulture) : float.NaN,
-                                TE_2_1A = entry.Value.ContainsKey("TE_2_1A") ? float.Parse(entry.Value["TE_2_1A"], CultureInfo.InvariantCulture) : float.NaN,
-                                TE_3_1A = entry.Value.ContainsKey("TE_3_1A") ? float.Parse(entry.Value["TE_3_1A"], CultureInfo.InvariantCulture) : float.NaN,
-                                TE_4_1A = entry.Value.ContainsKey("TE_4_1A") ? float.Parse(entry.Value["TE_4_1A"], CultureInfo.InvariantCulture) : float.NaN
-                            });
-                            dt = entry.Key;
-                        }
-                        catch (Exception ex)
-                        {
-                            logger.Error(ex, this.GetType().Name + "." + MethodBase.GetCurrentMethod().Name);
-                        }
+                    //foreach (KeyValuePair<DateTime, Dictionary<string, string>> entry in dataPoints)
+                    //{
+                    //    try
+                    //    {
+                    //        _points.Add(new ThermoChartPoint()
+                    //        {
+                    //            DTS = entry.Key,
+                    //            TE_1_1A = entry.Value.ContainsKey("TE_1_1A") ? float.Parse(entry.Value["TE_1_1A"], CultureInfo.InvariantCulture) : float.NaN,
+                    //            TE_2_1A = entry.Value.ContainsKey("TE_2_1A") ? float.Parse(entry.Value["TE_2_1A"], CultureInfo.InvariantCulture) : float.NaN,
+                    //            TE_3_1A = entry.Value.ContainsKey("TE_3_1A") ? float.Parse(entry.Value["TE_3_1A"], CultureInfo.InvariantCulture) : float.NaN,
+                    //            TE_4_1A = entry.Value.ContainsKey("TE_4_1A") ? float.Parse(entry.Value["TE_4_1A"], CultureInfo.InvariantCulture) : float.NaN
+                    //        });
+                    //        dt = entry.Key;
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        logger.Error(ex, this.GetType().Name + "." + MethodBase.GetCurrentMethod().Name);
+                    //    }
 
-                    }
+                    //}
 
                     Points = new ObservableRangeCollection<ThermoChartPoint>(_points);
 
-                    chartUpdater.Start(() => updateChart(), null);
+                  //  chartUpdater.Start(() => updateChart(), null);
                     
                     IsBusy = false;
                 });
@@ -179,7 +180,7 @@ namespace PK2_1A.ViewModels
         ~MnemonicViewModel()
         {
             internalUpdater.Stop();
-            chartUpdater.Stop();
+           // chartUpdater.Stop();
         }
     }
 }

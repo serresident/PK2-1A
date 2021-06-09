@@ -308,7 +308,8 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
-        <!--<ToggleSwitch:HorizontalToggleSwitch CheckedContent="Вкл" UncheckedContent="Откл" IsChecked="{Binding KV_67Z.Value, Mode=TwoWay}" Canvas.Left="843" Canvas.Top="78" />-->
+        <!--<ToggleSwitch:HorizontalToggleSwitch CheckedContent="Вкл" UncheckedContent="Откл" IsChecked="{Binding KV_67Z.Value, 
+        e=TwoWay}" Canvas.Left="843" Canvas.Top="78" />-->
 
         <WPF:Tube  Height="15" Canvas.Left="205" Canvas.Top="10" Width="789" FlangeLayout="Begin">
             <Behaviors:Interaction.Behaviors>
@@ -1090,9 +1091,9 @@
         </WPF:Tube>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
-            <child:WaterLoading  Left="700" Top="30" Height="200" Width="290" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="444" Canvas.Top="210" />
+            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
         </xctk:WindowContainer>
-        
+
     </Canvas>
 </UserControl>

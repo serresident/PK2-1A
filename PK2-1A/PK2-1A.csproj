@@ -145,6 +145,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChildWindows\WaterLoadTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ChildWindows\WaterLoading.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +195,7 @@
     <Compile Include="Controls\NumPadUpDown.cs" />
     <Compile Include="Controls\NumPadUtilities.cs" />
     <Compile Include="Controls\ValueBlock.cs" />
+    <Compile Include="Converters\BoolToNumConverter.cs" />
     <Compile Include="Converters\WindowsStatetToBoolConverter.cs" />
     <Compile Include="Dialogs\PasswordDialog.xaml.cs">
       <DependentUpon>PasswordDialog.xaml</DependentUpon>
@@ -226,6 +231,9 @@
     </Compile>
     <Compile Include="Views\ChildWindows\ThermoCycl_1A.xaml.cs">
       <DependentUpon>ThermoCycl_1A.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\WaterLoadTab.xaml.cs">
+      <DependentUpon>WaterLoadTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindows\WaterLoading.xaml.cs">
       <DependentUpon>WaterLoading.xaml</DependentUpon>
