@@ -5,17 +5,9 @@ using PK2_1A.Repositories;
 using PK2_1A.Services;
 using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Threading;
 using Xceed.Wpf.Toolkit;
 
 namespace PK2_1A.ViewModels

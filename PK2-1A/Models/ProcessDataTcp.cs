@@ -801,9 +801,10 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public Single FV_K480A_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=35
         public Single FV_K480A_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=37
 
-        public UInt16 ZagrVodaComm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //38
-        public UInt16 ZagrVodaComm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //39
-        public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//40
+        public UInt16 ZagrVodaComm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //39
+        public UInt16 ZagrVodaComm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //40
+        public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//41
+        public UInt16 viravni2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//42
 
 
         //public Single Weight_water_for_loading_59A { get { return getValue<Single>(); } set { setValue<Single>(value); } }
