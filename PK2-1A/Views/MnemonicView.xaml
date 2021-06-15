@@ -57,7 +57,8 @@
 
         <WPF:Tube Height="54" Canvas.Left="19" Canvas.Top="844" Width="34" FlangeThickness="7" FlangeWidth="7" RenderTransformOrigin="0.533,0.5">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.GE_WY_1_67D &gt;\= 1}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalActuatorHandlerBehavior_switcher HSpacing="30" VSpacing="-15"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
@@ -1154,10 +1155,10 @@
 
         </WPF:Tube>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-        </xctk:WindowContainer>
+        </xctk:WindowContainer>-->
 
     </Canvas>
 </UserControl>

@@ -185,6 +185,7 @@
     <Compile Include="Attributes\DeviderAttribute.cs" />
     <Compile Include="Attributes\JournalAttribute.cs" />
     <Compile Include="Behaviors\AnalogActuatorHandlerBehavior.cs" />
+    <Compile Include="Behaviors\DigitalActuatorHandlerBehavior_switcher.cs" />
     <Compile Include="Behaviors\DigitalActuatorHandlerBehavior.cs" />
     <Compile Include="Behaviors\DigitalActuatorStatusBehavior.cs" />
     <Compile Include="Behaviors\DigitalOnStatusBehavior.cs" />

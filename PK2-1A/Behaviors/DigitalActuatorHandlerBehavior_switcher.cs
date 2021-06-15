@@ -14,7 +14,7 @@ using System.Windows.Media;
 
 namespace PK2_1A.Behaviors
 {
-    public class DigitalActuatorHandlerBehavior : Behavior<ControlBase>
+    public class DigitalActuatorHandlerBehavior_switcher : Behavior<ControlBase>
     {
         private OptionsBehavior handleControlBehavior;
 
@@ -22,14 +22,14 @@ namespace PK2_1A.Behaviors
         private Border manualActivateBorder;
         private TextBlock manualTextBlock;
 
-        public static readonly DependencyProperty IsManProperty = DependencyProperty.Register("IsMan", typeof(bool), typeof(DigitalActuatorHandlerBehavior), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((DigitalActuatorHandlerBehavior)d).Update()));
+        public static readonly DependencyProperty IsManProperty = DependencyProperty.Register("IsMan", typeof(bool), typeof(DigitalActuatorHandlerBehavior_switcher), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((DigitalActuatorHandlerBehavior_switcher)d).Update()));
         public bool IsMan
         {
             get { return (bool)GetValue(IsManProperty); }
             set { SetValue(IsManProperty, value); }
         }
 
-        public static readonly DependencyProperty OutProperty = DependencyProperty.Register("Out", typeof(bool), typeof(DigitalActuatorHandlerBehavior), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        public static readonly DependencyProperty OutProperty = DependencyProperty.Register("Out", typeof(bool), typeof(DigitalActuatorHandlerBehavior_switcher), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         public bool Out
         {
             get { return (bool)GetValue(OutProperty); }
@@ -108,6 +108,7 @@ namespace PK2_1A.Behaviors
                 //popup
                 popupPanel = new Popup();
                 popupPanel.AllowsTransparency = true;
+                
 
                 Border popupBorder = new Border();
                 popupBorder.BorderBrush = Brushes.DimGray;
@@ -118,29 +119,31 @@ namespace PK2_1A.Behaviors
                 StackPanel layout = new StackPanel();
                 layout.Orientation = Orientation.Vertical;
                 layout.Margin = new Thickness(10, 10, 10, 10);
-
-                Xceed.Wpf.Toolkit.MaterialCheckBox popupCheckBox = new Xceed.Wpf.Toolkit.MaterialCheckBox();
-                popupCheckBox.IsThreeState = false;
-                popupCheckBox.Content = "Ручной режим";
-
-                Binding binding = new Binding();// ("IsMan");
-                binding.Source = this;
-                binding.Path = new PropertyPath("IsMan");
-                BindingOperations.SetBinding(popupCheckBox, CheckBox.IsCheckedProperty, binding);
-
+             
+                
+                
                 //close button
                 Xceed.Wpf.Toolkit.MaterialButton popupCloseButton = new Xceed.Wpf.Toolkit.MaterialButton();
                 popupCloseButton.Content = "X";
                 popupCloseButton.Width = 20;
                 popupCloseButton.Height = 20;
-                //  popupCloseButton.MaterialForeground= Brushes.White;
-                popupCloseButton.MaterialAccentBrush = Brushes.Red;
-                popupCloseButton.Foreground = Brushes.White;
+              //  popupCloseButton.MaterialForeground= Brushes.White;
+                popupCloseButton.MaterialAccentBrush= Brushes.Red;
+                popupCloseButton.Foreground= Brushes.White;
                 popupCloseButton.HorizontalAlignment = HorizontalAlignment.Right;
                 popupCloseButton.Click += (o, e) =>
                 {
                     popupPanel.IsOpen = false;
                 };
+
+
+
+                //  popupPanel.IsOpen =! popupCloseButton.IsEnabledChanged;
+
+                //Binding binding = new Binding();// ("IsMan");
+                //binding.Source = this;
+                //binding.Path = new PropertyPath("IsMan");
+                //BindingOperations.SetBinding(popupCheckBox, CheckBox.IsCheckedProperty, binding);
 
                 Xceed.Wpf.Toolkit.ToggleSwitch popupToggleSwitch = new Xceed.Wpf.Toolkit.ToggleSwitch();
                 popupToggleSwitch.Width = 100;
@@ -148,7 +151,7 @@ namespace PK2_1A.Behaviors
                 popupToggleSwitch.CornerRadius = new CornerRadius(2);
                 popupToggleSwitch.ThumbHeight = 25;
                 popupToggleSwitch.ThumbWidth = 24;
-                popupToggleSwitch.Margin = new Thickness(0, 5, 0, 0);
+                popupToggleSwitch.Margin = new Thickness(0, 10, 0, 0);
                 popupToggleSwitch.CheckedContent = CheckedLabel;
                 popupToggleSwitch.UncheckedContent = UncheckedLabel;
                 popupToggleSwitch.CheckedBackground = Brushes.Lime;
@@ -162,9 +165,10 @@ namespace PK2_1A.Behaviors
 
 
 
+             //   layout.Children.Add(popupCheckBox);
                 layout.Children.Add(popupCloseButton);
-                layout.Children.Add(popupCheckBox);
                 layout.Children.Add(popupToggleSwitch);
+
                 popupBorder.Child = layout;
 
                 popupPanel.Child = popupBorder;

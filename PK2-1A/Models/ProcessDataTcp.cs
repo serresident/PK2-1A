@@ -13,6 +13,122 @@ namespace PK2_1A.Models
     {
         // Inputs
         #region inputs
+        //line1_1           
+        //owen mv16 dn ad 1        
+        public bool NC_610M_Sost { get { return getValue<bool>(); } }// ad= 1 mv16 dn ad 1 line1_1 _ch 1
+        public bool NS_VodaArt_Sost { get { return getValue<bool>(); } }// ad= 2 mv16 dn ad 1 line1_1 _ch 2
+        public bool NS_VodaGor_Sost { get { return getValue<bool>(); } }// ad= 3 mv16 dn ad 1 line1_1 _ch 3
+        public bool Pmin_P461 { get { return getValue<bool>(); } }// ad= 4 mv16 dn ad 1 line1_1 _ch 4
+        public bool NS_631A_M_Sost { get { return getValue<bool>(); } }// ad= 5 mv16 dn ad 1 line1_1 _ch 5
+
+        public bool FV_K450A_SQH { get { return getValue<bool>(); } }// ad= 6 mv16 dn ad 1 line1_1 _ch 6
+        public bool FV_K450A_SQL { get { return getValue<bool>(); } }// ad= 7 mv16 dn ad 1 line1_1 _ch 7
+
+        public bool V_K610_SQH { get { return getValue<bool>(); } }// ad= 8 mv16 dn ad 1 line1_1 _ch 8
+        public bool V_K610_SQL { get { return getValue<bool>(); } }// ad= 9 mv16 dn ad 1 line1_1 _ch 9
+                                                                   //line2_1        
+                                                                   // owen 16dn ad1        
+        public bool VK480B_7_SQH { get { return getValue<bool>(); } }// ad= 10 mv110_16dn_1 _ch 1
+        public bool VK480B_7_SQL { get { return getValue<bool>(); } }// ad= 11 mv110_16dn_1 _ch 2
+
+        public bool WVR404A_SQH { get { return getValue<bool>(); } }// ad= 12 mv110_16dn_1 _ch 3
+        public bool WVR404A_SQL { get { return getValue<bool>(); } }// ad= 13 mv110_16dn_1 _ch 4
+
+        public bool VD460A_SQH { get { return getValue<bool>(); } }// ad= 14 mv110_16dn_1 _ch 5
+        public bool VD460A_SQL { get { return getValue<bool>(); } }// ad= 15 mv110_16dn_1 _ch 6
+
+        public bool NS_P611_sost { get { return getValue<bool>(); } }// ad= 16 mv110_16dn_1 _ch 7
+        public bool NS_K480B_sost { get { return getValue<bool>(); } }// ad= 17 mv110_16dn_1 _ch 8
+        public bool NS_K480A_sost { get { return getValue<bool>(); } }// ad= 18 mv110_16dn_1 _ch 9
+        public bool NS_P402_sost { get { return getValue<bool>(); } }// ad= 19 mv110_16dn_1 _ch 10
+        public bool NS_P201C_sost { get { return getValue<bool>(); } }// ad= 20 mv110_16dn_1 _ch 11
+        public bool NS_P404A_sost { get { return getValue<bool>(); } }// ad= 21 mv110_16dn_1 _ch 12
+        public bool NS_K460A_sost { get { return getValue<bool>(); } }// ad= 22 mv110_16dn_1 _ch 13
+        public bool NS_K460B_sost { get { return getValue<bool>(); } }// ad= 23 mv110_16dn_1 _ch 14
+                                                                      // mv110_16dn_6->Read() { get { return getValue<bool>(); } }        
+        public bool TV_K450A_SQH { get { return getValue<bool>(); } }// ad= 24 mv110_16dn_6 _ch 3
+        public bool TV_K450A_SQL { get { return getValue<bool>(); } }// ad= 25 mv110_16dn_6 _ch 4
+
+        public bool V_K450A_SQH { get { return getValue<bool>(); } }// ad= 26 mv110_16dn_6 _ch 5
+        public bool V_K450A_SQL { get { return getValue<bool>(); } }// ad= 27 mv110_16dn_6 _ch 6
+
+        public bool pHV_K450A_SQH { get { return getValue<bool>(); } }// ad= 28 mv110_16dn_6 _ch 9
+        public bool pHV_K450A_SQL { get { return getValue<bool>(); } }// ad= 29 mv110_16dn_6 _ch 10
+
+        public bool V_K480A_8_SQH { get { return getValue<bool>(); } }// ad= 30 mv110_16dn_6 _ch 11
+        public bool V_K480A_8_SQL { get { return getValue<bool>(); } }// ad= 31 mv110_16dn_6 _ch 12
+
+        public bool V_K480B_8_SQH { get { return getValue<bool>(); } }// ad= 32 mv110_16dn_6 _ch 13
+        public bool V_K480B_8_SQL { get { return getValue<bool>(); } }// ad= 33 mv110_16dn_6 _ch 14
+
+        public bool V_K480A_9_SQH { get { return getValue<bool>(); } }// ad= 34 mv110_16dn_6 _ch 15
+        public bool V_K480A_9_SQL { get { return getValue<bool>(); } }// ad= 35 mv110_16dn_6 _ch 16
+                                                                      //mv110_16dn_7->Read() { get { return getValue<bool>(); } }        
+        public bool V_K480B_9_SQH { get { return getValue<bool>(); } }// ad= 36 mv110_16dn_7 _ch 1
+        public bool V_K480B_9_SQL { get { return getValue<bool>(); } }// ad= 37 mv110_16dn_7 _ch 2
+
+        public bool V_K480A_11_SQH { get { return getValue<bool>(); } }// ad= 38 mv110_16dn_7 _ch 3
+        public bool V_K480A_11_SQL { get { return getValue<bool>(); } }// ad= 39 mv110_16dn_7 _ch 4
+
+        public bool V_K480B_11_SQH { get { return getValue<bool>(); } }// ad= 40 mv110_16dn_7 _ch 5
+        public bool V_K480B_11_SQL { get { return getValue<bool>(); } }// ad= 41 mv110_16dn_7 _ch 6
+
+        public bool V_K480A_10_SQH { get { return getValue<bool>(); } }// ad= 42 mv110_16dn_7 _ch 7
+        public bool V_K480A_10_SQL { get { return getValue<bool>(); } }// ad= 43 mv110_16dn_7 _ch 8
+
+        public bool V_K480B_10_SQH { get { return getValue<bool>(); } }// ad= 44 mv110_16dn_7 _ch 9
+        public bool V_K480B_10_SQL { get { return getValue<bool>(); } }// ad= 45 mv110_16dn_7 _ch 10
+
+        public bool V_E461A_1_SQH { get { return getValue<bool>(); } }// ad= 46 mv110_16dn_7 _ch 11
+        public bool V_E461A_1_SQL { get { return getValue<bool>(); } }// ad= 47 mv110_16dn_7 _ch 12
+
+        public bool V_E461A_2_SQH { get { return getValue<bool>(); } }// ad= 48 mv110_16dn_7 _ch 13
+        public bool V_E461A_2_SQL { get { return getValue<bool>(); } }// ad= 49 mv110_16dn_7 _ch 14
+
+        public bool V_E461A_SQH { get { return getValue<bool>(); } }// ad= 50 mv110_16dn_7 _ch 15
+        public bool V_E461A_SQL { get { return getValue<bool>(); } }// ad= 51 mv110_16dn_7 _ch 16
+                                                                    //mv110_16dn_8->Read() { get { return getValue<bool>(); } }        
+        public bool NC_K450A_sost { get { return getValue<bool>(); } }// ad= 52 mv110_16dn_8 _ch 8
+        public bool NC_K450A_alarm { get { return getValue<bool>(); } }// ad= 53 mv110_16dn_8 _ch 9
+
+        // plc1 
+        public bool FV_R631A_SQH { get { return getValue<bool>(); } } // ad=54  di1
+        public bool FV_R631A_SQL { get { return getValue<bool>(); } } // ad=55  di2
+        public bool FV_R603_SQH { get { return getValue<bool>(); } } // ad=56 di3
+        public bool FV_R603_SQL { get { return getValue<bool>(); } } // ad=57 di4
+        public bool FV_R521_SQH { get { return getValue<bool>(); } } // ad=58 di5
+        public bool FV_R521_SQL { get { return getValue<bool>(); } } // ad=59 di6
+        public bool LV_R422_SQH { get { return getValue<bool>(); } } //ad=60 di7
+        public bool LV_R422_SQL { get { return getValue<bool>(); } } //ad=61 di8
+
+        public bool TV_K610_SQH { get { return getValue<bool>(); } }// ad=62 di9
+        public bool TV_K610_SQL { get { return getValue<bool>(); } } // ad=63 di10
+        public bool FV_K480A_SQH { get { return getValue<bool>(); } } // ad=64 di11
+        public bool FV_K480A_SQL { get { return getValue<bool>(); } } // ad=65 di12
+        public bool FV_K480B_SQH { get { return getValue<bool>(); } } // ad=66 di13
+        public bool FV_K480B_SQL { get { return getValue<bool>(); } } // ad=67 di14
+        public bool FV_K460A_SQH { get { return getValue<bool>(); } } // ad=68 di15
+        public bool FV_K460A_SQL { get { return getValue<bool>(); } } // ad=69 di16
+
+        public bool FV_K460B_SQH { get { return getValue<bool>(); } } // ad=70 di17
+        public bool FV_K460B_SQL { get { return getValue<bool>(); } } // ad=71 di18
+        public bool FV_K460C_SQH { get { return getValue<bool>(); } } // ad=72 di13
+        public bool FV_K460C_SQL { get { return getValue<bool>(); } } // ad=73 di20
+        public bool FV_R471_SQH { get { return getValue<bool>(); } } // ad=74 di21
+        public bool FV_R471_SQL { get { return getValue<bool>(); } } // ad=75 di22
+        public bool NS_P470_sost { get { return getValue<bool>(); } } // ad=76 di23
+        public bool NS_603M_sost { get { return getValue<bool>(); } } // ad=77 di24
+
+        public bool NS_521M_sost { get { return getValue<bool>(); } } // ad=78 di25
+        public bool NS_P603_sost { get { return getValue<bool>(); } } // ad=79 di26
+        public bool NS_P521_sost { get { return getValue<bool>(); } } // ad=80 di27
+        public bool NS_P631A_sost { get { return getValue<bool>(); } } // ad=88 di28
+        public bool NS_422M_sost { get { return getValue<bool>(); } } // ad=89 di29
+        public bool NS_P461_sost { get { return getValue<bool>(); } } // ad=90 di30
+        public bool NS_LXU_sost { get { return getValue<bool>(); } } // ad=91 di31
+        public bool NC_P412_sost { get { return getValue<bool>(); } } // ad=92 di32
+
+
 
         //public bool In_ER_W59B { get { return getValue<bool>(); } }
         //public bool In_ER_W67X { get { return getValue<bool>(); } }
@@ -261,7 +377,7 @@ namespace PK2_1A.Models
 
         public bool Logging  { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad 18
 
-public bool Pmin_P461 { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad 19
+public bool Pmin_P461_Duplicate { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad 19
 
 public bool FV_R631A_dout { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=20 do1
 public bool FV_R603_dout { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad= 21  do 2
