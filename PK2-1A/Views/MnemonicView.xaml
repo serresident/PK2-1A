@@ -62,6 +62,44 @@
 
     <Canvas>
 
+        <WPF:Tube Height="26" Canvas.Left="139" Canvas.Top="355" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
+
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+
+        <WPF:Tube Height="24" Canvas.Left="141" Canvas.Top="505" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
+            <WPF:Tube.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WPF:Tube.RenderTransform>
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+
+        <WPF:Tube Height="24" Canvas.Left="140" Canvas.Top="342" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
+            <WPF:Tube.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WPF:Tube.RenderTransform>
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+
         <WPF:Tube Height="26" Canvas.Left="14" Canvas.Top="84" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
@@ -1393,7 +1431,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <Controls:ValueBlock Canvas.Left="197" Canvas.Top="154" Caption="PIT_P521" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P521, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="189" Canvas.Top="154" Caption="PIT_P521" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P521, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Tube Height="16" Canvas.Left="231" Canvas.Top="215" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
 
@@ -1422,27 +1460,6 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
         <TextBlock Canvas.Left="192" TextWrapping="Wrap" Text="P521" Canvas.Top="230" />
-        <WPF:Tube Height="26" Canvas.Left="139" Canvas.Top="355" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
-
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
-            </Behaviors:Interaction.Behaviors>
-
-        </WPF:Tube>
-        <WPF:Tube Height="24" Canvas.Left="140" Canvas.Top="342" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
-            <WPF:Tube.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="180"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </WPF:Tube.RenderTransform>
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
-            </Behaviors:Interaction.Behaviors>
-
-        </WPF:Tube>
         <WPF:Tube Height="16" Canvas.Left="152" Canvas.Top="365" Width="29" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
             <WPF:Tube.RenderTransform>
                 <TransformGroup>
@@ -1484,20 +1501,6 @@
         <TextBlock Canvas.Left="192" TextWrapping="Wrap" Text="P603" Canvas.Top="387" />
         <WPF:Tube Height="26" Canvas.Left="140" Canvas.Top="518" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
 
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
-            </Behaviors:Interaction.Behaviors>
-
-        </WPF:Tube>
-        <WPF:Tube Height="24" Canvas.Left="141" Canvas.Top="505" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
-            <WPF:Tube.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="180"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </WPF:Tube.RenderTransform>
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
@@ -1597,8 +1600,8 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <Controls:ValueBlock Canvas.Left="197" Canvas.Top="313" Caption="PIT_P603" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P603, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
-        <Controls:ValueBlock Canvas.Left="197" Canvas.Top="476" Caption="PIT_P631A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="189" Canvas.Top="313" Caption="PIT_P603" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P603, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="189" Canvas.Top="476" Caption="PIT_P631A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
