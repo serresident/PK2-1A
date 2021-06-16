@@ -62,6 +62,12 @@
 
     <Canvas>
 
+        <WPF:Tube Height="25" Canvas.Left="109" Canvas.Top="392" Width="27" Design="Arc90" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+
         <WPF:Tube Height="26" Canvas.Left="139" Canvas.Top="198" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
 
             <Behaviors:Interaction.Behaviors>
@@ -1375,7 +1381,7 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NS_631A_M_Sost}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <TextBlock Canvas.Left="73" TextWrapping="Wrap" Text="FV R631A" Canvas.Top="407" />
+        <TextBlock Canvas.Left="70" TextWrapping="Wrap" Text="FV R631A" Canvas.Top="407" />
         <WPF:Tube Height="16" Canvas.Left="152" Canvas.Top="208" Width="29" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
             <WPF:Tube.RenderTransform>
                 <TransformGroup>
@@ -1525,7 +1531,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P631A_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="-15"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P631A_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1536,11 +1542,6 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
 
-        </WPF:Tube>
-        <WPF:Tube Height="25" Canvas.Left="109" Canvas.Top="392" Width="27" Design="Arc90" FlangeLayout="None">
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
-            </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tube Height="25" Canvas.Left="-114" Canvas.Top="394" Width="27" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
