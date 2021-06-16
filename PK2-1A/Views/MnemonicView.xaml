@@ -12,6 +12,8 @@
              xmlns:helpers="clr-namespace:PK2_1A.Helpers"
              xmlns:Controls="clr-namespace:PK2_1A.Controls"
              xmlns:WPF="clr-namespace:AITSW.PCPANEL.WPF;assembly=PCPANEL_WPF_Controls"
+             xmlns:converters="clr-namespace:AITSW.WPFValueConverters;assembly=WPFValueConverters"
+             xmlns:conv="clr-namespace:PK2_1A.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1850" Loaded="{helpers:MethodBinding OnLoading}">
     <UserControl.Resources>
@@ -52,7 +54,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+
+
     </UserControl.Resources>
+
     <Canvas>
 
         <WPF:Tube Height="54" Canvas.Left="19" Canvas.Top="844" Width="34" FlangeThickness="7" FlangeWidth="7" RenderTransformOrigin="0.533,0.5">
@@ -1107,11 +1113,6 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Tube Height="30" Canvas.Left="120" Canvas.Top="84" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
-            </Behaviors:Interaction.Behaviors>
-        </WPF:Tube>
         <WPF:Tube Height="777" Canvas.Left="29" Canvas.Top="85" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_5_1A_SQH}" OnColor1="SlateBlue"/>
@@ -1138,8 +1139,9 @@
 
 
         </WPF:Valve>
-        <WPF:Tank  Height="155" Canvas.Left="112" Canvas.Top="99" Width="109" Design="StandingFunnelRoundRoof" GeometryParam4="*" GeometryParam5="0*" GeometryParam2="4*" GeometryParam3="*"/>
-        <TextBlock Canvas.Left="126" TextWrapping="Wrap" Text="R521" Canvas.Top="127" FontSize="18" Foreground="DimGray" FontWeight="Bold"/>
+
+
+
         <WPF:Tube Height="62" Canvas.Left="29" Canvas.Top="883" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
             <WPF:Tube.RenderTransform>
                 <TransformGroup>
@@ -1154,6 +1156,50 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
+        <WPF:Tube Height="30" Canvas.Left="120" Canvas.Top="84" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+        <WPF:Tank Height="64" Canvas.Left="112" Canvas.Top="106" Width="70" GeometryParam2="4*" Design="Lying" RenderTransformOrigin="0.5,0.5" GeometryParam1="0.3*">
+            <WPF:Tank.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WPF:Tank.RenderTransform>
+        </WPF:Tank>
+        <WPF:Tank Height="75" Canvas.Left="115" Canvas.Top="116" Width="64" Design="PendingFunnelRoundRoof" GeometryParam1="0*" GeometryParam2="0.3*" GeometryParam3="0.5*"/>
+        <WPF:Motor Height="21" Canvas.Left="125" Canvas.Top="72" Width="43" Header="M" HeaderPadding="16,2,0,0">
+            <WPF:Motor.States>
+                <WPF:StatesStandard Active="{Binding PD.NS_521M_sost}" />
+            </WPF:Motor.States>
+            <WPF:Motor.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Color1="#FF39A234"/>
+                    </WPF:ControlColors.State4Coloring>
+                </WPF:ControlColors>
+            </WPF:Motor.Colors>
+        
+            
+
+        </WPF:Motor>
+        <TextBlock Canvas.Left="129" TextWrapping="Wrap" Text="R521" Canvas.Top="151" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <WPF:Fan Height="62" Canvas.Left="135" Canvas.Top="92" Width="24" Design="Mixer">
+            <WPF:Fan.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Color1="#FF88B988" Color2="#FF487C48" ColorMode="Pulse" />
+                    </WPF:ControlColors.State4Coloring>
+                </WPF:ControlColors>
+            </WPF:Fan.Colors>
+            <WPF:Fan.States>
+                <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NS_521M_sost}" />
+            </WPF:Fan.States>
+        </WPF:Fan>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
