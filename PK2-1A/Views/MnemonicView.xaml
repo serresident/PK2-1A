@@ -62,6 +62,12 @@
 
     <Canvas>
 
+        <WPF:Tube Height="26" Canvas.Left="14" Canvas.Top="84" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+
         <WPF:Tube Height="25" Canvas.Left="109" Canvas.Top="392" Width="27" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
@@ -471,16 +477,7 @@
         </WPF:Tube>
         <TextBlock Canvas.Left="1033" TextWrapping="Wrap" Text="P1A" Canvas.Top="837"/>
         <TextBlock Canvas.Left="1044" TextWrapping="Wrap" Text="WV-4" Canvas.Top="778"/>
-        <WPF:Arrow Height="12" Canvas.Left="30" Canvas.Top="945" Width="12" RenderTransformOrigin="0.5,0.5" RotateAngle="270">
-            <WPF:Arrow.Colors>
-                <WPF:ControlColors >
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="LightSteelBlue" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Arrow.Colors>
-        </WPF:Arrow>
-        <TextBlock Canvas.Left="11" TextWrapping="Wrap" Text="Арт. вода" Canvas.Top="953"/>
+        <TextBlock Canvas.Left="11" TextWrapping="Wrap" Text="Арт. вода" Canvas.Top="958"/>
         <WPF:Tube Height="10" Canvas.Left="887" Canvas.Top="843" Width="35" FlangeWidth="3" FlangeThickness="2" FlangeLayout="Begin">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_4_1A_SQH}" OnColor1="#FF9ABEC9"/>
@@ -1145,7 +1142,7 @@
         </WPF:Tube>
         <WPF:Tube Height="777" Canvas.Left="29" Canvas.Top="85" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_5_1A_SQH}" OnColor1="SlateBlue"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_5_1A_SQH}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tube Height="16" Canvas.Left="42" Canvas.Top="70" Width="41" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
@@ -1396,7 +1393,9 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
+        <Controls:ValueBlock Canvas.Left="197" Canvas.Top="154" Caption="PIT_P521" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P521, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Tube Height="16" Canvas.Left="231" Canvas.Top="215" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+
 
 
             <Behaviors:Interaction.Behaviors>
@@ -1548,11 +1547,6 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Tube Height="26" Canvas.Left="14" Canvas.Top="84" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
-            </Behaviors:Interaction.Behaviors>
-        </WPF:Tube>
         <WPF:Tube Height="26" Canvas.Left="-186" Canvas.Top="397" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
@@ -1571,7 +1565,7 @@
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="#FF0D0B1D" />
+                        <WPF:ColoringColor Color1="DeepSkyBlue" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
@@ -1580,7 +1574,7 @@
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="#FF0D0B1D" />
+                        <WPF:ColoringColor Color1="DeepSkyBlue" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
@@ -1589,11 +1583,22 @@
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="#FF0D0B1D" />
+                        <WPF:ColoringColor Color1="DeepSkyBlue" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
+        <WPF:Arrow HeaderPadding="-65,-3,0,0" Height="14"   Canvas.Left="20" Canvas.Top="947" Width="33" RotateAngle="270"  >
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="DeepSkyBlue" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <Controls:ValueBlock Canvas.Left="197" Canvas.Top="313" Caption="PIT_P603" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P603, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="197" Canvas.Top="476" Caption="PIT_P631A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
