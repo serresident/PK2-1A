@@ -1280,7 +1280,7 @@
             </WPF:Fan.States>
         </WPF:Fan>
         <TextBlock Canvas.Left="66" TextWrapping="Wrap" Text="WY-1 67D" Canvas.Top="249" />
-        <TextBlock Canvas.Left="66" TextWrapping="Wrap" Canvas.Top="88" ><Run Text="FV R521"/><LineBreak/><Run/></TextBlock>
+        <TextBlock Canvas.Left="73" TextWrapping="Wrap" Canvas.Top="88" Height="16" ><Run Text="FV R521"/><LineBreak/><Run/></TextBlock>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
