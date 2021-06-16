@@ -1365,7 +1365,7 @@
 
 
         </WPF:Motor>
-        <TextBlock Canvas.Left="124" TextWrapping="Wrap" Text="R631A" Canvas.Top="473" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="121" TextWrapping="Wrap" Text="R631A" Canvas.Top="473" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Fan Height="62" Canvas.Left="136" Canvas.Top="414" Width="24" Design="Mixer">
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
