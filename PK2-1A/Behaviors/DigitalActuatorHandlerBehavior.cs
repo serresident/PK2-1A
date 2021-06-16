@@ -204,6 +204,7 @@ namespace PK2_1A.Behaviors
 
                 canvas.Children.Add(manualActivateBorder);
 
+
                 //var idx1 = Canvas.GetZIndex(AssociatedObject);
                 //Canvas.SetZIndex(AssociatedObject, 1);
                 //Canvas.SetZIndex(manualActivateBorder, 0);

@@ -62,6 +62,12 @@
 
     <Canvas>
 
+        <WPF:Tube Height="26" Canvas.Left="233" Canvas.Top="510" Width="56" Design="Arc90" FlangeLayout="None" RenderTransformOrigin="0.5,0.5" RotateAngle="90">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+
         <WPF:Tube Height="26" Canvas.Left="139" Canvas.Top="198" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
 
             <Behaviors:Interaction.Behaviors>
@@ -1290,7 +1296,7 @@
 
 
         </WPF:Motor>
-        <TextBlock Canvas.Left="123" TextWrapping="Wrap" Text="R521" Canvas.Top="309" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="123" TextWrapping="Wrap" Text="R603" Canvas.Top="309" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Fan Height="62" Canvas.Left="135" Canvas.Top="250" Width="24" Design="Mixer">
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
@@ -1362,7 +1368,7 @@
 
 
         </WPF:Motor>
-        <TextBlock Canvas.Left="124" TextWrapping="Wrap" Text="R521" Canvas.Top="473" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="124" TextWrapping="Wrap" Text="R631A" Canvas.Top="473" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Fan Height="62" Canvas.Left="136" Canvas.Top="414" Width="24" Design="Mixer">
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
@@ -1392,14 +1398,44 @@
         </WPF:Tube>
         <WPF:Arrow Height="12" Canvas.Left="262" Canvas.Top="217" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
-                <WPF:ControlColors >
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="LightSteelBlue" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
+                <WPF:ControlColors/>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
         <WPF:Tube Height="16" Canvas.Left="231" Canvas.Top="215" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+         
+          
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <!--
+                        <CheckBox IsChecked="{Binding PD.MAN_NASOS_34H_PUSK_STOP}" Content="Ручн. реж." Grid.Row="0" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+                        <toggleSwitch:HorizontalToggleSwitch Grid.Row="1" CheckedContent="Раб." UncheckedContent="Ост." IsEnabled="{Binding PD.MAN_NASOS_34H_PUSK_STOP}"  IsChecked="{Binding PD.NASOS_34H_PUSK_STOP, Mode=TwoWay}"/>
+                    </Grid>
+                </Border>
+
+            </Popup>
+        </WPF:Pump>-->
+
+        <WPF:Pump  Height="54"  Canvas.Left="194" Canvas.Top="189" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
+
+
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="-15"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}" />
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Pump>
+        <TextBlock Canvas.Left="192" TextWrapping="Wrap" Text="P521" Canvas.Top="230" />
+        <WPF:Tube Height="26" Canvas.Left="139" Canvas.Top="355" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
+
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <WPF:Tube Height="24" Canvas.Left="140" Canvas.Top="342" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
             <WPF:Tube.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -1413,52 +1449,34 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <!--<WPF:Pump  Height="54" Canvas.Left="194" Canvas.Top="196" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5">
-            <WPF:Pump.RenderTransform>
+        <WPF:Tube Height="16" Canvas.Left="152" Canvas.Top="365" Width="29" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+            <WPF:Tube.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="90"/>
+                    <RotateTransform Angle="180"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </WPF:Pump.RenderTransform>
-            --><!--<WPF:Pump.States>
-                <WPF:StatesStandard Active="{Binding PD.NASOS_34H_PUSK_STOP}" />
-            </WPF:Pump.States>--><!--
-            <WPF:Pump.States>
-                <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.STATUS_NASOS_34H, Converter={StaticResource AC_StatusConverter}, Mode=OneWay}" />
-            </WPF:Pump.States>
-            <WPF:Pump.Colors>
-                <WPF:ControlColors>
-                    <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Color1="#FF88B988" Color2="#FF487C48" ColorMode="Pulse" />
-                    </WPF:ControlColors.State4Coloring>
-                </WPF:ControlColors>
-            </WPF:Pump.Colors>
-            <WPF:Pump.OptionsBehavior>
-                <WPF:OptionsBehavior FeedbackOnPressed="True" />
-            </WPF:Pump.OptionsBehavior>
-            <WPF:Pump.OptionsAction>
-                <WPF:OptionsAction ActionOnClicked="SetTargetLogicalXor" ActionOnClickedOperand="1"
-                        ActionOnClickedTarget="{Binding NS34_popup, Mode=TwoWay}"/>
-            </WPF:Pump.OptionsAction>
-            <Popup StaysOpen="True" Placement="Top" HorizontalOffset="-15" VerticalOffset="0" Height="60"  Width="100" IsOpen="{Binding NS34_popup, Mode=OneWay}"  >
-                <Border BorderBrush="DimGray" Background="PeachPuff" BorderThickness="1">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
+            </WPF:Tube.RenderTransform>
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
 
-                        --><!--<StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center"  >
-                            <TextBlock Text="Уст." VerticalAlignment="Center"   />
+        </WPF:Tube>
+        <WPF:Arrow Height="12" Canvas.Left="262" Canvas.Top="374" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
 
-                            <WPF:TextBox VerticalContentAlignment="Center" Height="26" Text="0" TextWrapping="Wrap" Width="50" FontSize="16" Margin="5,0,0,0" AcceptedInput="Digits" >
-                                <Behaviors:Interaction.Behaviors>
-                                    <behaviors:BindingBehavior  Value="{Binding PD.SP_FRQ_34H, Mode=TwoWay, StringFormat=\{0:0.###\}}" />
-                                </Behaviors:Interaction.Behaviors>
-                            </WPF:TextBox>
-                        </StackPanel>--><!--
+                <WPF:ControlColors/>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <WPF:Tube Height="16" Canvas.Left="231" Canvas.Top="372" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+        
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <!--
                         <CheckBox IsChecked="{Binding PD.MAN_NASOS_34H_PUSK_STOP}" Content="Ручн. реж." Grid.Row="0" VerticalAlignment="Center" Margin="5,0,0,0"  />
 
                         <toggleSwitch:HorizontalToggleSwitch Grid.Row="1" CheckedContent="Раб." UncheckedContent="Ост." IsEnabled="{Binding PD.MAN_NASOS_34H_PUSK_STOP}"  IsChecked="{Binding PD.NASOS_34H_PUSK_STOP, Mode=TwoWay}"/>
@@ -1466,67 +1484,101 @@
                 </Border>
 
             </Popup>
-        </WPF:Pump>--> 
-        <WPF:Pump  Height="54" Canvas.Left="194" Canvas.Top="196" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5">
-            <WPF:Pump.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </WPF:Pump.RenderTransform>
-            <!--<WPF:Pump.States>
-                <WPF:StatesStandard Active="{Binding PD.NASOS_34H_PUSK_STOP}" />
-            </WPF:Pump.States>-->
-            <!--<WPF:Pump.States>
-                <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NS_P521_sost}" />
-            </WPF:Pump.States>
-            <WPF:Pump.Colors>
-                <WPF:ControlColors>
-                    <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Color1="#FF88B988" Color2="#FF487C48" ColorMode="Pulse" />
-                    </WPF:ControlColors.State4Coloring>
-                </WPF:ControlColors>
-            </WPF:Pump.Colors>-->
+        </WPF:Pump>-->
+        <WPF:Pump  Height="54"  Canvas.Left="194" Canvas.Top="346" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
+
 
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
-                <behaviors:DigitalActuatorHandlerBehavior_switcher HSpacing="30" VSpacing="-50"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}"/>
+                <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="-15"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}" />
             </Behaviors:Interaction.Behaviors>
-            <!--<WPF:Pump.OptionsBehavior>
-                <WPF:OptionsBehavior FeedbackOnPressed="True" />
-            </WPF:Pump.OptionsBehavior>
-            <WPF:Pump.OptionsAction>
-                <WPF:OptionsAction ActionOnClicked="SetTargetLogicalXor" ActionOnClickedOperand="1"
-                        ActionOnClickedTarget="{Binding NS34_popup, Mode=TwoWay}"/>
-            </WPF:Pump.OptionsAction>
-            <Popup StaysOpen="True" Placement="Top" HorizontalOffset="-15" VerticalOffset="0" Height="60"  Width="100" IsOpen="{Binding NS34_popup, Mode=OneWay}"  >
-                <Border BorderBrush="DimGray" Background="PeachPuff" BorderThickness="1">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
+        </WPF:Pump>
+        <TextBlock Canvas.Left="192" TextWrapping="Wrap" Text="P603" Canvas.Top="387" />
+        <WPF:Tube Height="26" Canvas.Left="140" Canvas.Top="518" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
 
-                        --><!--<StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center"  >
-                            <TextBlock Text="Уст." VerticalAlignment="Center"   />
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
 
-                            <WPF:TextBox VerticalContentAlignment="Center" Height="26" Text="0" TextWrapping="Wrap" Width="50" FontSize="16" Margin="5,0,0,0" AcceptedInput="Digits" >
-                                <Behaviors:Interaction.Behaviors>
-                                    <behaviors:BindingBehavior  Value="{Binding PD.SP_FRQ_34H, Mode=TwoWay, StringFormat=\{0:0.###\}}" />
-                                </Behaviors:Interaction.Behaviors>
-                            </WPF:TextBox>
-                        </StackPanel>--><!--
+        </WPF:Tube>
+        <WPF:Tube Height="24" Canvas.Left="141" Canvas.Top="505" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
+            <WPF:Tube.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WPF:Tube.RenderTransform>
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <WPF:Tube Height="16" Canvas.Left="153" Canvas.Top="528" Width="29" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+          
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <WPF:Tube Height="16" Canvas.Left="232" Canvas.Top="535" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+           
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <!--
                         <CheckBox IsChecked="{Binding PD.MAN_NASOS_34H_PUSK_STOP}" Content="Ручн. реж." Grid.Row="0" VerticalAlignment="Center" Margin="5,0,0,0"  />
 
                         <toggleSwitch:HorizontalToggleSwitch Grid.Row="1" CheckedContent="Раб." UncheckedContent="Ост." IsEnabled="{Binding PD.MAN_NASOS_34H_PUSK_STOP}"  IsChecked="{Binding PD.NASOS_34H_PUSK_STOP, Mode=TwoWay}"/>
                     </Grid>
                 </Border>
 
-            </Popup>-->
+            </Popup>
+        </WPF:Pump>-->
+        <WPF:Pump  Height="54"  Canvas.Left="195" Canvas.Top="509" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
+
+
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="-15"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}" />
+            </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="195" TextWrapping="Wrap" Text="P521" Canvas.Top="233" />
+        <TextBlock Canvas.Left="193" TextWrapping="Wrap" Text="P603" Canvas.Top="550" />
+        <WPF:Tube Height="26" Canvas.Left="-158" Canvas.Top="438" Width="26" Design="Arc90" FlangeLayout="None" RotateAngle="180" >
+
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+        <WPF:Tube Height="25" Canvas.Left="109" Canvas.Top="392" Width="27" Design="Arc90" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+        <WPF:Tube Height="25" Canvas.Left="-114" Canvas.Top="394" Width="27" Design="Arc90" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+        <WPF:Tube Height="26" Canvas.Left="14" Canvas.Top="84" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+        <WPF:Tube Height="26" Canvas.Left="-186" Canvas.Top="397" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+        <WPF:Tube Height="26" Canvas.Left="-114" Canvas.Top="450" Width="56" Design="Arc90" FlangeLayout="None" RenderTransformOrigin="0.5,0.5" RotateAngle="90">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />

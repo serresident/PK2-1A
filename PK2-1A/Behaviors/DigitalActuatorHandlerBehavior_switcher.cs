@@ -36,7 +36,7 @@ namespace PK2_1A.Behaviors
             set { SetValue(OutProperty, value); }
         }
 
-        private System.Windows.Controls.Primitives.PlacementMode placementMode = System.Windows.Controls.Primitives.PlacementMode.Bottom;
+        private System.Windows.Controls.Primitives.PlacementMode placementMode = System.Windows.Controls.Primitives.PlacementMode.MousePoint;
         public System.Windows.Controls.Primitives.PlacementMode PlacementMode
         {
             get { return placementMode; }
@@ -174,7 +174,7 @@ namespace PK2_1A.Behaviors
                 popupPanel.Child = popupBorder;
 
                 popupPanel.PlacementTarget = this.AssociatedObject;
-                popupPanel.Placement = PlacementMode;
+                popupPanel.Placement = PlacementMode.Bottom;
 
 
                 handleControlBehavior = new OptionsBehavior();
