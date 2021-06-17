@@ -137,14 +137,14 @@
 
         <WPF:Tube Height="54" Canvas.Left="19" Canvas.Top="844" Width="34" FlangeThickness="7" FlangeWidth="7" RenderTransformOrigin="0.533,0.5">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
-                <behaviors:DigitalActuatorHandlerBehavior_switcher HSpacing="30" VSpacing="-15"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="-15" IsMan="{Binding PD.NS_VodaArt_mode}" Out="{Binding PD.NS_VodaArt_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
         <WPF:Tube Height="26" Canvas.Left="14" Canvas.Top="84" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.Thermo_1A_START_STOP}" OnColor1="DeepPink"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
@@ -1180,7 +1180,7 @@
         </WPF:Tube>
         <WPF:Tube Height="777" Canvas.Left="29" Canvas.Top="85" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_5_1A_SQH}" OnColor1="DeepSkyBlue"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tube Height="16" Canvas.Left="42" Canvas.Top="70" Width="41" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
@@ -1276,7 +1276,7 @@
         </WPF:Arrow>
         <WPF:Tube Height="25" Canvas.Left="108" Canvas.Top="228" Width="27" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tube Height="16" Canvas.Left="34" Canvas.Top="228" Width="49" RenderTransformOrigin="0.5,0.5" FlangeLayout="None" Design="HorizontalRoundEnd">
@@ -1348,7 +1348,7 @@
         <TextBlock Canvas.Left="73" TextWrapping="Wrap" Canvas.Top="88" Height="16" ><Run Text="FV R521"/><LineBreak/><Run/></TextBlock>
         <WPF:Tube Height="25" Canvas.Left="109" Canvas.Top="392" Width="27" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tube Height="16" Canvas.Left="35" Canvas.Top="392" Width="49" RenderTransformOrigin="0.5,0.5" FlangeLayout="None" Design="HorizontalRoundEnd">
@@ -1361,7 +1361,7 @@
                 </TransformGroup>
             </WPF:Tube.RenderTransform>
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Valve Height="40" Canvas.Left="81" Canvas.Top="368" Width="30" Actor="Piston" Click="Valve_Click" RotateAngle="0" >
