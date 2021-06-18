@@ -167,6 +167,20 @@ namespace PK2_1A.Behaviors
                 binding2.Mode = BindingMode.TwoWay;
                 popupNumPadUpDown.SetBinding(NumPadUpDown.ValueProperty, binding2);
 
+                //close button
+                Xceed.Wpf.Toolkit.MaterialButton popupCloseButton = new Xceed.Wpf.Toolkit.MaterialButton();
+                popupCloseButton.Content = "X";
+                popupCloseButton.Width = 20;
+                popupCloseButton.Height = 20;
+                //  popupCloseButton.MaterialForeground= Brushes.White;
+                popupCloseButton.MaterialAccentBrush = Brushes.Red;
+                popupCloseButton.Foreground = Brushes.White;
+                popupCloseButton.HorizontalAlignment = HorizontalAlignment.Right;
+                popupCloseButton.Click += (o, e) =>
+                {
+                    popupPanel.IsOpen = false;
+                };
+
                 TextBlock unitsText = new TextBlock();
                 unitsText.VerticalAlignment = VerticalAlignment.Center;
                 unitsText.Margin = new Thickness(5, 0, 0, 0);
@@ -176,8 +190,10 @@ namespace PK2_1A.Behaviors
                 stackPanel.Children.Add(popupNumPadUpDown);
                 stackPanel.Children.Add(unitsText);
 
+                layout.Children.Add(popupCloseButton);
                 layout.Children.Add(popupCheckBox);
                 layout.Children.Add(stackPanel);
+                
                 popupBorder.Child = layout;
 
                 popupPanel.Child = popupBorder;

@@ -197,6 +197,7 @@
     <Compile Include="Controls\NumPadUtilities.cs" />
     <Compile Include="Controls\ValueBlock.cs" />
     <Compile Include="Converters\BoolToNumConverter.cs" />
+    <Compile Include="Converters\PowerPercentConverter.cs" />
     <Compile Include="Converters\WindowsStatetToBoolConverter.cs" />
     <Compile Include="Dialogs\PasswordDialog.xaml.cs">
       <DependentUpon>PasswordDialog.xaml</DependentUpon>
