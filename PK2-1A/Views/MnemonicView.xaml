@@ -1932,7 +1932,8 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="30" VSpacing="-15"  IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <WPF:Label  Height="28" Content="P" Canvas.Left="456" Canvas.Top="304" Width="74" Design="Arrowed" DefaultText="{Binding PD.FeedbackOUT_P67Z, Converter={StaticResource PowerPercentConverter}, StringFormat=\{0\}%}" ArrowWidth="5" Click="Label_Click">
+        <TextBlock   Canvas.Left="386" Canvas.Top="319" Text="{c:Binding '( PlcStatus) ?  \'Плк работает\' : \'Программа ПЛК не отвечает\''}" TextWrapping="Wrap" />
+        <!--<WPF:Label  Height="28" Content="P" Canvas.Left="386" Canvas.Top="319" Width="74" Design="Arrowed" DefaultText="{c:Binding '(PD.NC_P412_mode less 0) ? 1 : 2', Converter={StaticResource PowerPercentConverter}, StringFormat=\{0\}%}" ArrowWidth="5" Click="Label_Click">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -1940,7 +1941,7 @@
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
-        </WPF:Label>
+        </WPF:Label>-->
         <TextBlock Canvas.Left="291" TextWrapping="Wrap" Text="ph V k610" Canvas.Top="426" />
         <WPF:Tube Height="16" Canvas.Left="393" Canvas.Top="356" Width="23" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
