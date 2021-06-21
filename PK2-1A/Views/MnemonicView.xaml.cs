@@ -26,14 +26,5 @@ namespace PK2_1A.Views
             InitializeComponent();
         }
 
-        private void Valve_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Label_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
