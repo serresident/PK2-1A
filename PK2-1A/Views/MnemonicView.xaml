@@ -2191,6 +2191,7 @@
                 </WPF:HVLevelIndicator.OptionsScale>
             </WPF:HVLevelIndicator>
         </WPF:Frame>
+        <Controls:ValueBlock Canvas.Left="410" Canvas.Top="629" Caption="FQ K450A" Unit="Л" ValueColor="DeepSkyBlue" Width="84" Height="40" Value="{Binding PD.FQ_K450A_MEK_in_count, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
