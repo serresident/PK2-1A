@@ -1821,7 +1821,7 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <TextBlock Canvas.Left="262" TextWrapping="Wrap" Text="TVK610" Canvas.Top="469" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="262" TextWrapping="Wrap" Text="TVK610" Canvas.Top="474" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -1910,7 +1910,8 @@
                 <WPF:StatesStandard Active="{Binding PD.NC_610M_Sost}" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="-15" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>
+                <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="-15" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
+                <behaviors:AnalogActuatorHandlerBehavior HSpacing="30" VSpacing="-15"  MaxValue="50"  IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_ain_man}"/>
 
             </Behaviors:Interaction.Behaviors>
             <WPF:Motor.Colors>
@@ -1932,8 +1933,8 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="30" VSpacing="-15"  IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <TextBlock   Canvas.Left="386" Canvas.Top="319" Text="{c:Binding '( PlcStatus) ?  \'Плк работает\' : \'Программа ПЛК не отвечает\''}" TextWrapping="Wrap" />
-        <!--<WPF:Label  Height="28" Content="P" Canvas.Left="386" Canvas.Top="319" Width="74" Design="Arrowed" DefaultText="{c:Binding '(PD.NC_P412_mode less 0) ? 1 : 2', Converter={StaticResource PowerPercentConverter}, StringFormat=\{0\}%}" ArrowWidth="5" Click="Label_Click">
+        <!--<TextBlock  Canvas.Left="566" Canvas.Top="455"  Text="{c:Binding '( PD.NS_P521_sost) ?  \'Плк работает\' : \'Программа ПЛК не отвечает\''}"  TextWrapping="Wrap" />-->
+        <WPF:Label  Height="28" Content="P" Canvas.Left="353" Canvas.Top="429" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -1941,7 +1942,8 @@
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
-        </WPF:Label>-->
+        </WPF:Label>
+
         <TextBlock Canvas.Left="291" TextWrapping="Wrap" Text="ph V k610" Canvas.Top="426" />
         <WPF:Tube Height="16" Canvas.Left="393" Canvas.Top="356" Width="23" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
@@ -1976,6 +1978,26 @@
 
 
         </WPF:Valve>
+        <TextBlock Canvas.Left="68" TextWrapping="Wrap" Text="P450B" Canvas.Top="886" />
+        <TextBlock Canvas.Left="445" TextWrapping="Wrap" Text="VK610" Canvas.Top="383" RenderTransformOrigin="0.5,0.5" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <WPF:Label  Height="28" Content="P" Canvas.Left="380" Canvas.Top="318" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_P412_mode) ?  PD.NC_P412_ain_man : PD.NC_P412_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
