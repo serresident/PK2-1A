@@ -63,42 +63,42 @@
 
     <Canvas>
 
-        <WPF:Tube Height="39" Canvas.Left="788" Canvas.Top="266" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="39" Canvas.Left="508" Canvas.Top="111" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
-        <WPF:Tube Height="30" Canvas.Left="872" Canvas.Top="212" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="30" Canvas.Left="592" Canvas.Top="57" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
-        <WPF:Tube Height="30" Canvas.Left="924" Canvas.Top="212" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="30" Canvas.Left="644" Canvas.Top="57" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
-        <WPF:Tube Height="41" Canvas.Left="872" Canvas.Top="269" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="41" Canvas.Left="592" Canvas.Top="114" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
-        <WPF:Tube Height="26" Canvas.Left="941" Canvas.Top="310" Width="24" Design="Arc90" FlangeLayout="None">
+        <WPF:Tube Height="26" Canvas.Left="661" Canvas.Top="155" Width="24" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
-        <WPF:Tube Height="26" Canvas.Left="751" Canvas.Top="312" Width="29" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
+        <WPF:Tube Height="26" Canvas.Left="471" Canvas.Top="157" Width="29" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.V_K610_SQH}" OnColor1="DarkBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Arrow Height="12" Canvas.Left="754" RotateAngle="-90" Canvas.Top="376" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12" Canvas.Left="474" RotateAngle="-90" Canvas.Top="221" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -107,7 +107,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <WPF:Valve Height="40" Canvas.Left="733" Canvas.Top="330" Width="30" Actor="Piston"  RotateAngle="-90" >
+        <WPF:Valve Height="40" Canvas.Left="453" Canvas.Top="175" Width="30" Actor="Piston"  RotateAngle="-90" >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="-15" IsMan="{Binding PD.TV_K610_mode}" Out="{Binding PD.TV_K610_control_man}"/>
                 <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.V_K610_SQH}" OffSignal="{Binding PD.V_K610_SQL}" />
@@ -115,12 +115,12 @@
 
 
         </WPF:Valve>
-        <WPF:Tube Height="10" Canvas.Left="753" Canvas.Top="364" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="10" Canvas.Left="473" Canvas.Top="209" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <TextBlock Canvas.Left="697" TextWrapping="Wrap" Text="TVK450A" Canvas.Top="346" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="417" TextWrapping="Wrap" Text="TVK450A" Canvas.Top="191" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -2449,12 +2449,12 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NS_LXU_sost}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <WPF:Tube Height="49" Canvas.Left="924" Canvas.Top="265" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="49" Canvas.Left="644" Canvas.Top="110" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Tube  Design="Vertical" Height="119" Canvas.Left="775" Canvas.Top="312" Width="171" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
+        <WPF:Tube  Design="Vertical" Height="119" Canvas.Left="495" Canvas.Top="157" Width="171" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -2463,7 +2463,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <WPF:Arrow Height="12" Canvas.Left="951" RotateAngle="90" Canvas.Top="371" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12" Canvas.Left="671" RotateAngle="90" Canvas.Top="216" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -2472,7 +2472,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <WPF:Tank Height="156" Canvas.Left="762" Canvas.Top="304" Width="196" GeometryParam2="4*" Design="Lying" RenderTransformOrigin="0.5,0.5" GeometryParam1="0.3*">
+        <WPF:Tank Height="156" Canvas.Left="482" Canvas.Top="149" Width="196" GeometryParam2="4*" Design="Lying" RenderTransformOrigin="0.5,0.5" GeometryParam1="0.3*">
             <WPF:Tank.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -2482,7 +2482,7 @@
                 </TransformGroup>
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
-        <WPF:Fan Height="109" Canvas.Left="826" Canvas.Top="256" Width="41" Design="Mixer">
+        <WPF:Fan Height="109" Canvas.Left="546" Canvas.Top="101" Width="41" Design="Mixer">
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
@@ -2494,7 +2494,7 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NC_610M_Sost}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <WPF:Motor Height="27" Canvas.Left="825" Canvas.Top="235" Width="42" Header="M" HeaderPadding="16,2,0,0">
+        <WPF:Motor Height="27" Canvas.Left="545" Canvas.Top="80" Width="42" Header="M" HeaderPadding="16,2,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard Active="{Binding PD.NC_610M_Sost}" />
             </WPF:Motor.States>
@@ -2514,16 +2514,16 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock Canvas.Left="872" Canvas.Top="323" Caption="TE K610" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_3_1A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock Canvas.Left="872" Canvas.Top="361" Caption="QE K610" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
-        <WPF:Valve Height="40" Canvas.Left="876" RotateAngle="90" Canvas.Top="235" Width="30" Actor="Diaphram1">
+        <Controls:ValueBlock Canvas.Left="592" Canvas.Top="168" Caption="TE K450A" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K450A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock Canvas.Left="592" Canvas.Top="206" Caption="QE K450A" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QE_K450A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <WPF:Valve Height="40" Canvas.Left="596" RotateAngle="90" Canvas.Top="80" Width="30" Actor="Diaphram1">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.FeedbackOUT_10A/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="30" VSpacing="-15"  IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
         <!--<TextBlock  Canvas.Left="566" Canvas.Top="455"  Text="{c:Binding '( PD.NS_P521_sost) ?  \'Плк работает\' : \'Программа ПЛК не отвечает\''}"  TextWrapping="Wrap" />-->
-        <WPF:Label  Height="22" Content="P" Canvas.Left="810" Canvas.Top="291" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
+        <WPF:Label  Height="22" Content="P" Canvas.Left="530" Canvas.Top="136" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -2532,7 +2532,7 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <WPF:Valve Height="40" Canvas.Left="928" Canvas.Top="235" Width="30" Actor="Piston"  RotateAngle="90" >
+        <WPF:Valve Height="40" Canvas.Left="648" Canvas.Top="80" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="-15" IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
                 <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.V_K610_SQH}" OffSignal="{Binding PD.V_K610_SQL}" />
@@ -2540,7 +2540,7 @@
 
 
         </WPF:Valve>
-        <TextBlock Canvas.Left="898" TextWrapping="Wrap" Text="FV450A" Canvas.Top="247" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="618" TextWrapping="Wrap" Text="FV450A" Canvas.Top="92" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -2551,12 +2551,12 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <TextBlock Canvas.Left="553" TextWrapping="Wrap" Canvas.Top="548" Height="20" ><Run Text="в"/><Run Text=" R422"/><LineBreak/><Run/></TextBlock>
-        <WPF:Tube Height="30" Canvas.Left="788" Canvas.Top="213" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="30" Canvas.Left="508" Canvas.Top="58" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Valve Height="40" Canvas.Left="792" Canvas.Top="236" Width="30" Actor="Piston"  RotateAngle="90" >
+        <WPF:Valve Height="40" Canvas.Left="512" Canvas.Top="81" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="-15" IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
                 <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.V_K610_SQH}" OffSignal="{Binding PD.V_K610_SQL}" />
@@ -2564,7 +2564,7 @@
 
 
         </WPF:Valve>
-        <TextBlock Canvas.Left="755" TextWrapping="Wrap" Text="TVK450A" Canvas.Top="247" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="475" TextWrapping="Wrap" Text="TVK450A" Canvas.Top="92" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -2574,7 +2574,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock Canvas.Left="836" TextWrapping="Wrap" Text="pHV K450A" Canvas.Top="240" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="556" TextWrapping="Wrap" Text="pHV K450A" Canvas.Top="85" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -2584,15 +2584,42 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock Canvas.Left="792" TextWrapping="Wrap" Text="К450A" Canvas.Top="409" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="512" TextWrapping="Wrap" Text="К450A" Canvas.Top="254" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <Controls:ValueBlock Canvas.Left="465" Canvas.Top="457" Caption="QE K610" Unit="PH" ValueColor="Green" Width="65" Height="36" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <Controls:ValueBlock Canvas.Left="465" Canvas.Top="457" Caption="QE K610" Unit="PH" ValueColor="Green" Width="65" Height="36" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
-        <Controls:ValueBlock Canvas.Left="859" Canvas.Top="399" Caption="WE R422" Unit="кг" ValueColor="#FFA535E6" Width="77" Height="40" Value="{Binding PD.WE_R422, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="#FFB0F3B0"/>
-        <WPF:Tube Height="45" Canvas.Left="950" Canvas.Top="325" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <Controls:ValueBlock Canvas.Left="579" Canvas.Top="244" Caption="WE K450A" Unit="кг" ValueColor="#FFA535E6" Width="77" Height="40" Value="{Binding PD.WE_K450A, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="#FFB0F3B0"/>
+        <WPF:Tube Height="45" Canvas.Left="670" Canvas.Top="170" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
+        <WPF:Arrow Height="12" Canvas.Left="645" RotateAngle="90" Canvas.Top="43" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Black" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <WPF:Arrow Height="12" Canvas.Left="509" RotateAngle="90" Canvas.Top="43" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Black" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <WPF:Arrow Height="12" Canvas.Left="592" RotateAngle="90" Canvas.Top="43" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Black" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
