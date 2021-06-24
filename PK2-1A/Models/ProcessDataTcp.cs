@@ -128,6 +128,41 @@ namespace PK2_1A.Models
         public bool NS_LXU_sost { get { return getValue<bool>(); } } // ad=91 di31
         public bool NC_P412_sost { get { return getValue<bool>(); } } // ad=92 di32
 
+        //plc2*************************
+        public bool VK480A_1_SQH{ get { return getValue<bool>(); } } //ad=93 di1
+        public bool VK480A_1_SQL{ get { return getValue<bool>(); } } //ad=94 di2
+        public bool VK480B_1_SQH{ get { return getValue<bool>(); } } //ad=95 di3
+        public bool VK480B_1_SQL{ get { return getValue<bool>(); } } //ad=96 di4
+        public bool VK480A_2_SQH{ get { return getValue<bool>(); } } //ad=97 di5
+        public bool VK480A_2_SQL{ get { return getValue<bool>(); } } //ad=98 di6
+        public bool VK480B_2_SQH{ get { return getValue<bool>(); } } //ad=99 di7
+        public bool VK480B_2_SQL{ get { return getValue<bool>(); } } //ad=100 di8
+
+        public bool TVK480A_SQH{ get { return getValue<bool>(); } } //ad=101 di9
+        public bool TVK480A_SQL{ get { return getValue<bool>(); } } //ad=102 di10
+        public bool TVK480B_SQH{ get { return getValue<bool>(); } } //ad=103 di11
+        public bool TVK480B_SQL{ get { return getValue<bool>(); } } //ad=104 di12
+        public bool VK480A_3_SQH{ get { return getValue<bool>(); } } //ad=105 di13
+        public bool VK480A_3_SQL{ get { return getValue<bool>(); } } //ad=106 di14
+        public bool VK480B_3_SQH{ get { return getValue<bool>(); } } //ad=107 di15
+        public bool VK480B_3_SQL{ get { return getValue<bool>(); } } //ad=108 di16
+
+        public bool VK480A_4_SQH{ get { return getValue<bool>(); } } //ad=109 di17
+        public bool VK480A_4_SQL{ get { return getValue<bool>(); } } //ad=110 di18
+        public bool VK480B_4_SQH{ get { return getValue<bool>(); } } //ad=112 di19
+        public bool VK480B_4_SQL{ get { return getValue<bool>(); } } //ad=113 di20
+        public bool VK480A_5_SQH{ get { return getValue<bool>(); } } //ad=114 di21
+        public bool VK480A_5_SQL{ get { return getValue<bool>(); } } //ad=115 di22
+        public bool VK480B_5_SQH{ get { return getValue<bool>(); } } //ad=116 di23
+        public bool VK480B_5_SQL{ get { return getValue<bool>(); } } //ad=117 di24
+
+        public bool VK480A_6_SQH{ get { return getValue<bool>(); } } //ad=118 di25
+        public bool VK480A_6_SQL{ get { return getValue<bool>(); } } //ad=119 di26
+        public bool VK480B_6_SQH{ get { return getValue<bool>(); } } //ad=120 di27
+        public bool VK480B_6_SQL{ get { return getValue<bool>(); } } //ad=121 di28
+        public bool VK480A7_SQH{ get { return getValue<bool>(); } } //ad=122 di29
+        public bool VK480A7_SQL{ get { return getValue<bool>(); } } //ad=123 di30
+
 
 
         //public bool In_ER_W59B { get { return getValue<bool>(); } }
@@ -472,18 +507,130 @@ public bool FV_R471_mode { get { return getValue<bool>(); } set { setValue<bool>
 public bool FV_R471_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=91
 public bool FV_R471_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=92
 
-public bool FV_K450A_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=90
-public bool FV_K450A_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=91
-public bool FV_K450A_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=92
+public bool FV_K450A_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=93
+public bool FV_K450A_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=94
+public bool FV_K450A_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=95
 
-public bool V_K610_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=93
-public bool V_K610_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=94
-public bool V_K610_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=95
+public bool V_K610_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=96
+public bool V_K610_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=97
+public bool V_K610_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=98
 
-public bool FV_K480B_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad=96
-public bool FV_K480A_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=97
+public bool FV_K480B_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad=99
+public bool FV_K480A_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=100
 
-public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=98
+public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=101
+
+
+
+        public bool VK480A_2_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=102
+        public bool VK480A_2_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad= 103
+        public bool VK480A_2_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad= 104
+
+        //plc2 dout***************
+        public bool NS_P402_stop{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=105 dof1
+        public bool NS_P201C_stop{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=106 dof2
+        public bool NS_P404A_stop{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=107 dof3
+        public bool VK480A_1_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=108 dof4
+
+        public bool VK480B_1_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=109 do1
+        public bool VK480A_2_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=110 do2
+        public bool VK480B_2_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=111 do3
+        public bool TVK480A_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=112 do4
+        public bool TVK480B_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=113 do5
+        public bool VK480A_3_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=114 do6
+        public bool VK480B_3_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=115 do7
+        public bool VK480A_4_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=116 do8
+
+        public bool VK480B_4_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=117 do9
+        public bool VK480A_5_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=118 do8
+        public bool VK480B_5_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=119 do10
+        public bool VK480A_6_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=120 do11
+        public bool VK480B_6_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=121 do12
+        public bool WVR404A_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=122 do13
+        public bool VD460A_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=123 do14
+        public bool empty_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=124 do15
+
+        public bool VK480B_2_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=125 
+        public bool VK480B_2_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=126
+        public bool VK480B_2_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=127
+
+        // выход оборотной рубашки
+        public bool VK480A_3_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=129
+        public bool VK480A_3_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=130
+        public bool VK480A_3_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=131
+
+        public bool VK480B_3_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=132
+        public bool VK480B_3_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=133
+        public bool VK480B_3_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=134
+
+        // (*выход  воды после продувки *)
+        public bool VK480A_4_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=135
+        public bool VK480A_4_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=136
+        public bool VK480A_4_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=137
+
+        public bool VK480B_4_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=138
+        public bool VK480B_4_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=139
+        public bool VK480B_4_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=140
+                                  //(*подача оборотной воды в рубашку*)
+        public bool VK480A_5_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=141
+        public bool VK480A_5_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=142
+        public bool VK480A_5_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=143
+
+        public bool VK480B_5_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=144
+        public bool VK480B_5_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=145
+        public bool VK480B_5_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=146
+                                  // (*подача воздуха на продувку рубашки*)
+        public bool VK480A_6_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=147
+        public bool VK480A_6_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=148
+        public bool VK480A_6_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=149
+
+        public bool VK480B_6_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=150
+        public bool VK480B_6_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=151
+        public bool VK480B_6_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=152
+
+        public bool WVR404A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=153
+        public bool WVR404A_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=154
+        public bool WVR404A_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=155
+
+        public bool VD460A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=156
+        public bool VD460A_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=157
+        public bool VD460A_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=158
+
+        public bool V_K450A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=159
+        public bool V_K450A_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=160
+        public bool V_K450A_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=161
+
+        public bool V_E461A_1_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=162
+        public bool V_E461A_1_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=163
+        public bool V_E461A_1_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=164
+
+        public bool V_E461A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=165
+        public bool V_E461A_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=166
+        public bool V_E461A_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=167
+
+        public bool TV_K450A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=168
+        public bool TV_K450A_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=169
+        public bool TV_K450A_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=170
+
+        public bool V_E461A_2_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=171
+        public bool V_E461A_2_control_auto{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=172
+        public bool V_E461A_2_control_man{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=173
+
+        public bool VK480A_7_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=174
+        public bool VK480B_7_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=175
+        public bool VK480A_1_reg_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=176
+        public bool VK480B_1_reg_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=177
+        public bool pHV_K450A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=178
+        public bool V_K480A_8_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=179
+        public bool V_K480B_8_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=180
+        public bool V_K480A_9_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=181
+        public bool V_K480B_9_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=182
+        public bool V_K480A_10_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=183
+        public bool V_K480B_10_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=184
+        public bool V_K480A_11_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=185
+        public bool V_K480B_11_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=186
+
+
 
         //public bool LoadingWater_in_59A_59B_67Z_67X_41D_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
         //public bool LoadingComponents_from_59A_67Z_67X_TO_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
@@ -922,6 +1069,41 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//41
         public UInt16 viravni2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//42
 
+        //PLC2 valve reg
+        public Single VK480A_7_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//43
+        public Single VK480A_7_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//45
+
+        public Single VK480B_7_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//43
+        public Single VK480B_7_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//45
+
+        public Single VK480A_1_reg_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=47
+        public Single VK480A_1_reg_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=49
+
+        public Single pHV_K450A_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=51 
+        public Single pHV_K450A_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=53
+
+        public Single V_K480A_8_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=55
+        public Single V_K480A_8_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=57
+
+        public Single V_K480B_8_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=59
+        public Single V_K480B_8_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=61
+
+        public Single V_K480A_9_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=63
+        public Single V_K480A_9_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=65
+
+        public Single V_K480B_9_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=67
+        public Single V_K480B_9_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=69
+
+        public Single V_K480B_10_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=71
+        public Single V_K480B_10_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=73
+
+        public Single V_K480B_11_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=75
+        public Single V_K480B_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=77
+
+        public Single V_K480A_10_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=79
+        public Single V_K480A_10_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=81
+        public Single V_K480A_11_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=83
+        public Single V_K480A_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=85
 
         //public Single Weight_water_for_loading_59A { get { return getValue<Single>(); } set { setValue<Single>(value); } }
         //public Single Weight_water_for_loading_59B { get { return getValue<Single>(); } set { setValue<Single>(value); } }
