@@ -631,6 +631,10 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public bool V_K480B_11_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=186
 
 
+        public bool NC_K450A_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=187 управ меш реактора
+        public bool NC_K450A_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad=188
+        public bool NC_K450A_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=189
+
 
         //public bool LoadingWater_in_59A_59B_67Z_67X_41D_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
         //public bool LoadingComponents_from_59A_67Z_67X_TO_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
@@ -888,6 +892,7 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public UInt16 FQ_K460_in_count { get { return getValue<UInt16>(); } } //ad=74 fast di3
         public UInt16 FQ_K450A_MEK_in_count { get { return getValue<UInt16>(); } } //ad=75 fast di4
 
+
         //public Single WE_59B { get { return getValue<Single>(); } }
         //public Single WE_67X { get { return getValue<Single>(); } }
         //public Single WE_67Z { get { return getValue<Single>(); } }
@@ -1104,6 +1109,8 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public Single V_K480A_10_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=81
         public Single V_K480A_11_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=83
         public Single V_K480A_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=85
+        public Single NC_K450A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=87 частота мешалки в авто
+        public Single NC_K450A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=89частота мешалки в руч
 
         //public Single Weight_water_for_loading_59A { get { return getValue<Single>(); } set { setValue<Single>(value); } }
         //public Single Weight_water_for_loading_59B { get { return getValue<Single>(); } set { setValue<Single>(value); } }
