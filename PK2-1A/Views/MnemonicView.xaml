@@ -2908,7 +2908,7 @@
         <TextBlock Canvas.Left="879" TextWrapping="Wrap" Canvas.Top="397" Height="18" ><Run Text="Из R403"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="960" TextWrapping="Wrap" Canvas.Top="394" Height="18" ><Run Text="Из R404A"/><LineBreak/><Run/></TextBlock>
         <Controls:ValueBlock Canvas.Left="926" Canvas.Top="635" Caption="PT 480A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PT_480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
-        <WPF:Tank Height="204" Canvas.Left="1142" Canvas.Top="80" Width="194" GeometryParam2="4*"  GeometryParam1="0.1*" Design="StandingSpherical">
+        <WPF:Tank Height="115" Canvas.Left="999" Canvas.Top="190" Width="114" GeometryParam2="4*"  GeometryParam1="0.4*" RotateAngle="270" Design="StandingSpherical" Click="Tank_Click" GeometryParam3="*" GeometryParam4="0*">
             <WPF:Tank.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -2919,6 +2919,30 @@
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
         <Controls:ValueBlock Canvas.Left="1062" Canvas.Top="570" Caption="TE K480A" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+        <TextBlock Canvas.Left="912" TextWrapping="Wrap" Text="D470" Canvas.Top="215" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <WPF:Tube  Design="Vertical" Height="14" Canvas.Left="879" Canvas.Top="303" Width="124" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
+            <WPF:Tube.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Gray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Tube.Colors>
+        </WPF:Tube>
+        <WPF:Tube Height="29" Canvas.Left="934" Canvas.Top="305" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
+            <WPF:Tube.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WPF:Tube.RenderTransform>
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />

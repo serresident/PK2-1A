@@ -26,5 +26,9 @@ namespace PK2_1A.Views
             InitializeComponent();
         }
 
+        private void Tank_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
