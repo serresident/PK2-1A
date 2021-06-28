@@ -891,6 +891,8 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public UInt16 FQ_K480_in_count { get { return getValue<UInt16>(); } } //ad=73 fast di2
         public UInt16 FQ_K460_in_count { get { return getValue<UInt16>(); } } //ad=74 fast di3
         public UInt16 FQ_K450A_MEK_in_count { get { return getValue<UInt16>(); } } //ad=75 fast di4
+        public Single TE_480A_1 { get { return getValue<UInt16>(); } } //ad=76  trm202 ch1
+        public Single TE_480B_1 { get { return getValue<UInt16>(); } } //ad=78 trm202 ch2
 
 
         //public Single WE_59B { get { return getValue<Single>(); } }
@@ -1111,6 +1113,8 @@ public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue
         public Single V_K480A_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=85
         public Single NC_K450A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=87 частота мешалки в авто
         public Single NC_K450A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=89частота мешалки в руч
+
+
 
         //public Single Weight_water_for_loading_59A { get { return getValue<Single>(); } set { setValue<Single>(value); } }
         //public Single Weight_water_for_loading_59B { get { return getValue<Single>(); } set { setValue<Single>(value); } }
