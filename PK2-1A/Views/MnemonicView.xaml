@@ -1072,7 +1072,7 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <GroupBox Style="{StaticResource HmiGroupBox}" Width="100" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="-372" Canvas.Top="1455">
+        <GroupBox Style="{StaticResource HmiGroupBox}" Width="100" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1502" Canvas.Top="756">
             <GroupBox.Header>
                 <TextBlock><Run Text="67E" /><LineBreak/><Run Text="Расход [кг/ч]"/></TextBlock>
             </GroupBox.Header>
@@ -3341,7 +3341,7 @@
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NS_VodaGor_mode}" Out="{Binding PD.NS_VodaGor_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <WPF:Arrow HeaderPadding="-65,-3,0,0" Height="14"   Canvas.Left="1550" Canvas.Top="337" Width="33" RotateAngle="-180"  >
+        <WPF:Arrow HeaderPadding="-65,-3,0,0" Height="14"   Canvas.Left="1551" Canvas.Top="337" Width="33" RotateAngle="-180"  >
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
