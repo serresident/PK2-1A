@@ -3512,8 +3512,8 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock Canvas.Left="959" Canvas.Top="900" Caption="TE K480A" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock Canvas.Left="959" Canvas.Top="937" Caption="QE K480A" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QIY_K480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="959" Canvas.Top="900" Caption="TE K460A" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K460A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="959" Canvas.Top="937" Caption="QE K460A" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QIY_K460A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Tube  Design="Vertical" Height="134" Canvas.Left="1076" Canvas.Top="845" Width="98" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
@@ -3551,8 +3551,8 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock Canvas.Left="1078" Canvas.Top="900" Caption="TE K480A" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock Canvas.Left="1078" Canvas.Top="937" Caption="QE K480A" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QIY_K480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="1078" Canvas.Top="900" Caption="TE K460B" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K460B, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock Canvas.Left="1078" Canvas.Top="937" Caption="QE K460B" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QIY_K460B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Tube  Design="Vertical" Height="134" Canvas.Left="1196" Canvas.Top="846" Width="98" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
