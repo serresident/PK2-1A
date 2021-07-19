@@ -3844,7 +3844,7 @@
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="Pink" />
+                        <WPF:ColoringColor Color1="#FFE4687E" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
