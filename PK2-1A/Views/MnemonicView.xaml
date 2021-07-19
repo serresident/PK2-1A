@@ -2940,7 +2940,7 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.V_K480A_10_mode}" Out="{Binding PD.V_K480A_10_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <TextBlock Canvas.Left="848" TextWrapping="Wrap" Text="V K480A-10" Canvas.Top="423" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="848" TextWrapping="Wrap" Text="V K480A-10" Canvas.Top="420" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3003,7 +3003,7 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.V_K480A_11_mode}" Out="{Binding PD.V_K480A_11_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <TextBlock Canvas.Left="923" TextWrapping="Wrap" Text="V K480A-11" Canvas.Top="422" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="923" TextWrapping="Wrap" Text="V K480A-11" Canvas.Top="421" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3237,7 +3237,7 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.V_K480B_8_mode}" Out="{Binding PD.V_K480B_8_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <TextBlock Canvas.Left="1109" TextWrapping="Wrap" Text="V K480B-8" Canvas.Top="425" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1109" TextWrapping="Wrap" Text="V K480B-8" Canvas.Top="420" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
