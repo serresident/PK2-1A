@@ -63,7 +63,17 @@
 
     <Canvas>
 
-        <WPF:Tube  Design="Vertical" Height="145" Canvas.Left="1152" Canvas.Top="515" Width="194" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
+        <WPF:Tube  Design="Vertical" Height="145" Canvas.Left="1153" Canvas.Top="510" Width="194" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
+            <WPF:Tube.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Gray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Tube.Colors>
+        </WPF:Tube>
+
+        <WPF:Tube  Design="Vertical" Height="145" Canvas.Left="3770" Canvas.Top="515" Width="194" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
