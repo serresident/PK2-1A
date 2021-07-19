@@ -30,5 +30,10 @@ namespace PK2_1A.Views
         {
 
         }
+
+        private void Label_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
