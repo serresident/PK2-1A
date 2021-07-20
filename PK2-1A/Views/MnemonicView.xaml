@@ -3367,21 +3367,6 @@
 
         </WPF:Valve>
         <TextBlock Canvas.Left="1169" TextWrapping="Wrap" Text="V E461A" Canvas.Top="263" />
-        <WPF:Motor Height="21" Canvas.Left="983" Canvas.Top="815" Width="43" Header="M" HeaderPadding="16,2,0,0">
-            <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_631A_M_Sost}" />
-            </WPF:Motor.States>
-            <WPF:Motor.Colors>
-                <WPF:ControlColors>
-                    <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Color1="#FF39A234"/>
-                    </WPF:ControlColors.State4Coloring>
-                </WPF:ControlColors>
-            </WPF:Motor.Colors>
-
-
-
-        </WPF:Motor>
         <WPF:Tube  Design="Vertical" Height="134" Canvas.Left="1076" Canvas.Top="845" Width="98" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
@@ -4655,6 +4640,22 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.FV_K480A_reg_mode}" Out="{Binding PD.FV_K480A_reg_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
+        <WPF:Motor Height="21" Canvas.Left="983" Canvas.Top="815" Width="43" Header="M" HeaderPadding="16,2,0,0">
+            <WPF:Motor.States>
+                <WPF:StatesStandard Active="{Binding PD.NS_631A_M_Sost}" />
+            </WPF:Motor.States>
+            <WPF:Motor.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Color1="#FF39A234"/>
+                    </WPF:ControlColors.State4Coloring>
+                </WPF:ControlColors>
+            </WPF:Motor.Colors>
+
+
+
+        </WPF:Motor>
+        <Controls:ValueBlock Canvas.Left="1563" Canvas.Top="476" Caption="TE K480B" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480B_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <!--<Controls:NumPad Canvas.Left="56" Canvas.Top="685" />-->
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
