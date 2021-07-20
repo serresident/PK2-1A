@@ -3994,16 +3994,16 @@
         </WPF:Valve>
         <WPF:Valve Height="40" Canvas.Left="1019" Canvas.Top="676" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.V_K610_SQH}" OffSignal="{Binding PD.V_K610_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_5_mode}" Out="{Binding PD.VK480A_5_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_5_SQH}" OffSignal="{Binding PD.VK480A_5_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
         </WPF:Valve>
         <WPF:Valve Height="40" Canvas.Left="1081" Canvas.Top="676" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.V_K610_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.V_K610_SQH}" OffSignal="{Binding PD.V_K610_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_6_mode}" Out="{Binding PD.VK480A_6_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_6_SQH}" OffSignal="{Binding PD.VK480A_6_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
