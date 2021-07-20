@@ -4059,11 +4059,11 @@
         <WPF:Valve Height="40" Canvas.Left="1364" RotateAngle="-90" Canvas.Top="551" Width="30" Actor="Diaphram1">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.V_K480A_11_aout/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.TVK480A_SQH}" OffSignal="{Binding PD.TVK480A_SQL}" />
-                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.TVK480B_SQH}" OffSignal="{Binding PD.TVK480B_SQL}" />
+                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480B_mode}" Out="{Binding PD.TVK480B_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <TextBlock Canvas.Left="1380" TextWrapping="Wrap" Text="TV K480A" Canvas.Top="555" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1380" TextWrapping="Wrap" Text="TV K480B" Canvas.Top="555" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4097,7 +4097,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <TextBlock Canvas.Left="1407" TextWrapping="Wrap" Text="V K480A-3" Canvas.Top="558" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1407" TextWrapping="Wrap" Text="V K480B-3" Canvas.Top="558" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4121,7 +4121,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <TextBlock Canvas.Left="1473" TextWrapping="Wrap" Text="V K480A-4" Canvas.Top="559" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1473" TextWrapping="Wrap" Text="V K480B-4" Canvas.Top="559" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4190,7 +4190,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <TextBlock Canvas.Left="1348" TextWrapping="Wrap" Text="V K480A-2" Canvas.Top="673" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1348" TextWrapping="Wrap" Text="V K480B-2" Canvas.Top="673" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4214,7 +4214,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <TextBlock Canvas.Left="1410" TextWrapping="Wrap" Text="V K480A-5" Canvas.Top="670" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1410" TextWrapping="Wrap" Text="V K480B-5" Canvas.Top="670" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4238,7 +4238,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <TextBlock Canvas.Left="1473" TextWrapping="Wrap" Text="V K480A-6" Canvas.Top="672" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1473" TextWrapping="Wrap" Text="V K480B-6" Canvas.Top="672" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4280,40 +4280,40 @@
         <TextBlock Canvas.Left="1492" TextWrapping="Wrap" Text="воздух" Canvas.Top="716" />
         <WPF:Valve Height="40" Canvas.Left="1452" Canvas.Top="550" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_3_mode}" Out="{Binding PD.VK480A_3_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_3_SQH}" OffSignal="{Binding PD.VK480A_3_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480B_3_mode}" Out="{Binding PD.VK480B_3_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480B_3_SQH}" OffSignal="{Binding PD.VK480B_3_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
         </WPF:Valve>
         <WPF:Valve Height="40" Canvas.Left="1514" Canvas.Top="550" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_4_mode}" Out="{Binding PD.VK480A_4_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_4_SQH}" OffSignal="{Binding PD.VK480A_4_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480B_4_mode}" Out="{Binding PD.VK480B_4_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480B_4_SQH}" OffSignal="{Binding PD.VK480B_4_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
         </WPF:Valve>
         <WPF:Valve Height="40" Canvas.Left="1388" Canvas.Top="662" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_2_mode}" Out="{Binding PD.VK480A_2_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_2_SQH}" OffSignal="{Binding PD.VK480A_2_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480B_2_mode}" Out="{Binding PD.VK480B_2_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480B_2_SQH}" OffSignal="{Binding PD.VK480B_2_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
         </WPF:Valve>
         <WPF:Valve Height="40" Canvas.Left="1452" Canvas.Top="662" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_5_mode}" Out="{Binding PD.VK480A_5_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_5_SQH}" OffSignal="{Binding PD.VK480A_5_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480B_5_mode}" Out="{Binding PD.VK480B_5_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480B_5_SQH}" OffSignal="{Binding PD.VK480B_5_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
         </WPF:Valve>
         <WPF:Valve Height="40" Canvas.Left="1514" Canvas.Top="662" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_6_mode}" Out="{Binding PD.VK480A_6_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480A_6_SQH}" OffSignal="{Binding PD.VK480A_6_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480B_6_mode}" Out="{Binding PD.VK480B_6_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.VK480B_6_SQH}" OffSignal="{Binding PD.VK480B_6_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
