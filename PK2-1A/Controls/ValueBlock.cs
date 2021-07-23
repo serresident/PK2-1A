@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace PK2_1A.Controls
+namespace belofor.Controls
 {
     [TemplatePart(Name = "PART_Caption", Type = typeof(TextBlock))]
     public class ValueBlock : Control

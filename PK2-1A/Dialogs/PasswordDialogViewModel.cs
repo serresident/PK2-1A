@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PK2_1A.Dialogs
+namespace belofor.Dialogs
 {
     public class PasswordDialogViewModel : BindableBase, IDialogAware
     {

@@ -1,4 +1,4 @@
-﻿using PK2_1A.ViewModels;
+﻿using belofor.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PK2_1A.Views
+namespace belofor.Views
 {
     /// <summary>
     /// Interaction logic for MnemonicView.xaml

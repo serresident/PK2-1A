@@ -1,5 +1,4 @@
-﻿using PK2_1A.ViewModels;
-using Prism.Regions;
+﻿using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using belofor.ViewModels;
 
-namespace PK2_1A.Views
+namespace belofor.Views
 {
     /// <summary>
     /// Interaction logic for NavigationItemView.xaml

@@ -1,15 +1,15 @@
 ﻿using MySqlConnector;
 using Newtonsoft.Json;
 using NLog;
-using PK2_1A.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using belofor.Services;
 
-namespace PK2_1A.Repositories
+namespace belofor.Repositories
 {
     public class ArchivRepository
     {

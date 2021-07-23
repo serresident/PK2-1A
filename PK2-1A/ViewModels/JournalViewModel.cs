@@ -1,8 +1,4 @@
-﻿using PK2_1A.Attributes;
-using PK2_1A.Helpers;
-using PK2_1A.Models;
-using PK2_1A.Repositories;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +6,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using belofor.Attributes;
+using belofor.Helpers;
+using belofor.Models;
+using belofor.Repositories;
 
-namespace PK2_1A.ViewModels
+namespace belofor.ViewModels
 {
     public class JournalViewModel : BindableBase
     {

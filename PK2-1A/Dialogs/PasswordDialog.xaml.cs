@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PK2_1A.Dialogs
+namespace belofor.Dialogs
 {
     /// <summary>
     /// Interaction logic for PasswordDialog.xaml

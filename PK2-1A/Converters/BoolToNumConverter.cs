@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace PK2_1A.Converters
+namespace belofor.Converters
 {
   
     public class BoolToNumConverter : IValueConverter

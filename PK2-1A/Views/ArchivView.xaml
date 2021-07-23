@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="PK2_1A.Views.ArchivView"
+﻿<UserControl x:Class="belofor.Views.ArchivView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:helpers="clr-namespace:PK2_1A.Helpers"
-             xmlns:local="clr-namespace:PK2_1A.Views"
+             xmlns:helpers="clr-namespace:belofor.Helpers"
+             xmlns:local="clr-namespace:belofor.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 

@@ -8,7 +8,7 @@ using System.Windows.Threading;
 using Xceed.Wpf.Toolkit.Core.Utilities;
 
 
-namespace PK2_1A.Controls
+namespace belofor.Controls
 {
     [TemplatePart(Name = PART_NumPadButtonPanel, Type = typeof(ContentControl))]
     public class NumPad : Control

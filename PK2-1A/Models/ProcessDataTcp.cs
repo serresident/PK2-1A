@@ -1,11 +1,11 @@
-﻿using PK2_1A.Attributes;
+﻿using belofor.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PK2_1A.Models
+namespace belofor.Models
 {
     // для цветов
     //https://chir.ag/projects/name-that-color/#BF788B 

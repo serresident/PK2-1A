@@ -8,7 +8,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using Xceed.Wpf.Toolkit;
 
-namespace PK2_1A.Controls
+namespace belofor.Controls
 {
     [TemplatePart(Name = PART_NumPadPopup, Type = typeof(Popup))]
     [TemplatePart(Name = PART_NumPad, Type = typeof(NumPad))]

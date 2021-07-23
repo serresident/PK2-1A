@@ -1,6 +1,5 @@
 ﻿using AITSW.PCPANEL.WPF;
 using Microsoft.Xaml.Behaviors;
-using PK2_1A.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +11,9 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using belofor.Controls;
 
-namespace PK2_1A.Behaviors
+namespace belofor.Behaviors
 {
     public class AnalogActuatorHandlerBehavior : Behavior<ControlBase>
     {

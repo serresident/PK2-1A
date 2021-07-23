@@ -1,8 +1,6 @@
 ﻿using MySqlConnector;
 using Newtonsoft.Json;
 using NLog;
-using PK2_1A.Attributes;
-using PK2_1A.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,8 +8,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using belofor.Attributes;
+using belofor.Models;
 
-namespace PK2_1A.Services
+namespace belofor.Services
 {
     public class ArchivService
     {

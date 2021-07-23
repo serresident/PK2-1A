@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xaml.Behaviors;
-using PK2_1A.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using belofor.Controls;
 using Xceed.Wpf.Toolkit;
 
-namespace PK2_1A.Behaviors
+namespace belofor.Behaviors
 {
     public class ModbusBindingBehavior : Behavior<NumPadUpDown>
     {

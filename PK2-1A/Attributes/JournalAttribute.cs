@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PK2_1A.Attributes
+namespace belofor.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class JournalAttribute : Attribute

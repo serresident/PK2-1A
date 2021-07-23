@@ -1,8 +1,8 @@
 ﻿<prism:PrismApplication
-    x:Class="PK2_1A.App"
+    x:Class="belofor.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:PK2_1A"
+    xmlns:local="clr-namespace:belofor"
     xmlns:prism="http://prismlibrary.com/">
     <Application.Resources>
         <ResourceDictionary>

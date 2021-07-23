@@ -1,13 +1,13 @@
 ﻿using NLog;
-using PK2_1A.Models;
-using PK2_1A.Services;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
+using belofor.Models;
+using belofor.Services;
 
-namespace PK2_1A.ViewModels
+namespace belofor.ViewModels
 {
     public class ShellViewModel : BindableBase
     {

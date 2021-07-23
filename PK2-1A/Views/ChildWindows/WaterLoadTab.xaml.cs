@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Xceed.Wpf.Toolkit;
 
-namespace PK2_1A.Views.ChildWindows
+namespace belofor.Views.ChildWindows
 {
     /// <summary>
     /// Interaction logic for WaterLoading.xaml

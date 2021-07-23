@@ -1,7 +1,6 @@
 ﻿using EasyModbus;
 using EasyModbus.Exceptions;
 using NLog;
-using PK2_1A.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -10,8 +9,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using belofor.Models;
 
-namespace PK2_1A.Services
+namespace belofor.Services
 {
     public delegate void ConnectedChanged(bool status);
 

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace PK2_1A.Behaviors
+namespace belofor.Behaviors
 {
     public class DigitalActuatorStatusBehavior : Behavior<ControlBase>
     {

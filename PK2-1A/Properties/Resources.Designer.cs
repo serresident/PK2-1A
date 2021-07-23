@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PK2_1A.Properties {
+namespace belofor.Properties {
     using System;
     
     

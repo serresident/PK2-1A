@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace PK2_1A.Behaviors
+namespace belofor.Behaviors
 {
     public class DigitalOnStatusBehavior : Behavior<ControlBase>
     {

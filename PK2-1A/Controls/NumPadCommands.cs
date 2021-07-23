@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace PK2_1A.Controls
+namespace belofor.Controls
 {
     public static class NumPadCommands
     {

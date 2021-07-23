@@ -1,12 +1,6 @@
 ﻿using NLog;
 using NLog.Config;
 using NLog.Targets;
-using PK2_1A.Dialogs;
-using PK2_1A.Models;
-using PK2_1A.Repositories;
-using PK2_1A.Services;
-using PK2_1A.ViewModels;
-using PK2_1A.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
@@ -15,8 +9,14 @@ using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows;
+using belofor.Dialogs;
+using belofor.Models;
+using belofor.Repositories;
+using belofor.Services;
+using belofor.ViewModels;
+using belofor.Views;
 
-namespace PK2_1A
+namespace belofor
 {
     /// <summary>
     /// Interaction logic for App.xaml

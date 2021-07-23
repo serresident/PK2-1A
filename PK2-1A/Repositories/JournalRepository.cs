@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PK2_1A.Repositories
+namespace belofor.Repositories
 {
     public class JournalRepository
     {

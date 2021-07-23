@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
-namespace PK2_1A.Services
+namespace belofor.Services
 {
     /// <summary>
     /// Starts a task that runs in a separate thread

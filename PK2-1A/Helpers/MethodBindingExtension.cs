@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace PK2_1A.Helpers
+namespace belofor.Helpers
 {
     // https://stackoverflow.com/questions/7887867/binding-the-loaded-event
     // https://gist.github.com/mikernet/7eb18408ffbcc149f1d9b89d9483fc19

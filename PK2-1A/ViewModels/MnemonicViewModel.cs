@@ -1,16 +1,16 @@
 ﻿using NLog;
-using PK2_1A.Helpers;
-using PK2_1A.Models;
-using PK2_1A.Repositories;
-using PK2_1A.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using belofor.Helpers;
+using belofor.Models;
+using belofor.Repositories;
+using belofor.Services;
 using Xceed.Wpf.Toolkit;
 
-namespace PK2_1A.ViewModels
+namespace belofor.ViewModels
 {
     public class MnemonicViewModel : BindableBase
     {

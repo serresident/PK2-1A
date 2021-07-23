@@ -1,10 +1,10 @@
-﻿using PK2_1A.ViewModels;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+using belofor.ViewModels;
 
-namespace PK2_1A.Views
+namespace belofor.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

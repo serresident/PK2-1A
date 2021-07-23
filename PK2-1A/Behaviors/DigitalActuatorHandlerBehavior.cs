@@ -12,7 +12,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace PK2_1A.Behaviors
+namespace belofor.Behaviors
 {
     public class DigitalActuatorHandlerBehavior : Behavior<ControlBase>
     {

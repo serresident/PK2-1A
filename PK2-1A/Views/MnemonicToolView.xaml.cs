@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PK2_1A.Views
+namespace belofor.Views
 {
     /// <summary>
     /// Interaction logic for MnemonicToolView.xaml
