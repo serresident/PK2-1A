@@ -28,7 +28,7 @@ namespace PK2_1A.ViewModels
 
         public User User { get; set; }
 
-        const string title = "Схема поликарбоксилатов 1A";
+        const string title = "Схема производства Белофоров";
         private string _title;
         public string Title
         {
