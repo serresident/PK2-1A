@@ -834,106 +834,104 @@ public bool ZagrKond460Comm_Start{ get { return getValue<bool>(); } set { setVal
         #region Holdings Registers
         //******************line1_1 ********************      
         //mu 110 8i ad=5       
-        public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 1 _ch 1 
-        public UInt16 NC_610M_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 2 _ch 2 
-        public UInt16 pHV_K610_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 3 _ch 3 
-        public UInt16 FV_K480A_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 4 _ch 4 
-        public UInt16 FV_K480B_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 5 _ch 5 
-                                                                                                           // ************************line2_1   ***************************    
-                                                                                                           //mu 110 8i ad=5       
-        public UInt16 VK480A_7_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 6 _ch 1 
-        public UInt16 VK480B_7_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 7 _ch 2 
-        public UInt16 TVK480A_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 8 _ch 3 
-        public UInt16 TVK480B_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 9 _ch 4 
-        public UInt16 VK480A_1_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 10 _ch 5 
-        public UInt16 VK480B_1_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 11 _ch 6 
-                                                                                                           //mu 110 8i ad=11       
-        public UInt16 pHV_K450A_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 12 _ch 1 
-        public UInt16 V_K480A_8_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 13 _ch 2 
-        public UInt16 V_K480B_8_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 14 _ch 3 
-        public UInt16 V_K480A_9_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 15 _ch 4 
-        public UInt16 V_K480B_9_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 16 _ch 5 
-        public UInt16 V_K480A_11_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 17 _ch 6 
-        public UInt16 V_K480B_11_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 18 _ch 7 
-        public UInt16 V_K480A_10_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 19 _ch 8 
-                                                                                                        //mu 110 8i ad=12       
-        public UInt16 V_K480B_10_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 20 _ch 1 
-        public UInt16 NC_K450A_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad= 21 _ch 2 
-                                                                                                      //public UInt16 FV_K480B_reg_aout_{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//ad=22 _ch3
-        public UInt16 viravni1 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//ad=22
+        public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 1 _ch 1 
+                                                                                                            //mu 110 8i ad=5        //mu 110 8i ad=5        //mu 110 8i ad=5       	//mu 110 8i ad=5       
+        public UInt16 NC_610M_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 2 _ch 2 
+        public UInt16 pHV_K610_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad= 3 _ch 3 
+        public UInt16 FV_K480A_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 4 _ch 4 
+        public UInt16 FV_K480B_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 5 _ch 5 
+                                                                                                                    // ************************line2_1   ***************************     // ************************line2_1   ***************************     // ************************line2_1   ***************************    	// ************************line2_1   ***************************    
+                                                                                                                    //mu 110 8i ad=5        //mu 110 8i ad=5        //mu 110 8i ad=5       	//mu 110 8i ad=5       
+        public UInt16 VK480A_7_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 6 _ch 1 
+        public UInt16 VK480B_7_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 7 _ch 2 
+        public UInt16 TVK480A_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad= 8 _ch 3 
+        public UInt16 TVK480B_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad= 9 _ch 4 
+        public UInt16 VK480A_1_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 10 _ch 5 
+        public UInt16 VK480B_1_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 11 _ch 6 
+                                                                                                                    //mu 110 8i ad=11        //mu 110 8i ad=11        //mu 110 8i ad=11       	//mu 110 8i ad=11       
+        public UInt16 pHV_K450A_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 12 _ch 1 
+        public UInt16 V_K480A_8_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 13 _ch 2 
+        public UInt16 V_K480B_8_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 14 _ch 3 
+        public UInt16 V_K480A_9_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 15 _ch 4 
+        public UInt16 V_K480B_9_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 16 _ch 5 
+        public UInt16 V_K480A_11_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   // ad= 17 _ch 6 
+        public UInt16 V_K480B_11_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   // ad= 18 _ch 7 
+        public UInt16 V_K480A_10_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   // ad= 19 _ch 8 
+                                                                                                                //mu 110 8i ad=12        //mu 110 8i ad=12        //mu 110 8i ad=12       	//mu 110 8i ad=12       
+        public UInt16 V_K480B_10_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   // ad= 20 _ch 1 
+        public UInt16 NC_K450A_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad= 21 _ch 2 
+        public UInt16 viravni1 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //ad=22
 
-        public Single NC_M610_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=23 частота мешалки в авто
-        public Single NC_M610_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=25 частота мешалки в руч
+        public Single NC_M610_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=23 частота мешалки в авто
+        public Single NC_M610_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }   //ad=25 частота мешалки в руч
 
-        public Single NC_P412_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=27 частота мешалки в авто
-        public Single NC_P412_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=29 частота мешалки в руч
+        public Single NC_P412_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=27 частота мешалки в авто
+        public Single NC_P412_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }   //ad=29 частота мешалки в руч
 
 
 
-        public Single FV_K480B_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=31
-        public Single FV_K480B_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=33
+        public Single FV_K480B_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=31
+        public Single FV_K480B_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=33
 
-        public Single FV_K480A_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=35
-        public Single FV_K480A_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=37
+        public Single FV_K480A_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=35
+        public Single FV_K480A_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=37
 
         public UInt16 ZagrVodaComm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //39
-        public UInt16 ZagrVodaComm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //40
-        public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//41
-        public UInt16 viravni2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//42
+        public UInt16 ZagrVodaComm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //40
+        public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //41
+        public UInt16 viravni2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //42
+                                                                                                        //PLC2 valve reg //PLC2 valve reg //PLC2 valve reg	//PLC2 valve reg
+        public Single VK480A_7_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //43
+        public Single VK480A_7_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } } //45
 
-        //PLC2 valve reg
-        public Single VK480A_7_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//43
-        public Single VK480A_7_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//45
+        public Single VK480B_7_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //47
+        public Single VK480B_7_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } } //49
 
-        public Single VK480B_7_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//43
-        public Single VK480B_7_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//45
+        public Single VK480A_1_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=51
+        public Single VK480A_1_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=53
 
-        public Single VK480A_1_reg_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=47
-        public Single VK480A_1_reg_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=49
+        public Single pHV_K450A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=55
+        public Single pHV_K450A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=57
 
-        public Single pHV_K450A_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=51 
-        public Single pHV_K450A_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=53
+        public Single V_K480A_8_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=59
+        public Single V_K480A_8_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=61
 
-        public Single V_K480A_8_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=55
-        public Single V_K480A_8_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=57
+        public Single V_K480B_8_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=63
+        public Single V_K480B_8_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=65
 
-        public Single V_K480B_8_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=59
-        public Single V_K480B_8_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=61
+        public Single V_K480A_9_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=67
+        public Single V_K480A_9_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=69
 
-        public Single V_K480A_9_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=63
-        public Single V_K480A_9_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=65
+        public Single V_K480B_9_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=71
+        public Single V_K480B_9_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=73
 
-        public Single V_K480B_9_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=67
-        public Single V_K480B_9_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=69
+        public Single V_K480B_10_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=75
+        public Single V_K480B_10_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }   //ad=77
 
-        public Single V_K480B_10_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=71
-        public Single V_K480B_10_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=73
+        public Single V_K480B_11_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=79
+        public Single V_K480B_11_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }   //ad=81
 
-        public Single V_K480B_11_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=75
-        public Single V_K480B_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=77
+        public Single V_K480A_10_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=83
+        public Single V_K480A_10_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }   //ad=85
+        public Single V_K480A_11_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }    //ad=87
+        public Single V_K480A_11_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }   //ad=89
 
-        public Single V_K480A_10_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=79
-        public Single V_K480A_10_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=81
-        public Single V_K480A_11_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=83
-        public Single V_K480A_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=85
-        public Single NC_K450A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=87 частота мешалки в авто
-        public Single NC_K450A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=89частота мешалки в руч
+        public Single NC_K450A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad=91 частота мешалки в авто
+        public Single NC_K450A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=93 частота мешалки в руч
 
+        public Single TVK480A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }   // 95
+        public Single TVK480A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }  // 97
 
-    
+        public Single TVK480B_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }   // 99
+        public Single TVK480B_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }  // 101
+        public UInt16 test { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //102
+        public UInt16 test1 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //103
+        public UInt16 ZagrKond460Comm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   //104
+        public UInt16 ZagrKond460Comm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //105
+        public UInt16 ZagrKond460Comm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //106
 
-        public Single TVK480A_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 95
-        public Single TVK480A_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 97
+        public UInt16 viravni4 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }	//107
 
-        public Single TVK480B_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 99
-        public Single TVK480B_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 101
-        public UInt16 test{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//102
-        public UInt16 test1{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//103
-        public UInt16 ZagrKond460Comm_DozaZad{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //104
-        public UInt16 ZagrKond460Comm_Nemk{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //105
-        public UInt16 ZagrKond460Comm_doza{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//106
-
-        public UInt16 viravni3{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//107
 
 
 
