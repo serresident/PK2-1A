@@ -45,7 +45,7 @@
                     <Setter Property="Template" Value="{StaticResource SimpleToggleButtonTemplate}"/>
 
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding LoadingWater_in_59A_59B_67Z_67X_41D_41A_Active}" Value="True">
+                        <DataTrigger Binding="{Binding PD.ZagrVodaComm_Start}" Value="true" >
                             <Setter Property="OverridesDefaultStyle" Value="true"/>
                             <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
                             <Setter Property="Foreground" Value="{StaticResource GreenTextForegroundBrush}"/>

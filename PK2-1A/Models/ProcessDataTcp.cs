@@ -631,215 +631,24 @@ public bool NC_K450A_mode { get { return getValue<bool>(); } set { setValue<bool
 public bool NC_K450A_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad=187
 public bool NC_K450A_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } } // ad=188
 
-//public bool LoadingWater_in_59A_59B_67Z_67X_41D_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool LoadingComponents_from_59A_67Z_67X_TO_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool isPaused_Mass_loading_from_59A_to_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool isPaused_Mass_loading_from_59B_to_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool isPaused_Mass_loading_from_67Z_to_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool isPaused_Mass_loading_from_67X_to_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+public bool TVK480A_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=189
+public bool TVK480A_man_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=190
 
-//public bool UPRAV_OTS_KL_V_P53 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_P51 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool IsMAN_OTS_KL_V_P53 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool IsMAN_OTS_KL_V_P51 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Zagruzka_Over_P53_in_75 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Zagruzka_Over_P51_in_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+public bool TVK480B_mode{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=191
+public bool TVK480B_man_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=192
 
-//public bool Zagruzka_Over_P53 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Zagruzka_Over_P51 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool Zagruzka_Over_P41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Zagruzka_Over_P41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Zagruzka_Over_31 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Zagruzka_Over_48 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+public bool ZagrKond460Comm_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=193
 
 
-///* MDS DIO-16BD A6 **********************************/
-//public bool UPRAV_OTS_KL_V75 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V64A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_VP53 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_VP51 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_TV1_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_TV2_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV1_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV2_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
 
-///* MDS DIO-16BD A7 **********************************/
-//public bool UPRAV_OTS_KL_WV5_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV3_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV4_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_FV_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV6_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_2_59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_4_59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_59A_3 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+        #endregion
 
+        // Inputs Registers
+        #region Inputs Registers
 
-///* MDS DIO-16BD A8 **********************************/
-//public bool UPRAV_OTS_KL_V_59A_2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_59A_4 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_59A_1 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_59A_5 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_P41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_67L { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_14 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_525 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_V2_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Nitrogen_Purge_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_PV6 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool NASOS_34H_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Thermo_PV5_In_Mass { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_KL_TV35H { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Thermo_41D_START_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool NASOS_48_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MESHAL_59A_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MESHAL_41D_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool KV_59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool KV_67X { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool KV_67Z { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_1_P59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_67Z { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_67X { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_2_67Z { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool UPRAV_OTS_KL_WV_2_67X { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool Loading_from_67L_to_59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool Thermo_59A_START_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool ExternControlP41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_P41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V2_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool ExternControlP51 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool ExternControlP53 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV2_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_UPRAV_OTS_KL_WV_4_59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV6_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-////
-//public bool MAN_UPRAV_KL_PV5 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_KL_PV6 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_UPRAV_KL_WV_1_67X { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_KL_WV_1_67Z { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_KL_WV_3_P59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_INV_P59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_FV_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_UPRAV_OTS_KL_V_59A_3 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_1_P59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_67Z { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_67X { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV1_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_2_67Z { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV4_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_2_67X { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV3_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_14 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_67L { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_59A_4 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_VP53 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V75 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_59A_2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_UPRAV_OTS_KL_VP51 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV5_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_2_59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_59A_1 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_UPRAV_OTS_KL_TV1_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_TV2_41D { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_UPRAV_KL_V62H { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_NASOS_48_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_59A_5 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MAN_NASOS_34H_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_VP59B__2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_VP59B__2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_QVP59B__2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_QVP59B__2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_V_2_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_2_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_V_1_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_1_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_FV_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_FV_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_V_P41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_P41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool ExternControlP41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_TE_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_TE_41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool MESHAL_41A_PUSK_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool Thermo_41A_START_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool IS_LOAD_FROM_41D_TO41A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool Discharge_59B { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_P59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_P59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_1_P59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_1_P59A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_1_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_1_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_2_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_2_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_3_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_3_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//public bool UPRAV_OTS_KL_WV_5_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_5_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//// клапан WV P59B/2
-//public bool UPRAV_OTS_KL_WV_P59B_2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_P59B_2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//// клапан WV4-1A
-//public bool UPRAV_OTS_KL_WV_4_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_WV_4_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//// клапан V-P1A
-//public bool UPRAV_OTS_KL_V_P1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_OTS_KL_V_P1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-//[JournalAttribute("Изменение состояния термоцикла реактора 1A >> [{0}] --> [{1}]")]
-//public bool Thermo_1A_START_STOP { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_KL_9A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool MAN_UPRAV_KL_10A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-
-//public bool Thermo_1A_In_Mass { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-//public bool LoadingWater_in_1A { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-
-#endregion
-
-// Inputs Registers
-#region Inputs Registers
-
-//line1_1       
-//owen mv 8as ad=3      
-public Single WE_D470 { get { return getValue<Single>(); } }// ad= 1 _ch 1
+        //line1_1       
+        //owen mv 8as ad=3      
+        public Single WE_D470 { get { return getValue<Single>(); } }// ad= 1 _ch 1
         public Single LT_R137 { get { return getValue<Single>(); } }// ad= 3 _ch 2
         public Single WE_R422 { get { return getValue<Single>(); } }// ad= 5 _ch 3
         public Single LT_R461 { get { return getValue<Single>(); } }// ad= 7 _ch 4
@@ -1109,6 +918,22 @@ public Single WE_D470 { get { return getValue<Single>(); } }// ad= 1 _ch 1
         public Single V_K480A_11_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=85
         public Single NC_K450A_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=87 частота мешалки в авто
         public Single NC_K450A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=89частота мешалки в руч
+
+
+    
+
+        public Single TVK480A_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 95
+        public Single TVK480A_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 97
+
+        public Single TVK480B_ain_man{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 99
+        public Single TVK480B_ain_auto{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// 101
+        public UInt16 test{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//102
+        public UInt16 test1{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//103
+        public UInt16 ZagrKond460Comm_DozaZad{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //104
+        public UInt16 ZagrKond460Comm_Nemk{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //105
+        public UInt16 ZagrKond460Comm_doza{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//106
+
+        public UInt16 viravni3{ get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//107
 
 
 
