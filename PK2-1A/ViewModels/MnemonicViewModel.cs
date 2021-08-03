@@ -23,7 +23,10 @@ namespace belofor.ViewModels
         private readonly ArchivRepository archivRepository;
 
         public DelegateCommand WaterLoadingStartCommand { get; private set; }
-        public DelegateCommand WaterLoadingStopCommand { get; private set; }
+        public DelegateCommand WaterLoadingStopCommand { get; private set; }      
+        public DelegateCommand HotWaterLoadingStartCommand { get; private set; }
+        public DelegateCommand HotWaterLoadingStopCommand { get; private set; }
+
 
         private ObservableRangeCollection<ThermoChartPoint> points;
         public ObservableRangeCollection<ThermoChartPoint> Points
@@ -37,6 +40,13 @@ namespace belofor.ViewModels
         {
             get { return waterLoadingWndStatus; }
             set { SetProperty(ref waterLoadingWndStatus, value); }
+        }
+
+        private WindowState hotwaterLoadingWndStatus = WindowState.Closed;
+        public WindowState HotWaterLoadingWndStatus
+        {
+            get { return hotwaterLoadingWndStatus; }
+            set { SetProperty(ref hotwaterLoadingWndStatus, value); }
         }
 
         private WindowState thermoCycl_1AWndStatus = WindowState.Closed;
@@ -66,6 +76,9 @@ namespace belofor.ViewModels
 
             WaterLoadingStartCommand = new DelegateCommand(waterLoadingStart, canWaterLoadingStart);
             WaterLoadingStopCommand = new DelegateCommand(waterLoadingStop, canWaterLoadingStop);
+            HotWaterLoadingStartCommand = new DelegateCommand(hotwaterLoadingStart, canHotWaterLoadingStart);
+            HotWaterLoadingStopCommand = new DelegateCommand(hotwaterLoadingStop, canHotWaterLoadingStop);
+     
 
          //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
@@ -86,6 +99,24 @@ namespace belofor.ViewModels
         }
 
         private void waterLoadingStop() => PD.ZagrVodaComm_Start = false;
+
+
+
+        private bool canHotWaterLoadingStart()
+        {
+            // return !PD.LoadingWater_in_59A_59B_67Z_67X_41D_41A & !PD.In_SOST_OTS_KL_WV_4_1A_SQH & PD.NS64_status_net != 1 & PD.NS64_status_net != 2;
+            return !PD.ZagrKond460Comm_Start;
+            // return true;
+        }
+
+        private void hotwaterLoadingStart() =>  PD.ZagrKond460Comm_Start = true;
+
+        private bool canHotWaterLoadingStop()
+        {
+            return PD.ZagrKond460Comm_Start;
+        }
+
+        private void hotwaterLoadingStop() => PD.ZagrKond460Comm_Start = false;
 
         public void OnLoading()
         {
@@ -167,7 +198,9 @@ namespace belofor.ViewModels
         private void internalUpdate()
         {
             WaterLoadingStartCommand.RaiseCanExecuteChanged();
-            WaterLoadingStopCommand.RaiseCanExecuteChanged();
+            WaterLoadingStopCommand.RaiseCanExecuteChanged(); 
+            HotWaterLoadingStartCommand.RaiseCanExecuteChanged();
+            HotWaterLoadingStopCommand.RaiseCanExecuteChanged();
         }
 
         ~MnemonicViewModel()

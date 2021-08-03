@@ -4652,7 +4652,8 @@
         <Controls:ValueBlock Canvas.Left="1563" Canvas.Top="476" Caption="TE K480B" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480B_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:NumPad Canvas.Left="56" Canvas.Top="685" />
         <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
-            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка воды В 1А"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" />
+            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="90" Canvas.Top="47" /> 
+            <child:HotWaterLoading  Left="100" Top="30" Height="250" Width="405" Caption="Загрузка гор. воды"  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="432" Canvas.Top="47" />
             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
         </xctk:WindowContainer>
 
