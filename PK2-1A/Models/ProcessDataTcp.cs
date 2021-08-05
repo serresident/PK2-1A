@@ -638,6 +638,7 @@ public bool TVK480B_mode{ get { return getValue<bool>(); } set { setValue<bool>(
 public bool TVK480B_man_dout{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=192
 
 public bool ZagrKond460Comm_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=193
+public bool ZagrKond480Comm_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=194
 
 
 
@@ -798,13 +799,16 @@ public bool ZagrKond460Comm_Start{ get { return getValue<bool>(); } set { setVal
 
         public Single TVK480B_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }   // 99
         public Single TVK480B_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }  // 101
-        public UInt16 test { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //102
-        public UInt16 test1 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //103
-        public UInt16 ZagrKond460Comm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   //104
-        public UInt16 ZagrKond460Comm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //105
-        public UInt16 ZagrKond460Comm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //106
+        public UInt16 test { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //103
+        public UInt16 test1 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //104
+        public UInt16 ZagrKond460Comm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }   //105
+        public UInt16 ZagrKond460Comm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //106
+        public UInt16 ZagrKond460Comm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //107
 
-        public UInt16 viravni4 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }	//107
+        public UInt16 ZagrKond480Comm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //108
+        public UInt16 ZagrKond480Comm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //109
+        public UInt16 ZagrKond480Comm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//110
+
 
 
 

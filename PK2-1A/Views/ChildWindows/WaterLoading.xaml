@@ -250,7 +250,7 @@
                 DockPanel.Dock="Right"
                 IconLocation="Left">
                 <xctk:IconButton.Icon>
-                    <Image Source="/beloforHMi;component/Assest/Stop-red.png">
+                    <Image Source="/belofor;component/Assest/Stop-red.png">
                         <Image.Style>
                             <Style TargetType="Image">
                                 <Style.Triggers>
@@ -272,7 +272,7 @@
                 DockPanel.Dock="Right"
                 IconLocation="Left">
                 <xctk:IconButton.Icon>
-                    <Image Source="/beloforHMi;component/Assest/Start.png">
+                    <Image Source="/belofor;component/Assest/Start.png">
                         <Image.Style>
                             <Style TargetType="Image">
                                 <Style.Triggers>

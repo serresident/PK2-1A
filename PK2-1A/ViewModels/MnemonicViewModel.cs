@@ -25,7 +25,9 @@ namespace belofor.ViewModels
         public DelegateCommand WaterLoadingStartCommand { get; private set; }
         public DelegateCommand WaterLoadingStopCommand { get; private set; }      
         public DelegateCommand HotWaterLoadingStartCommand { get; private set; }
-        public DelegateCommand HotWaterLoadingStopCommand { get; private set; }
+        public DelegateCommand HotWaterLoadingStopCommand { get; private set; }      
+        public DelegateCommand Hot480WaterLoadingStartCommand { get; private set; }
+        public DelegateCommand Hot480WaterLoadingStopCommand { get; private set; }
 
 
         private ObservableRangeCollection<ThermoChartPoint> points;
@@ -47,6 +49,13 @@ namespace belofor.ViewModels
         {
             get { return hotwaterLoadingWndStatus; }
             set { SetProperty(ref hotwaterLoadingWndStatus, value); }
+
+        }
+        private WindowState hot480waterLoadingWndStatus = WindowState.Closed;
+        public WindowState Hot480WaterLoadingWndStatus
+        {
+            get { return hot480waterLoadingWndStatus; }
+            set { SetProperty(ref hot480waterLoadingWndStatus, value); }
         }
 
         private WindowState thermoCycl_1AWndStatus = WindowState.Closed;
@@ -76,48 +85,32 @@ namespace belofor.ViewModels
 
             WaterLoadingStartCommand = new DelegateCommand(waterLoadingStart, canWaterLoadingStart);
             WaterLoadingStopCommand = new DelegateCommand(waterLoadingStop, canWaterLoadingStop);
+
             HotWaterLoadingStartCommand = new DelegateCommand(hotwaterLoadingStart, canHotWaterLoadingStart);
             HotWaterLoadingStopCommand = new DelegateCommand(hotwaterLoadingStop, canHotWaterLoadingStop);
+
+            Hot480WaterLoadingStartCommand = new DelegateCommand(hot480waterLoadingStart, canHot480WaterLoadingStart);
+            Hot480WaterLoadingStopCommand = new DelegateCommand(hot480waterLoadingStop, canHot480WaterLoadingStop);
      
 
          //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         }
 
-        private bool canWaterLoadingStart()
-        {
-            // return !PD.LoadingWater_in_59A_59B_67Z_67X_41D_41A & !PD.In_SOST_OTS_KL_WV_4_1A_SQH & PD.NS64_status_net != 1 & PD.NS64_status_net != 2;
-             return !PD.ZagrVodaComm_Start ;
-           // return true;
-        }
-
+        private bool canWaterLoadingStart() {return !PD.ZagrVodaComm_Start ; }
         private void waterLoadingStart() =>  PD.ZagrVodaComm_Start = true;
-
-        private bool canWaterLoadingStop()
-        {
-            return PD.ZagrVodaComm_Start;
-        }
-
+        private bool canWaterLoadingStop() { return PD.ZagrVodaComm_Start; }
         private void waterLoadingStop() => PD.ZagrVodaComm_Start = false;
 
-
-
-        private bool canHotWaterLoadingStart()
-        {
-            // return !PD.LoadingWater_in_59A_59B_67Z_67X_41D_41A & !PD.In_SOST_OTS_KL_WV_4_1A_SQH & PD.NS64_status_net != 1 & PD.NS64_status_net != 2;
-            return !PD.ZagrKond460Comm_Start;
-            // return true;
-        }
-
+        private bool canHotWaterLoadingStart() { return !PD.ZagrKond460Comm_Start; }
         private void hotwaterLoadingStart() =>  PD.ZagrKond460Comm_Start = true;
-
-        private bool canHotWaterLoadingStop()
-        {
-            return PD.ZagrKond460Comm_Start;
-        }
-
+        private bool canHotWaterLoadingStop() {return PD.ZagrKond460Comm_Start; } 
         private void hotwaterLoadingStop() => PD.ZagrKond460Comm_Start = false;
 
+        private bool canHot480WaterLoadingStart() { return !PD.ZagrKond480Comm_Start; }
+        private void hot480waterLoadingStart() =>  PD.ZagrKond480Comm_Start = true;
+        private bool canHot480WaterLoadingStop() {return PD.ZagrKond480Comm_Start; } 
+        private void hot480waterLoadingStop() => PD.ZagrKond480Comm_Start = false;
         public void OnLoading()
         {
             if (!initVM)
@@ -199,8 +192,12 @@ namespace belofor.ViewModels
         {
             WaterLoadingStartCommand.RaiseCanExecuteChanged();
             WaterLoadingStopCommand.RaiseCanExecuteChanged(); 
+
             HotWaterLoadingStartCommand.RaiseCanExecuteChanged();
-            HotWaterLoadingStopCommand.RaiseCanExecuteChanged();
+            HotWaterLoadingStopCommand.RaiseCanExecuteChanged();  
+
+            Hot480WaterLoadingStartCommand.RaiseCanExecuteChanged();
+            Hot480WaterLoadingStopCommand.RaiseCanExecuteChanged();
         }
 
         ~MnemonicViewModel()

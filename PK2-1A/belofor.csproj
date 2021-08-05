@@ -141,7 +141,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChildWindows\Hot480WaterLoading .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ChildWindows\HotWaterLoading .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ChildWindows\UnloadR422.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -235,8 +243,14 @@
     <Compile Include="Views\ChildWindows\Control_P1A.xaml.cs">
       <DependentUpon>Control_P1A.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChildWindows\Hot480WaterLoading .xaml.cs">
+      <DependentUpon>Hot480WaterLoading .xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChildWindows\HotWaterLoading .xaml.cs">
       <DependentUpon>HotWaterLoading .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\UnloadR422.xaml.cs">
+      <DependentUpon>UnloadR422.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindows\ThermoCycl_1A.xaml.cs">
       <DependentUpon>ThermoCycl_1A.xaml</DependentUpon>
