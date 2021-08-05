@@ -13,8 +13,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-    Width="587.21"
-    Height="381.857"
+    Width="600"
+    Height="450"
     d:DesignHeight="450"
     d:DesignWidth="900"
     Background="Wheat"
@@ -96,11 +96,13 @@
                     <RowDefinition Height="30" />
                     <RowDefinition Height="30" />
                     <RowDefinition Height="30" />
-                    <RowDefinition Height="30" />     
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition  Height="30"/>
                     <RowDefinition />
-                    <RowDefinition  />
-                    <RowDefinition  />
-                    <RowDefinition  />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition  Width="140"/>
@@ -110,23 +112,40 @@
                 <TextBlock Text="Расч.остаток:" VerticalAlignment="Center"   HorizontalAlignment="Center" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
+              
+
                 <TextBlock Text="Загр. всего: " Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
-                <TextBlock Text="1 загрузка:" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+              
+
+                    <TextBlock Text="1 загрузка:" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
                 <TextBlock Text="продол-ть: " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
-          <TextBlock Text="2 загрузка" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+                   
+                    <TextBlock Text="2 загрузка" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
-          <TextBlock Text="продол-ть: " Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+          <TextBlock Text="продол-ть: " Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
 
-                
+
+                <TextBlock Text="Длит-ть опер-ии: " Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="#FF646464"/>
+                <TextBlock Text="Расч. кол-во ДС &#10;к-ты на опр-ю: " Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="#FF646464"/>
+
+                <TextBlock Text="Конц-я &#10; ДС-кис-ты: " Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="#FF646464"/>
+
+
                 <TextBlock  Grid.Column="1"
                             Height="28"
                             FontSize="20"
@@ -159,14 +178,6 @@
                            Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 <TextBlock Grid.Column="1"  
-                           Grid.Row="4" 
-                           Height="28"
-                           FontSize="20"
-                           FontWeight="Bold"
-                           Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
-                           VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
-                <TextBlock Grid.Column="1"  
                            Grid.Row="5" 
                            Height="28"
                            FontSize="20"
@@ -174,15 +185,66 @@
                            Foreground="LawnGreen"
                            Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
-               
-            
+                <TextBlock Grid.Column="1"  
+                           Grid.Row="6" 
+                           Height="28"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="LawnGreen"
+                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
+                           VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
+                <Controls:NumPadUpDown
+            Grid.Row="8"
+            Grid.Column="1"
+            Width="120"
+            Height="30"
+            Margin="15,0,0,0"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF7E7E7E"
+            Increment="1"
+            Minimum="-1"
+            Precision="0"
+            UpdateValueOnEnterKey="True">
+                    <Behaviors:Interaction.Behaviors>
+                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrKond480Comm_DozaZad}" />
+                    </Behaviors:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+
+                <Controls:NumPadUpDown
+            Grid.Row="9"
+            Grid.Column="1"
+            Width="120"
+            Height="30"
+            Margin="15,0,0,0"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF7E7E7E"
+            Increment="1"
+            Minimum="-1"
+            Precision="0"
+            UpdateValueOnEnterKey="True">
+                    <Behaviors:Interaction.Behaviors>
+                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrKond480Comm_DozaZad}" />
+                    </Behaviors:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
 
 
-           
-         
-          
 
-        </Grid>
+
+
+
+
+
+
+
+            </Grid>
             <Border
                 Grid.RowSpan="2"
                 Grid.Column="1"
