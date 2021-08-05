@@ -23,11 +23,16 @@ namespace belofor.ViewModels
         private readonly ArchivRepository archivRepository;
 
         public DelegateCommand WaterLoadingStartCommand { get; private set; }
-        public DelegateCommand WaterLoadingStopCommand { get; private set; }      
+        public DelegateCommand WaterLoadingStopCommand { get; private set; }     
+        
         public DelegateCommand HotWaterLoadingStartCommand { get; private set; }
         public DelegateCommand HotWaterLoadingStopCommand { get; private set; }      
+
         public DelegateCommand Hot480WaterLoadingStartCommand { get; private set; }
         public DelegateCommand Hot480WaterLoadingStopCommand { get; private set; }
+
+        public DelegateCommand UnloadFromR422StartCommand { get; private set; }
+        public DelegateCommand UnloadFromR422StopCommand { get; private set; }
 
 
         private ObservableRangeCollection<ThermoChartPoint> points;
@@ -51,13 +56,23 @@ namespace belofor.ViewModels
             set { SetProperty(ref hotwaterLoadingWndStatus, value); }
 
         }
+
         private WindowState hot480waterLoadingWndStatus = WindowState.Closed;
+
         public WindowState Hot480WaterLoadingWndStatus
         {
             get { return hot480waterLoadingWndStatus; }
             set { SetProperty(ref hot480waterLoadingWndStatus, value); }
         }
+        // выгрузка r422
+        private WindowState unloadFromR422WndStatus = WindowState.Closed;
+        public WindowState UnloadFromR422WndStatus
+        {
+            get { return unloadFromR422WndStatus; }
+            set { SetProperty(ref unloadFromR422WndStatus, value); }
+        }
 
+        //термоцикл
         private WindowState thermoCycl_1AWndStatus = WindowState.Closed;
         public WindowState ThermoCycl_1AWndStatus
         {
@@ -91,6 +106,9 @@ namespace belofor.ViewModels
 
             Hot480WaterLoadingStartCommand = new DelegateCommand(hot480waterLoadingStart, canHot480WaterLoadingStart);
             Hot480WaterLoadingStopCommand = new DelegateCommand(hot480waterLoadingStop, canHot480WaterLoadingStop);
+
+            UnloadFromR422StartCommand = new DelegateCommand(unloadFromR422Start, canUnloadFromR422Start);
+            UnloadFromR422StopCommand = new DelegateCommand(unloadFromR422stop, canUnloadFromR422Stop);
      
 
          //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
@@ -111,6 +129,13 @@ namespace belofor.ViewModels
         private void hot480waterLoadingStart() =>  PD.ZagrKond480Comm_Start = true;
         private bool canHot480WaterLoadingStop() {return PD.ZagrKond480Comm_Start; } 
         private void hot480waterLoadingStop() => PD.ZagrKond480Comm_Start = false;
+
+        private bool canUnloadFromR422Start() { return !PD.ZagrKond480Comm_Start; }
+        private void unloadFromR422Start() =>  PD.ZagrKond480Comm_Start = true;
+        private bool canUnloadFromR422Stop() {return PD.ZagrKond480Comm_Start; } 
+        private void unloadFromR422stop() => PD.ZagrKond480Comm_Start = false;
+
+
         public void OnLoading()
         {
             if (!initVM)
@@ -198,6 +223,9 @@ namespace belofor.ViewModels
 
             Hot480WaterLoadingStartCommand.RaiseCanExecuteChanged();
             Hot480WaterLoadingStopCommand.RaiseCanExecuteChanged();
+
+            UnloadFromR422StartCommand.RaiseCanExecuteChanged();
+            UnloadFromR422StopCommand.RaiseCanExecuteChanged();
         }
 
         ~MnemonicViewModel()
