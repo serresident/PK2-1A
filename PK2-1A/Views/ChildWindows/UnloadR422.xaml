@@ -193,7 +193,20 @@
                            Foreground="LawnGreen"
                            Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
+
+
+                <TextBlock Grid.Column="1"  
+                           Grid.Row="7" 
+                           Height="28"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="LawnGreen"
+                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
+                           VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
+                
+                
                 <Controls:NumPadUpDown
+                    
             Grid.Row="8"
             Grid.Column="1"
             Width="120"
