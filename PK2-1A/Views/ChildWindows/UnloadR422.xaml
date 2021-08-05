@@ -98,7 +98,9 @@
                     <RowDefinition Height="30" />
                     <RowDefinition Height="30" />     
                     <RowDefinition />
-                    <RowDefinition Height="56" />
+                    <RowDefinition  />
+                    <RowDefinition  />
+                    <RowDefinition  />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition  Width="140"/>
@@ -111,13 +113,16 @@
                 <TextBlock Text="Загр. всего: " Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
-                <TextBlock Text="1 загрузка: " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+                <TextBlock Text="1 загрузка:" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
-                <TextBlock Text="2 загрузка: " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+                <TextBlock Text="продол-ть: " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
-          <TextBlock Text="Время   &#10; процесса: " Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+          <TextBlock Text="2 загрузка" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#FF646464"/>
+          <TextBlock Text="продол-ть: " Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464"/>
 
@@ -155,6 +160,14 @@
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 <TextBlock Grid.Column="1"  
                            Grid.Row="4" 
+                           Height="28"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="LawnGreen"
+                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
+                           VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
+                <TextBlock Grid.Column="1"  
+                           Grid.Row="5" 
                            Height="28"
                            FontSize="20"
                            FontWeight="Bold"
