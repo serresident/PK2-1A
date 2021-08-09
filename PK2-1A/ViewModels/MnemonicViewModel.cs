@@ -35,6 +35,10 @@ namespace belofor.ViewModels
         public DelegateCommand UnloadFromR422StopCommand { get; private set; }
 
 
+        public DelegateCommand Ohlagd480StartCommand { get; private set; }
+        public DelegateCommand Ohlagd480StopCommand { get; private set; }
+
+
         private ObservableRangeCollection<ThermoChartPoint> points;
         public ObservableRangeCollection<ThermoChartPoint> Points
         {
@@ -70,6 +74,14 @@ namespace belofor.ViewModels
         {
             get { return unloadFromR422WndStatus; }
             set { SetProperty(ref unloadFromR422WndStatus, value); }
+        }
+
+                    // охлаждение 480
+        private WindowState ohlagd480WndStatus = WindowState.Closed;
+        public WindowState Ohlagd480WndStatus
+        {
+            get { return ohlagd480WndStatus; }
+            set { SetProperty(ref ohlagd480WndStatus, value); }
         }
 
         //термоцикл
@@ -109,9 +121,12 @@ namespace belofor.ViewModels
 
             UnloadFromR422StartCommand = new DelegateCommand(unloadFromR422Start, canUnloadFromR422Start);
             UnloadFromR422StopCommand = new DelegateCommand(unloadFromR422stop, canUnloadFromR422Stop);
-     
 
-         //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
+            Ohlagd480StartCommand = new DelegateCommand(Ohlagd480Start, canOhlagd480Start);
+            Ohlagd480StopCommand = new DelegateCommand(Ohlagd480stop, canOhlagd480Stop);
+
+
+            //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         }
 
@@ -130,10 +145,15 @@ namespace belofor.ViewModels
         private bool canHot480WaterLoadingStop() {return PD.ZagrKond480Comm_Start; } 
         private void hot480waterLoadingStop() => PD.ZagrKond480Comm_Start = false;
 
-        private bool canUnloadFromR422Start() { return !PD.ZagrKond480Comm_Start; }
-        private void unloadFromR422Start() =>  PD.ZagrKond480Comm_Start = true;
-        private bool canUnloadFromR422Stop() {return PD.ZagrKond480Comm_Start; } 
-        private void unloadFromR422stop() => PD.ZagrKond480Comm_Start = false;
+        private bool canUnloadFromR422Start() { return !PD.fromR422_xStart; }
+        private void unloadFromR422Start() =>  PD.fromR422_xStart = true;
+        private bool canUnloadFromR422Stop() {return PD.fromR422_xStart; } 
+        private void unloadFromR422stop() => PD.fromR422_xStart = false;
+
+        private bool canOhlagd480Start() { return !PD.Ohlagd480_Start; }
+        private void Ohlagd480Start() => PD.Ohlagd480_Start = true;
+        private bool canOhlagd480Stop() { return PD.Ohlagd480_Start; }
+        private void Ohlagd480stop() => PD.Ohlagd480_Start = false;
 
 
         public void OnLoading()
@@ -226,6 +246,9 @@ namespace belofor.ViewModels
 
             UnloadFromR422StartCommand.RaiseCanExecuteChanged();
             UnloadFromR422StopCommand.RaiseCanExecuteChanged();
+
+            Ohlagd480StartCommand.RaiseCanExecuteChanged();
+            Ohlagd480StopCommand.RaiseCanExecuteChanged();
         }
 
         ~MnemonicViewModel()

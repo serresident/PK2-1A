@@ -141,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChildWindows\Ohlagd480.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ChildWindows\Hot480WaterLoading .xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -242,6 +246,9 @@
     </Compile>
     <Compile Include="Views\ChildWindows\Control_P1A.xaml.cs">
       <DependentUpon>Control_P1A.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\Ohlagd480.xaml.cs">
+      <DependentUpon>Ohlagd480.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindows\Hot480WaterLoading .xaml.cs">
       <DependentUpon>Hot480WaterLoading .xaml</DependentUpon>

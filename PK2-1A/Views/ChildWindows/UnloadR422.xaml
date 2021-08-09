@@ -139,11 +139,11 @@
                            Foreground="#FF646464"/>
                 <TextBlock Text="Расч. кол-во ДС &#10;к-ты на опр-ю: " Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
-                           Foreground="#FF646464"/>
+                           Foreground="Blue"/>
 
                 <TextBlock Text="Конц-я &#10; ДС-кис-ты: " Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
-                           Foreground="#FF646464"/>
+                           Foreground="blue"/>
 
 
                 <TextBlock  Grid.Column="1"
@@ -151,15 +151,15 @@
                             FontSize="20"
                             FontWeight="Bold"
                             Foreground="LawnGreen"
-                            Text="40000 кг"    
-                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"    />
+                            Text="{Binding PD.fromR422_Ostatok, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"   
+                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black" RenderTransformOrigin="0.329,0.607"    />
                 <TextBlock Grid.Column="1"  
                            Grid.Row="1" 
                            Height="28"
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
+                           Text="{Binding PD.fromR422_doza, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 <TextBlock Grid.Column="1"  
                            Grid.Row="2" 
@@ -167,7 +167,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
+                           Text="{Binding PD.fromR422_doza1, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 <TextBlock Grid.Column="1"  
                            Grid.Row="3" 
@@ -175,7 +175,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
+                           Text="{Binding PD.fromR422_tau1, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 <TextBlock Grid.Column="1"  
                            Grid.Row="5" 
@@ -183,7 +183,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
+                           Text="{Binding PD.fromR422_doza2, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 <TextBlock Grid.Column="1"  
                            Grid.Row="6" 
@@ -191,7 +191,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
+                           Text="{Binding PD.fromR422_tau2, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
 
 
@@ -201,7 +201,7 @@
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="LawnGreen"
-                           Text="{Binding PD.FQ_K480_in_count, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
+                           Text="{Binding PD.fromR422_tau, StringFormat=\{0:0.0 мин\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left"  HorizontalAlignment="Stretch" Background="Black"  />
                 
                 
@@ -223,7 +223,7 @@
             Precision="0"
             UpdateValueOnEnterKey="True">
                     <Behaviors:Interaction.Behaviors>
-                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrKond480Comm_DozaZad}" />
+                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.fromR422_doza_zad}" />
                     </Behaviors:Interaction.Behaviors>
                 </Controls:NumPadUpDown>
 
@@ -239,12 +239,12 @@
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF7E7E7E"
-            Increment="1"
+            Increment="0.1"
             Minimum="-1"
-            Precision="0"
+            Precision="1"
             UpdateValueOnEnterKey="True">
                     <Behaviors:Interaction.Behaviors>
-                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrKond480Comm_DozaZad}" />
+                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.fromR422_Concentr}" />
                     </Behaviors:Interaction.Behaviors>
                 </Controls:NumPadUpDown>
 
@@ -316,7 +316,7 @@
                 <xctk:IconButton
                         Padding="3,3,20,3"
                         HorizontalAlignment="Center"
-                        Command="{Binding HotWaterLoadingStopCommand}"
+                        Command="{Binding UnloadFromR422StopCommand}"
                         Content="     Стоп"
                         DockPanel.Dock="Right"
                         IconLocation="Left">
@@ -338,7 +338,7 @@
                 <xctk:IconButton
                         Padding="3,3,20,3"
                         HorizontalAlignment="Center"
-                        Command="{Binding HotWaterLoadingStartCommand}"
+                        Command="{Binding UnloadFromR422StartCommand}"
                         Content="     Пуск"
                         DockPanel.Dock="Right"
                         IconLocation="Left">

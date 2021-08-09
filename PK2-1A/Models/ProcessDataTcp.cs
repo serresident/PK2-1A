@@ -640,6 +640,12 @@ public bool TVK480B_man_dout{ get { return getValue<bool>(); } set { setValue<bo
 public bool ZagrKond460Comm_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=193
 public bool ZagrKond480Comm_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=194
 
+        // from r422
+public bool fromR422_xStart{ get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=195
+public bool fromR422_xOk { get { return getValue<bool>(); } set { setValue<bool>(value); } }  //ad=196
+public bool fromR422_xEndZagr2 { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=197
+                                                                                                   //охлаждение к480A/B
+public bool Ohlagd480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=198
 
 
         #endregion
@@ -809,6 +815,33 @@ public bool ZagrKond480Comm_Start{ get { return getValue<bool>(); } set { setVal
         public UInt16 ZagrKond480Comm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //109
         public UInt16 ZagrKond480Comm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//110
 
+        //from r422
+       public Single   fromR422_doza_zad{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=111
+       public Single   fromR422_W{ get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=113
+       public Single   fromR422_tau_zad{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=115
+       public Single   fromR422_ZonaProp{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=117
+       public Single   fromR422_Ti{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=119
+       public Single   fromR422_Kd{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=121
+       public Single   fromR422_Doza100{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=123
+       public Single   fromR422_KoefOper{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=125
+       public Single   fromR422_Concentr{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=127
+       public Single   fromR422_DoljaZagr1{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=129
+       public Single   fromR422_MinProizv{ get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=131
+
+        public UInt16 fromR422_Message { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//ad=132
+        public  UInt16 fromR422_Operation { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//ad=133
+        public Single fromR422_W_zad{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=134
+        public Single fromR422_doza{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=136
+        public Single fromR422_doza1{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=138
+        public Single fromR422_doza2{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=140
+        public Single fromR422_Ostatok{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=142
+        public Single fromR422_tau{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=144
+        public Single fromR422_tau1{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=146
+        public Single fromR422_tau2 { get { return getValue<Single>(); } set { setValue<Single>(value); } }///ad=148
+
+        public Single Ohlagd480_Tzad { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad 150
+        public UInt16 ohlagd480_N_emk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //152
+        public UInt16 ohlagd480_N_emk_2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //153
 
 
 
