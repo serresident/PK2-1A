@@ -33,6 +33,7 @@ namespace belofor.Controls
         private static void onValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (e.NewValue.ToString() != "???")
+                if(e.NewValue.ToString() !="NaN")
                 if (float.Parse(e.NewValue.ToString()) < float.Parse("-100")) (d as ValueBlock).Value = "???";
         }
 

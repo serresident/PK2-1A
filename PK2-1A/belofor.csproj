@@ -59,15 +59,15 @@
   <ItemGroup>
     <Reference Include="AlarmManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\PCPANEL.NET472\PCPANEL_WPF_Controls\bin\Debug\AlarmManager.dll</HintPath>
+      <HintPath>bin\Debug\AlarmManager.dll</HintPath>
     </Reference>
     <Reference Include="PCPANEL_WPF_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\PCPANEL.NET472\PCPANEL_WPF_Controls\bin\Debug\PCPANEL_WPF_Controls.dll</HintPath>
+      <HintPath>bin\Debug\PCPANEL_WPF_Controls.dll</HintPath>
     </Reference>
     <Reference Include="SimpleEvaluator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\PCPANEL.NET472\PCPANEL_WPF_Controls\bin\Debug\SimpleEvaluator.dll</HintPath>
+      <HintPath>bin\Debug\SimpleEvaluator.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -85,7 +85,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="WPFValueConverters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\PCPANEL.NET472\PCPANEL_WPF_Controls\bin\Debug\WPFValueConverters.dll</HintPath>
+      <HintPath>bin\Debug\WPFValueConverters.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.Toolkit, Version=4.1.21063.2360, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
