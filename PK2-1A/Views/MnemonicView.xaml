@@ -405,7 +405,7 @@
             </TextBlock.RenderTransform>
         </TextBlock>
 
-        <WPF:Pump  Height="110"  Canvas.Left="454" Canvas.Top="866" Width="49" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
+        <WPF:Pump  Height="110"  Canvas.Left="524" Canvas.Top="807" Width="49" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
 
 
             <Behaviors:Interaction.Behaviors>
@@ -414,7 +414,7 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
 
-        <WPF:Tube Height="69" Canvas.Left="527" Canvas.Top="878" Width="63" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0"  >
+        <WPF:Tube Height="69" Canvas.Left="597" Canvas.Top="819" Width="63" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0"  >
             <WPF:Tube.Colors>
                 <WPF:ControlColors/>
             </WPF:Tube.Colors>
@@ -668,7 +668,7 @@
 
         <WPF:Tube Height="26" Canvas.Left="14" Canvas.Top="84" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_VodaArt_Sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tank  Height="155" Canvas.Left="-714" Canvas.Top="122" Width="110" Design="StandingFunnelRoundRoof" GeometryParam4="*" GeometryParam5="0.3*" GeometryParam2="4*"/>
@@ -2077,8 +2077,8 @@
         <TextBlock Canvas.Left="1262" TextWrapping="Wrap" Text="R403" Canvas.Top="117" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <TextBlock Canvas.Left="1389" TextWrapping="Wrap" Text="R481" Canvas.Top="118" FontSize="18" Foreground="DimGray" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <Controls:ValueBlock Canvas.Left="1385" Canvas.Top="74" Caption="LE 481" Unit="%" ValueColor="#FF0E5A70" Width="77" Height="40" Value="{Binding PD.LE_R481, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
-        <TextBlock Canvas.Left="454" TextWrapping="Wrap" Text="ЛХУ" Canvas.Top="951" Height="33" Width="45" />
-        <WPF:Fan Height="53" Canvas.Left="533" Canvas.Top="886" Width="49" Design="Blower1">
+        <TextBlock Canvas.Left="524" TextWrapping="Wrap" Text="ЛХУ" Canvas.Top="892" Height="33" Width="45" />
+        <WPF:Fan Height="53" Canvas.Left="603" Canvas.Top="827" Width="49" Design="Blower1">
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
@@ -4040,18 +4040,44 @@
 
         </WPF:Motor>
         <Controls:ValueBlock Canvas.Left="1563" Canvas.Top="476" Caption="TE K480B" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480B_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
-        <WPF:Pump  Height="110"  Canvas.Left="260" Canvas.Top="860" Width="49" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
+        <WPF:Pump  Height="110"  Canvas.Left="1638" Canvas.Top="140" Width="49" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
 
 
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_VodaGor_Sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.V_K480A_11_aout/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                <behaviors:AnalogActuatorHandlerBehavior  Units="Гц"  HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.P726_OUT_Frq/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
+                <behaviors:AnalogActuatorHandlerBehavior  Units="Гц"  HSpacing="0" VSpacing="0"  IsMan="{Binding PD.P726_Auto}" Out="{Binding PD.man_P726_setFrq}"/>
 
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="260" TextWrapping="Wrap" Text="P726" Canvas.Top="945" Height="33" Width="45" />
-        <Controls:ValueBlock Canvas.Left="236" Canvas.Top="842" Caption="PIT_P631A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <TextBlock Canvas.Left="1638"   TextWrapping="Wrap" Text="P726" Canvas.Top="225" Height="33" Width="45" />
+        <Controls:ValueBlock Canvas.Left="1614" Canvas.Top="122" Caption="PIT_P631A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:NumPadUpDown ToolTip="Уставка давления кг/см3"
+            Width="88"
+            Height="30"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF7E7E7E"
+            Increment="1"
+            Minimum="-1"
+            Precision="0"
+            UpdateValueOnEnterKey="True" Canvas.Left="1693" Canvas.Top="169">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.SP_P_OUT_P726}" />
+            </Behaviors:Interaction.Behaviors>
+        </Controls:NumPadUpDown>
+        <WPF:Label  Height="26" Content="P" Canvas.Left="1625" Canvas.Top="246" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />

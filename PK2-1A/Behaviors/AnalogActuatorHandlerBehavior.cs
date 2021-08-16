@@ -181,6 +181,10 @@ namespace belofor.Behaviors
                     popupPanel.IsOpen = false;
                 };
 
+                //settings
+                Expander settings = new Expander();
+                settings.Visibility = Visibility.Collapsed;
+
                 TextBlock unitsText = new TextBlock();
                 unitsText.VerticalAlignment = VerticalAlignment.Center;
                 unitsText.Margin = new Thickness(5, 0, 0, 0);
@@ -193,7 +197,9 @@ namespace belofor.Behaviors
                 layout.Children.Add(popupCloseButton);
                 layout.Children.Add(popupCheckBox);
                 layout.Children.Add(stackPanel);
-                
+
+                layout.Children.Add(settings);
+
                 popupBorder.Child = layout;
 
                 popupPanel.Child = popupBorder;

@@ -647,6 +647,9 @@ public bool fromR422_xEndZagr2 { get { return getValue<bool>(); } set { setValue
                                                                                                    //охлаждение к480A/B
 public bool Ohlagd480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=198
 
+public bool P726_Access_Wr_Frq { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=199
+public bool P726_Auto { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=200
+
 
         #endregion
 
@@ -698,24 +701,46 @@ public bool Ohlagd480_Start { get { return getValue<bool>(); } set { setValue<bo
         public Single TE_K450A { get { return getValue<Single>(); } }// ad= 69 _ch 2
         public Single WE_K450A { get { return getValue<Single>(); } }// ad= 71 _ch 3
 
-        public UInt16 FQ_R521_in_count { get { return getValue<UInt16>(); } } //ad= 72 fast di1
-        public UInt16 FQ_K480_in_count { get { return getValue<UInt16>(); } } //ad=73 fast di2
-        public UInt16 FQ_K460_in_count { get { return getValue<UInt16>(); } } //ad=74 fast di3
-        public UInt16 FQ_K450A_MEK_in_count { get { return getValue<UInt16>(); } } //ad=75 fast di4
-        public Single TE_480A_1 { get { return getValue<Single>(); } } //ad=76  trm202 ch1
-        public Single TE_480B_1 { get { return getValue<Single>(); } } //ad=78 trm202 ch2
+        public UInt16 FQ_R521_in_count { get { return getValue<UInt16>(); } } //ad= 73 fast di1
+        public UInt16 FQ_K480_in_count { get { return getValue<UInt16>(); } } //ad=74 fast di2
+        public UInt16 FQ_K460_in_count { get { return getValue<UInt16>(); } } //ad=75fast di3
+        public UInt16 FQ_K450A_MEK_in_count { get { return getValue<UInt16>(); } } //ad=76 fast di4
+        public Single TE_480A_1 { get { return getValue<Single>(); } } //ad=77  trm202 ch1
+        public Single TE_480B_1 { get { return getValue<Single>(); } } //ad=79 trm202 ch2
 
 
-        public UInt16 viravni3 { get { return getValue<UInt16>(); } } // должен быть последний
-        public UInt16 JOURNAL { get { return getValue<UInt16>(); } } // должен быть последний
+        public Single P726_Cur_I{ get { return getValue<Single>(); } } //ad=81
+        public Single P726_Cur_FRQ{ get { return getValue<Single>(); } }//ad83
+      
+        public Single Tenzo1{ get { return getValue<Single>(); } } //ad=85
+        public Single Tenzo2{ get { return getValue<Single>(); } } //ad=87
+        public Single Tenzo3{ get { return getValue<Single>(); } } //ad=89
+        public Single Tenzo4{ get { return getValue<Single>(); } } //ad=91
+        public Single Tenzo5{ get { return getValue<Single>(); } } //ad=93
 
-        #endregion
 
-        // Holdings Registers
-        #region Holdings Registers
-        //******************line1_1 ********************      
-        //mu 110 8i ad=5       
-        public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 1 _ch 1 
+        public Single FQ_R521_in_count_{ get { return getValue<Single>(); } } //ad= 95
+        public Single FQ_K480_in_count_{ get { return getValue<Single>(); } } //ad=97
+        public Single FQ_K460_in_count_{ get { return getValue<Single>(); } } //ad=99
+        public Single FQ_K450A_MEK_in_count_{ get { return getValue<Single>(); } } //ad=101
+
+        public Single P_P726{ get { return getValue<Single>(); } }//ad=103
+        public Single P726_OUT_Frq{ get { return getValue<Single>(); } } //ad=105
+
+        public UInt16 P726_status { get { return getValue<UInt16>(); } }//ad=107
+
+
+
+        public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последни
+        } //ad=82 
+
+#endregion
+
+// Holdings Registers
+#region Holdings Registers
+//******************line1_1 ********************      
+//mu 110 8i ad=5       
+public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 1 _ch 1 
                                                                                                             //mu 110 8i ad=5        //mu 110 8i ad=5        //mu 110 8i ad=5       	//mu 110 8i ad=5       
         public UInt16 NC_610M_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 2 _ch 2 
         public UInt16 pHV_K610_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad= 3 _ch 3 
@@ -842,6 +867,14 @@ public bool Ohlagd480_Start { get { return getValue<bool>(); } set { setValue<bo
         public Single Ohlagd480_Tzad { get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad 150
         public UInt16 ohlagd480_N_emk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //152
         public UInt16 ohlagd480_N_emk_2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //153
+
+
+        public Single man_P726_setFrq{ get { return getValue<Single>(); } set { setValue<Single>(value); } } //ad 154
+        public Single SP_P_OUT_P726{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad156  
+        public Single KP_P_OUT_P726{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad157
+        public Single TN_P_OUT_P726{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad159
+        public Single TV_P_OUT_P726{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad161
+
 
 
 
