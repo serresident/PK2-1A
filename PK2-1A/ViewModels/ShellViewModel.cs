@@ -72,7 +72,7 @@ namespace belofor.ViewModels
             {
                 if (r.Parameters.ContainsKey("password"))
                 {
-                    if (r.Parameters.GetValue<string>("password") == "1919")
+                    if (r.Parameters.GetValue<string>("password") == "2020")
                         User.IsAuthorized = true;
                 }
             });
