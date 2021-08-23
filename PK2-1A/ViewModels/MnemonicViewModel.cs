@@ -38,6 +38,10 @@ namespace belofor.ViewModels
         public DelegateCommand Ohlagd480StartCommand { get; private set; }
         public DelegateCommand Ohlagd480StopCommand { get; private set; }
 
+        public DelegateCommand RegPhK480aStartCommand { get; private set; }
+        public DelegateCommand RegPhK480aStopCommand { get; private set; }
+
+
 
         private ObservableRangeCollection<ThermoChartPoint> points;
         public ObservableRangeCollection<ThermoChartPoint> Points
@@ -82,6 +86,16 @@ namespace belofor.ViewModels
         {
             get { return ohlagd480WndStatus; }
             set { SetProperty(ref ohlagd480WndStatus, value); }
+
+        }
+
+
+        // PH 480a
+        private WindowState regPh480aWndStatus = WindowState.Closed;
+        public WindowState RegPh480aWndStatus
+        {
+            get { return regPh480aWndStatus; }
+            set { SetProperty(ref regPh480aWndStatus, value); }
         }
 
         //термоцикл
@@ -125,6 +139,9 @@ namespace belofor.ViewModels
             Ohlagd480StartCommand = new DelegateCommand(Ohlagd480Start, canOhlagd480Start);
             Ohlagd480StopCommand = new DelegateCommand(Ohlagd480stop, canOhlagd480Stop);
 
+            RegPhK480aStartCommand = new DelegateCommand(RegPh480aStart, canRegPh480aStart);
+            RegPhK480aStopCommand = new DelegateCommand(RegPh480astop, canRegPh480aStop);
+
 
             //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
@@ -154,6 +171,12 @@ namespace belofor.ViewModels
         private void Ohlagd480Start() => PD.Ohlagd480_Start = true;
         private bool canOhlagd480Stop() { return PD.Ohlagd480_Start; }
         private void Ohlagd480stop() => PD.Ohlagd480_Start = false;
+
+
+        private bool canRegPh480aStart() { return !PD.RegPH480A_Start; }
+        private void RegPh480aStart() => PD.RegPH480A_Start = true;
+        private bool canRegPh480aStop() { return PD.RegPH480A_Start; }
+        private void RegPh480astop() => PD.RegPH480A_Start = false;
 
 
         public void OnLoading()
@@ -249,6 +272,10 @@ namespace belofor.ViewModels
 
             Ohlagd480StartCommand.RaiseCanExecuteChanged();
             Ohlagd480StopCommand.RaiseCanExecuteChanged();
+
+            RegPhK480aStartCommand.RaiseCanExecuteChanged();
+            RegPhK480aStopCommand.RaiseCanExecuteChanged();
+
         }
 
         ~MnemonicViewModel()

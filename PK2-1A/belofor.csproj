@@ -153,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ChildWindows\RegPh480A.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ChildWindows\UnloadR422.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -255,6 +259,9 @@
     </Compile>
     <Compile Include="Views\ChildWindows\HotWaterLoading .xaml.cs">
       <DependentUpon>HotWaterLoading .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\RegPh480A.xaml.cs">
+      <DependentUpon>RegPh480A.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindows\UnloadR422.xaml.cs">
       <DependentUpon>UnloadR422.xaml</DependentUpon>

@@ -650,6 +650,8 @@ public bool Ohlagd480_Start { get { return getValue<bool>(); } set { setValue<bo
 public bool P726_Access_Wr_Frq { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=199
 public bool P726_Auto { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=200
 
+public bool RegPH480A_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=201
+
 
         #endregion
 
@@ -888,8 +890,8 @@ public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<U
         public Single RegPH480A_pH4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=179
         public Single RegPH480A_pH5 { get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=181
         public Single RegPH480A_DeltaPH_max { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=183
-        UInt16 RegPH480A_Tau_izm { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad=185
-        UInt16 RegPH480A_Tau_pause { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad=186
+        public UInt16 RegPH480A_Tau_izm { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad=185
+        public UInt16 RegPH480A_Tau_pause { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad=186
 
 
         public Single RegPH480B_x1 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=187
@@ -903,8 +905,8 @@ public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<U
         public Single RegPH480B_pH4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=203
         public Single RegPH480B_pH5 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=205
         public Single RegPH480B_DeltaPH_max { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=207
-        UInt16 RegPH480B_Tau_izm { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad=209
-        UInt16 RegPH480B_Tau_pause { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad=210
+        public UInt16 RegPH480B_Tau_izm { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad=209
+        public UInt16 RegPH480B_Tau_pause { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad=210
 
         public Single RegPH480A_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=211
         public Single RegPH480B_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=213
