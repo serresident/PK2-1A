@@ -877,6 +877,47 @@ public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<U
 
 
 
+        public Single RegPH480A_x1 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=163
+        public Single RegPH480A_x2 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=165
+        public Single RegPH480A_x3 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=167
+        public Single RegPH480A_x4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=169
+        public Single RegPH480A_x5 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=171
+        public Single RegPH480A_pH { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=173
+        public Single RegPH480A_pH2 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=175
+        public Single RegPH480A_pH3 { get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=177
+        public Single RegPH480A_pH4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=179
+        public Single RegPH480A_pH5 { get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=181
+        public Single RegPH480A_DeltaPH_max { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=183
+        UInt16 RegPH480A_Tau_izm { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad=185
+        UInt16 RegPH480A_Tau_pause { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad=186
+
+
+        public Single RegPH480B_x1 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=187
+        public Single RegPH480B_x2 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=189
+        public Single RegPH480B_x3 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=191
+        public Single RegPH480B_x4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=193
+        public Single RegPH480B_x5 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=195
+        public Single RegPH480B_pH1 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=197
+        public Single RegPH480B_pH2 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=199
+        public Single RegPH480B_pH3 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=201
+        public Single RegPH480B_pH4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=203
+        public Single RegPH480B_pH5 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=205
+        public Single RegPH480B_DeltaPH_max { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=207
+        UInt16 RegPH480B_Tau_izm { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }// ad=209
+        UInt16 RegPH480B_Tau_pause { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad=210
+
+        public Single RegPH480A_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=211
+        public Single RegPH480B_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=213
+        public Single RegPH480A_pH_zad { get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=215
+        public Single RegPH480B_pH_zad { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=217
+        public Single RegPH480A_Kx { get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=219
+        public Single RegPH480B_Kx { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=221
+        public Single RegPH480A_doza { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=223
+        public Single RegPH480B_doza { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=225
+
+
+
+
 
 
         #endregion
