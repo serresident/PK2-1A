@@ -1548,7 +1548,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P461_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P201C_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1594,7 +1594,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P461_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P402_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1640,7 +1640,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P461_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P404A_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1686,8 +1686,8 @@
         </WPF:Tube>
         <WPF:Valve Height="40" Canvas.Left="1074" Canvas.Top="10" Width="30" Actor="Piston"  RotateAngle="0" >
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.FV_R521_mode}" Out="{Binding PD.FV_R521_control_man}"/>
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.FV_R521_SQH}" OffSignal="{Binding PD.FV_R521_SQL}" />
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.WVR404A_mode}" Out="{Binding PD.WVR404A_control_man}"/>
+                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.WVR404A_SQH}" OffSignal="{Binding PD.WVR404A_SQL}" />
             </Behaviors:Interaction.Behaviors>
 
 
@@ -2807,22 +2807,15 @@
         </WPF:Tube>
         <WPF:Tube Height="16" Canvas.Left="1441" Canvas.Top="518" Width="172" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
-            <Behaviors:Interaction.Behaviors>
+            <!--<Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.TVK480B_SQH}" OnColor1="#FFE4687E"/>
-            </Behaviors:Interaction.Behaviors>
+            </Behaviors:Interaction.Behaviors>-->
 
         </WPF:Tube>
-        <WPF:Tube Height="36" Canvas.Left="1500" Canvas.Top="558" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RotateAngle="0                    ">
-            <WPF:Tube.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="180"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </WPF:Tube.RenderTransform>
+        <WPF:Tube Height="36" Canvas.Left="1486" Canvas.Top="523" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RotateAngle="180                    ">
+
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="#FFE4687E"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.TVK480B_SQH}" OnColor1="#FFE4687E"/>
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
@@ -2853,7 +2846,7 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <WPF:Tube Height="36" Canvas.Left="1550" Canvas.Top="522" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RotateAngle="180                    ">
+        <WPF:Tube Height="36" Canvas.Left="1550" Canvas.Top="523" Width="14" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RotateAngle="180                    ">
 
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.VK480B_3_SQH}" OnColor1="DeepSkyBlue"/>
