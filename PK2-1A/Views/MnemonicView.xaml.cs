@@ -35,5 +35,10 @@ namespace belofor.Views
         {
 
         }
+
+        private void Label_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

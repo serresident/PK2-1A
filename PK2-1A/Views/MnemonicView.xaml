@@ -1359,7 +1359,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -1404,14 +1404,14 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
         <WPF:Tube Height="30" Canvas.Left="121" Canvas.Top="406" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_R631A_SQH}" OnColor1="Gold"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_R631A_SQH}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Tube  Design="Vertical" Height="79" Canvas.Left="107" Canvas.Top="434" Width="77" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
@@ -1814,7 +1814,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -1913,7 +1913,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2169,7 +2169,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2178,7 +2178,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2229,8 +2229,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2259,8 +2259,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2269,8 +2269,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2555,8 +2555,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -2844,8 +2844,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3123,7 +3123,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3177,7 +3177,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3213,7 +3213,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3367,7 +3367,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3376,8 +3376,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3386,8 +3386,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3396,8 +3396,8 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'Lime\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3460,7 +3460,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3514,7 +3514,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3550,7 +3550,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3598,16 +3598,15 @@
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_VodaGor_Sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.P726_OUT_Frq/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                <behaviors:AnalogActuatorHandlerBehavior  Units="Гц"  HSpacing="0" VSpacing="0"  IsMan="{Binding PD.P726_Auto}" Out="{Binding PD.man_P726_setFrq}"/>
+                <behaviors:AnalogActuatorHandlerBehavior  Units="Гц"  HSpacing="40" VSpacing="20"  IsMan="{Binding PD.P726_Auto}" Out="{Binding PD.man_P726_setFrq}"/>
 
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
         <TextBlock Canvas.Left="1638"   TextWrapping="Wrap" Text="P726" Canvas.Top="225" Height="33" Width="45" />
-        <Controls:ValueBlock Canvas.Left="1614" Canvas.Top="122" Caption="PIT_P631A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="1714" Canvas.Top="147" Caption="PIT P726" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <Controls:NumPadUpDown ToolTip="Уставка давления кг/см3"
             Width="88"
             Height="30"
-            VerticalAlignment="Center"
             VerticalContentAlignment="Center"
             EnterClosesNumPad="True"
             FontSize="16"
@@ -3616,16 +3615,17 @@
             Increment="1"
             Minimum="-1"
             Precision="0"
-            UpdateValueOnEnterKey="True" Canvas.Left="1693" Canvas.Top="169">
+            UpdateValueOnEnterKey="True" Canvas.Left="1616" Canvas.Top="128">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.SP_P_OUT_P726}" />
             </Behaviors:Interaction.Behaviors>
         </Controls:NumPadUpDown>
-        <WPF:Label  Height="26" Content="P" Canvas.Left="1625" Canvas.Top="246" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
+        <WPF:Label  Height="26" Content="P" Canvas.Left="1625" Canvas.Top="246" Width="74" Design="Arrowed" DefaultText="{Binding  PD.P726_Cur_FRQ
+            , StringFormat=\{0\}Гц}" ArrowWidth="5" ToolTip="9999 ГЦ НЕТ СВЯЗИ С ПЧ!!!">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Lime" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3678,7 +3678,8 @@
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R631A"/><LineBreak/><Run/></TextBlock>
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <TextBlock Canvas.Left="1623"   TextWrapping="Wrap" Canvas.Top="94" Height="33" Width="78" ><Run Language="ru-ru" Text="уст. под-я давления"/></TextBlock>
+        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -3686,7 +3687,7 @@
             <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
             <child:RegPh480A Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-        </xctk:WindowContainer>
+        </xctk:WindowContainer>-->
 
     </Canvas>
 

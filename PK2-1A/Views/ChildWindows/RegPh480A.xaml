@@ -303,7 +303,10 @@
                 </xctk:IconButton>
             </DockPanel>
             <Expander Grid.Row="3" Header="Дополнительный параметры" FontSize="24" Grid.ColumnSpan="2">
-                <Grid>
+                <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+              
+                    
+                        <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30" />
                         <RowDefinition  Height="30"/>
@@ -317,6 +320,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Делта 1"></TextBlock>
                 </Grid>
+                </ScrollViewer>
             </Expander>
 
         </Grid>
