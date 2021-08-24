@@ -11,6 +11,11 @@
     
     <Window.Resources>
         <converters:BooleanNegateConverter x:Key="BooleanNegateConverter" />
+        <Style  TargetType="{x:Type WPF:Label}" >
+            <Setter Property="Content" Value="status" />
+
+
+        </Style>
     </Window.Resources>
 
     <Grid Background="Azure">

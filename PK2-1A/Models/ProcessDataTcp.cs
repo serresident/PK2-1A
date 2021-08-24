@@ -11,8 +11,10 @@ namespace belofor.Models
     //https://chir.ag/projects/name-that-color/#BF788B 
     public class ProcessDataTcp : ProcessData
     {
-        // Inputs
+        // InputsV_K480B_1_mode
         #region inputs
+        //line1_1           
+        //owen mv16 dn ad 1        
         //line1_1           
         //owen mv16 dn ad 1        
         public bool NC_610M_Sost { get { return getValue<bool>(); } }// ad= 1 mv16 dn ad 1 line1_1 _ch 1
@@ -45,7 +47,7 @@ namespace belofor.Models
         public bool NS_P404A_sost { get { return getValue<bool>(); } }// ad= 21 mv110_16dn_1 _ch 12
         public bool NS_K460A_sost { get { return getValue<bool>(); } }// ad= 22 mv110_16dn_1 _ch 13
         public bool NS_K460B_sost { get { return getValue<bool>(); } }// ad= 23 mv110_16dn_1 _ch 14
-                                                                      // mv110_16dn_6->Read() { get { return getValue<bool>(); } }        
+                                                                      // mv110_16dn_6->Read(){ get { return getValue<bool>(); } }        
         public bool TV_K450A_SQH { get { return getValue<bool>(); } }// ad= 24 mv110_16dn_6 _ch 3
         public bool TV_K450A_SQL { get { return getValue<bool>(); } }// ad= 25 mv110_16dn_6 _ch 4
 
@@ -63,7 +65,7 @@ namespace belofor.Models
 
         public bool V_K480A_9_SQH { get { return getValue<bool>(); } }// ad= 34 mv110_16dn_6 _ch 15
         public bool V_K480A_9_SQL { get { return getValue<bool>(); } }// ad= 35 mv110_16dn_6 _ch 16
-                                                                      //mv110_16dn_7->Read() { get { return getValue<bool>(); } }        
+                                                                      //mv110_16dn_7->Read(){ get { return getValue<bool>(); } }        
         public bool V_K480B_9_SQH { get { return getValue<bool>(); } }// ad= 36 mv110_16dn_7 _ch 1
         public bool V_K480B_9_SQL { get { return getValue<bool>(); } }// ad= 37 mv110_16dn_7 _ch 2
 
@@ -87,307 +89,102 @@ namespace belofor.Models
 
         public bool V_E461A_SQH { get { return getValue<bool>(); } }// ad= 50 mv110_16dn_7 _ch 15
         public bool V_E461A_SQL { get { return getValue<bool>(); } }// ad= 51 mv110_16dn_7 _ch 16
-                                                                    //mv110_16dn_8->Read() { get { return getValue<bool>(); } }        
+                                                                    //mv110_16dn_8->Read(){ get { return getValue<bool>(); } }        
         public bool NC_K450A_sost { get { return getValue<bool>(); } }// ad= 52 mv110_16dn_8 _ch 8
         public bool NC_K450A_alarm { get { return getValue<bool>(); } }// ad= 53 mv110_16dn_8 _ch 9
 
         // plc1 
         public bool FV_R631A_SQH { get { return getValue<bool>(); } } // ad=54  di1
         public bool FV_R631A_SQL { get { return getValue<bool>(); } } // ad=55  di2
-        public bool FV_R603_SQH { get { return getValue<bool>(); } } // ad=56 di3
+        public bool FV_R603_SQH { get { return getValue<bool>(); } } // ad=56 di3 yes
         public bool FV_R603_SQL { get { return getValue<bool>(); } } // ad=57 di4
-        public bool FV_R521_SQH { get { return getValue<bool>(); } } // ad=58 di5
-        public bool FV_R521_SQL { get { return getValue<bool>(); } } // ad=59 di6
-        public bool LV_R422_SQH { get { return getValue<bool>(); } } //ad=60 di7
-        public bool LV_R422_SQL { get { return getValue<bool>(); } } //ad=61 di8
-
-        public bool TV_K610_SQH { get { return getValue<bool>(); } }// ad=62 di9
-        public bool TV_K610_SQL { get { return getValue<bool>(); } } // ad=63 di10
-        public bool FV_K480A_SQH { get { return getValue<bool>(); } } // ad=64 di11
-        public bool FV_K480A_SQL { get { return getValue<bool>(); } } // ad=65 di12
-        public bool FV_K480B_SQH { get { return getValue<bool>(); } } // ad=66 di13
-        public bool FV_K480B_SQL { get { return getValue<bool>(); } } // ad=67 di14
-        public bool FV_K460A_SQH { get { return getValue<bool>(); } } // ad=68 di15
-        public bool FV_K460A_SQL { get { return getValue<bool>(); } } // ad=69 di16
-
-        public bool FV_K460B_SQH { get { return getValue<bool>(); } } // ad=70 di17
-        public bool FV_K460B_SQL { get { return getValue<bool>(); } } // ad=71 di18
-        public bool FV_K460C_SQH { get { return getValue<bool>(); } } // ad=72 di13
-        public bool FV_K460C_SQL { get { return getValue<bool>(); } } // ad=73 di20
-        public bool FV_R471_SQH { get { return getValue<bool>(); } } // ad=74 di21
-        public bool FV_R471_SQL { get { return getValue<bool>(); } } // ad=75 di22
-        public bool NS_P470_sost { get { return getValue<bool>(); } } // ad=76 di23
-        public bool NS_603M_sost { get { return getValue<bool>(); } } // ad=77 di24
-
-        public bool NS_521M_sost { get { return getValue<bool>(); } } // ad=78 di25
-        public bool NS_P603_sost { get { return getValue<bool>(); } } // ad=79 di26
-        public bool NS_P521_sost { get { return getValue<bool>(); } } // ad=80 di27
-        public bool NS_P631A_sost { get { return getValue<bool>(); } } // ad=88 di28
-        public bool NS_422M_sost { get { return getValue<bool>(); } } // ad=89 di29
-        public bool NS_P461_sost { get { return getValue<bool>(); } } // ad=90 di30
-        public bool NS_LXU_sost { get { return getValue<bool>(); } } // ad=91 di31
-        public bool NC_P412_sost { get { return getValue<bool>(); } } // ad=92 di32
-
-        //plc2*************************
-        public bool VK480A_1_SQH{ get { return getValue<bool>(); } } //ad=93 di1
-        public bool VK480A_1_SQL{ get { return getValue<bool>(); } } //ad=94 di2
-        public bool VK480B_1_SQH{ get { return getValue<bool>(); } } //ad=95 di3
-        public bool VK480B_1_SQL{ get { return getValue<bool>(); } } //ad=96 di4
-        public bool VK480A_2_SQH{ get { return getValue<bool>(); } } //ad=97 di5
-        public bool VK480A_2_SQL{ get { return getValue<bool>(); } } //ad=98 di6
-        public bool VK480B_2_SQH{ get { return getValue<bool>(); } } //ad=99 di7
-        public bool VK480B_2_SQL{ get { return getValue<bool>(); } } //ad=100 di8
-
-        public bool TVK480A_SQH{ get { return getValue<bool>(); } } //ad=101 di9
-        public bool TVK480A_SQL{ get { return getValue<bool>(); } } //ad=102 di10
-        public bool TVK480B_SQH{ get { return getValue<bool>(); } } //ad=103 di11
-        public bool TVK480B_SQL{ get { return getValue<bool>(); } } //ad=104 di12
-        public bool VK480A_3_SQH{ get { return getValue<bool>(); } } //ad=105 di13
-        public bool VK480A_3_SQL{ get { return getValue<bool>(); } } //ad=106 di14
-        public bool VK480B_3_SQH{ get { return getValue<bool>(); } } //ad=107 di15
-        public bool VK480B_3_SQL{ get { return getValue<bool>(); } } //ad=108 di16
-
-        public bool VK480A_4_SQH{ get { return getValue<bool>(); } } //ad=109 di17
-        public bool VK480A_4_SQL{ get { return getValue<bool>(); } } //ad=110 di18
-        public bool VK480B_4_SQH{ get { return getValue<bool>(); } } //ad=112 di19
-        public bool VK480B_4_SQL{ get { return getValue<bool>(); } } //ad=113 di20
-        public bool VK480A_5_SQH{ get { return getValue<bool>(); } } //ad=114 di21
-        public bool VK480A_5_SQL{ get { return getValue<bool>(); } } //ad=115 di22
-        public bool VK480B_5_SQH{ get { return getValue<bool>(); } } //ad=116 di23
-        public bool VK480B_5_SQL{ get { return getValue<bool>(); } } //ad=117 di24
-
-        public bool VK480A_6_SQH{ get { return getValue<bool>(); } } //ad=118 di25
-        public bool VK480A_6_SQL{ get { return getValue<bool>(); } } //ad=119 di26
-        public bool VK480B_6_SQH{ get { return getValue<bool>(); } } //ad=120 di27
-        public bool VK480B_6_SQL{ get { return getValue<bool>(); } } //ad=121 di28
-        public bool VK480A7_SQH{ get { return getValue<bool>(); } } //ad=122 di29
-        public bool VK480A7_SQL{ get { return getValue<bool>(); } } //ad=123 di30
-
-
-
-        //public bool In_ER_W59B { get { return getValue<bool>(); } }
-        //public bool In_ER_W67X { get { return getValue<bool>(); } }
-        //public bool In_ER_W67Z { get { return getValue<bool>(); } }
-        //public bool In_ER_W59A { get { return getValue<bool>(); } }
-
-        //public bool In_ER_W41D { get { return getValue<bool>(); } }
-
-        ///* MDS DIO-16BD A2 **********************************/
-        //// клапан V75
-        //public bool In_SOST_OTS_KL_V75_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V75_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V64A
-        //public bool In_SOST_OTS_KL_V64A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V64A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан VP53
-        //public bool In_SOST_OTS_KL_VP53_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_VP53_SQL { get { return getValue<bool>(); } }
-
-        //// клапан VP51
-        //public bool In_SOST_OTS_KL_VP51_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_VP51_SQL { get { return getValue<bool>(); } }
-
-        //// клапан TV1_41D
-        //public bool In_SOST_OTS_KL_TV1_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_TV1_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан TV2_41D
-        //public bool In_SOST_OTS_KL_TV2_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_TV2_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV1_41D
-        //public bool In_SOST_OTS_KL_WV1_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV1_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV2_41D
-        //public bool In_SOST_OTS_KL_WV2_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV2_41D_SQL { get { return getValue<bool>(); } }
-
-        ///* MDS DIO-16BD A3 **********************************/
-        //// клапан WV5 41D 
-        //public bool In_SOST_OTS_KL_WV5_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV5_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV3 41D 
-        //public bool In_SOST_OTS_KL_WV3_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV3_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV4 41D 
-        //public bool In_SOST_OTS_KL_WV4_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV4_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан FV 41D 
-        //public bool In_SOST_OTS_KL_FV_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_FV_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV6 41D 
-        //public bool In_SOST_OTS_KL_WV6_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV6_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV_4 P59B 
-        //public bool In_SOST_OTS_KL_WV_4_P59B_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_4_P59B_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 59A-3 
-        //public bool In_SOST_OTS_KL_V_59A_3_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_59A_3_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 59A-2 
-        //public bool In_SOST_OTS_KL_V_59A_2_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_59A_2_SQL { get { return getValue<bool>(); } }
-
-        ///* MDS DIO-16BD A4 **********************************/
-        //// клапан V 59A-4 
-        //public bool In_SOST_OTS_KL_V_59A_4_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_59A_4_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 59A-1 
-        //public bool In_SOST_OTS_KL_V_59A_1_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_59A_1_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 59A-5 
-        //public bool In_SOST_OTS_KL_V_59A_5_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_59A_5_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V P41D 
-        //public bool In_SOST_OTS_KL_V_P41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_P41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV 67L 
-        //public bool In_SOST_OTS_KL_WV_67L_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_67L_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 14 
-        //public bool In_SOST_OTS_KL_V_14_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_14_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 62H 
-        ////public bool In_SOST_OTS_KL_V_62H_SQH { get { return getValue<bool>(); } }
-        ////public bool In_SOST_OTS_KL_V_62H_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V 41D 
-        //public bool In_SOST_OTS_KL_V_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_41D_SQL { get { return getValue<bool>(); } }
-
-        ///* MDS DIO-16BD A5 **********************************/
-        //// клапан V2 41D 
-        //public bool In_SOST_OTS_KL_V2_41D_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V2_41D_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV-2 P59B
-        //public bool In_SOST_OTS_KL_WV_2_P59B_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_2_P59B_SQL { get { return getValue<bool>(); } }
-
-        //// Двигатель насоса поз. 48
-        //public bool In_SOST_NASOS_48 { get { return getValue<bool>(); } }
-
-        //// Max уровень в расшир. баке поз. 62н
-        //public bool In_MAX_LEVEL_LSA_62H { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_MESHALKI_KV_59B { get { return getValue<bool>(); } }
-        //public bool In_SOST_MESHALKI_KV_67X { get { return getValue<bool>(); } }
-        //public bool In_SOST_MESHALKI_KV_67Z { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_OTS_KL_WV_1_P59B_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_1_P59B_SQL { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_OTS_KL_WV_67Z_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_67Z_SQL { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_OTS_KL_WV_67X_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_67X_SQL { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_OTS_KL_WV_2_67X_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_2_67X_SQL { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_OTS_KL_WV_2_67Z_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_2_67Z_SQL { get { return getValue<bool>(); } }
-
-        //public bool In_SOST_OTS_KL_WV_59A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_59A_SQL { get { return getValue<bool>(); } }
-        //public bool In_MIN_LEVEL_ZAPOR_JIDKOSTI { get { return getValue<bool>(); } }
-
-
-        ////Дозреватель
-
-        //// клапан VP59B__2
-        //public bool In_SOST_OTS_KL_VP59B__2_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_VP59B__2_SQL { get { return getValue<bool>(); } }
-
-        //// клапан QVP59B__2
-        //public bool In_SOST_OTS_KL_QVP59B__2_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_QVP59B__2_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V_2_41A
-        //public bool In_SOST_OTS_KL_V_2_41A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_2_41A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V_1_41A
-        //public bool In_SOST_OTS_KL_V_1_41A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_1_41A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан FV_41A
-        //public bool In_SOST_OTS_KL_FV_41A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_FV_41A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан V_P41A
-        //public bool In_SOST_OTS_KL_V_P41A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_V_P41A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан TE_41A
-        //public bool In_SOST_OTS_KL_TV_41A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_TV_41A_SQL { get { return getValue<bool>(); } }
-
-        //// 1A
-        //// клапан WV p59a 
-        //public bool In_SOST_OTS_KL_WV_P59A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_P59A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV-1 p59a 
-        //public bool In_SOST_OTS_KL_WV_1_P59A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_1_P59A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV 1A
-        //public bool In_SOST_OTS_KL_WV_1A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_1A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV-1 1A
-        //public bool In_SOST_OTS_KL_WV_1_1A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_1_1A_SQL { get { return getValue<bool>(); } }
-
-
-        //// клапан WV-2 1A
-        //public bool In_SOST_OTS_KL_WV_2_1A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_2_1A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV3-1A
-        //public bool In_SOST_OTS_KL_WV_3_1A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_3_1A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV5-1A
-        //public bool In_SOST_OTS_KL_WV_5_1A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_5_1A_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV P59B/2
-        //public bool In_SOST_OTS_KL_WV_P59B_2_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_P59B_2_SQL { get { return getValue<bool>(); } }
-
-        //// клапан WV4-1A
-        //public bool In_SOST_OTS_KL_WV_4_1A_SQH { get { return getValue<bool>(); } }
-        //public bool In_SOST_OTS_KL_WV_4_1A_SQL { get { return getValue<bool>(); } }
-
-
-        #endregion
-
-        //Coils
-        #region Coils
-
-
-        //line1_1  (ttyS2)       
-        //owen mv110 16r ad=2      
-        public bool NS_VodaArt_pusk { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad= 1 line1_1 owen mv110 16r ad=2 _ch 1
+        public bool FV_R521_SQH { get { return getValue<bool>(); }
+} // ad=58 di5
+public bool FV_R521_SQL { get { return getValue<bool>(); } } // ad=59 di6
+public bool LV_R422_SQH { get { return getValue<bool>(); } } //ad=60 di7 yes
+public bool LV_R422_SQL { get { return getValue<bool>(); } } //ad=61 di8 ??
+
+public bool TV_K610_SQH { get { return getValue<bool>(); } }// ad=62 di9  ??
+public bool TV_K610_SQL { get { return getValue<bool>(); } } // ad=63 di10   yes
+public bool FV_K480A_SQH { get { return getValue<bool>(); } } // ad=64 di11
+public bool FV_K480A_SQL { get { return getValue<bool>(); } } // ad=65 di12
+public bool FV_K480B_SQH { get { return getValue<bool>(); } } // ad=66 di13
+public bool FV_K480B_SQL { get { return getValue<bool>(); } } // ad=67 di14
+public bool FV_K460A_SQH { get { return getValue<bool>(); } } // ad=68 di15
+public bool FV_K460A_SQL { get { return getValue<bool>(); } } // ad=69 di16
+
+public bool FV_K460B_SQH { get { return getValue<bool>(); } } // ad=70 di17
+public bool FV_K460B_SQL { get { return getValue<bool>(); } } // ad=71 di18
+public bool FV_K460C_SQH { get { return getValue<bool>(); } } // ad=72 di13
+public bool FV_K460C_SQL { get { return getValue<bool>(); } } // ad=73 di20
+public bool FV_R471_SQH { get { return getValue<bool>(); } } // ad=74 di21
+public bool FV_R471_SQL { get { return getValue<bool>(); } } // ad=75 di22
+public bool NS_P470_sost { get { return getValue<bool>(); } } // ad=76 di23
+public bool NS_603M_sost { get { return getValue<bool>(); } } // ad=77 di24
+
+public bool NS_521M_sost  { get { return getValue<bool>(); } } // ad=78 di25
+public bool NS_P603_sost { get { return getValue<bool>(); } } // ad=79 di26
+public bool NS_P521_sost { get { return getValue<bool>(); } } // ad=80 di27
+public bool NS_P631A_sost { get { return getValue<bool>(); } } // ad=81 di28
+public bool NS_422M_sost { get { return getValue<bool>(); } } // ad=82 di29
+public bool NS_P461_sost { get { return getValue<bool>(); } } // ad=83 di30
+public bool NS_LXU_sost { get { return getValue<bool>(); } } // ad=84 di31 
+public bool NC_P412_sost { get { return getValue<bool>(); } } // ad=85 di32
+
+//plc2*************************
+public bool VK480A_1_SQH { get { return getValue<bool>(); } } //ad=86 di1  ?? инверсия
+public bool VK480A_1_SQL { get { return getValue<bool>(); } } //ad=87 di2  ??
+public bool VK480B_1_SQH { get { return getValue<bool>(); } } //ad=88 di3 ??
+public bool VK480B_1_SQL { get { return getValue<bool>(); } } //ad=89 di4 yes
+
+public bool VK480A_2_SQH { get { return getValue<bool>(); } } //ad=90 di5 ?? не работает
+public bool VK480A_2_SQL { get { return getValue<bool>(); } } //ad=91 di6 yes
+public bool VK480B_2_SQH { get { return getValue<bool>(); } } //ad=92 di7 ?? не работает
+public bool VK480B_2_SQL { get { return getValue<bool>(); } } //ad=93 di8 yes
+
+public bool TVK480A_SQH { get { return getValue<bool>(); } } //ad=94 di9  ??
+public bool TVK480A_SQL { get { return getValue<bool>(); } } //ad=95 di10  no
+public bool TVK480B_SQH { get { return getValue<bool>(); } } //ad=96 di11   ??
+public bool TVK480B_SQL { get { return getValue<bool>(); } } //ad=97 di12 no
+
+public bool VK480A_3_SQH { get { return getValue<bool>(); } } //ad=98 di13   инверсия с sql ?
+public bool VK480A_3_SQL { get { return getValue<bool>(); } } //ad=99 di14   ??
+public bool VK480B_3_SQH { get { return getValue<bool>(); } } //ad=100 di15  ??
+public bool VK480B_3_SQL { get { return getValue<bool>(); } } //ad=101 di16   yes
+
+public bool VK480A_4_SQH { get { return getValue<bool>(); } } //ad=102 di17  ??
+public bool VK480A_4_SQL { get { return getValue<bool>(); } } //ad=103 di18  yes
+public bool VK480B_4_SQH { get { return getValue<bool>(); } } //ad=104 di19  ??
+public bool VK480B_4_SQL { get { return getValue<bool>(); } } //ad=105 di20 yes
+
+public bool VK480A_5_SQH { get { return getValue<bool>(); } } //ad=106 di21 ??    //проверить
+public bool VK480A_5_SQL { get { return getValue<bool>(); } } //ad=107 di22  no
+public bool VK480B_5_SQH { get { return getValue<bool>(); } } //ad=108 di23  ??
+public bool VK480B_5_SQL { get { return getValue<bool>(); } } //ad=109 di24  no
+
+public bool VK480A_6_SQH { get { return getValue<bool>(); } } //ad=110 di25  ??
+public bool VK480A_6_SQL { get { return getValue<bool>(); } } //ad=111 di26  yes
+public bool VK480B_6_SQH { get { return getValue<bool>(); } } //ad=112 di27  ??
+public bool VK480B_6_SQL { get { return getValue<bool>(); } } //ad=113 di28  yes
+public bool VK480A7_SQH { get { return getValue<bool>(); } } //ad=114 di29  ??
+public bool VK480A7_SQL { get { return getValue<bool>(); } } //ad=115 di30  yes
+
+public bool delta_p726_status { get { return getValue<bool>(); } } //ad=116
+public bool NC_K480B_Dstatus { get { return getValue<bool>(); } } //ad=117
+
+
+
+
+
+#endregion
+
+//Coils
+#region Coils
+
+
+//line1_1  (ttyS2)       
+//owen mv110 16r ad=2      
+public bool NS_VodaArt_pusk { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad= 1 line1_1 owen mv110 16r ad=2 _ch 1
         public bool NS_VodaArt_stop { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad= 2 line1_1 owen mv110 16r ad=2 _ch 2
         public bool NS_VodaGor_pusk { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad= 3 line1_1 owen mv110 16r ad=2 _ch 3
         public bool NS_VodaGor_stop { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad= 4 line1_1 owen mv110 16r ad=2 _ch 4
@@ -651,6 +448,7 @@ public bool P726_Access_Wr_Frq { get { return getValue<bool>(); } set { setValue
 public bool P726_Auto { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=200
 
 public bool RegPH480A_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=201
+public bool NC_K480B_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=202
 
 
         #endregion
@@ -731,6 +529,9 @@ public bool RegPH480A_Start { get { return getValue<bool>(); } set { setValue<bo
 
         public UInt16 P726_status { get { return getValue<UInt16>(); } }//ad=107
 
+        public UInt16 NC_K480B_status { get { return getValue<UInt16>(); } }//ad=108
+        float NC_K480B_OUT_Frq { get { return getValue<UInt16>(); } } //ad=109
+        public UInt16 JOURNAL2 { get { return getValue<UInt16>(); } } //ad=108
 
 
         public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последни
@@ -917,6 +718,12 @@ public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<U
         public Single RegPH480A_doza { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=223
         public Single RegPH480B_doza { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=225
 
+        public Single VK480B_1_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=227
+        public Single VK480B1_reg_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=229
+
+
+        public Single NC_K480B_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//231
+        public Single NC_K480B_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//233
 
 
 
