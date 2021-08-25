@@ -530,7 +530,9 @@ public bool NC_K480B_mode { get { return getValue<bool>(); } set { setValue<bool
         public UInt16 P726_status { get { return getValue<UInt16>(); } }//ad=107
 
         public UInt16 NC_K480B_status { get { return getValue<UInt16>(); } }//ad=108
-        float NC_K480B_OUT_Frq { get { return getValue<UInt16>(); } } //ad=109
+        public Single NC_K480B_OUT_Frq { get { return getValue<UInt16>(); } } //ad=109
+        public Single NC_K480B_Cur_I { get { return getValue<Single>(); } } //ad=111
+        public Single NC_K480B_Cur_FRQ { get { return getValue<Single>(); } }//ad=113
         public UInt16 JOURNAL2 { get { return getValue<UInt16>(); } } //ad=108
 
 

@@ -1359,7 +1359,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -1814,7 +1814,7 @@
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3620,13 +3620,13 @@
                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.SP_P_OUT_P726}" />
             </Behaviors:Interaction.Behaviors>
         </Controls:NumPadUpDown>
-        <WPF:Label  Height="26" Content="" Canvas.Left="1625" Canvas.Top="246" Width="74" Design="Arrowed" DefaultText="{Binding  PD.P726_Cur_FRQ
-            , StringFormat=\{0\}Гц}" ArrowWidth="5" ToolTip="9999 ГЦ НЕТ СВЯЗИ С ПЧ!!!">
+        <WPF:Label  Height="26" Content="" Canvas.Left="1314" Canvas.Top="474" Width="74" Design="Arrowed" DefaultText="{Binding  PD.P726_Cur_FRQ
+            , StringFormat=\{0\}Гц}" ArrowWidth="5" >
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
-                        
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
+
                         <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ >1) ?\'LightGreen\':\'White\''}" />-->
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
@@ -3681,6 +3681,29 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R631A"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1623"   TextWrapping="Wrap" Canvas.Top="94" Height="33" Width="78" ><Run Language="ru-ru" Text="уст. под-я давления"/></TextBlock>
+        <WPF:Label  Height="26" Content="" Canvas.Left="1629" Canvas.Top="249" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" ToolTip="9999 ГЦ НЕТ СВЯЗИ С ПЧ!!!">
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
+
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ >1) ?\'LightGreen\':\'White\''}" />-->
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
+        <WPF:Label  Height="26" Content="" Canvas.Left="1721" Canvas.Top="246" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_I, StringFormat=\{0\}A}" ArrowWidth="5" >
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGoldenrodYellow" />
+
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
