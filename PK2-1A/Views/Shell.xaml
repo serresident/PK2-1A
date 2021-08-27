@@ -79,7 +79,7 @@
         </ItemsControl>
 
 
-        <xctk:MaterialButton Grid.Row="0" Grid.Column="3" Content="Настройки" Command="{Binding ShowSettingsDialogCommand}" Margin="0,6,6,6" Padding="5,0" IsRaisedActive="True" IsInkEffectActive="True" InkEffectBrush="White" InkEffectOpacity="0.25" Mode="Rectangle" HorizontalAlignment="Center" />
+        <!--<xctk:MaterialButton Grid.Row="0" Grid.Column="3" Content="Настройки" Command="{Binding ShowSettingsDialogCommand}" Margin="0,6,6,6" Padding="5,0" IsRaisedActive="True" IsInkEffectActive="True" InkEffectBrush="White" InkEffectOpacity="0.25" Mode="Rectangle" HorizontalAlignment="Center" />-->
 
 
         <ContentControl prism:RegionManager.RegionName="ContentRegion"  Grid.Row="1" Grid.ColumnSpan="4"  />

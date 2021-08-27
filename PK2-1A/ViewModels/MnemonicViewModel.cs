@@ -41,6 +41,12 @@ namespace belofor.ViewModels
         public DelegateCommand RegPhK480aStartCommand { get; private set; }
         public DelegateCommand RegPhK480aStopCommand { get; private set; }
 
+        public DelegateCommand RegPhK480bStartCommand { get; private set; }
+        public DelegateCommand RegPhK480bStopCommand { get; private set; }
+
+        public DelegateCommand ZagrMorfolin480StartCommand { get; private set; }
+        public DelegateCommand ZagrMorfolin480StopCommand { get; private set; }
+
 
 
         private ObservableRangeCollection<ThermoChartPoint> points;
@@ -98,6 +104,25 @@ namespace belofor.ViewModels
             set { SetProperty(ref regPh480aWndStatus, value); }
         }
 
+
+        // PH 480b
+        private WindowState regPh480bWndStatus = WindowState.Closed;
+        public WindowState RegPh480bWndStatus
+        {
+            get { return regPh480bWndStatus; }
+            set { SetProperty(ref regPh480bWndStatus, value); }
+        }
+
+        //Морфолин в 480
+
+        private WindowState zagrMorfolin480WndStatus = WindowState.Closed;
+        public WindowState ZagrMorfolin480WndStatus
+        {
+            get { return zagrMorfolin480WndStatus; }
+            set { SetProperty(ref zagrMorfolin480WndStatus, value); }
+        }
+
+
         //термоцикл
         private WindowState thermoCycl_1AWndStatus = WindowState.Closed;
         public WindowState ThermoCycl_1AWndStatus
@@ -142,6 +167,14 @@ namespace belofor.ViewModels
             RegPhK480aStartCommand = new DelegateCommand(RegPh480aStart, canRegPh480aStart);
             RegPhK480aStopCommand = new DelegateCommand(RegPh480astop, canRegPh480aStop);
 
+            RegPhK480bStartCommand = new DelegateCommand(RegPh480bStart, canRegPh480bStart);
+            RegPhK480bStopCommand = new DelegateCommand(RegPh480bstop, canRegPh480bStop);
+
+
+            ZagrMorfolin480StartCommand = new DelegateCommand(ZagrMorfolin480Start, canZagrMorfolin480Start);
+            ZagrMorfolin480StopCommand = new DelegateCommand(ZagrMorfolin480stop, canZagrMorfolin480Stop);
+           
+
 
             //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
@@ -177,6 +210,16 @@ namespace belofor.ViewModels
         private void RegPh480aStart() => PD.RegPH480A_Start = true;
         private bool canRegPh480aStop() { return PD.RegPH480A_Start; }
         private void RegPh480astop() => PD.RegPH480A_Start = false;
+
+        private bool canRegPh480bStart() { return !PD.RegPH480B_Start; }
+        private void RegPh480bStart() => PD.RegPH480B_Start = true;
+        private bool canRegPh480bStop() { return PD.RegPH480A_Start; }
+        private void RegPh480bstop() => PD.RegPH480B_Start = false;
+
+        private bool canZagrMorfolin480Start() { return !PD.ZagrMorfolinK480_Start; }
+        private void ZagrMorfolin480Start() => PD.ZagrMorfolinK480_Start = true;
+        private bool canZagrMorfolin480Stop() { return PD.ZagrMorfolinK480_Start; }
+        private void ZagrMorfolin480stop() => PD.ZagrMorfolinK480_Start = false;
 
 
         public void OnLoading()

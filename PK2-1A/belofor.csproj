@@ -89,7 +89,7 @@
     </Reference>
     <Reference Include="Xceed.Wpf.Toolkit, Version=4.1.21063.2360, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Xceed\Xceed Toolkit Plus for WPF v4.1\Bin\Xceed.Wpf.Toolkit.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Xceed\Xceed Toolkit Plus for WPF v4.1\Bin\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +140,14 @@
     <Page Include="Views\ChildWindows\Control_P1A.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\RegPh480B.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ChildWindows\ZagrMorfolin480.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ChildWindows\Ohlagd480.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +258,12 @@
     </Compile>
     <Compile Include="Views\ChildWindows\Control_P1A.xaml.cs">
       <DependentUpon>Control_P1A.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\RegPh480B.xaml.cs">
+      <DependentUpon>RegPh480B.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\ZagrMorfolin480.xaml.cs">
+      <DependentUpon>ZagrMorfolin480.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindows\Ohlagd480.xaml.cs">
       <DependentUpon>Ohlagd480.xaml</DependentUpon>

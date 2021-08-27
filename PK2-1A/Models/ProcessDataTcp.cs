@@ -450,6 +450,11 @@ public bool P726_Auto { get { return getValue<bool>(); } set { setValue<bool>(va
 public bool RegPH480A_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=201
 public bool NC_K480B_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=202
 
+public bool NC_K480B_Access_Wr_Frq { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=203
+
+public bool ZagrMorfolinK480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=204
+public bool ZagrMorfolinK480_SW_surplus { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad205
+public bool RegPH480B_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=206
 
         #endregion
 
@@ -512,11 +517,11 @@ public bool NC_K480B_mode { get { return getValue<bool>(); } set { setValue<bool
         public Single P726_Cur_I{ get { return getValue<Single>(); } } //ad=81
         public Single P726_Cur_FRQ{ get { return getValue<Single>(); } }//ad83
       
-        public Single Tenzo1{ get { return getValue<Single>(); } } //ad=85
-        public Single Tenzo2{ get { return getValue<Single>(); } } //ad=87
-        public Single Tenzo3{ get { return getValue<Single>(); } } //ad=89
-        public Single Tenzo4{ get { return getValue<Single>(); } } //ad=91
-        public Single Tenzo5{ get { return getValue<Single>(); } } //ad=93
+        public Single WE_D470A_rs { get { return getValue<Single>(); } } //ad=85
+        public Single WE_R201B_rs { get { return getValue<Single>(); } } //ad=87
+        public Single WE_R404A_rs { get { return getValue<Single>(); } } //ad=89
+        public Single WE_R402B_rs { get { return getValue<Single>(); } } //ad=91
+        public Single WE_R403_rs { get { return getValue<Single>(); } } //ad=93
 
 
         public Single FQ_R521_in_count_{ get { return getValue<Single>(); } } //ad= 95
