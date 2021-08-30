@@ -485,7 +485,7 @@ public bool RegPH480B_Start { get { return getValue<bool>(); } set { setValue<bo
         public Single QIY_K460B { get { return getValue<Single>(); } }// ad= 33 _ch 4
         public Single TE_K480A_2 { get { return getValue<Single>(); } }// ad= 35 _ch 5
         public Single TE_K480B_2 { get { return getValue<Single>(); } }// ad= 37 _ch 6
-        public Single TE_E482 { get { return getValue<Single>(); } }// ad= 39 _ch 7
+        public Single TE_E482_2 { get { return getValue<Single>(); } }// ad= 39 _ch 7
                                                                     // owen  8as ad 3      
         public Single PT_480A { get { return getValue<Single>(); } }// ad= 41 _ch 1
         public Single PT_480B { get { return getValue<Single>(); } }// ad= 43 _ch 2
