@@ -15,7 +15,7 @@ namespace belofor.Services
 {
     public class ArchivService
     {
-        public const string ConnStr = "server=A2ESS;user=sysdba;password=masterkey;database=asutp;default command timeout=20;";
+        public const string ConnStr = "server=localhost;user=sysdba;password=masterkey;database=asutp;default command timeout=20;";
 
         private Logger logger = LogManager.GetCurrentClassLogger();
 

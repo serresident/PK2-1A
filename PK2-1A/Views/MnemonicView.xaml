@@ -17,7 +17,7 @@
              xmlns:toggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
              xmlns:converters1="clr-namespace:belofor.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1850" Loaded="{helpers:MethodBinding OnLoading}">
+             d:DesignHeight="1000" d:DesignWidth="1920" Loaded="{helpers:MethodBinding OnLoading}">
     <UserControl.Resources>
         <Style x:Key="HmiGroupBox" TargetType="{x:Type GroupBox}">
             <Setter Property="Template">
@@ -793,6 +793,7 @@
                 <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
+        <Border Background="#FFD3DCBB"  BorderThickness="2" BorderBrush="AliceBlue" Width="230" Height="155" Canvas.Left="1607" Canvas.Top="184"></Border>
         <WPF:Tube Height="25" Canvas.Left="108" Canvas.Top="70" Width="27" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_R521_SQH}" OnColor1="DeepSkyBlue"/>
@@ -2047,7 +2048,7 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock Canvas.Left="819" Canvas.Top="603" Caption="TE K480A" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_480A_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock Canvas.Left="812" Canvas.Top="603" Caption="TE K480A_1" Unit="ºC" ValueColor="#FFF57E1A" Width="72" Height="36" Value="{Binding PD.TE_480A_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="819" Canvas.Top="562" Caption="QE K480A" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QIY_K480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Valve Height="40" Canvas.Left="916" RotateAngle="270" Canvas.Top="416" Width="30" Actor="Diaphram1"  >
             <Behaviors:Interaction.Behaviors>
@@ -2250,7 +2251,7 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock Canvas.Left="1365" Canvas.Top="606" Caption="TE K480B" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_480B_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock Canvas.Left="1358" Canvas.Top="606" Caption="TE K480B_1" Unit="ºC" ValueColor="#FFF57E1A" Width="72" Height="36" Value="{Binding PD.TE_480B_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="1365" Canvas.Top="560" Caption="QE K480B" Unit="PH" ValueColor="Green" Width="64" Height="36" Value="{Binding PD.QIY_K480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <Controls:ValueBlock Canvas.Left="1271" Canvas.Top="561" Caption="PT 480B" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PT_480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Label  Height="26" RotateAngle="-90" Content="" Canvas.Left="1023" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.FV_K480A_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.FV_K480A_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
@@ -2272,7 +2273,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <TextBlock Canvas.Left="1799" TextWrapping="Wrap" Canvas.Top="313" Height="18" ><Run Text="Гор.Вода"/><LineBreak/><Run/></TextBlock>
+        <TextBlock Canvas.Left="1800" TextWrapping="Wrap" Canvas.Top="302" Height="36" Width="45" ><Run Text="Гор.&#10; Вода"/><LineBreak/><Run/></TextBlock>
         <Controls:ValueBlock Canvas.Left="985" Canvas.Top="176" Caption="WE D470" Unit="кг" ValueColor="#FFA535E6" Width="77" Height="40" Value="{Binding PD.WE_D470, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="#FFB0F3B0"/>
         <WPF:Label  Height="26" RotateAngle="-90" Content="" Canvas.Left="889" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_10_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_10_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
@@ -3619,7 +3620,7 @@
 
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="1685"   TextWrapping="Wrap" Text="P726" Canvas.Top="320" Height="33" Width="45" />
+        <TextBlock Canvas.Left="1681"   TextWrapping="Wrap" Text="P726" Canvas.Top="316" Height="33" Width="45" />
         <Controls:ValueBlock Canvas.Left="1622" Canvas.Top="204" Caption="PIT P726" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.P_P726, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <Controls:NumPadUpDown ToolTip="Уставка давления кг/см3"
             Width="88"
@@ -3697,7 +3698,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R631A"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1623"   TextWrapping="Wrap" Canvas.Top="245" Height="14" Width="78" ><Run Language="ru-ru" Text="Уст. давления                                                                                                           "/></TextBlock>
-        <WPF:Label  Height="26" Content="" Canvas.Left="1709" Canvas.Top="212" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" ToolTip="9999 ГЦ НЕТ СВЯЗИ С ПЧ!!!">
+        <WPF:Label  Height="26" Content="" Canvas.Left="1712" Canvas.Top="212" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" ToolTip="9999 ГЦ НЕТ СВЯЗИ С ПЧ!!!">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3714,7 +3715,7 @@
                     <WPF:ControlColors.DefaultColoring>
 
                         <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ >1) ?\'LightGreen\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGoldenrodYellow" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="Gold"  />
 
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
@@ -3932,7 +3933,7 @@
         <Controls:ValueBlock Canvas.Left="1414" Canvas.Top="180" Caption="TE E481" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="884" Canvas.Top="237" Caption="TE E482_2" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_E482_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="1414" Canvas.Top="223" Caption="TE E481_2" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_E481_Distil, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
-        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -3942,7 +3943,7 @@
             <child:RegPh480A Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
             <child:RegPh480B Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="444" Canvas.Top="210" />
             <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
-        </xctk:WindowContainer>-->
+        </xctk:WindowContainer>
 
     </Canvas>
 

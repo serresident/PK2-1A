@@ -319,6 +319,13 @@ namespace belofor.ViewModels
             RegPhK480aStartCommand.RaiseCanExecuteChanged();
             RegPhK480aStopCommand.RaiseCanExecuteChanged();
 
+
+            RegPhK480bStartCommand.RaiseCanExecuteChanged();
+            RegPhK480bStopCommand.RaiseCanExecuteChanged();
+
+            ZagrMorfolin480StartCommand.RaiseCanExecuteChanged();
+            ZagrMorfolin480StopCommand.RaiseCanExecuteChanged();
+
         }
 
         ~MnemonicViewModel()

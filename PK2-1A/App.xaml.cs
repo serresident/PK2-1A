@@ -16,6 +16,7 @@ using belofor.Services;
 using belofor.ViewModels;
 using belofor.Views;
 
+
 namespace belofor
 {
     /// <summary>
@@ -93,7 +94,9 @@ namespace belofor
             containerRegistry.Register<JournalRepository>();
 
             // Services
-            containerRegistry.RegisterSingleton<ModbusTcpService>();
+          containerRegistry.RegisterSingleton<ModbusTcpService>();
+
+           // containerRegistry.RegisterSingleton<ModbusMasterService>();
             containerRegistry.RegisterSingleton<ArchivService>();
             containerRegistry.RegisterSingleton<JournalService>();
 

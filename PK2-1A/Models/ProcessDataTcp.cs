@@ -314,6 +314,7 @@ public bool V_K610_control_man { get { return getValue<bool>(); } set { setValue
 
 public bool FV_K480B_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad=99/////////////////////
 public bool FV_K480A_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=100
+ [JournalAttribute("Загрузка арт. воды изменение состояние на СТАРТ >> [{0}] --> [{1}]")]
 public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=101
 
 public bool VK480A_2_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=102
@@ -516,7 +517,7 @@ public bool RegPH480B_Start { get { return getValue<bool>(); } set { setValue<bo
 
         public Single P726_Cur_I{ get { return getValue<Single>(); } } //ad=81
         public Single P726_Cur_FRQ{ get { return getValue<Single>(); } }//ad83
-      
+        [ArchivAttribute("Вес мерника WE_D470A")]
         public Single WE_D470A_rs { get { return getValue<Single>(); } } //ad=85
         public Single WE_R201B_rs { get { return getValue<Single>(); } } //ad=87
         public Single WE_R404A_rs { get { return getValue<Single>(); } } //ad=89
@@ -550,8 +551,8 @@ public bool RegPH480B_Start { get { return getValue<bool>(); } set { setValue<bo
 #region Holdings Registers
 //******************line1_1 ********************      
 //mu 110 8i ad=5       
-public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 1 _ch 1 
-                                                                                                            //mu 110 8i ad=5        //mu 110 8i ad=5        //mu 110 8i ad=5       	//mu 110 8i ad=5       
+        public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 1 _ch 1 
+          //mu 110 8i ad=5        //mu 110 8i ad=5        //mu 110 8i ad=5       	//mu 110 8i ad=5       
         public UInt16 NC_610M_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 2 _ch 2 
         public UInt16 pHV_K610_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } // ad= 3 _ch 3 
         public UInt16 FV_K480A_reg_aout_ { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }    // ad= 4 _ch 4 
@@ -732,6 +733,18 @@ public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<U
         public Single NC_K480B_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//231
         public Single NC_K480B_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//233
 
+        public Single ZagrMorfolinK480_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } }//237
+        public Single ZagrMorfolinK480_Xnom{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//239
+
+        public Single ZagrMorfolinK480_Wmin { get { return getValue<Single>(); } set { setValue<Single>(value); } }//241
+        public Single ZagrMorfolinK480_percentSurplus { get { return getValue<Single>(); } set { setValue<Single>(value); } }//243
+        public Single ResetCount{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//245
+
+        public UInt16 ZagrMorfolinK480_secondsSurplus { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //247
+        public UInt16 ZagrMorfolinK480_status { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //248
+
+        public UInt16 ZagrMorfolinK480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //249
+        public UInt16 zap { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //250
 
 
 

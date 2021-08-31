@@ -14,7 +14,7 @@ namespace belofor.Services
 {
     public class JournalService
     {
-        private const string connStr = "server=a2ess ;user=sysdba;password=masterkey;database=asutp;default command timeout=20;";
+        private const string connStr = "server=localhost ;user=sysdba;password=masterkey;database=asutp;default command timeout=20;";
 
         private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 

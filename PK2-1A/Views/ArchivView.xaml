@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+              xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              xmlns:helpers="clr-namespace:belofor.Helpers"
              xmlns:local="clr-namespace:belofor.Views"
              mc:Ignorable="d" 
@@ -25,6 +26,9 @@
                         <oxy:LinearAxis   Position="Left" MajorGridlineStyle="Dot" MajorGridlineColor="LightGray"  IsZoomEnabled="True" IsPanEnabled="True" Minimum="0" Maximum="{Binding ProxyArchivTool.MaxY}" />
                     </oxy:Plot.Axes>
                 </oxy:Plot>
-            </Grid>
+            <!--<wv2:WebView2 Name = "webView"
+                  Source = "http://stp10"
+    />-->
+        </Grid>
     </xctk:BusyIndicator>
 </UserControl>

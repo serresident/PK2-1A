@@ -13,70 +13,92 @@ using belofor.Repositories;
 
 namespace belofor.ViewModels
 {
-    public class JournalViewModel : BindableBase
-    {
-        private ObservableRangeCollection<JournalItem> journalItems;
-        public ObservableRangeCollection<JournalItem> JournalItems
-        {
-            get { return journalItems; }
-            set { SetProperty(ref journalItems, value); }
-        }
+	public class JournalViewModel : BindableBase
+	{
+		// Token: 0x1700000D RID: 13
+		// (get) Token: 0x06000072 RID: 114 RVA: 0x000038A4 File Offset: 0x00001AA4
+		// (set) Token: 0x06000073 RID: 115 RVA: 0x000038BC File Offset: 0x00001ABC
+		public ObservableRangeCollection<JournalItem> JournalItems
+		{
+			get
+			{
+				return this.journalItems;
+			}
+			set
+			{
+				this.SetProperty<ObservableRangeCollection<JournalItem>>(ref this.journalItems, value, "JournalItems");
+			}
+		}
 
-        private ProcessDataTcp _pd;
-        public ProcessDataTcp PD
-        {
-            get { return _pd; }
-            set { SetProperty(ref _pd, value); }
-        }
+		// Token: 0x1700000E RID: 14
+		// (get) Token: 0x06000074 RID: 116 RVA: 0x000038D4 File Offset: 0x00001AD4
+		// (set) Token: 0x06000075 RID: 117 RVA: 0x000038EC File Offset: 0x00001AEC
+		public ProcessDataTcp PD
+		{
+			get
+			{
+				return this._pd;
+			}
+			set
+			{
+				this.SetProperty<ProcessDataTcp>(ref this._pd, value, "PD");
+			}
+		}
 
-        private bool isBusy;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
+		// Token: 0x1700000F RID: 15
+		// (get) Token: 0x06000076 RID: 118 RVA: 0x00003904 File Offset: 0x00001B04
+		// (set) Token: 0x06000077 RID: 119 RVA: 0x0000391C File Offset: 0x00001B1C
+		public bool IsBusy
+		{
+			get
+			{
+				return this.isBusy;
+			}
+			set
+			{
+				this.SetProperty<bool>(ref this.isBusy, value, "IsBusy");
+			}
+		}
 
-        public JournalViewModel(ProcessDataTcp pd, JournalRepository journalRepository)
-        {
-            PD = pd;
-        }
+		// Token: 0x06000078 RID: 120 RVA: 0x00003932 File Offset: 0x00001B32
+		public JournalViewModel(ProcessDataTcp pd, JournalRepository journalRepository)
+		{
+			this.PD = pd;
+		}
 
-        public void OnLoading()
-        {
-            //ShowMessage = "Wait please...";
+		// Token: 0x06000079 RID: 121 RVA: 0x00003944 File Offset: 0x00001B44
+		public void OnLoading()
+		{
+			Task.Factory.StartNew(delegate ()
+			{
+				this.IsBusy = true;
+				List<JournalItem> _journalItems = new List<JournalItem>();
+				foreach (PropertyInfo prop in from p in this.PD.GetType().GetProperties()
+											  where p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))
+											  select p)
+				{
+					JournalAttribute[] attr = (JournalAttribute[])prop.GetCustomAttributes(typeof(JournalAttribute), false);
+					string message = attr[0].Message.Substring(0, attr[0].Message.IndexOf(">") - 1);
+					_journalItems.Add(new JournalItem
+					{
+						Message = message,
+						Property = prop.Name
+					});
+				}
+				this.JournalItems = new ObservableRangeCollection<JournalItem>(_journalItems);
+			}).ContinueWith(delegate (Task x)
+			{
+				this.IsBusy = false;
+			}, TaskScheduler.FromCurrentSynchronizationContext());
+		}
 
-            Task.Factory.StartNew(() =>
-            {
-                IsBusy = true; // Show busyindicator and ProgressRing
+		// Token: 0x04000038 RID: 56
+		private ObservableRangeCollection<JournalItem> journalItems;
 
-                var _journalItems = new List<JournalItem>();
-                foreach (PropertyInfo prop in PD.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))))
-                {
-                    var attr = (JournalAttribute[])prop.GetCustomAttributes(typeof(JournalAttribute), false);
-                    var message = attr[0].Message.Substring(0, attr[0].Message.IndexOf(">") - 1);
-                    
-                    _journalItems.Add(new JournalItem() { Message = message, Property = prop.Name });
-                }
+		// Token: 0x04000039 RID: 57
+		private ProcessDataTcp _pd;
 
-                //_journalItems.FirstOrDefault().
-                //_journalItems.Add("1111", "2222");
-                //_journalItems.Add("3333", "4444");
-                JournalItems = new ObservableRangeCollection<JournalItem>(_journalItems);
-
-                //Thread.Sleep(5000); // 5 seconds to see the animation (Here is a SQL insert)
-
-                /// Hide ProgressRing only
-
-                //ShowMessage = "Save complete.";
-
-                //Thread.Sleep(2000); // 2 seconds to see "ShowMessage"
-
-            }).ContinueWith(x =>
-            {
-                IsBusy = false; // hide busyindicator and ProgressRing
-
-            }, TaskScheduler.FromCurrentSynchronizationContext());
-
-        }
-    }
+		// Token: 0x0400003A RID: 58
+		private bool isBusy;
+	}
 }
