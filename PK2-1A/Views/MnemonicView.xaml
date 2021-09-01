@@ -1245,7 +1245,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <WPF:Tube  Design="Vertical" Height="93" Canvas.Left="384" Canvas.Top="450" Width="178" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
+        <WPF:Tube  Design="Vertical" Height="93" Canvas.Left="384" Canvas.Top="450" Width="137" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -1287,12 +1287,12 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Tube Height="25" Canvas.Left="561" Canvas.Top="450" Width="23" Design="Arc90" FlangeLayout="None">
+        <WPF:Tube Height="25" Canvas.Left="520" Canvas.Top="448" Width="23" Design="Arc90" FlangeLayout="None">
             <!--<Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>-->
         </WPF:Tube>
-        <WPF:Arrow Height="12" Canvas.Left="570" RotateAngle="90" Canvas.Top="516" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12" Canvas.Left="529" RotateAngle="90" Canvas.Top="514" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -1343,7 +1343,7 @@
                 </TransformGroup>
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
-        <TextBlock Canvas.Left="399" TextWrapping="Wrap" Text="K610" Canvas.Top="515" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="460" TextWrapping="Wrap" Text="K610" Canvas.Top="512" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Fan Height="104" Canvas.Left="459" Canvas.Top="405" Width="24" Design="Mixer">
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
@@ -1376,8 +1376,8 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock Canvas.Left="486" Canvas.Top="465" Caption="TE K610" Unit="ºC" ValueColor="#FFF57E1A" Width="65" Height="36" Value="{Binding PD.TE_K610, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock Canvas.Left="486" Canvas.Top="503" Caption="QE K610" Unit="PH" ValueColor="Green" Width="65" Height="36" Value="{Binding PD.QE_K610, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
+        <Controls:ValueBlock Canvas.Left="388" Canvas.Top="450" Caption="TE K610" Unit="ºC" ValueColor="#FFF57E1A" Width="65" Height="36" Value="{Binding PD.TE_K610, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock Canvas.Left="388" Canvas.Top="489" Caption="QE K610" Unit="PH" ValueColor="Green" Width="65" Height="36" Value="{Binding PD.QE_K610, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
         <WPF:Valve Height="40" Canvas.Left="307" Canvas.Top="388" Width="30" Actor="Diaphram1">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.FeedbackOUT_10A/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
@@ -1934,7 +1934,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <WPF:Tube Height="50" Canvas.Left="569" Canvas.Top="464" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="50" Canvas.Left="528" Canvas.Top="462" Width="14" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <!--<Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="DeepSkyBlue"/>
             </Behaviors:Interaction.Behaviors>-->
@@ -3943,6 +3943,7 @@
             <child:RegPh480A Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
             <child:RegPh480B Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="444" Canvas.Top="210" />
             <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
+            <child:ZagrDietilamin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтиламина K480A/B"  WindowState="{Binding ZagrDietilamin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
         </xctk:WindowContainer>
 
     </Canvas>

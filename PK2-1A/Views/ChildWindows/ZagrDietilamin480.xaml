@@ -1,5 +1,5 @@
 ﻿<xctk:ChildWindow
-    x:Class="belofor.Views.ChildWindows.ZagrMorfolin480"
+    x:Class="belofor.Views.ChildWindows.ZagrDietilamin480"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
@@ -113,7 +113,7 @@
 
         </Grid.ColumnDefinitions>
         
-        <Grid Margin="0,0,4,0" Grid.Row="0"   IsEnabled="{Binding PD.ZagrMorfolinK480_Start, Converter={StaticResource BooleanNegateConverter}}">
+        <Grid Margin="0,0,4,0" Grid.Row="0"   IsEnabled="{Binding PD.ZagrDietilaminK480_Start, Converter={StaticResource BooleanNegateConverter}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -153,8 +153,8 @@
             Grid.ColumnSpan="2"
             Height="48"
             VerticalAlignment="Bottom"
-            IsEnabled="{Binding PD.ZagrMorfolinK480_Start, Converter={StaticResource BooleanNegateConverter}}"
-            SelectedIndex="{Binding PD.ZagrMorfolinK480_Nemk}"
+            IsEnabled="{Binding PD.ZagrDietilaminK480_Start, Converter={StaticResource BooleanNegateConverter}}"
+            SelectedIndex="{Binding PD.ZagrDietilaminK480_Nemk}"
             Style="{StaticResource SelectTabControlStyle}">
             <TabControl.ContentTemplate>
                 <DataTemplate>
@@ -227,7 +227,7 @@
             Precision="1"
             UpdateValueOnEnterKey="True">
             <Behaviors:Interaction.Behaviors>
-                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrMorfolinK480_DozaZad}" />
+                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilaminK480_DozaZad}" />
             </Behaviors:Interaction.Behaviors>
         </controls:NumPadUpDown>
 
@@ -248,7 +248,7 @@
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
                 <Behaviors:Interaction.Behaviors>
-                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrMorfolinK480_Xnom}" />
+                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilaminK480_Xnom}" />
                 </Behaviors:Interaction.Behaviors>
             </controls:NumPadUpDown>
             <TextBlock
@@ -273,7 +273,7 @@
             FontSize="20"
             FontWeight="Bold"
             Foreground="#FF646464"
-            Text="{Binding PD.ZagrMorfolinK480_Doza, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
+            Text="{Binding PD.ZagrDietilaminK480_Doza, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
 
        
          
@@ -301,7 +301,7 @@
                             <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Text="Предвар. закр-е :"></TextBlock>
                         <xctk:ToggleSwitch Width="64" Margin="0,0,0,5" Height="25" Grid.Row="0" Grid.Column="1"    
                   CornerRadius="2"
-                 IsChecked="{Binding PD.ZagrMorfolinK480_IsEnablePredictClose ,Mode=TwoWay}"
+                 IsChecked="{Binding PD.ZagrDietilaminK480_IsEnablePredictClose ,Mode=TwoWay}"
                 ThumbHeight = "25"
                 ThumbWidth = "24"
               VerticalAlignment="Center"
@@ -330,7 +330,7 @@
             Precision="1"
             UpdateValueOnEnterKey="True">
             <Behaviors:Interaction.Behaviors>
-                                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrMorfolinK480_percentSurplus}" />
+                                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietil_weightPredictClose}" />
             </Behaviors:Interaction.Behaviors>
             </controls:NumPadUpDown>
 
@@ -377,7 +377,7 @@
             <xctk:IconButton
                 Padding="3,3,20,3"
                 HorizontalAlignment="Center"
-                Command="{Binding ZagrMorfolin480StopCommand}"
+                Command="{Binding ZagrDietilamin480StopCommand}"
                 Content="     Стоп"
                 DockPanel.Dock="Right"
                 IconLocation="Left">
@@ -399,7 +399,7 @@
             <xctk:IconButton
                 Padding="3,3,20,3"
                 HorizontalAlignment="Center"
-                Command="{Binding ZagrMorfolin480StartCommand}"
+                Command="{Binding ZagrDietilamin480StartCommand}"
                 Content="     Пуск"
                 DockPanel.Dock="Right"
                 IconLocation="Left">

@@ -145,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\ChildWindows\ZagrDietilamin480.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ChildWindows\ZagrMorfolin480.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -262,6 +266,9 @@
     </Compile>
     <Compile Include="Views\ChildWindows\RegPh480B.xaml.cs">
       <DependentUpon>RegPh480B.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\ZagrDietilamin480.xaml.cs">
+      <DependentUpon>ZagrDietilamin480.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindows\ZagrMorfolin480.xaml.cs">
       <DependentUpon>ZagrMorfolin480.xaml</DependentUpon>

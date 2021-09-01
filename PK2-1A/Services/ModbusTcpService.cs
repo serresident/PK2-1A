@@ -17,8 +17,8 @@ namespace belofor.Services
 
     public class ModbusTcpService
     {
-        //private readonly string ModbusClientIP = "192.168.3.127";
-        private readonly string ModbusClientIP = "192.168.120.139";
+        private readonly string ModbusClientIP = "192.168.3.127";
+       // private readonly string ModbusClientIP = "192.168.120.139";
        // private readonly string ModbusClientIP = "192.168.0.22";
         //private readonly string ModbusClientIP = "192.168.200.18";
         //private readonly int ModbusPort = 502;
@@ -102,7 +102,12 @@ namespace belofor.Services
                                 else
                                 {
                                     requestResult.AddRange(_modbusClient.ReadHoldingRegisters(0, 123).ToList());
+                                    if(_processData.HoldigRegisterCount - 123<=123)
                                     requestResult.AddRange(_modbusClient.ReadHoldingRegisters(123, _processData.HoldigRegisterCount - 123).ToList());
+                                    else
+                                    requestResult.AddRange(_modbusClient.ReadHoldingRegisters(123, 123).ToList());
+                                    requestResult.AddRange(_modbusClient.ReadHoldingRegisters(246, _processData.HoldigRegisterCount - 246).ToList());
+
                                 }
 
                                 //requestResult.AddRange(_modbusClient.ReadHoldingRegisters(0, _processData.HoldigRegisterCount).ToList());

@@ -47,6 +47,9 @@ namespace belofor.ViewModels
         public DelegateCommand ZagrMorfolin480StartCommand { get; private set; }
         public DelegateCommand ZagrMorfolin480StopCommand { get; private set; }
 
+        public DelegateCommand ZagrDietilamin480StartCommand { get; private set; }
+        public DelegateCommand ZagrDietilamin480StopCommand { get; private set; }
+
 
 
         private ObservableRangeCollection<ThermoChartPoint> points;
@@ -122,6 +125,15 @@ namespace belofor.ViewModels
             set { SetProperty(ref zagrMorfolin480WndStatus, value); }
         }
 
+        //Диэтиламин в 480
+
+        private WindowState zagrDietilamin480WndStatus = WindowState.Closed;
+        public WindowState ZagrDietilamin480WndStatus
+        {
+            get { return zagrDietilamin480WndStatus; }
+            set { SetProperty(ref zagrDietilamin480WndStatus, value); }
+        }
+
 
         //термоцикл
         private WindowState thermoCycl_1AWndStatus = WindowState.Closed;
@@ -173,7 +185,10 @@ namespace belofor.ViewModels
 
             ZagrMorfolin480StartCommand = new DelegateCommand(ZagrMorfolin480Start, canZagrMorfolin480Start);
             ZagrMorfolin480StopCommand = new DelegateCommand(ZagrMorfolin480stop, canZagrMorfolin480Stop);
-           
+
+            ZagrDietilamin480StartCommand = new DelegateCommand(ZagrDietilamin480Start, canZagrDietilamin480Start);
+            ZagrDietilamin480StopCommand = new DelegateCommand(ZagrDietilamin480stop, canZagrDietilamin480Stop);
+
 
 
             //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
@@ -213,13 +228,19 @@ namespace belofor.ViewModels
 
         private bool canRegPh480bStart() { return !PD.RegPH480B_Start; }
         private void RegPh480bStart() => PD.RegPH480B_Start = true;
-        private bool canRegPh480bStop() { return PD.RegPH480A_Start; }
+        private bool canRegPh480bStop() { return PD.RegPH480B_Start; }
         private void RegPh480bstop() => PD.RegPH480B_Start = false;
 
         private bool canZagrMorfolin480Start() { return !PD.ZagrMorfolinK480_Start; }
         private void ZagrMorfolin480Start() => PD.ZagrMorfolinK480_Start = true;
         private bool canZagrMorfolin480Stop() { return PD.ZagrMorfolinK480_Start; }
         private void ZagrMorfolin480stop() => PD.ZagrMorfolinK480_Start = false;
+
+
+        private bool canZagrDietilamin480Start() { return !PD.ZagrDietilaminK480_Start; }
+        private void ZagrDietilamin480Start() => PD.ZagrDietilaminK480_Start = true;
+        private bool canZagrDietilamin480Stop() { return PD.ZagrDietilaminK480_Start; }
+        private void ZagrDietilamin480stop() => PD.ZagrDietilaminK480_Start = false;
 
 
         public void OnLoading()
@@ -325,6 +346,9 @@ namespace belofor.ViewModels
 
             ZagrMorfolin480StartCommand.RaiseCanExecuteChanged();
             ZagrMorfolin480StopCommand.RaiseCanExecuteChanged();
+
+            ZagrDietilamin480StartCommand.RaiseCanExecuteChanged();
+            ZagrDietilamin480StopCommand.RaiseCanExecuteChanged();
 
         }
 
