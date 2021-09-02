@@ -11,6 +11,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using Xceed.Wpf.Toolkit;
 
 namespace belofor.Behaviors
 {
@@ -106,6 +107,8 @@ namespace belofor.Behaviors
                 this.AssociatedObject.Cursor = Cursors.Hand;
 
                 //popup
+
+                ChildWindow window = new ChildWindow();
                 popupPanel = new Popup();
                 popupPanel.AllowsTransparency = true;
 

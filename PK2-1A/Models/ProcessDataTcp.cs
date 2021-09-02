@@ -314,9 +314,11 @@ public bool V_K610_control_man { get { return getValue<bool>(); } set { setValue
 
 public bool FV_K480B_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }// ad=99/////////////////////
 public bool FV_K480A_reg_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=100
+
  [JournalAttribute("Загрузка арт. воды изменение состояние на СТАРТ >> [{0}] --> [{1}]")]
 public bool ZagrVodaComm_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad=101
 
+[JournalAttribute("VK480A_2 изменение режима >> [{0}] --> [{1}]")]
 public bool VK480A_2_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=102
 public bool VK480A_2_control_auto { get { return getValue<bool>(); } set { setValue<bool>(value); } } //ad= 103
 public bool VK480A_2_control_man { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad= 104
@@ -561,7 +563,10 @@ public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>
         public Single TE_K480B_1 { get { return getValue<Single>(); } }//ad123  //трм 202 ad80 2k
 
         public Single ZagrDietilaminK480_Doza { get { return getValue<Single>(); } }  //ad125
-        public UInt16 JOURNAL2 { get { return getValue<UInt16>(); } } //
+        public UInt16 ZagrARtVoda_TimeLeft { get { return getValue<UInt16>(); } } //126
+        public UInt16 ZagrGoroda460_TimeLeft { get { return getValue<UInt16>(); } } //127
+        public UInt16 ZagrARtVoda480_TimeLeft { get { return getValue<UInt16>(); } } //128
+
         public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последни
         } //ad=82 
 
@@ -614,6 +619,7 @@ public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>
         public Single FV_K480A_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=37
 
         public UInt16 ZagrVodaComm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //39
+        [JournalAttribute(" Изменена уставка дозы воды >> [{0}] --> [{1}]")]
         public UInt16 ZagrVodaComm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //40
         public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //41
         public UInt16 viravni2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //42

@@ -238,6 +238,7 @@
     <Compile Include="Helpers\MethodBindingExtension.cs" />
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
     <Compile Include="Models\ArchivItem.cs" />
+    <Compile Include="Models\CharPoint.cs" />
     <Compile Include="Models\JournalItem.cs" />
     <Compile Include="Models\ModbusWriteItem.cs" />
     <Compile Include="Models\ProcessData.cs" />
