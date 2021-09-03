@@ -29,8 +29,8 @@ namespace belofor.Services
             _processDataTcp = processDataTcp;
             _journal = new Dictionary<string, string>();
 
-           // foreach (PropertyInfo prop in processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))))
-                foreach (PropertyInfo prop in processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive ))
+         foreach (PropertyInfo prop in processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))))
+               // foreach (PropertyInfo prop in processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive ))
                 {
                     
                 _journal.Add(prop.Name, String.Empty);
@@ -41,7 +41,7 @@ namespace belofor.Services
         {
             if (_processDataTcp.JOURNAL == 13 && !firstInit)
             {
-                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive /*&& Attribute.IsDefined(p, typeof(JournalAttribute))*/))
+                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))))
                 {
                     _journal[prop.Name] = prop.GetValue(_processDataTcp).ToString();
                 }
@@ -51,13 +51,13 @@ namespace belofor.Services
 
             if (_processDataTcp.JOURNAL == 13 && firstInit)
             {
-                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive /*&& Attribute.IsDefined(p, typeof(JournalAttribute))*/))
+                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))))
                 {
                     if (_journal[prop.Name] != prop.GetValue(_processDataTcp).ToString())
                     {
-                      //  var attr = prop.GetCustomAttribute<JournalAttribute>();
+                      var attr = prop.GetCustomAttribute<JournalAttribute>();
 
-                     //   Debug.WriteLine(string.Format(attr.Message, _journal[prop.Name], prop.GetValue(_processDataTcp)));
+                       Debug.WriteLine(string.Format(attr.Message, _journal[prop.Name], prop.GetValue(_processDataTcp)));
 
                         using (var conn = new MySqlConnection(connStr))
                         {
@@ -70,7 +70,7 @@ namespace belofor.Services
 
                                     command.CommandText = @"INSERT INTO journal (DTS, `message`) VALUES (@DTS, @message); DELETE FROM journal WHERE DTS < @minDTS";
                                     command.Parameters.AddWithValue("@DTS", DateTime.Now);
-                                    command.Parameters.AddWithValue("@message", string.Format(prop.Name+ ">> [{0}] --> [{1}]", _journal[prop.Name], prop.GetValue(_processDataTcp)));
+                                    command.Parameters.AddWithValue("@message", string.Format(attr.Message+ " "+prop.Name+ " >> [{0}] --> [{1}]", _journal[prop.Name], prop.GetValue(_processDataTcp)));
                                     command.Parameters.AddWithValue("@minDTS", DateTime.Now.AddDays(-7));
 
                                     command.ExecuteNonQuery();

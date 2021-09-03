@@ -619,7 +619,7 @@ public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>
         public Single FV_K480A_reg_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }  //ad=37
 
         public UInt16 ZagrVodaComm_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //39
-        [JournalAttribute(" Изменена уставка дозы воды >> [{0}] --> [{1}]")]
+        [JournalAttribute(" Загр. арт воды. Изменена уставка дозы воды ")]
         public UInt16 ZagrVodaComm_DozaZad { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //40
         public UInt16 ZagrVodaComm_doza { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } } //41
         public UInt16 viravni2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  //42
