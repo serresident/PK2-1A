@@ -318,8 +318,9 @@
                         <ColumnDefinition Width="88*"/>
                         <ColumnDefinition Width="223*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Делта 1"></TextBlock>
-                </Grid>
+                   
+                        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Column="0" Text="Предвар. закр-е :" Margin="0,0,159,0"/>
+                    </Grid>
                 </ScrollViewer>
             </Expander>
 

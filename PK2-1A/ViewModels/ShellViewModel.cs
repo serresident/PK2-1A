@@ -6,11 +6,14 @@ using Prism.Services.Dialogs;
 using System;
 using belofor.Models;
 using belofor.Services;
+using Microsoft.Web.WebView2.Wpf;
 
 namespace belofor.ViewModels
 {
     public class ShellViewModel : BindableBase
     {
+
+
         private Logger logger = LogManager.GetCurrentClassLogger();
 
         private readonly IDialogService dialogService;

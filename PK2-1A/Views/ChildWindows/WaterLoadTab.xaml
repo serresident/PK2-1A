@@ -119,7 +119,18 @@
         </controls:NumPadUpDown>
 
       
-        <TextBlock Text="{Binding PD.ZagrVodaComm_doza,  StringFormat=\{0:0.0##\}, FallbackValue=???}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="1" FontWeight="Bold" Foreground="#FF646464" Margin="5" />
+        <TextBlock Text="{Binding PD.ZagrVodaComm_doza,  StringFormat=\{0:0.0##\}, FallbackValue=???}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Grid.Row="3" Grid.Column="1" FontWeight="Bold" Foreground="#FF646464" Margin="5" >
+            <DoubleAnimation Storyboard.TargetName="rectangle"
+     Storyboard.TargetProperty="Opacity"
+     From="0"
+     To="1"
+     Duration="0:0:0.25"
+     AutoReverse="True"
+     RepeatBehavior="Forever">
+    <DoubleAnimation.EasingFunction>
+        <ElasticEase EasingMode="EaseInOut" />
+    </DoubleAnimation.EasingFunction>    
+</DoubleAnimation></TextBlock>
 
         <DockPanel Grid.Row="4" Grid.ColumnSpan="3" LastChildFill="False" Background="Goldenrod" Margin="0,10" >
             <DockPanel.Resources>

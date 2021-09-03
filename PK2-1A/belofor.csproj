@@ -185,9 +185,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SettingToolView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\JournalToolView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\JournalView.xaml">
       <SubType>Designer</SubType>
@@ -253,6 +261,7 @@
     <Compile Include="Services\ModbusTcpService.cs" />
     <Compile Include="Services\PeriodicalTaskStarter.cs" />
     <Compile Include="ViewModels\ArchivViewModel.cs" />
+    <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="ViewModels\JournalViewModel.cs" />
     <Compile Include="ViewModels\MnemonicViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -298,8 +307,14 @@
     <Compile Include="Views\ChildWindows\WaterLoading.xaml.cs">
       <DependentUpon>WaterLoading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SettingToolView.xaml.cs">
+      <DependentUpon>SettingToolView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\JournalToolView.xaml.cs">
       <DependentUpon>JournalToolView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\JournalView.xaml.cs">
       <DependentUpon>JournalView.xaml</DependentUpon>

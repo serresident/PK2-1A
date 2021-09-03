@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Interop;
 using belofor.ViewModels;
 
+
 namespace belofor.Views
 {
     /// <summary>
@@ -115,6 +116,7 @@ namespace belofor.Views
             return GetSystemMenu(windowhandle, false);
         }
 
-        
+
+
     }
 }

@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace belofor.Views
 {
     /// <summary>
-    /// Interaction logic for ArchivView.xaml
+    /// Interaction logic for JournalToolView.xaml
     /// </summary>
-    public partial class ArchivView : UserControl
+    public partial class SettingToolView : UserControl
     {
-        public ArchivView()
+        public SettingToolView()
         {
             InitializeComponent();
         }
-
-        
     }
 }

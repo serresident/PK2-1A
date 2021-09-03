@@ -26,6 +26,7 @@ namespace belofor.ViewModels
 
         private Plot plot;
 
+
         private DateTime maxDTS;
         public DateTime MaxDTS
         {

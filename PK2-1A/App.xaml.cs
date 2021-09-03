@@ -115,6 +115,9 @@ namespace belofor
             containerRegistry.RegisterForNavigation<JournalView>("JournalView");
             containerRegistry.RegisterForNavigation<JournalToolView>("JournalToolView");
 
+            containerRegistry.RegisterForNavigation<SettingView>("SettingView");
+            containerRegistry.RegisterForNavigation<SettingToolView>("SettingToolView");
+
             // Dialog
             //containerRegistry.RegisterDialog<SettingsDialog, SettingsDialogViewModel>("settings");
             containerRegistry.RegisterDialog<PasswordDialog, PasswordDialogViewModel>("password");
@@ -142,10 +145,10 @@ namespace belofor
             var regionManager = Container.Resolve<IRegionManager>();
             var nav = Container.Resolve<Func<string, string, string, NavigationItemView>>();
 
-            regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("MnemonicView", "MnemonicToolView", "Мнемосхема"));
-            regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("ArchivView", "ArchivToolView", "Архив"));
+         regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("MnemonicView", "MnemonicToolView", "Мнемосхема"));
+            //regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("ArchivView", "ArchivToolView", "Архив"));
             regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("JournalView", "JournalToolView", "Журнал"));
-            //regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("SettingView", "SettingToolView", "Настройки" ));
+            regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("SettingView", "SettingToolView", "Настройки" ));
 
             regionManager.RequestNavigate("ContentRegion", "MnemonicView");
 
