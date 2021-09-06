@@ -122,6 +122,8 @@ namespace belofor.Controls
         {
             Keyboard.AddKeyDownHandler(this, OnKeyDown);
             Mouse.AddPreviewMouseDownOutsideCapturedElementHandler(this, OnMouseDownOutsideCapturedElement);
+
+           
         }
 
         #endregion //Constructors
