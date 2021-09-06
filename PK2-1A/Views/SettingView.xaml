@@ -63,7 +63,7 @@
                     <RowDefinition Height="28"/>
                     <RowDefinition Height="36"/>
                 </Grid.RowDefinitions>
-                <TextBlock  FontSize="14" FontWeight="Black"  HorizontalAlignment="Center" Foreground="Blue" Text="Загрузки Щелочи в К480А" Grid.ColumnSpan="2" Grid.Row="0" Height="24"/>
+                <TextBlock  FontSize="14" FontWeight="Black"  HorizontalAlignment="Center" Foreground="Blue" Text="Загрузка Щелочи в К480А" Grid.ColumnSpan="2" Grid.Row="0" Height="24"/>
 
                 <TextBlock FontStyle="Italic" FontSize="14" HorizontalAlignment="Center" Text="  точка 1" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top"  />
                 <TextBlock FontWeight="Bold" FontSize="14"  Text="% открытия клапана" Grid.ColumnSpan="1" Grid.Row="2" VerticalAlignment="Center" /> 
@@ -400,7 +400,7 @@
                     <RowDefinition Height="28"/>
                     <RowDefinition Height="36"/>
                 </Grid.RowDefinitions>
-                <TextBlock  FontSize="14" FontWeight="Black"  HorizontalAlignment="Center" Foreground="Blue" Text="Загрузки Щелочи в К480B" Grid.ColumnSpan="2" Grid.Row="0" Height="24"/>
+                <TextBlock  FontSize="14" FontWeight="Black"  HorizontalAlignment="Center" Foreground="Blue" Text="Загрузка Щелочи в К480B" Grid.ColumnSpan="2" Grid.Row="0" Height="24"/>
 
                 <TextBlock FontStyle="Italic" FontSize="14" HorizontalAlignment="Center" Text="  точка 1" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top"  />
                 <TextBlock FontWeight="Bold" FontSize="14"  Text="% открытия клапана" Grid.ColumnSpan="1" Grid.Row="2" VerticalAlignment="Center" />
