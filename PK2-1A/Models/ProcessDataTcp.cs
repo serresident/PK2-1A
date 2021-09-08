@@ -465,8 +465,9 @@ public bool Res_fq480{ get { return getValue<bool>(); } set { setValue<bool>(val
 
 public bool testing{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad210
 
-public bool ZagrDietilaminK480_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=211
-public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad212
+public bool ZagrDietilK480_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=211
+public bool ZagrDietilK480_IsEnablePredictClose{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad212
+public bool NC_K480A_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=213
 
         #endregion
 
@@ -562,10 +563,14 @@ public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>
         
         public Single TE_K480B_1 { get { return getValue<Single>(); } }//ad123  //трм 202 ad80 2k
 
-        public Single ZagrDietilaminK480_Doza { get { return getValue<Single>(); } }  //ad125
+        public Single ZagrDietilK480_Doza { get { return getValue<Single>(); } }  //ad125
         public UInt16 ZagrARtVoda_TimeLeft { get { return getValue<UInt16>(); } } //126
         public UInt16 ZagrGoroda460_TimeLeft { get { return getValue<UInt16>(); } } //127
         public UInt16 ZagrARtVoda480_TimeLeft { get { return getValue<UInt16>(); } } //128
+
+        public UInt16 empty3 { get { return getValue<UInt16>(); } }//129
+        public Single NC_K480A_OUT_Frq { get { return getValue<Single>(); } } //ad=130
+        public Single NC_K480A_Cur_FRQ { get { return getValue<Single>(); } }//ad=132
 
         public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последни
         } //ad=82 
@@ -719,7 +724,7 @@ public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>
         public Single RegPH480A_x3 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=167
         public Single RegPH480A_x4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=169
         public Single RegPH480A_x5 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=171
-        public Single RegPH480A_pH { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=173
+        public Single RegPH480A_pH1 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=173
         public Single RegPH480A_pH2 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=175
         public Single RegPH480A_pH3 { get { return getValue<Single>(); } set { setValue<Single>(value); } }// ad=177
         public Single RegPH480A_pH4 { get { return getValue<Single>(); } set { setValue<Single>(value); } } // ad=179
@@ -774,13 +779,16 @@ public bool ZagrDietilaminK480_IsEnablePredictClose{ get { return getValue<bool>
 
         public Single ZagrMorfol_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//252
 
-        public Single ZagrDietilaminK480_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } }//253
-        public Single ZagrDietilaminK480_Xnom { get { return getValue<Single>(); } set { setValue<Single>(value); } }//255
-        public Single ZagrDietilaminK480_Wmin { get { return getValue<Single>(); } set { setValue<Single>(value); } }//257
+        public Single ZagrDietilK480_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } }//253
+        public Single ZagrDietilK480_Xnom { get { return getValue<Single>(); } set { setValue<Single>(value); } }//255
+        public Single ZagrDietilK480_Wmin { get { return getValue<Single>(); } set { setValue<Single>(value); } }//257
         public Single ZagrDietil_weightPredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//259
-        public UInt16 ZagrDietilaminK480_status { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//261
-        public UInt16 ZagrDietilaminK480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//262
-        public Single ZagrDietil_setDeegrePredictClose = 10;//263
+        public UInt16 ZagrDietilK480_status { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//261
+        public UInt16 ZagrDietilK480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//262
+        public Single ZagrDietil_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//263
+
+        public Single NC_K480A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//265
+        public Single NC_K480BA_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//267
 
         #endregion
     }

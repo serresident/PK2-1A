@@ -19,9 +19,9 @@ namespace belofor.Views.ChildWindows
     /// <summary>
     /// Interaction logic for WaterLoading.xaml
     /// </summary>
-    public partial class ZagrDietilamin480 : ChildWindow
+    public partial class ZagrDietil480 : ChildWindow
     {
-        public ZagrDietilamin480()
+        public ZagrDietil480()
         {
             InitializeComponent();
         }

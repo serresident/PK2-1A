@@ -398,7 +398,7 @@
             </ToggleButton.Style>
 
         </ToggleButton>
-        <ToggleButton  Content="Загр. Диэтила- &#xA; мина в K480" IsChecked="{Binding ZagrDietilamin480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked">
+        <ToggleButton  Content="Загр. Диэтила- &#xA; мина в K480" IsChecked="{Binding ZagrDietil480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked">
 
             <!--<Behaviors:Interaction.Triggers>
                 <Behaviors:EventTrigger EventName="Checked">
@@ -423,7 +423,7 @@
                     <Setter Property="Template" Value="{StaticResource SimpleToggleButtonTemplate}"/>
 
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding PD.ZagrDietilaminK480_Start}" Value="true" >
+                        <DataTrigger Binding="{Binding PD.ZagrDietilK480_Start}" Value="true" >
                             <Setter Property="OverridesDefaultStyle" Value="true"/>
                             <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
                             <Setter Property="Foreground" Value="{StaticResource GreenTextForegroundBrush}"/>

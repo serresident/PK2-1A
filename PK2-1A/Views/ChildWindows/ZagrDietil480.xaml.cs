@@ -1,5 +1,4 @@
-﻿using belofor.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,18 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
-namespace belofor.Views
+namespace belofor.Views.ChildWindows
 {
     /// <summary>
-    /// Interaction logic for MnemonicView.xaml
+    /// Interaction logic for WaterLoading.xaml
     /// </summary>
-    public partial class MnemonicView : UserControl
+    public partial class ZagrDietilAmin480 : ChildWindow
     {
-        public MnemonicView()
+        public ZagrDietilAmin480()
         {
             InitializeComponent();
         }
-
     }
 }

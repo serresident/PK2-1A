@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using belofor.Attributes;
 using belofor.Models;
+using InfluxDB.Client;
+using InfluxDB.Client.Api.Domain;
 
 namespace belofor.Services
 {
@@ -18,6 +20,7 @@ namespace belofor.Services
         public const string ConnStr = "server=localhost;user=sysdba;password=masterkey;database=asutp;default command timeout=20;";
 
         private Logger logger = LogManager.GetCurrentClassLogger();
+        Dictionary<string, string> values;
 
         private readonly ProcessDataTcp _processDataTcp;
         Dictionary<string, string> _archive;
@@ -27,17 +30,19 @@ namespace belofor.Services
         {
             _processDataTcp = processDataTcp;
             _archive = new Dictionary<string, string>();
+            values  = new Dictionary<string, string>();
             foreach (PropertyInfo prop in processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive ))
             {
 
                 _archive.Add(prop.Name, String.Empty);
+
             }
         }
     
 
         public void Worker()
         {
-            if (!firstInit)
+            if (_processDataTcp.JOURNAL == 13 && !firstInit)
             {
                 foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive ))
                 {
@@ -46,22 +51,24 @@ namespace belofor.Services
 
                 firstInit = true;
             }
-            Dictionary<string, string> values = new Dictionary<string, string>();
+          
 
-            if (firstInit)
+            if (_processDataTcp.JOURNAL == 13 && firstInit)
             {
 
 
-                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive /*&& p.PropertyType != typeof(bool) && !p.CanWrite && Attribute.IsDefined(p, typeof(ArchivAttribute))*/))
+                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && p.PropertyType != typeof(bool) && !p.CanWrite && Attribute.IsDefined(p, typeof(ArchivAttribute))))
                 {
                     if (_archive[prop.Name] != prop.GetValue(_processDataTcp).ToString())
                     {
-                        var t =prop.GetValue(_processDataTcp).ToString();
-                       if ( prop.GetValue(_processDataTcp).ToString()=="False")
-                        values.Add(prop.Name, "0");
-                       else if(prop.GetValue(_processDataTcp).ToString() == "True")
-                            values.Add(prop.Name, "1");
-                        else values.Add(prop.Name, float.Parse(prop.GetValue(_processDataTcp).ToString()).ToString(CultureInfo.InvariantCulture));
+                       // var t =prop.GetValue(_processDataTcp).ToString();
+                       //if ( prop.GetValue(_processDataTcp).ToString()=="False")
+                       // values.Add(prop.Name, "0");
+                       //else if(prop.GetValue(_processDataTcp).ToString() == "True")
+                       //     values.Add(prop.Name, "1");
+                       // else values.Add(prop.Name, float.Parse(prop.GetValue(_processDataTcp).ToString()).ToString(CultureInfo.InvariantCulture));
+
+                        values.Add(prop.Name, float.Parse(prop.GetValue(_processDataTcp).ToString()).ToString(CultureInfo.InvariantCulture));
                         _archive[prop.Name] = prop.GetValue(_processDataTcp).ToString();
                     }
                 }
@@ -97,8 +104,32 @@ namespace belofor.Services
                         {
                             conn.Close();
                         }
+                        // You can generate a Token from the "Tokens Tab" in the UI
+                        const string token = "mHucveNRwLyyPprDcHlGTjtXAE3B6aV3hRGW61Q3UfvT0_G6plFQvpJwS62jFrNK2g4fGEEDNU1HCAJzKoajlQ==";
+                        const string bucket_journal = "belofor_detail";
+                        const string bucket_serias = "belofor";
+                        const string org = "belofor";
 
+                        var client = InfluxDBClientFactory.Create("http://192.168.120.143:8086", token.ToCharArray());
+                         string data_journal = "Log_Action,title=belofor_hmi log_mnemonic="+"\""+JsonConvert.SerializeObject(values)+"\"";
+                        string replace = JsonConvert.SerializeObject(values).Replace("{", "")
+                             .Replace("\"", "")
+                             .Replace(":", "=")
+                             .Replace("}", "");
+                        string data_serias = "belofor,title=mnemonic_seria_10s " ;
+                        using (var writeApi = client.GetWriteApi())
+                        {
+                          writeApi.WriteRecord(bucket_journal, org, WritePrecision.Ns, data_journal);
+                           
+                            foreach (var item in values)
+                            {
+                                writeApi.WriteRecord(bucket_serias, org, WritePrecision.Ns, data_serias+item.Key+"="+item.Value);
+                            }
 
+                        }
+                        
+
+                        values.Clear();
                     }
                 }
                 

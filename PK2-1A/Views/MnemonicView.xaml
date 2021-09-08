@@ -13,6 +13,7 @@
              xmlns:Controls="clr-namespace:belofor.Controls"
              xmlns:WPF="clr-namespace:AITSW.PCPANEL.WPF;assembly=PCPANEL_WPF_Controls"
              xmlns:converters="clr-namespace:AITSW.WPFValueConverters;assembly=WPFValueConverters"
+             xmlns:media ="clr-namespace:System.Windows.Media;assembly=PresentationCore"
           
              xmlns:toggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
              xmlns:converters1="clr-namespace:belofor.Converters"
@@ -2025,12 +2026,12 @@
                 </WPF:ControlColors>
             </WPF:Fan.Colors>
             <WPF:Fan.States>
-                <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NS_K480A_sost}" />
+                <WPF:StatesBitmask State4Bitmask="1" Value="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1}" />
             </WPF:Fan.States>
         </WPF:Fan>
         <WPF:Motor Height="27" Canvas.Left="788" Canvas.Top="415" Width="42" Header="M" HeaderPadding="16,2,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_K480A_sost}" />
+                <WPF:StatesStandard Active="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1}" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
@@ -2183,7 +2184,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R404A"/><LineBreak/><Run/></TextBlock>
         <Controls:ValueBlock Canvas.Left="734" Canvas.Top="560" Caption="PT 480A" Unit="кг/см2" ValueColor="#FF1820BF" Width="77" Height="40" Value="{Binding PD.PT_480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="#FFB0F3B0"/>
-        <WPF:Tank Height="115" Canvas.Left="1080" Canvas.Top="160" Width="114" GeometryParam2="4*"  GeometryParam1="0.4*" RotateAngle="270" Design="StandingSpherical" Click="Tank_Click" GeometryParam3="*" GeometryParam4="0*">
+        <WPF:Tank Height="115" Canvas.Left="1080" Canvas.Top="160" Width="114" GeometryParam2="4*"  GeometryParam1="0.4*" RotateAngle="270" Design="StandingSpherical"  GeometryParam3="*" GeometryParam4="0*">
             <WPF:Tank.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3585,7 +3586,7 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480B_SQH}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Valve Height="40" Canvas.Left="1582" RotateAngle="-90" Canvas.Top="416" Width="30" Actor="Diaphram1">
+        <WPF:Valve Height="40" Canvas.Left="1582"  RotateAngle="-90" Canvas.Top="416" Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*">
             <Behaviors:Interaction.Behaviors>
 
                 <!--<behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding '( PD.FV_K480A_reg_mode) ?  PD.FV_K480A_reg_ain_man/10 less= 1 : PD.FV_K480A_reg_ain_auto/10 = 1 '}" OnColor1="Green" DefaultColor="Red"/>-->
@@ -3638,16 +3639,32 @@
                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.SP_P_OUT_P726}" />
             </Behaviors:Interaction.Behaviors>
         </Controls:NumPadUpDown>
-        <WPF:Label  Height="26" Content="" Canvas.Left="1314" Canvas.Top="474" Width="74" Design="Arrowed" DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" >
+
+        <WPF:Label  Height="26" Content="" Canvas.Left="1310" Canvas.Top="474" Width="auto"  Design="Arrowed" ItemDeterminationValue="{c:Binding '(PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1'}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц }" ArrowWidth="5" >
+            <WPF:Label.States>
+                <WPF:StatesStandard  Critical="{c:Binding '(PD.NC_K480B_Cur_FRQ less 0)'}"  Active="{c:Binding '(PD.NC_K480B_Cur_FRQ > 0)'}"/>
+            </WPF:Label.States>
+
             <WPF:Label.Colors>
-                <WPF:ControlColors>
+                <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
                         <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
 
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ >1) ?\'LightGreen\':\'White\''}" />-->
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ less) ? \'Green\':\'Green\''}" />-->
                     </WPF:ControlColors.DefaultColoring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red" />
+                    </WPF:ControlColors.State1Coloring>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="#FFACE0AC" />
+                    </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
+
+            <WPF:Label.Items>
+                <WPF:ValueTextItem Text="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}"  Value="1"/>
+                <WPF:ValueTextItem Text="Нет связи" Value="0"/>
+            </WPF:Label.Items>
         </WPF:Label>
         <WPF:Tube Height="16" Canvas.Left="1025" Canvas.Top="319" Width="127" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
@@ -3698,16 +3715,32 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R631A"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1623"   TextWrapping="Wrap" Canvas.Top="245" Height="14" Width="78" ><Run Language="ru-ru" Text="Уст. давления                                                                                                           "/></TextBlock>
-        <WPF:Label  Height="26" Content="" Canvas.Left="1712" Canvas.Top="212" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" ToolTip="9999 ГЦ НЕТ СВЯЗИ С ПЧ!!!">
+        <WPF:Label ItemDeterminationValue="{c:Binding '(PD.P726_Cur_FRQ less 0) ? 0 : 1'}" Height="26" Content="" Canvas.Left="1703" Canvas.Top="212" Width="auto" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц }" ArrowWidth="5" >
+
+            <WPF:Label.States>
+                <WPF:StatesStandard  Critical="{c:Binding '(PD.P726_Cur_FRQ less 0)'}"  Active="{c:Binding '(PD.P726_Cur_FRQ > 0)'}"/>
+            </WPF:Label.States>
+
             <WPF:Label.Colors>
-                <WPF:ControlColors>
+                <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
                         <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
 
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ >1) ?\'LightGreen\':\'White\''}" />-->
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ less) ? \'Green\':\'Green\''}" />-->
                     </WPF:ControlColors.DefaultColoring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red" />
+                    </WPF:ControlColors.State1Coloring>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="#FFACE0AC" />
+                    </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
+
+            <WPF:Label.Items>
+                <WPF:ValueTextItem Text="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}"  Value="1"/>
+                <WPF:ValueTextItem Text="Нет связи c ПЧ" Value="0"/>
+            </WPF:Label.Items>
         </WPF:Label>
         <WPF:Label  Height="26" Content="" Canvas.Left="1712" Canvas.Top="248" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_I, StringFormat=\{0\}A}" ArrowWidth="5" >
             <WPF:Label.Colors>
@@ -3721,7 +3754,7 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <WPF:Tank Height="116" Canvas.Left="1218" Canvas.Top="158" Width="114" GeometryParam2="4*"  GeometryParam1="0.4*" RotateAngle="270" Design="StandingSpherical" Click="Tank_Click" GeometryParam3="*" GeometryParam4="0*">
+        <WPF:Tank Height="116" Canvas.Left="1218" Canvas.Top="158" Width="114" GeometryParam2="4*"  GeometryParam1="0.4*" RotateAngle="270" Design="StandingSpherical"  GeometryParam3="*" GeometryParam4="0*">
             <WPF:Tank.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3933,6 +3966,18 @@
         <Controls:ValueBlock Canvas.Left="1414" Canvas.Top="180" Caption="TE E481" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="884" Canvas.Top="237" Caption="TE E482_2" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_E482_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="1414" Canvas.Top="223" Caption="TE E481_2" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_E481_Distil, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
+
+        <WPF:Label  Height="26" Content=""  Canvas.Left="770" Canvas.Top="478" Width="74"  Design="Arrowed" DefaultText="{Binding PD.NC_K480A_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" >
+            <WPF:Label.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
+
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.NC_K480A_Cur_FRQ less 0)  ? \'Red\' :  \'Green\' '}" />-->
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
         <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
@@ -3941,9 +3986,9 @@
             <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
             <child:RegPh480A Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-            <child:RegPh480B Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="444" Canvas.Top="210" />
+            <child:RegPh480B Left="50" Top="500" Height="400" Width="560" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="644" Canvas.Top="509" />
             <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
-            <child:ZagrDietilamin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтиламина K480A/B"  WindowState="{Binding ZagrDietilamin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
+            <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
         </xctk:WindowContainer>
 
     </Canvas>

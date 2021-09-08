@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Interop;
 using belofor.ViewModels;
 
@@ -42,6 +44,23 @@ namespace belofor.Views
             InsertMenu(systemMenuHandle, 6, MF_BYPOSITION, _UserItem, userAutorizationStatus); //Add a setting menu item
 
             hwndSource.AddHook(new HwndSourceHook(WndProc));
+            var secondScreen = Screen.AllScreens.Where(s => s.Primary).FirstOrDefault();
+
+            if (secondScreen != null)
+            {
+                if(!this.IsLoaded)
+                    this.WindowStartupLocation = WindowStartupLocation.Manual;
+
+                var workingArea = secondScreen.WorkingArea;
+                this.Left = workingArea.Left;
+                this.Top = workingArea.Top;
+                this.Width = workingArea.Width;
+                this.Height = workingArea.Height;
+
+                if (this.IsLoaded)
+                    this.WindowState = WindowState.Maximized;
+            }
+
 
             (this.DataContext as ShellViewModel).OnLoad();
         }
@@ -116,7 +135,6 @@ namespace belofor.Views
             return GetSystemMenu(windowhandle, false);
         }
 
-
-
+     
     }
 }

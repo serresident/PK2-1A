@@ -47,8 +47,11 @@ namespace belofor.ViewModels
         public DelegateCommand ZagrMorfolin480StartCommand { get; private set; }
         public DelegateCommand ZagrMorfolin480StopCommand { get; private set; }
 
-        public DelegateCommand ZagrDietilamin480StartCommand { get; private set; }
-        public DelegateCommand ZagrDietilamin480StopCommand { get; private set; }
+        public DelegateCommand ZagrDietil480StartCommand { get; private set; }
+        public DelegateCommand ZagrDietil480StopCommand { get; private set; }
+
+        public DelegateCommand ZagrDietilAmin480StartCommand { get; private set; }
+        public DelegateCommand ZagrDietilAmin480StopCommand { get; private set; }
 
 
 
@@ -125,13 +128,22 @@ namespace belofor.ViewModels
             set { SetProperty(ref zagrMorfolin480WndStatus, value); }
         }
 
-        //Диэтиламин в 480
+        //Диэтил в 480
 
-        private WindowState zagrDietilamin480WndStatus = WindowState.Closed;
-        public WindowState ZagrDietilamin480WndStatus
+        private WindowState zagrDietil480WndStatus = WindowState.Closed;
+        public WindowState ZagrDietil480WndStatus
         {
-            get { return zagrDietilamin480WndStatus; }
-            set { SetProperty(ref zagrDietilamin480WndStatus, value); }
+            get { return zagrDietil480WndStatus; }
+            set { SetProperty(ref zagrDietil480WndStatus, value); }
+        }
+
+        //ДиэтилАмин в 480
+
+        private WindowState zagrDietilAmin480WndStatus = WindowState.Closed;
+        public WindowState ZagrDietilAmin480WndStatus
+        {
+            get { return zagrDietilAmin480WndStatus; }
+            set { SetProperty(ref zagrDietilAmin480WndStatus, value); }
         }
 
 
@@ -186,8 +198,12 @@ namespace belofor.ViewModels
             ZagrMorfolin480StartCommand = new DelegateCommand(ZagrMorfolin480Start, canZagrMorfolin480Start);
             ZagrMorfolin480StopCommand = new DelegateCommand(ZagrMorfolin480stop, canZagrMorfolin480Stop);
 
-            ZagrDietilamin480StartCommand = new DelegateCommand(ZagrDietilamin480Start, canZagrDietilamin480Start);
-            ZagrDietilamin480StopCommand = new DelegateCommand(ZagrDietilamin480stop, canZagrDietilamin480Stop);
+            ZagrDietil480StartCommand = new DelegateCommand(ZagrDietil480Start, canZagrDietil480Start);
+            ZagrDietil480StopCommand = new DelegateCommand(ZagrDietil480stop, canZagrDietil480Stop);
+
+
+            ZagrDietilAmin480StartCommand = new DelegateCommand(ZagrDietilAmin480Start, canZagrDietilAmin480Start);
+            ZagrDietilAmin480StopCommand = new DelegateCommand(ZagrDietilAmin480stop, canZagrDietilAmin480Stop);
 
 
 
@@ -237,10 +253,16 @@ namespace belofor.ViewModels
         private void ZagrMorfolin480stop() => PD.ZagrMorfolinK480_Start = false;
 
 
-        private bool canZagrDietilamin480Start() { return !PD.ZagrDietilaminK480_Start; }
-        private void ZagrDietilamin480Start() => PD.ZagrDietilaminK480_Start = true;
-        private bool canZagrDietilamin480Stop() { return PD.ZagrDietilaminK480_Start; }
-        private void ZagrDietilamin480stop() => PD.ZagrDietilaminK480_Start = false;
+        private bool canZagrDietil480Start() { return !PD.ZagrDietilK480_Start; }
+        private void ZagrDietil480Start() => PD.ZagrDietilK480_Start = true;
+        private bool canZagrDietil480Stop() { return PD.ZagrDietilK480_Start; }
+        private void ZagrDietil480stop() => PD.ZagrDietilK480_Start = false;
+
+
+        private bool canZagrDietilAmin480Start() { return !PD.ZagrDietilAminK480_Start; }
+        private void ZagrDietilAmin480Start() => PD.ZagrDietilAminK480_Start = true;
+        private bool canZagrDietilAmin480Stop() { return PD.ZagrDietilAminK480_Start; }
+        private void ZagrDietilAmin480stop() => PD.ZagrDietilAminK480_Start = false;
 
 
         public void OnLoading()
@@ -347,8 +369,11 @@ namespace belofor.ViewModels
             ZagrMorfolin480StartCommand.RaiseCanExecuteChanged();
             ZagrMorfolin480StopCommand.RaiseCanExecuteChanged();
 
-            ZagrDietilamin480StartCommand.RaiseCanExecuteChanged();
-            ZagrDietilamin480StopCommand.RaiseCanExecuteChanged();
+            ZagrDietil480StartCommand.RaiseCanExecuteChanged();
+            ZagrDietil480StopCommand.RaiseCanExecuteChanged();
+
+            ZagrDietil480StartCommand.RaiseCanExecuteChanged();
+            ZagrDietil480StopCommand.RaiseCanExecuteChanged();
 
         }
 

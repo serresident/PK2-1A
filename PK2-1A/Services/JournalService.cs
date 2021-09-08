@@ -36,7 +36,7 @@ namespace belofor.Services
                 _journal.Add(prop.Name, String.Empty);
             }
         }
-
+        //Rr6qESotEniwmvQg7--eNjdQ6oHTzErVZbY1N67ndKX_orFsvTaRIyFVkKjnzuVsEoY4ckzvX1362MYe_au-dg==
         public void Worker()
         {
             if (_processDataTcp.JOURNAL == 13 && !firstInit)

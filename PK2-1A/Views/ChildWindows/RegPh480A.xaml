@@ -15,8 +15,8 @@
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:convertors="clr-namespace:AITSW.WPFValueConverters;assembly=WPFValueConverters" xmlns:conv="clr-namespace:belofor.Converters"
     Width="600"
     Height="450"
-    d:DesignHeight="450"
-    d:DesignWidth="900"
+    d:DesignHeight="250"
+    d:DesignWidth="300"
     Background="Wheat"
     ResizeMode="NoResize"
     WindowBackground="LightGray"
@@ -91,7 +91,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition  />
-                <ColumnDefinition />
+           
             </Grid.ColumnDefinitions>
 
 
@@ -194,7 +194,7 @@
 
 
             </Grid>
-            <Border
+            <!--<Border
                 Grid.RowSpan="2"
                 Grid.Column="1"
                
@@ -245,7 +245,7 @@
 
 
                 </oxy:Plot>
-            </Border>
+            </Border>-->
             <DockPanel
                     Grid.Row="1"
                     Grid.Column="0"
@@ -302,7 +302,7 @@
                     </xctk:IconButton.Icon>
                 </xctk:IconButton>
             </DockPanel>
-            <Expander Grid.Row="3" Header="Дополнительный параметры" FontSize="24" Grid.ColumnSpan="2">
+            <!--<Expander Grid.Row="3" Header="Дополнительный параметры" FontSize="24" Grid.ColumnSpan="2">
                 <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
               
                     
@@ -322,7 +322,7 @@
                         <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Column="0" Text="Предвар. закр-е :" Margin="0,0,159,0"/>
                     </Grid>
                 </ScrollViewer>
-            </Expander>
+            </Expander>-->
 
         </Grid>
     </xctk:BusyIndicator>

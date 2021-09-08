@@ -34,6 +34,7 @@
         </Grid.ColumnDefinitions>
 
         <Border BorderBrush="DarkGray" BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="5"/>
+        
         <WPF:Label Grid.Column="0" DefaultText="Работает" Content="Контроллер" Design="Simple" ItemDeterminationValue="{Binding PlcStatus}" HorizontalAlignment="Left" Height="40"  Width="75" Margin="5,5,0,5" LightEmittingUpToState="3" CornerRadius="0" >
 
             <WPF:Label.Style>
@@ -48,6 +49,7 @@
             </WPF:Label.Style>
 
             <WPF:Label.States>
+                
                 <WPF:StatesStandard Critical="{Binding PlcStatus, Converter={StaticResource BooleanNegateConverter}}" Active="{Binding PlcStatus}"/>
             </WPF:Label.States>
 

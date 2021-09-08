@@ -26,7 +26,7 @@ namespace belofor.ViewModels
         private PeriodicalTaskStarter journalTask = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         private readonly JournalService journalService;
 
-        private PeriodicalTaskStarter archivTask = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
+        private PeriodicalTaskStarter archivTask = new PeriodicalTaskStarter(TimeSpan.FromSeconds(3));
         private readonly ArchivService archivService;
 
         public User User { get; set; }
