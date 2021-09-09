@@ -16,7 +16,7 @@
     Background="Wheat"
     ResizeMode="NoResize"
     WindowBackground="LightGray"
-    mc:Ignorable="d" Width="240" Height="290">
+    mc:Ignorable="d" Width="240" Height="310">
 
     <xctk:ChildWindow.Resources>
         <Style x:Key="FocusVisual">
@@ -164,6 +164,7 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                             <ColumnDefinition />
+                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
                         <!--<TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Время[мин]" VerticalAlignment="Center" FontSize="16"/>
@@ -211,7 +212,7 @@
                             </Behaviors:Interaction.Behaviors>
                         </WPF:TextBox>-->
         <controls:NumPadUpDown
-            
+            ToolTip="Вес, при котором включается пауза загрузки, до зад. нанагрева "
             Grid.Row="3"
             Grid.Column="0"
             Width="120"
@@ -228,7 +229,7 @@
             Precision="1"
             UpdateValueOnEnterKey="True">
             <Behaviors:Interaction.Behaviors>
-                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilAminK480_DozaZad}" />
+                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilAminK480_DozaZad1}" />
             </Behaviors:Interaction.Behaviors>
         </controls:NumPadUpDown>
 
@@ -249,16 +250,16 @@
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
                 <Behaviors:Interaction.Behaviors>
-                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilAminK480_Xnom}" />
+                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilAminK480_Tnagr}" />
                 </Behaviors:Interaction.Behaviors>
             </controls:NumPadUpDown>
 
             <controls:NumPadUpDown
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="0"
             Width="120"
             Height="30"
-            Margin="15,0,0,0"
+            Margin="15,5,0,0"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
             EnterClosesNumPad="True"
@@ -282,11 +283,33 @@
             FontSize="20"
             FontWeight="Bold"
             Foreground="Blue"
-            Text="Доза2" />
+            Text="Т нагр." />
+
+
+            <controls:NumPadUpDown
+            Grid.Row="5"
+            Grid.Column="0"
+            Width="120"
+            Height="30"
+            Margin="15,0,0,0"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF7E7E7E"
+            Increment="1"
+            Minimum="-1"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                <Behaviors:Interaction.Behaviors>
+                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrDietilAminK480_DozaZad2}" />
+                </Behaviors:Interaction.Behaviors>
+            </controls:NumPadUpDown>
 
 
 
-            <Expander  Grid.ColumnSpan="2"   Grid.Row="6" Header="Дополнительные параметры">
+            <Expander  Grid.ColumnSpan="2"   Grid.Row="7" Header="Дополнительные параметры">
 
             <ScrollViewer>
                 <Grid>
@@ -295,8 +318,9 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-                   
-                </Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+
+                        </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="94" />
                  <ColumnDefinition Width="Auto" />
@@ -369,7 +393,7 @@
                 </ScrollViewer>
         </Expander>
             <TextBlock
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -394,7 +418,16 @@
                 FontSize="20"
                 FontWeight="Bold"
                 Foreground="Blue"
-                Text="Доза1" Margin="13,30,0,0" Grid.RowSpan="2" />
+                Text="вес. нагр" Margin="13,30,0,0" Grid.RowSpan="2" />
+            <TextBlock
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="Blue"
+                Text="Доза2" Margin="16,35,0,0" Grid.RowSpan="2" />
 
 
         </Grid>

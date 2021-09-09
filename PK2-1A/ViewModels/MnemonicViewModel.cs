@@ -372,8 +372,8 @@ namespace belofor.ViewModels
             ZagrDietil480StartCommand.RaiseCanExecuteChanged();
             ZagrDietil480StopCommand.RaiseCanExecuteChanged();
 
-            ZagrDietil480StartCommand.RaiseCanExecuteChanged();
-            ZagrDietil480StopCommand.RaiseCanExecuteChanged();
+            ZagrDietilAmin480StartCommand.RaiseCanExecuteChanged();
+            ZagrDietilAmin480StopCommand.RaiseCanExecuteChanged();
 
         }
 

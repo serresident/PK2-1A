@@ -468,6 +468,8 @@ public bool testing{ get { return getValue<bool>(); } set { setValue<bool>(value
 public bool ZagrDietilK480_Start{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=211
 public bool ZagrDietilK480_IsEnablePredictClose{ get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad212
 public bool NC_K480A_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=213
+public bool ZagrDietilAminK480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=214
+public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad215
 
         #endregion
 
@@ -790,6 +792,15 @@ public bool NC_K480A_mode { get { return getValue<bool>(); } set { setValue<bool
         public Single NC_K480A_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//265
         public Single NC_K480BA_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//267
 
+         public Single ZagrDietilAminK480_DozaZad1 { get { return getValue<Single>(); } set { setValue<Single>(value); } }//269
+         public Single ZagrDietilAminK480_DozaZad2 { get { return getValue<Single>(); } set { setValue<Single>(value); } }//271
+        public Single ZagrDietilAminK480_Xnom { get { return getValue<Single>(); } set { setValue<Single>(value); } }//273
+         public Single ZagrDietilAminK480_Wmin { get { return getValue<Single>(); } set { setValue<Single>(value); } }//275
+         public Single ZagrDietilAmin_weightPredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//277
+        public UInt16 ZagrDietilAminK480_status { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//279
+        public UInt16 ZagrDietilAminK480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//281
+        public Single ZagrDietilAmin_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//283
+        public Single ZagrDietilAminK480_Tnagr { get { return getValue<Single>(); } set { setValue<Single>(value); } }//285
         #endregion
     }
 
