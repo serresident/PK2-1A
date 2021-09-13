@@ -10,24 +10,37 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1800" Loaded="{helpers:MethodBinding OnLoading}">
-    <!--<Grid HorizontalAlignment="Left" IsEnabled="{c:Binding '!IsBusy' }">
+    <Grid HorizontalAlignment="Left" IsEnabled="{c:Binding '!IsBusy' }">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition />
             <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        --><!--<ComboBox Grid.Column="0" ItemsSource="{Binding ArchivItems}" SelectedItem="{Binding SelectedArchivItem}" DisplayMemberPath="Title" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="200" Margin="0,0,5,0"/>--><!--
-        <xctk:CheckComboBox Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Delimiter="+"  ItemsSource="{Binding JournalItems}" DisplayMemberPath="Message" Width="400" Margin="0,0,5,0"/>
-        <DatePicker Grid.Column="1" SelectedDate="{Binding SelectedDTS, TargetNullValue={x:Static sys:DateTime.Now}}" DisplayDateEnd="{Binding MaxDTS}" DisplayDateStart="{Binding MinDTS}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,5,0">
-            <DatePicker.Resources>
-                <Style TargetType="DatePickerTextBox">
-                    <Setter Property="IsReadOnly" Value="True"/>
-                </Style>
-            </DatePicker.Resources>
-        </DatePicker>
-        <Button Content="Сформировать" Command="{Binding MakeChartCommand}" Grid.Column="2" Width="95" Height="25" HorizontalAlignment="Center"/>
+        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Text="ПЕРЕХВАТ управления с ПЛК1:  "></TextBlock>
+        <xctk:ToggleSwitch Width="64" Margin="5,0,5,0" Height="25" Grid.Row="0" Grid.Column="1"    
+                  CornerRadius="2"
+                 IsChecked="{Binding PD.Intercept_plc1 ,Mode=TwoWay}"
+                ThumbHeight = "25"
+                ThumbWidth = "24"
+              VerticalAlignment="Center"
+               CheckedContent = "ВКЛ"
+                UncheckedContent = "ВЫКЛ"
+                CheckedBackground="DarkSeaGreen"
+                UncheckedBackground ="LightPink"></xctk:ToggleSwitch>
+        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Text="ПЕРЕХВАТ  управления с ПЛК2:  "></TextBlock>
+        <xctk:ToggleSwitch Width="64" Margin="5,0,0,5" Height="25" Grid.Row="0" Grid.Column="3"    
+                  CornerRadius="2"
+                 IsChecked="{Binding PD.Intercept_plc2 ,Mode=TwoWay}"
+                ThumbHeight = "25"
+                ThumbWidth = "24"
+              VerticalAlignment="Center"
+               CheckedContent = "ВКЛ"
+                UncheckedContent = "ВЫКЛ"
+                CheckedBackground="DarkSeaGreen"
+                UncheckedBackground ="LightPink"></xctk:ToggleSwitch>
 
 
 
-    </Grid>-->
+    </Grid>
 </UserControl>

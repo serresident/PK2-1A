@@ -12,6 +12,7 @@ using belofor.Attributes;
 using belofor.Models;
 using InfluxDB.Client;
 using InfluxDB.Client.Api.Domain;
+using System.Threading;
 
 namespace belofor.Services
 {
@@ -21,6 +22,7 @@ namespace belofor.Services
 
         private Logger logger = LogManager.GetCurrentClassLogger();
         Dictionary<string, string> values;
+        Dictionary<string, string> journal;
 
         private readonly ProcessDataTcp _processDataTcp;
         Dictionary<string, string> _archive;
@@ -31,6 +33,7 @@ namespace belofor.Services
             _processDataTcp = processDataTcp;
             _archive = new Dictionary<string, string>();
             values  = new Dictionary<string, string>();
+            journal= new Dictionary<string, string>();
             foreach (PropertyInfo prop in processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive ))
             {
 
@@ -55,12 +58,11 @@ namespace belofor.Services
 
             if (_processDataTcp.JOURNAL == 13 && firstInit)
             {
-
-
-                foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && p.PropertyType != typeof(bool) && !p.CanWrite && Attribute.IsDefined(p, typeof(ArchivAttribute))))
+            
+                    foreach (PropertyInfo prop in _processDataTcp.GetType().GetProperties().Where(p => p.PropertyType.IsPrimitive && p.PropertyType  != typeof(bool) && !p.CanWrite && Attribute.IsDefined(p, typeof(ArchivAttribute))))
                 {
-                    if (_archive[prop.Name] != prop.GetValue(_processDataTcp).ToString())
-                    {
+                    //if (_archive[prop.Name] != prop.GetValue(_processDataTcp).ToString())
+                    //{
                        // var t =prop.GetValue(_processDataTcp).ToString();
                        //if ( prop.GetValue(_processDataTcp).ToString()=="False")
                        // values.Add(prop.Name, "0");
@@ -70,7 +72,7 @@ namespace belofor.Services
 
                         values.Add(prop.Name, float.Parse(prop.GetValue(_processDataTcp).ToString()).ToString(CultureInfo.InvariantCulture));
                         _archive[prop.Name] = prop.GetValue(_processDataTcp).ToString();
-                    }
+                    //    }
                 }
 
                 if (values.Count > 0)
@@ -110,7 +112,7 @@ namespace belofor.Services
                         const string bucket_serias = "belofor";
                         const string org = "belofor";
 
-                        var client = InfluxDBClientFactory.Create("http://192.168.120.143:8086", token.ToCharArray());
+                        var client = InfluxDBClientFactory.Create("http://localhost:8086", token.ToCharArray());
                          string data_journal = "Log_Action,title=belofor_hmi log_mnemonic="+"\""+JsonConvert.SerializeObject(values)+"\"";
                         string replace = JsonConvert.SerializeObject(values).Replace("{", "")
                              .Replace("\"", "")
@@ -119,11 +121,13 @@ namespace belofor.Services
                         string data_serias = "belofor,title=mnemonic_seria_10s " ;
                         using (var writeApi = client.GetWriteApi())
                         {
-                          writeApi.WriteRecord(bucket_journal, org, WritePrecision.Ns, data_journal);
+                         // writeApi.WriteRecord(bucket_journal, org, WritePrecision.Ns, data_journal);
                            
                             foreach (var item in values)
                             {
-                                writeApi.WriteRecord(bucket_serias, org, WritePrecision.Ns, data_serias+item.Key+"="+item.Value);
+                                string send= data_serias + item.Key + "=" + item.Value;
+                                writeApi.WriteRecord(bucket_serias, org, WritePrecision.Ns, send);
+                                
                             }
 
                         }

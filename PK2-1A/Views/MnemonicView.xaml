@@ -2090,7 +2090,7 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.V_K480A_9_mode}" Out="{Binding PD.V_K480A_9_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <TextBlock Canvas.Left="757" TextWrapping="Wrap" Text="V K480A-9" Canvas.Top="424" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="752" TextWrapping="Wrap" Text="V K480A-9" Canvas.Top="422" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3640,7 +3640,7 @@
             </Behaviors:Interaction.Behaviors>
         </Controls:NumPadUpDown>
 
-        <WPF:Label  Height="26" Content="" Canvas.Left="1310" Canvas.Top="474" Width="auto"  Design="Arrowed" ItemDeterminationValue="{c:Binding '(PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1'}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц }" ArrowWidth="5" >
+        <WPF:Label  Height="26" Content="" Canvas.Left="1318" Canvas.Top="474" Width="auto"  Design="Arrowed" ItemDeterminationValue="{c:Binding '(PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1'}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц }" ArrowWidth="5" >
             <WPF:Label.States>
                 <WPF:StatesStandard  Critical="{c:Binding '(PD.NC_K480B_Cur_FRQ less 0)'}"  Active="{c:Binding '(PD.NC_K480B_Cur_FRQ > 0)'}"/>
             </WPF:Label.States>
@@ -3663,7 +3663,7 @@
 
             <WPF:Label.Items>
                 <WPF:ValueTextItem Text="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}"  Value="1"/>
-                <WPF:ValueTextItem Text="Нет связи" Value="0"/>
+                <WPF:ValueTextItem  Text="Нет связи c ПЧ" Value="0"/>
             </WPF:Label.Items>
         </WPF:Label>
         <WPF:Tube Height="16" Canvas.Left="1025" Canvas.Top="319" Width="127" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
@@ -3967,7 +3967,7 @@
         <Controls:ValueBlock Canvas.Left="884" Canvas.Top="237" Caption="TE E482_2" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_E482_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="1414" Canvas.Top="223" Caption="TE E481_2" Unit="ºC" ValueColor="#FFF57E1A" Width="64" Height="36" Value="{Binding PD.TE_E481_Distil, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="#FFB0F3B0" RenderTransformOrigin="0.558,0.275"/>
 
-        <WPF:Label  Height="26" Content=""  Canvas.Left="770" Canvas.Top="478" Width="74"  Design="Arrowed" DefaultText="{Binding PD.NC_K480A_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" >
+        <WPF:Label  Height="26" Content=""  Canvas.Left="770" Canvas.Top="478" Width="74"  Design="Arrowed" DefaultText="{Binding PD.NC_K480A_Cur_FRQ ,StringFormat=\{0:0\}Гц}" ArrowWidth="5" >
             <WPF:Label.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>

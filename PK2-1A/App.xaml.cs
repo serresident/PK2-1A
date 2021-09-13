@@ -133,6 +133,9 @@ namespace belofor
             ViewModelLocationProvider.Register<ArchivView>(() => Container.Resolve<ArchivViewModel>());
             ViewModelLocationProvider.Register<ArchivToolView>(() => Container.Resolve<ArchivViewModel>());
 
+            ViewModelLocationProvider.Register<SettingView>(() => Container.Resolve<SettingViewModel>());
+            ViewModelLocationProvider.Register<SettingToolView>(() => Container.Resolve<SettingViewModel>());
+
             //ViewModelLocationProvider.Register<JournalView>(() => Container.Resolve<JournalViewModel>());
             //ViewModelLocationProvider.Register<JournalToolView>(() => Container.Resolve<JournalViewModel>());
 

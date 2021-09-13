@@ -69,27 +69,27 @@ namespace belofor.ViewModels
 		// Token: 0x06000079 RID: 121 RVA: 0x00003944 File Offset: 0x00001B44
 		public void OnLoading()
 		{
-			Task.Factory.StartNew(delegate ()
-			{
-				this.IsBusy = true;
-				List<JournalItem> _journalItems = new List<JournalItem>();
-				foreach (PropertyInfo prop in from p in this.PD.GetType().GetProperties()
-											  where p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))
-											  select p)
-				{
-					JournalAttribute[] attr = (JournalAttribute[])prop.GetCustomAttributes(typeof(JournalAttribute), false);
-					string message = attr[0].Message.Substring(0, attr[0].Message.IndexOf(">") - 1);
-					_journalItems.Add(new JournalItem
-					{
-						Message = message,
-						Property = prop.Name
-					});
-				}
-				this.JournalItems = new ObservableRangeCollection<JournalItem>(_journalItems);
-			}).ContinueWith(delegate (Task x)
-			{
-				this.IsBusy = false;
-			}, TaskScheduler.FromCurrentSynchronizationContext());
+			//Task.Factory.StartNew(delegate ()
+			//{
+			//	this.IsBusy = true;
+			//	List<JournalItem> _journalItems = new List<JournalItem>();
+			//	foreach (PropertyInfo prop in from p in this.PD.GetType().GetProperties()
+			//								  where p.PropertyType.IsPrimitive && Attribute.IsDefined(p, typeof(JournalAttribute))
+			//								  select p)
+			//	{
+			//		JournalAttribute[] attr = (JournalAttribute[])prop.GetCustomAttributes(typeof(JournalAttribute), false);
+			//		string message = attr[0].Message.Substring(0, attr[0].Message.IndexOf(">") - 1);
+			//		_journalItems.Add(new JournalItem
+			//		{
+			//			Message = message,
+			//			Property = prop.Name
+			//		});
+			//	}
+			//	this.JournalItems = new ObservableRangeCollection<JournalItem>(_journalItems);
+			//}).ContinueWith(delegate (Task x)
+			//{
+			//	this.IsBusy = false;
+			//}, TaskScheduler.FromCurrentSynchronizationContext());
 		}
 
 		// Token: 0x04000038 RID: 56

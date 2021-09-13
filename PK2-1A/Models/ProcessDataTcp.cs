@@ -471,35 +471,52 @@ public bool NC_K480A_mode { get { return getValue<bool>(); } set { setValue<bool
 public bool ZagrDietilAminK480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=214
 public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad215
 
+        public bool Intercept_plc1 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad216
+        public bool Intercept_plc2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad217
+
+
         #endregion
 
         // Inputs Registers
         #region Inputs Registers
 
         //line1_1       
-        //owen mv 8as ad=3      
+        //owen mv 8as ad=3
+        [ArchivAttribute("Вес мерника WE_D470")]
         public Single WE_D470 { get { return getValue<Single>(); } }// ad= 1 _ch 1
+        [ArchivAttribute("уровень LT_R137")]
         public Single LT_R137 { get { return getValue<Single>(); } }// ad= 3 _ch 2
+        [ArchivAttribute("Вес мерника WE_R422")]
         public Single WE_R422 { get { return getValue<Single>(); } }// ad= 5 _ch 3
+        [ArchivAttribute("уровень LT_R461")]
         public Single LT_R461 { get { return getValue<Single>(); } }// ad= 7 _ch 4
+        [ArchivAttribute("температура TE_K610")]
         public Single TE_K610 { get { return getValue<Single>(); } }// ad= 9 _ch 5
         public Single PIT_P603 { get { return getValue<Single>(); } }// ad= 11 _ch 6
         public Single PIT_P521 { get { return getValue<Single>(); } }// ad= 13 _ch 7
         public Single PIT_P631A { get { return getValue<Single>(); } }// ad= 15 _ch 8
-                                                                      //owen mv 8as ad=4      
+        [ArchivAttribute("pH QE_K610")]                                        //owen mv 8as ad=4      
         public Single QE_K610 { get { return getValue<Single>(); } }// ad= 17 _ch 1
         public Single GE_pHV_K610 { get { return getValue<Single>(); } }// ad= 19 _ch 2
+        [ArchivAttribute("температура TE_482")]
         public Single TE_482 { get { return getValue<Single>(); } }// ad= 21 _ch 6
+        [ArchivAttribute("температура TE_482_2")]
         public Single TE_E481_Distil { get { return getValue<Single>(); } }// ad= 23 _ch 7
         public Single PIT_P461 { get { return getValue<Single>(); } }// ad= 25 _ch 8
                                                                      //line2_1       
-                                                                     // owen  8as ad 2      
+        [ArchivAttribute("pH QIY_K480A")]                                         // owen  8as ad 2      
         public Single QIY_K480A { get { return getValue<Single>(); } }// ad= 27 _ch 1
+        [ArchivAttribute("pH QIY_K480B")]
         public Single QIY_K480B { get { return getValue<Single>(); } }// ad= 29 _ch 2
+        [ArchivAttribute("pH QIY_K460A")]
         public Single QIY_K460A { get { return getValue<Single>(); } }// ad= 31 _ch 3
+        [ArchivAttribute("pH QIY_K460B")]
         public Single QIY_K460B { get { return getValue<Single>(); } }// ad= 33 _ch 4
+        [ArchivAttribute("TE_K480A_2")]
         public Single TE_K480A_2 { get { return getValue<Single>(); } }// ad= 35 _ch 5
+        [ArchivAttribute("TE_K480B_2")]
         public Single TE_K480B_2 { get { return getValue<Single>(); } }// ad= 37 _ch 6
+        [ArchivAttribute("TE_E482_2")]
         public Single TE_E482_2 { get { return getValue<Single>(); } }// ad= 39 _ch 7
                                                                     // owen  8as ad 3      
         public Single PT_480A { get { return getValue<Single>(); } }// ad= 41 _ch 1
@@ -510,15 +527,16 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single WE_R201B { get { return getValue<Single>(); } }// ad= 51 _ch 6
         public Single WE_R404A { get { return getValue<Single>(); } }// ad= 53 _ch 7
         public Single WE_R403 { get { return getValue<Single>(); } }// ad= 55 _ch 8
-                                                                    // owen  8as ad 4      
+        [ArchivAttribute("LE_R481")]                                       // owen  8as ad 4      
         public Single LE_R481 { get { return getValue<Single>(); } }// ad= 57 _ch 1
         public Single WE_D460A { get { return getValue<Single>(); } }// ad= 59 _ch 2
         public Single TE_K460A { get { return getValue<Single>(); } }// ad= 61 _ch 3
         public Single TE_K460B { get { return getValue<Single>(); } }// ad= 63 _ch 4
         public Single FQI_MEK_K480B_MOMENT { get { return getValue<Single>(); } }// ad= 65 _ch 5
-                                                                                 //mv1108as ad=10      
+        [ArchivAttribute("QE_K450A")]                                            //mv1108as ad=10      
         public Single QE_K450A { get { return getValue<Single>(); } }// ad= 67 _ch 1
         public Single TE_K450A { get { return getValue<Single>(); } }// ad= 69 _ch 2
+        [ArchivAttribute("WE_K450A")]
         public Single WE_K450A { get { return getValue<Single>(); } }// ad= 71 _ch 3
 
         public UInt16 FQ_R521_in_count { get { return getValue<UInt16>(); } } //ad= 73 fast di1
@@ -531,19 +549,30 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
 
         public Single P726_Cur_I{ get { return getValue<Single>(); } } //ad=81
         public Single P726_Cur_FRQ{ get { return getValue<Single>(); } }//ad83
+         
         [ArchivAttribute("Вес мерника WE_D470A")]
         public Single WE_D470A_rs { get { return getValue<Single>(); } } //ad=85
+
+        [ArchivAttribute("Вес мерника WE_R201B")]
         public Single WE_R201B_rs { get { return getValue<Single>(); } } //ad=87
+
+        [ArchivAttribute("Вес мерника WE_R404A")]
         public Single WE_R404A_rs { get { return getValue<Single>(); } } //ad=89
+
+        [ArchivAttribute("Вес мерника WE_R402B")]
         public Single WE_R402B_rs { get { return getValue<Single>(); } } //ad=91
+
+        [ArchivAttribute("Вес мерника WE_R403")]
         public Single WE_R403_rs { get { return getValue<Single>(); } } //ad=93
 
-
+        [ArchivAttribute("счетчик FQ_R521")]
         public Single FQ_R521_in_count_{ get { return getValue<Single>(); } } //ad= 95
+        [ArchivAttribute("счетчик FQ_K480")]
         public Single FQ_K480_in_count_{ get { return getValue<Single>(); } } //ad=97
+        [ArchivAttribute("счетчик FQ_K460")]
         public Single FQ_K460_in_count_{ get { return getValue<Single>(); } } //ad=99
         public Single FQ_K450A_MEK_in_count_{ get { return getValue<Single>(); } } //ad=101
-
+        [ArchivAttribute("Давление насоса P_726")]
         public Single P_P726{ get { return getValue<Single>(); } }//ad=103
         public Single P726_OUT_Frq{ get { return getValue<Single>(); } } //ad=105
 
@@ -560,9 +589,9 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single ZagrMorfolinK480_Doza { get { return getValue<Single>(); } }  //ad117
 
         public Single TE_E481 { get { return getValue<Single>(); } }//ad119 //трм 202 ad24 1k
-
+        [ArchivAttribute("счетчик TE_K480A_1")]
         public Single TE_K480A_1 { get { return getValue<Single>(); } }//121 //трм 202 ad80 1k
-        
+        [ArchivAttribute("счетчик TE_K480B_1")]
         public Single TE_K480B_1 { get { return getValue<Single>(); } }//ad123  //трм 202 ad80 2k
 
         public Single ZagrDietilK480_Doza { get { return getValue<Single>(); } }  //ad125
@@ -574,6 +603,9 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single NC_K480A_OUT_Frq { get { return getValue<Single>(); } } //ad=130
         public Single NC_K480A_Cur_FRQ { get { return getValue<Single>(); } }//ad=132
 
+        //public Single  { get { return getValue<Single>(); } }
+        public Single ZagrDietilAminK480_Doza  { get { return getValue<Single>(); } }//ad134
+        
         public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последни
         } //ad=82 
 

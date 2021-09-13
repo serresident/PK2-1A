@@ -16,7 +16,7 @@
     Background="Wheat"
     ResizeMode="NoResize"
     WindowBackground="LightGray"
-    mc:Ignorable="d" Width="240" Height="310">
+    mc:Ignorable="d" Width="240" Height="400">
 
     <xctk:ChildWindow.Resources>
         <Style x:Key="FocusVisual">
@@ -103,7 +103,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-       
+            <RowDefinition Height="Auto" />
+
 
 
         </Grid.RowDefinitions>
@@ -307,7 +308,42 @@
                 </Behaviors:Interaction.Behaviors>
             </controls:NumPadUpDown>
 
-
+            <TextBlock
+            Grid.Row="6"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="20"
+            FontWeight="Bold"
+            Foreground="Blue"
+            Text="% откр" Margin="7,0,0,0" />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="#FF646464"
+                Text="{Binding PD.ZagrDietilAminK480_Doza, FallbackValue=???, StringFormat=\{0:0.0##\}}" Margin="30,1,0,0" />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="Blue"
+                Text="вес. нагр" Margin="13,30,0,0" Grid.RowSpan="2" />
+            <TextBlock
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="Blue"
+                Text="Доза2" Margin="16,35,0,0" Grid.RowSpan="2" />
 
             <Expander  Grid.ColumnSpan="2"   Grid.Row="7" Header="Дополнительные параметры">
 
@@ -392,47 +428,12 @@
                  </Grid>
                 </ScrollViewer>
         </Expander>
-            <TextBlock
-            Grid.Row="6"
-            Grid.Column="1"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            FontSize="20"
-            FontWeight="Bold"
-            Foreground="Blue"
-            Text="% откр" Margin="7,0,0,0" />
-            <TextBlock
-                Grid.Row="2"
-                Grid.Column="1"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF646464"
-                Text="{Binding PD.ZagrDietilAminK480_Doza, FallbackValue=???, StringFormat=\{0:0.0##\}}" Margin="30,1,0,0" />
-            <TextBlock
-                Grid.Row="2"
-                Grid.Column="1"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                FontSize="20"
-                FontWeight="Bold"
-                Foreground="Blue"
-                Text="вес. нагр" Margin="13,30,0,0" Grid.RowSpan="2" />
-            <TextBlock
-                Grid.Row="4"
-                Grid.Column="1"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                FontSize="20"
-                FontWeight="Bold"
-                Foreground="Blue"
-                Text="Доза2" Margin="16,35,0,0" Grid.RowSpan="2" />
+          
 
 
         </Grid>
         <DockPanel
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.ColumnSpan="3"
             Margin="0,10"
             Background="Goldenrod"
@@ -487,5 +488,47 @@
                 </xctk:IconButton.Icon>
             </xctk:IconButton>
         </DockPanel>
+        <WPF:Label Grid.Row="3" DefaultText="Работает" Design="Simple"  ItemDeterminationValue="{Binding PD.ZagrDietilAminK480_status}" HorizontalAlignment="Center" Height="40"  Width="200" Margin="5,5,0,5" LightEmittingUpToState="3" CornerRadius="0" >
+
+            <WPF:Label.Style>
+                <Style TargetType="WPF:Label">
+                    <Setter Property="Foreground" Value="Blue"></Setter>
+                    <Style.Triggers>
+                        <Trigger Property="ItemDeterminationValue" Value="0">
+                            <Setter Property="Foreground" Value="Yellow" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </WPF:Label.Style>
+
+            <!--<WPF:Label.States>
+
+                <WPF:StatesStandard Critical="{Binding ZagrDietilAminK480_status}" Active="{Binding PlcStatus}"/>
+            </WPF:Label.States>-->
+
+            <WPF:Label.Items>
+               
+                <WPF:ValueTextItem Text="ожидание" Value="0"/>
+                <WPF:ValueTextItem Text="идет загрузка 1й дозы" Value="1"/>
+                <WPF:ValueTextItem Text="Доза1 заг-на. закр. кл-н" Value="2"/>
+                <WPF:ValueTextItem Text="Доза1 заг-на ож-е нагрева" Value="3"/>
+                <WPF:ValueTextItem Text="идет заг-ка Дозы2 " Value="4"/>
+                <WPF:ValueTextItem Text="призакртыие клапана" Value="5"/>
+                <WPF:ValueTextItem Text="оп-я прервана вручную" Value="88"/>
+                <WPF:ValueTextItem Text="загружено" Value="99"/>
+            </WPF:Label.Items>
+
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red" />
+                    </WPF:ControlColors.State1Coloring>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="#FFACE0AC" />
+                    </WPF:ControlColors.State4Coloring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+
+        </WPF:Label>
     </Grid>
 </xctk:ChildWindow>
