@@ -112,7 +112,7 @@ namespace belofor.Services
                         const string bucket_serias = "belofor";
                         const string org = "belofor";
 
-                        var client = InfluxDBClientFactory.Create("http://localhost:8086", token.ToCharArray());
+                        var client = InfluxDBClientFactory.Create("http://192.168.120.143:8086", token.ToCharArray());
                          string data_journal = "Log_Action,title=belofor_hmi log_mnemonic="+"\""+JsonConvert.SerializeObject(values)+"\"";
                         string replace = JsonConvert.SerializeObject(values).Replace("{", "")
                              .Replace("\"", "")

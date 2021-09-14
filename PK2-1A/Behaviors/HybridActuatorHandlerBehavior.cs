@@ -15,7 +15,7 @@ using belofor.Controls;
 
 namespace belofor.Behaviors
 {
-    public class AnalogActuatorHandlerBehavior : Behavior<ControlBase>
+    public class HybridActuatorHandlerBehavior : Behavior<ControlBase>
     {
         private OptionsBehavior handleControlBehavior;
 
@@ -23,14 +23,14 @@ namespace belofor.Behaviors
         private Border manualActivateBorder;
         private TextBlock manualTextBlock;
 
-        public static readonly DependencyProperty IsManProperty = DependencyProperty.Register("IsMan", typeof(bool), typeof(AnalogActuatorHandlerBehavior), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((AnalogActuatorHandlerBehavior)d).Update()));
+        public static readonly DependencyProperty IsManProperty = DependencyProperty.Register("IsMan", typeof(bool), typeof(HybridActuatorHandlerBehavior), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((HybridActuatorHandlerBehavior)d).Update()));
         public bool IsMan
         {
             get { return (bool)GetValue(IsManProperty); }
             set { SetValue(IsManProperty, value); }
         }
 
-        public static readonly DependencyProperty OutProperty = DependencyProperty.Register("Out", typeof(Single), typeof(AnalogActuatorHandlerBehavior), new FrameworkPropertyMetadata(default(Single), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        public static readonly DependencyProperty OutProperty = DependencyProperty.Register("Out", typeof(Single), typeof(HybridActuatorHandlerBehavior), new FrameworkPropertyMetadata(default(Single), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         public Single Out
         {
             get { return (Single)GetValue(OutProperty); }
@@ -85,6 +85,27 @@ namespace belofor.Behaviors
             set
             {
                 vspacing = value;
+            }
+        }
+
+
+        private string checkedLabel = "ОТКР";
+        public string CheckedLabel
+        {
+            get { return checkedLabel; }
+            set
+            {
+                checkedLabel = value;
+            }
+        }
+
+        private string uncheckedLabel = "ЗАКР";
+        public string UncheckedLabel
+        {
+            get { return uncheckedLabel; }
+            set
+            {
+                uncheckedLabel = value;
             }
         }
 
@@ -151,22 +172,22 @@ namespace belofor.Behaviors
                 binding.Path = new PropertyPath("IsMan");
                 BindingOperations.SetBinding(popupCheckBox, CheckBox.IsCheckedProperty, binding);
 
-                //Xceed.Wpf.Toolkit.ToggleSwitch popupToggleSwitch = new Xceed.Wpf.Toolkit.ToggleSwitch();
-                //popupToggleSwitch.Width = 80;
-                //popupToggleSwitch.Height = 25;
-                //popupToggleSwitch.ThumbHeight = 25;
-                //popupToggleSwitch.ThumbWidth = 24;
-                //popupToggleSwitch.Margin = new Thickness(0, 5, 0, 0);
-                //popupToggleSwitch.CheckedContent = CheckedLabel;
-                //popupToggleSwitch.UncheckedContent = UncheckedLabel;
-                //popupToggleSwitch.CheckedBackground = Brushes.Lime;
-                //popupToggleSwitch.UncheckedBackground = Brushes.LightPink;
+                Xceed.Wpf.Toolkit.ToggleSwitch popupToggleSwitch = new Xceed.Wpf.Toolkit.ToggleSwitch();
+                popupToggleSwitch.Width = 80;
+                popupToggleSwitch.Height = 25;
+                popupToggleSwitch.ThumbHeight = 25;
+                popupToggleSwitch.ThumbWidth = 24;
+                popupToggleSwitch.Margin = new Thickness(0, 5, 0, 0);
+                popupToggleSwitch.CheckedContent = CheckedLabel;
+                popupToggleSwitch.UncheckedContent = UncheckedLabel;
+                popupToggleSwitch.CheckedBackground = Brushes.Lime;
+                popupToggleSwitch.UncheckedBackground = Brushes.LightPink;
 
-                //Binding binding2 = new Binding();
-                //binding2.Source = this;
-                //binding2.Path = new PropertyPath("Out");
-                //binding2.Mode = BindingMode.TwoWay;
-                //popupToggleSwitch.SetBinding(Xceed.Wpf.Toolkit.ToggleSwitch.IsCheckedProperty, binding2);
+                Binding binding3 = new Binding();
+                binding3.Source = this;
+                binding3.Path = new PropertyPath("Out");
+                binding3.Mode = BindingMode.TwoWay;
+                popupToggleSwitch.SetBinding(Xceed.Wpf.Toolkit.ToggleSwitch.IsCheckedProperty, binding3);
 
                 StackPanel stackPanel = new StackPanel();
                 stackPanel.Orientation = Orientation.Horizontal;
@@ -218,8 +239,9 @@ namespace belofor.Behaviors
                 layout.Children.Add(popupCloseButton);
                 layout.Children.Add(popupCheckBox);
                 layout.Children.Add(stackPanel);
-
+                layout.Children.Add(popupToggleSwitch);
                 layout.Children.Add(settings);
+            //    layout.Children.Add(stackPanel);
 
                 popupBorder.Child = layout;
 

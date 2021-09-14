@@ -56,7 +56,7 @@ namespace belofor.Controls
 
         static ValueBlock()
         {
-            ForegroundProperty.OverrideMetadata(typeof(ValueBlock), new FrameworkPropertyMetadata(Brushes.Gray, OnForegroundChanged));
+            ForegroundProperty.OverrideMetadata(typeof(ValueBlock), new FrameworkPropertyMetadata(Brushes.White, OnForegroundChanged));
             WidthProperty.OverrideMetadata(typeof(ValueBlock), new FrameworkPropertyMetadata((double)100));
             HeightProperty.OverrideMetadata(typeof(ValueBlock), new FrameworkPropertyMetadata((double)50));
 
@@ -71,9 +71,9 @@ namespace belofor.Controls
                                                                                   BindingFlags.Instance);
             var v = mi.Invoke(e, null);
 
-            if ((e.NewValue != Brushes.Gray) && (v.ToString() == "AddChild"))
+            if ((e.NewValue != Brushes.White) && (v.ToString() == "AddChild"))
             {
-                ((ValueBlock)d).Foreground = Brushes.Gray;
+                ((ValueBlock)d).Foreground = Brushes.White;
             }
             else
             {

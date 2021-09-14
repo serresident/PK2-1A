@@ -500,7 +500,7 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single GE_pHV_K610 { get { return getValue<Single>(); } }// ad= 19 _ch 2
         [ArchivAttribute("температура TE_482")]
         public Single TE_482 { get { return getValue<Single>(); } }// ad= 21 _ch 6
-        [ArchivAttribute("температура TE_482_2")]
+        [ArchivAttribute("температура TE_481_2")]
         public Single TE_E481_Distil { get { return getValue<Single>(); } }// ad= 23 _ch 7
         public Single PIT_P461 { get { return getValue<Single>(); } }// ad= 25 _ch 8
                                                                      //line2_1       
@@ -605,8 +605,10 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
 
         //public Single  { get { return getValue<Single>(); } }
         public Single ZagrDietilAminK480_Doza  { get { return getValue<Single>(); } }//ad134
-        
-        public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последни
+        public Single WE_D470A_analog { get { return getValue<Single>(); } } //136
+        public UInt16 zap3 { get { return getValue<UInt16>(); } }
+
+        public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последним ,служит для определения успешного чтения регистров
         } //ad=82 
 
 #endregion
@@ -833,6 +835,7 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public UInt16 ZagrDietilAminK480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//281
         public Single ZagrDietilAmin_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//283
         public Single ZagrDietilAminK480_Tnagr { get { return getValue<Single>(); } set { setValue<Single>(value); } }//285
+        public Single InceptControl { get { return getValue<Single>(); } set { setValue<Single>(value); } }//287
         #endregion
     }
 
