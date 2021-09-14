@@ -1354,7 +1354,7 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
         <!--<TextBlock  Canvas.Left="566" Canvas.Top="455"  Text="{c:Binding '( PD.NS_P521_sost) ?  \'Плк работает\' : \'Программа ПЛК не отвечает\''}"  TextWrapping="Wrap" />-->
-        <WPF:Label  Height="28" Content="" Canvas.Left="435" Canvas.Top="426" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
+        <WPF:Label  Height="28" Content="" Canvas.Left="419" Canvas.Top="419" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -1869,7 +1869,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock Canvas.Left="515" TextWrapping="Wrap" Text="К450A" Canvas.Top="254" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="512" TextWrapping="Wrap" Text="К450A" Canvas.Top="255" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <Controls:ValueBlock Canvas.Left="573" Canvas.Top="256" Caption="WE K450A" Unit="кг" ValueColor="#FFCA75FB" Width="77" Height="40" Value="{Binding PD.WE_K450A, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
         <WPF:Arrow Height="12" Canvas.Left="667" RotateAngle="90" Canvas.Top="43" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
@@ -3773,7 +3773,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <TextBlock Canvas.Left="1310" TextWrapping="Wrap" Text="E481" Canvas.Top="212" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="1307" TextWrapping="Wrap" Text="E481" Canvas.Top="212" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Arrow Height="12" Canvas.Left="1252" RotateAngle="180" Canvas.Top="251" Width="12" RenderTransformOrigin="0.5,0.5" >
             <WPF:Arrow.RenderTransform>
                 <TransformGroup>
@@ -3868,7 +3868,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <TextBlock Canvas.Left="781" TextWrapping="Wrap" Text="E482" Canvas.Top="222" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="776" TextWrapping="Wrap" Text="E482" Canvas.Top="222" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Arrow Height="12" Canvas.Left="722" RotateAngle="180" Canvas.Top="261" Width="12" RenderTransformOrigin="0.5,0.5" >
             <WPF:Arrow.RenderTransform>
                 <TransformGroup>
