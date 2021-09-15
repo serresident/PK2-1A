@@ -37,6 +37,13 @@ namespace belofor.Behaviors
             set { SetValue(OutProperty, value); }
         }
 
+        public static readonly DependencyProperty DoutProperty = DependencyProperty.Register("Dout", typeof(bool), typeof(HybridActuatorHandlerBehavior), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((HybridActuatorHandlerBehavior)d).Update()));
+        public bool Dout
+        {
+            get { return (bool)GetValue(DoutProperty); }
+            set { SetValue(DoutProperty, value); }
+        }
+
         private System.Windows.Controls.Primitives.PlacementMode placementMode = System.Windows.Controls.Primitives.PlacementMode.Bottom;
         public System.Windows.Controls.Primitives.PlacementMode PlacementMode
         {
@@ -185,7 +192,7 @@ namespace belofor.Behaviors
 
                 Binding binding3 = new Binding();
                 binding3.Source = this;
-                binding3.Path = new PropertyPath("Out");
+                binding3.Path = new PropertyPath("Dout");
                 binding3.Mode = BindingMode.TwoWay;
                 popupToggleSwitch.SetBinding(Xceed.Wpf.Toolkit.ToggleSwitch.IsCheckedProperty, binding3);
 
