@@ -246,6 +246,8 @@
     <Compile Include="Attributes\ArchivAttribute.cs" />
     <Compile Include="Attributes\DeviderAttribute.cs" />
     <Compile Include="Attributes\JournalAttribute.cs" />
+    <Compile Include="Behaviors\Valve_status.cs" />
+    <Compile Include="Behaviors\Digital_OnOFF_status.cs" />
     <Compile Include="Behaviors\HybridActuatorHandlerBehavior.cs" />
     <Compile Include="Behaviors\AnalogActuatorHandlerBehavior.cs" />
     <Compile Include="Behaviors\DigitalActuatorHandlerBehavior_switcher.cs" />

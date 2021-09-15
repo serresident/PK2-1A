@@ -39,7 +39,7 @@ namespace belofor.Controls
             Enter,
             Five,
             Four,
-            //Fraction,
+            Fraction,
             //MAdd,
             //MC,
             //MR,

@@ -1789,7 +1789,7 @@
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
                 <behaviors:AnalogActuatorHandlerBehavior Units="Гц" HSpacing="0" VSpacing="-10"  MaxValue="50"  IsMan="{Binding PD.NC_K450A_mode}" Out="{Binding PD.NC_K450A_ain_man}"/>
-
+                <behaviors:HybridActuatorHandlerBehavior Dout="{Binding PD.NC_K450A_control_man, Mode=TwoWay}"   Units="Гц" HSpacing="20" VSpacing="-10"  MaxValue="50"  IsMan="{Binding PD.NC_K450A_mode}" Out="{Binding PD.NC_P412_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
@@ -2807,11 +2807,12 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <WPF:Valve Height="40" Canvas.Left="1464" RotateAngle="-90" Canvas.Top="551" Width="30" Actor="Diaphram1">
+        <WPF:Valve Height="40" Canvas.Left="1464" RotateAngle="-90" Canvas.Top="551" Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*">
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480B_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>-->
-                <behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.TVK480B_SQH}" OffSignal="{Binding PD.TVK480B_SQL}" />
-                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480B_mode}" Out="{Binding PD.TVK480B_ain_man}"/>
+                <!--<behaviors:DigitalActuatorStatusBehavior OnSignal="{Binding PD.TVK480B_SQH}" OffSignal="{Binding PD.TVK480B_SQL}" />-->
+                <behaviors:Valve_status HSpacing="16" VSpacing="18" HSpacing1="16" VSpacing1="2" isOpenValve="{Binding PD.TVK480B_SQH,Mode=OneWay}" isCloseValve="{Binding PD.TVK480B_SQL ,Mode=OneWay}" />
+                <!--<behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480B_mode}" Out="{Binding PD.TVK480B_ain_man}"/>-->
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
         <TextBlock Canvas.Left="1478" TextWrapping="Wrap" Text="TV K480B" Canvas.Top="563" RenderTransformOrigin="0.5,0.5" >
@@ -2868,17 +2869,20 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Arrow Height="12" Canvas.Left="1485" RotateAngle="-90" Canvas.Top="594" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12"    Canvas.Left="1485" RotateAngle="-90" Canvas.Top="594"  Width="12" RenderTransformOrigin="0.5,0.5">
+
+            
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
                         <WPF:ColoringColor Color1="#FFE4687E" />
+                        
                     </WPF:ControlColors.DefaultColoring>
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
         <TextBlock Canvas.Left="1482" TextWrapping="Wrap" Text="пар" Canvas.Top="602" />
-        <WPF:Arrow Height="12" Canvas.Left="1549" RotateAngle="90" Canvas.Top="595" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12" Canvas.Left="1549"  RotateAngle="90" Canvas.Top="595" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -3662,7 +3666,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <WPF:Arrow Height="12" Canvas.Left="303" RotateAngle="90" Canvas.Top="263" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12" Canvas.Left="303" RotateAngle="90" Canvas.Top="263" Width="12" >
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
