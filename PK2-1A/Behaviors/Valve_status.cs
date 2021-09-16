@@ -177,10 +177,11 @@ namespace belofor.Behaviors
                 //open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
                 open.Width = 18;
                 open.Height = 18;
-
+                open .ToolTip = "Состояние концевика клапана \n на ОТКРЫТИЕ\n ( ЗЕЛЕНЫЙ = ЕСТЬ сигнал/СЕРЫЙ= НЕТ сигнала)";
+                
                 close = new Arrow();
                 close.RotateAngle = RotareAnggeClose;
-
+                close.ToolTip = "Состояние концевика клапана \n на ЗАКРЫТИЕ\n ( КРАСНЫЙ = ЕСТЬ сигнал/СЕРЫЙ= НЕТ сигнала)";
                 close.Colors = new ControlColors();
                 //open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
                 close.Width = 18;
