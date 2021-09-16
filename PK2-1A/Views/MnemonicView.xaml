@@ -70,7 +70,9 @@
 
     <Canvas Background="#FFF3E5CC" >
 
-        <Border Background="WhiteSmoke"  BorderThickness="2" BorderBrush="DarkGray" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>
+        <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
+
+        <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
 
         <WPF:Tube Height="17" Canvas.Left="457" Canvas.Top="170" Width="29" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
@@ -1288,7 +1290,7 @@
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
-                <behaviors:HybridActuatorHandlerBehavior Dout="{Binding PD.NC_M610_control_man, Mode=TwoWay}"   Units="Гц" HSpacing="20" VSpacing="-10"  MaxValue="50"  IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_ain_man}"/>
+                <behaviors:HybridActuatorHandlerBehavior CheckedLabel="ВЫКЛ" UncheckedLabel="ВКЛ" Dout="{Binding PD.NC_M610_control_man, Mode=TwoWay}"   Units="Гц" HSpacing="20" VSpacing="-10"  MaxValue="50"  IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_ain_man}"/>
 
             </Behaviors:Interaction.Behaviors>
             <WPF:Motor.Colors>
@@ -1311,15 +1313,6 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
         <!--<TextBlock  Canvas.Left="566" Canvas.Top="455"  Text="{c:Binding '( PD.NS_P521_sost) ?  \'Плк работает\' : \'Программа ПЛК не отвечает\''}"  TextWrapping="Wrap" />-->
-        <WPF:Label  Height="28" Content="" Canvas.Left="419" Canvas.Top="419" Width="74" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
-            <WPF:Label.Colors>
-                <WPF:ControlColors>
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Label.Colors>
-        </WPF:Label>
 
         <TextBlock Canvas.Left="291" TextWrapping="Wrap" Text="ph V k610" Canvas.Top="428" />
         <WPF:Tube Height="12" Canvas.Left="393" Canvas.Top="362" Width="23" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
@@ -1476,7 +1469,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <Controls:ValueBlock Canvas.Left="259" Canvas.Top="650" Caption="LT 461" Unit="%"  ValueColor="White" Foreground="#FF9AE2C9"  Width="77" Height="40" Value="{Binding PD.LT_R461, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock Canvas.Left="268" Canvas.Top="650" Caption="LT 461" Unit="%"  ValueColor="White" Foreground="#FF9AE2C9"  Width="65" Height="40" Value="{Binding PD.LT_R461, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <TextBlock Canvas.Left="287" TextWrapping="Wrap" Text="R461" Canvas.Top="691" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Frame HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="74" Width="41" 
             Design="SquareGlass" Foreground="White" BevelWidth="5" GlassEffectOffset="0.2" Canvas.Left="338" Canvas.Top="650" >
@@ -1929,16 +1922,16 @@
                 </WPF:ControlColors>
             </WPF:Fan.Colors>
             <WPF:Fan.States>
-                <WPF:StatesBitmask State4Bitmask="1" Value="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1}" />
+                <WPF:StatesBitmask State4Bitmask="1" Value="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost}" />
             </WPF:Fan.States>
         </WPF:Fan>
         <WPF:Motor Height="30" Canvas.Left="788" Canvas.Top="415" Width="42" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1}" />
+                <WPF:StatesStandard Active="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost }" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
-                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
+                <behaviors:AnalogActuatorHandlerBehavior VSpacing="-10"  Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
 
             </Behaviors:Interaction.Behaviors>
             <WPF:Motor.Colors>
@@ -2355,15 +2348,6 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <TextBlock Canvas.Left="1427" TextWrapping="Wrap" Text="FV K460A" Canvas.Top="807" />
-        <WPF:Tube  Design="Vertical" Height="8" Canvas.Left="616" Canvas.Top="463" Width="474" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
-            <WPF:Tube.Colors>
-                <WPF:ControlColors >
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="Gray" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Tube.Colors>
-        </WPF:Tube>
         <TextBlock Canvas.Left="1274" TextWrapping="Wrap" Text="K480B" Canvas.Top="636" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Tube Height="12" Canvas.Left="897" Canvas.Top="776" Width="38" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
@@ -2667,16 +2651,7 @@
             </WPF:Arrow.Colors>
         </WPF:Arrow>
         <TextBlock Canvas.Left="1002" TextWrapping="Wrap" Text="вода" Canvas.Top="716" />
-        <WPF:Arrow Height="12" Canvas.Left="1067" RotateAngle="-90" Canvas.Top="708" Width="12" RenderTransformOrigin="0.5,0.5" Content="behaviors:Valve_status">
-            <WPF:Arrow.Colors>
-                <WPF:ControlColors >
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="DarkGray" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Arrow.Colors>
-        </WPF:Arrow>
-        <TextBlock Canvas.Left="1052" TextWrapping="Wrap" Text="воздух" Canvas.Top="716" />
+        <TextBlock Canvas.Left="1052" TextWrapping="Wrap" Text="воздух" Canvas.Top="717" />
         <WPF:Valve Height="40" Canvas.Left="1010" Canvas.Top="550" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480A_3_mode}" Out="{Binding PD.VK480A_3_control_man}"/>
@@ -2920,7 +2895,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <TextBlock Canvas.Left="1541" TextWrapping="Wrap" Text="вода" Canvas.Top="716" />
+        <TextBlock Canvas.Left="1541" TextWrapping="Wrap" Text="вода" Canvas.Top="717" />
         <WPF:Arrow Height="12" Canvas.Left="1611" RotateAngle="-90" Canvas.Top="709" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
@@ -2930,7 +2905,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <TextBlock Canvas.Left="1592" TextWrapping="Wrap" Text="воздух" Canvas.Top="717" />
+        <TextBlock Canvas.Left="1597" TextWrapping="Wrap" Text="воздух" Canvas.Top="718" />
         <WPF:Valve Height="40" Canvas.Left="1552" Canvas.Top="550" Width="30" Actor="Piston"  RotateAngle="90" >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.VK480B_3_mode}" Out="{Binding PD.VK480B_3_control_man}"/>
@@ -3323,15 +3298,6 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <WPF:Tube  Design="Vertical" Height="8" Canvas.Left="1151" Canvas.Top="463" Width="474" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
-            <WPF:Tube.Colors>
-                <WPF:ControlColors >
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Color1="Gray" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Tube.Colors>
-        </WPF:Tube>
         <WPF:Tube Height="17" Canvas.Left="1398" Canvas.Top="447" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
@@ -3543,7 +3509,7 @@
             </Behaviors:Interaction.Behaviors>
         </Controls:NumPadUpDown>
 
-        <WPF:Label  Height="28" Content="" Canvas.Left="1318" Canvas.Top="474" Width="auto"  Design="Arrowed" ItemDeterminationValue="{c:Binding (PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" >
+        <WPF:Label  Height="28" Content="NC_K480B" FontWeight="Bold" Foreground="Black" Canvas.Left="1172" Canvas.Top="474" Width="auto"  Design="Arrowed" ItemDeterminationValue="{c:Binding (PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" >
             <WPF:Label.States>
                 <WPF:StatesStandard  Critical="{c:Binding (PD.NC_K480B_Cur_FRQ less 0)}"  Active="{c:Binding (PD.NC_K480B_Cur_FRQ &gt; 0)}"/>
             </WPF:Label.States>
@@ -3556,10 +3522,10 @@
                         <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ less) ? \'Green\':\'Green\''}" />-->
                     </WPF:ControlColors.DefaultColoring>
                     <WPF:ControlColors.State1Coloring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="Red" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="DarkGray"  />
                     </WPF:ControlColors.State1Coloring>
                     <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="#FFACE0AC" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="Green" />
                     </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3870,7 +3836,15 @@
         <Controls:ValueBlock Canvas.Left="884" Canvas.Top="237" Caption="TE E482_2" Unit="ºC"  ValueColor="White" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_E482_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock Canvas.Left="1414" Canvas.Top="223" Caption="TE E481_2" Unit="ºC"   ValueColor="White" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_E481_Distil, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
 
-        <WPF:Label  Height="28" Content=""  Canvas.Left="770" Canvas.Top="478" Width="74"  Design="Arrowed" DefaultText="{Binding PD.NC_K480A_Cur_FRQ, StringFormat=\{0:0\}Гц}" ArrowWidth="5"  >
+        <WPF:Label  Height="36" FontWeight="Bold" Content="NC_K480A"  Canvas.Left="604" Canvas.Top="475" Width="194"  Design="Arrowed" DefaultText="{Binding PD.NC_K480A_Cur_FRQ, StringFormat=\{0:0\}Гц}" ArrowWidth="5"  >
+            <WPF:Label.States>
+                <WPF:StatesStandard  Critical="{c:Binding (PD.NC_K480A_Cur_FRQ less 0)}"  Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt; 0)}"/>
+            </WPF:Label.States>
+            <WPF:Label.Items>
+                <WPF:ValueTextItem Text="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}"  Value="1"/>
+                <WPF:ValueTextItem  Text="Нет связи ПЧ /&#xA; сигнал менее 4мА" Value="0"/>
+            </WPF:Label.Items>
+
             <WPF:Label.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -3878,6 +3852,12 @@
 
                         <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.NC_K480A_Cur_FRQ less 0)  ? \'Red\' :  \'Green\' '}" />-->
                     </WPF:ControlColors.DefaultColoring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="DarkGray"  />
+                    </WPF:ControlColors.State1Coloring>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Green" />
+                    </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
@@ -3975,6 +3955,62 @@
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R402B"/><LineBreak/><Run/></TextBlock>
+        <WPF:Label  FontWeight="Bold"  Height="28" Content="NC_K610" Canvas.Left="348" Canvas.Top="412" Width="104" Design="Arrowed" DefaultText="{c:Binding '( PD.NC_M610_mode) ?  PD.NC_M610_ain_man : PD.NC_M610_ain_auto ', StringFormat=\{0\}Гц}" ArrowWidth="5">
+            <WPF:Label.States>
+                <WPF:StatesStandard    Active="{c:Binding (PD.NC_610M_Sost)}"/>
+            </WPF:Label.States>
+
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
+                    </WPF:ControlColors.DefaultColoring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightBlue"  />
+                    </WPF:ControlColors.State1Coloring>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Green" />
+                    </WPF:ControlColors.State4Coloring>
+
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
+        <WPF:Tube Height="15" Foreground="black" Canvas.Left="607" Canvas.Top="458" Width="414"  FlangeLayout="None">
+
+
+
+        </WPF:Tube>
+        <WPF:Tube Height="15" Canvas.Left="1145" Canvas.Top="459" Width="476" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+            <WPF:Tube.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="gray"/>
+                    </WPF:ControlColors.DefaultColoring>
+
+                </WPF:ControlColors>
+            </WPF:Tube.Colors>
+
+
+
+        </WPF:Tube>
+        <WPF:Arrow Height="12" Canvas.Left="1611" RotateAngle="-90" Canvas.Top="709" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="DarkGray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <WPF:Arrow Height="12" Canvas.Left="1068" RotateAngle="-90" Canvas.Top="708" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="DarkGray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
 
     </Canvas>
 

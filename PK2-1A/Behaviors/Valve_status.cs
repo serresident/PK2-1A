@@ -26,6 +26,9 @@ namespace belofor.Behaviors
         private TextBlock closeTextBlock;
         private Arrow open;
         private Arrow close;
+        private ColoringColor red = new ColoringColor() { Color1 = System.Windows.Media.Colors.Red };
+        private ColoringColor green = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
+        private ColoringColor darkSlateGray = new ColoringColor() { Color1 = System.Windows.Media.Colors.DarkSlateGray };
 
         public static readonly DependencyProperty isOpenValveProperty = DependencyProperty.Register("isOpenValve", typeof(bool), typeof(Valve_status), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits, (d, e) => ((Valve_status)d).Update()));
         public bool isOpenValve
@@ -154,7 +157,7 @@ namespace belofor.Behaviors
 
                 this.AssociatedObject.Cursor = Cursors.Hand;
 
-                
+
 
 
                 handleControlBehavior = new OptionsBehavior();
@@ -195,11 +198,11 @@ namespace belofor.Behaviors
                 var top1 = Canvas.GetTop(AssociatedObject);
                 Canvas.SetTop(close, top1 + VSpacing1);
 
-              
+
 
                 var canvas = (Canvas)(AssociatedObject.Parent);
 
-             
+
                 canvas.Children.Add(open);
                 canvas.Children.Add(close);
 
@@ -228,7 +231,7 @@ namespace belofor.Behaviors
         protected override void OnDetaching()
         {
 
-           // this.AssociatedObject.Click -= onClick;
+            // this.AssociatedObject.Click -= onClick;
 
             base.OnDetaching();
         }
@@ -241,39 +244,39 @@ namespace belofor.Behaviors
                 if (isOpenValve)
                 {
 
-                    open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
-                    
+                    open.Colors.DefaultColoring = green;
 
-
-                }
-                else
-                {
-                    
-
-                    open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.DarkSlateGray };
-                }    
-                
-
-
-
-                 if (isCloseValve)
-                {
-                    
-
-                    close.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Red };
-                   
 
 
                 }
                 else
                 {
 
-                    close.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.DarkSlateGray };
-                    
-                }
-                   
 
-              
+                    open.Colors.DefaultColoring = darkSlateGray;
+                }
+
+
+
+
+                if (isCloseValve)
+                {
+
+
+                    close.Colors.DefaultColoring = red;
+
+
+
+                }
+                else
+                {
+
+                    close.Colors.DefaultColoring = darkSlateGray;
+
+                }
+
+
+
             }
         }
 
