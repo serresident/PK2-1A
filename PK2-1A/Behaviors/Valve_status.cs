@@ -27,14 +27,14 @@ namespace belofor.Behaviors
         private Arrow open;
         private Arrow close;
 
-        public static readonly DependencyProperty isOpenValveProperty = DependencyProperty.Register("isOpenValve", typeof(bool), typeof(Valve_status), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((Valve_status)d).Update()));
+        public static readonly DependencyProperty isOpenValveProperty = DependencyProperty.Register("isOpenValve", typeof(bool), typeof(Valve_status), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits, (d, e) => ((Valve_status)d).Update()));
         public bool isOpenValve
         {
             get { return (bool)GetValue(isOpenValveProperty); }
             set { SetValue(isOpenValveProperty, value); }
         }
 
-        public static readonly DependencyProperty isCloseValveProperty = DependencyProperty.Register("isCloseValve", typeof(bool), typeof(Valve_status), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, (d, e) => ((Valve_status)d).Update()));
+        public static readonly DependencyProperty isCloseValveProperty = DependencyProperty.Register("isCloseValve", typeof(bool), typeof(Valve_status), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits, (d, e) => ((Valve_status)d).Update()));
         public bool isCloseValve
         {
             get { return (bool)GetValue(isCloseValveProperty); }
@@ -52,7 +52,7 @@ namespace belofor.Behaviors
         }
 
 
-        private int hspacing = -14; // сдвиг метки( А -Р) по горизонтали
+        private int hspacing = 18; // сдвиг метки( А -Р) по горизонтали
         public int HSpacing
         {
             get { return hspacing; }
@@ -62,7 +62,27 @@ namespace belofor.Behaviors
             }
         }
 
-        private int vspacing1 = 30; // сдвиг метки( А -Р) по вертикали
+
+        private int rotareAngleOpen = -90; // 
+        public int RotareAnggeOpen
+        {
+            get { return rotareAngleOpen; }
+            set
+            {
+                rotareAngleOpen = value;
+            }
+        }
+        private int rotareAngleClose = 90; // 
+        public int RotareAnggeClose
+        {
+            get { return rotareAngleClose; }
+            set
+            {
+                rotareAngleClose = value;
+            }
+        }
+
+        private int vspacing1 = 4; // сдвиг метки( А -Р) по вертикали
         public int VSpacing1
         {
             get { return vspacing1; }
@@ -76,7 +96,7 @@ namespace belofor.Behaviors
 
 
 
-        private int hspacing1 = -14; // сдвиг метки( А -Р) по горизонтали
+        private int hspacing1 = 18; // сдвиг метки( А -Р) по горизонтали
         public int HSpacing1
         {
             get { return hspacing1; }
@@ -86,7 +106,7 @@ namespace belofor.Behaviors
             }
         }
 
-        private int vspacing = -5; // сдвиг метки( А -Р) по вертикали
+        private int vspacing = 18; // сдвиг метки( А -Р) по вертикали
         public int VSpacing
         {
             get { return vspacing; }
@@ -148,20 +168,20 @@ namespace belofor.Behaviors
 
 
                 open = new Arrow();
-                open.RotateAngle = 270;
+                open.RotateAngle = RotareAnggeOpen;
 
                 open.Colors = new ControlColors();
                 //open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
-                open.Width = 20;
-                open.Height = 20;
+                open.Width = 18;
+                open.Height = 18;
 
                 close = new Arrow();
-                close.RotateAngle = 90;
+                close.RotateAngle = RotareAnggeClose;
 
                 close.Colors = new ControlColors();
                 //open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
-                close.Width = 20;
-                close.Height = 20;
+                close.Width = 18;
+                close.Height = 18;
 
 
 
@@ -224,11 +244,13 @@ namespace belofor.Behaviors
                     open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Green };
                     
 
+
                 }
                 else
                 {
-                
-                    open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Black };
+                    
+
+                    open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.DarkSlateGray };
                 }    
                 
 
@@ -236,9 +258,9 @@ namespace belofor.Behaviors
 
                  if (isCloseValve)
                 {
+                    
 
-
-                    open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Red };
+                    close.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Red };
                    
 
 
@@ -246,8 +268,8 @@ namespace belofor.Behaviors
                 else
                 {
 
-                    open.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.Black };
-
+                    close.Colors.DefaultColoring = new ColoringColor() { Color1 = System.Windows.Media.Colors.DarkSlateGray };
+                    
                 }
                    
 
