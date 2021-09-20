@@ -474,7 +474,11 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public bool Intercept_plc1 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad216
         public bool Intercept_plc2 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad217
 
+        public bool pHV_K610_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=218
 
+        public bool ResetCount_FV521 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+        public bool ResetCount_FV460 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+        public bool ResetCount_FV480 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
         #endregion
 
         // Inputs Registers
@@ -836,6 +840,9 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single ZagrDietilAmin_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//283
         public Single ZagrDietilAminK480_Tnagr { get { return getValue<Single>(); } set { setValue<Single>(value); } }//285
         public Single InceptControl { get { return getValue<Single>(); } set { setValue<Single>(value); } }//287
+        public Single pHV_K610_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=289
+        public Single pHV_K610_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=291
+
         #endregion
     }
 

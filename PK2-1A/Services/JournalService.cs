@@ -119,9 +119,9 @@ namespace belofor.Services
                          .Replace(":", "=")
                          .Replace("}", "");
                     string data_serias = "belofor,title=mnemonic_seria_10s ";
-                    using (var writeApi = client.GetWriteApi())
+                    var writeApi = client.GetWriteApiAsync();
                     {
-                      writeApi.WriteRecord(bucket_journal, org, WritePrecision.Ns, data_journal);
+                      writeApi.WriteRecordsAsync(bucket_journal, org, WritePrecision.Ns, data_journal);
 
                         //foreach (var item in values)
                         //{

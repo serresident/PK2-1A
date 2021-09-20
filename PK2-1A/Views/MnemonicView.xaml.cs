@@ -26,9 +26,6 @@ namespace belofor.Views
             InitializeComponent();
         }
 
-        private void Label_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
     }
 }

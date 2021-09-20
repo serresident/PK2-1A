@@ -119,18 +119,19 @@ namespace belofor.Services
                              .Replace(":", "=")
                              .Replace("}", "");
                         string data_serias = "belofor,title=mnemonic_seria_10s " ;
-                        using (var writeApi = client.GetWriteApi())
-                        {
+                        var writeApi = client.GetWriteApiAsync();
+                        
                          // writeApi.WriteRecord(bucket_journal, org, WritePrecision.Ns, data_journal);
                            
                             foreach (var item in values)
                             {
                                 string send= data_serias + item.Key + "=" + item.Value;
-                                writeApi.WriteRecord(bucket_serias, org, WritePrecision.Ns, send);
+                              
+                             writeApi.WriteRecordAsync(bucket_serias, org, WritePrecision.Ns, send);
                                 
                             }
 
-                        }
+                        
                         
 
                         values.Clear();
