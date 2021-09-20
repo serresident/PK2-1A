@@ -58,10 +58,16 @@
             </Setter>
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Control.FontFamily" Value="Tahoma"></Setter>
+            <Setter Property="Control.FontFamily" Value=""></Setter>
             <Setter Property="Control.FontSize" Value="11"></Setter>
             <Setter Property="Control.FontWeight" Value="Bold"></Setter>
             <Setter Property="Control.Padding" Value="5"></Setter>
+
+        </Style>
+
+        <Style TargetType="WPF:Valve">
+            <Setter Property="Control.ToolTip" Value="Зеленый= подается сигнал на открытие /n Красный= подается "></Setter>
+          
 
         </Style>
 
@@ -1013,8 +1019,8 @@
         <WPF:Tube Height="12" Canvas.Left="149" Canvas.Top="530" Width="33" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
             <WPF:Tube.Colors>
                 <WPF:ControlColors>
-                    
-                    </WPF:ControlColors>
+
+                </WPF:ControlColors>
             </WPF:Tube.Colors>
 
             <Behaviors:Interaction.Behaviors>
@@ -1069,7 +1075,7 @@
             </WPF:Arrow.Colors>
         </WPF:Arrow>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="189" Canvas.Top="313" Caption="PIT_P603" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="77" Height="40" Value="{Binding PD.PIT_P603, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="189" Canvas.Top="476" Caption="PIT_P631A" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="77" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="189" Canvas.Top="476" Caption="PIT_P631A" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="82" Height="40" Value="{Binding PD.PIT_P631A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <WPF:Tube Height="46" Canvas.Left="344" Canvas.Top="175" Width="10" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RenderTransformOrigin="0.5,0.5">
 
             <Behaviors:Interaction.Behaviors>
@@ -1315,6 +1321,7 @@
         <WPF:Valve Height="40" Canvas.Left="307" Canvas.Top="389" Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.GE_pHV_K610 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
+                <behaviors:Valve_status RotareAnggeClose="180" RotareAnggeOpen="0" HSpacing="-1" HSpacing1="13" VSpacing="23" VSpacing1="23"  isOpenValve="{c:Binding PD.GE_pHV_K610 &gt;\= 1}" isCloseValve="{c:Binding  PD.GE_pHV_K610 less 1 }" />
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="30" VSpacing="0"  IsMan="{Binding PD.V_K610_mode}" Out="{Binding PD.pHV_K610_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
@@ -3346,7 +3353,7 @@
             </WPF:Label.Colors>
         </WPF:Label>
         <WPF:Tube Height="12" Canvas.Left="624" Canvas.Top="319" Width="401" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
-           
+
 
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.VK480A_1_SQH}" OnColor1="Gold"/>
@@ -4014,6 +4021,33 @@
             CheckedBackground="Green"
             UncheckedBackground ="LightPink" Canvas.Left="695" Canvas.Top="147"/>
         <TextBlock Canvas.Left="691" TextWrapping="Wrap" Canvas.Top="172" Height="29" RenderTransformOrigin="0.54,3.158" Width="101" ><Run Text="Промывка pH "/><LineBreak/><Run Text="метра  "/><Run Language="ru-by" Text="ап."/><Run Text="K450A"/><LineBreak/><Run/></TextBlock>
+        <xctk:ToggleSwitch Width="64" Height="24"    
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV521, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Canvas.Left="85" Canvas.Top="867"/>
+        <xctk:ToggleSwitch Width="64" Height="24"    
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV460, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Canvas.Left="1442" Canvas.Top="913"/>
+        <xctk:ToggleSwitch Width="64" Height="24"    
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV480, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Canvas.Left="1703" Canvas.Top="422"/>
 
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
