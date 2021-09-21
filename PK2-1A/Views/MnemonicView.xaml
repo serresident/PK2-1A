@@ -452,7 +452,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
 
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -515,7 +515,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P611_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P611_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
 
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -676,7 +676,7 @@
 
         <WPF:Tube Height="54" Canvas.Left="19" Canvas.Top="844" Width="31" FlangeThickness="7" FlangeWidth="7" RenderTransformOrigin="0.533,0.5">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}"   OnColor1="Green" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_LXU_sost}"   OnColor1="Green" OnColor2="#FF487C48" DefaultColor="Red" />
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NS_VodaArt_mode}" Out="{Binding PD.NS_VodaArt_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
@@ -976,7 +976,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P521_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P521_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1015,7 +1015,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P603_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P603_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P603_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1052,7 +1052,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P631A_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P631A_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
 
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P631A_control_man}" />
             </Behaviors:Interaction.Behaviors>
@@ -1166,13 +1166,16 @@
         </WPF:Valve>
         <WPF:Motor Height="30" Canvas.Left="306" Canvas.Top="253" Width="43" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_422M_sost}" />
+                <WPF:StatesStandard  Critical="{c:Binding not PD.NS_422M_sost}" Active="{Binding PD.NS_422M_sost}" />
             </WPF:Motor.States>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -1440,7 +1443,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P470_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P470_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NS_P470_mode}" Out="{Binding PD.NS_P470_control_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1482,7 +1485,7 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P461_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P461_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
@@ -1544,17 +1547,18 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P201C_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P201C_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="794" TextWrapping="Wrap" Text="P201C" Canvas.Top="52" />
+        <TextBlock Canvas.Left="794" TextWrapping="Wrap" Text="P201C" Canvas.Top="54" />
         <WPF:Arrow Height="12" Canvas.Left="754" RotateAngle="0" Canvas.Top="36" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
                         <WPF:ColoringColor Color1="DeepSkyBlue" />
                     </WPF:ControlColors.DefaultColoring>
+
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
@@ -1590,11 +1594,11 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P402_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P402_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="938" TextWrapping="Wrap" Text="P402" Canvas.Top="53" />
+        <TextBlock Canvas.Left="938" TextWrapping="Wrap" Text="P402" Canvas.Top="55" />
         <WPF:Arrow Height="12" Canvas.Left="898" RotateAngle="0" Canvas.Top="37" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
@@ -1636,11 +1640,11 @@
 
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P404A_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.NS_P404A_sost}" OnColor1="#FF88B988" OnColor2="#FF487C48" DefaultColor="Red"/>
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="1120" TextWrapping="Wrap" Text="P404A" Canvas.Top="52" />
+        <TextBlock Canvas.Left="1120" TextWrapping="Wrap" Text="P404A" Canvas.Top="53" />
         <WPF:Arrow Height="12" Canvas.Left="1051" RotateAngle="0" Canvas.Top="36" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
@@ -1689,7 +1693,7 @@
 
 
         </WPF:Valve>
-        <TextBlock Canvas.Left="1056" TextWrapping="Wrap" Canvas.Top="49" ><Run Text="WVR404A"/><LineBreak/><Run/></TextBlock>
+        <TextBlock Canvas.Left="1056" TextWrapping="Wrap" Canvas.Top="51" ><Run Text="WVR404A"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1262" TextWrapping="Wrap" Text="R403" Canvas.Top="117" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <TextBlock Canvas.Left="1389" TextWrapping="Wrap" Text="R481" Canvas.Top="118" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1385" Canvas.Top="74" Caption="LE 481" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="77" Height="40" Value="{Binding PD.LE_R481, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
@@ -1698,7 +1702,7 @@
             <WPF:Fan.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Color1="#FF88B988" Color2="#FF487C48" ColorMode="Pulse" />
+                        <WPF:ColoringColor Color1="#FF88B988" Color2="#FF487C48" ColorMode="Pulse"  />
                     </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Fan.Colors>
@@ -1753,11 +1757,11 @@
         </WPF:Fan>
         <WPF:Motor Height="30" Canvas.Left="536" Canvas.Top="87" Width="42" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NC_K450A_sost}" />
+                <WPF:StatesStandard  Critical="{c:Binding not PD.NC_K450A_sost}" Active="{Binding PD.NC_K450A_sost}" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
-                <behaviors:AnalogActuatorHandlerBehavior Units="Гц" HSpacing="0" VSpacing="-10"  MaxValue="50"  IsMan="{Binding PD.NC_K450A_mode}" Out="{Binding PD.NC_K450A_ain_man}"/>
+
                 <behaviors:HybridActuatorHandlerBehavior Dout="{Binding PD.NC_K450A_control_man, Mode=TwoWay}"   Units="Гц" HSpacing="20" VSpacing="-10"  MaxValue="50"  IsMan="{Binding PD.NC_K450A_mode}" Out="{Binding PD.NC_P412_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
             <WPF:Motor.Colors>
@@ -1765,6 +1769,9 @@
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -2088,7 +2095,7 @@
         </WPF:Fan>
         <WPF:Motor Height="30" Canvas.Left="1330" Canvas.Top="415" Width="42" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{c:Binding PD.NC_K480B_Cur_FRQ &gt;\= 1}" />
+                <WPF:StatesStandard Critical="{c:Binding not PD.NC_K480B_Cur_FRQ &gt;\= 1 }" Active="{c:Binding PD.NC_K480B_Cur_FRQ &gt;\= 1}" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
@@ -2100,6 +2107,9 @@
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -2249,13 +2259,16 @@
         <TextBlock Canvas.Left="1093" TextWrapping="Wrap" Text="K460B" Canvas.Top="872" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Motor Height="30" HeaderPadding="16,6,0,0" Canvas.Left="1102" Canvas.Top="806" Width="43" Header="M" >
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_K460B_sost}" />
+                <WPF:StatesStandard Critical="{c:Binding not PD.NS_K460B_sost}" Active="{Binding PD.NS_K460B_sost}" />
             </WPF:Motor.States>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -2345,7 +2358,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="922" Canvas.Top="839" Caption="TE K460A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_K460A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="968" Canvas.Top="899" Caption="TE K460A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="36" Value="{Binding PD.TE_K460A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black"/>
         <Controls:ValueBlock FontFamily="Proxy 1"  Visibility="Hidden" Canvas.Left="977" Canvas.Top="894" Caption="QE K460A" Unit="PH"  ValueColor="LawnGreen" Foreground="#FF09F509"  Width="64" Height="36" Value="{Binding PD.QIY_K460A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <WPF:Fan Height="49" Canvas.Left="992" Canvas.Top="826" Width="24" Design="Mixer">
             <WPF:Fan.Colors>
@@ -3410,13 +3423,16 @@
         </WPF:Valve>
         <WPF:Motor Height="30" HeaderPadding="16,6,0,0" Canvas.Left="983" Canvas.Top="806" Width="43" Header="M" >
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_K460A_sost}" />
+                <WPF:StatesStandard Critical="{c:Binding not PD.NS_K460A_sost}" Active="{Binding PD.NS_K460A_sost}" />
             </WPF:Motor.States>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -3589,7 +3605,7 @@
         </WPF:Tube>
         <TextBlock Canvas.Left="1134" TextWrapping="Wrap" Text="D470A" Canvas.Top="270" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <TextBlock Canvas.Left="1000" TextWrapping="Wrap" Text="D470" Canvas.Top="272" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1044" Canvas.Top="840" Caption="TE K460B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_K460B, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1081" Canvas.Top="899" Caption="TE K460B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="36" Value="{Binding PD.TE_K460B, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <WPF:Tube Height="12" Canvas.Left="1377" Canvas.Top="217" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
             <Behaviors:Interaction.Behaviors>
@@ -3825,13 +3841,16 @@
         <TextBlock Canvas.Left="1627"   TextWrapping="Wrap" Canvas.Top="185" Height="14" Width="200" RenderTransformOrigin="0.06,0.643" ><Run Language="ru-ru" Text="Поддержание зад. давл-я нагн-я"/></TextBlock>
         <WPF:Motor Height="30" Canvas.Left="126" Canvas.Top="394" Width="43" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_631A_M_Sost}" />
+                <WPF:StatesStandard  Critical="{c:Binding not PD.NS_631A_M_Sost}" Active="{Binding PD.NS_631A_M_Sost}" />
             </WPF:Motor.States>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -3840,13 +3859,16 @@
         </WPF:Motor>
         <WPF:Motor Height="30" Canvas.Left="125" Canvas.Top="225" Width="43" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_603M_sost}" />
+                <WPF:StatesStandard Critical="{c:Binding not PD.NS_603M_sost}" Active="{Binding PD.NS_603M_sost}" />
             </WPF:Motor.States>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -3855,13 +3877,16 @@
         </WPF:Motor>
         <WPF:Motor Height="30" Canvas.Left="125" Canvas.Top="68" Width="43" Header="M" HeaderPadding="16,6,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Active="{Binding PD.NS_521M_sost}" />
+                <WPF:StatesStandard Critical="{c:Binding not PD.NS_521M_sost}" Active="{Binding PD.NS_521M_sost}" />
             </WPF:Motor.States>
             <WPF:Motor.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -4007,6 +4032,9 @@
                     <WPF:ControlColors.State4Coloring>
                         <WPF:ColoringColor Color1="#FF39A234"/>
                     </WPF:ControlColors.State4Coloring>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                    </WPF:ControlColors.State1Coloring>
                 </WPF:ControlColors>
             </WPF:Motor.Colors>
 
@@ -4102,7 +4130,7 @@
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480A}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>
                 <TextBlock Grid.Row="1" TextWrapping="Wrap"  FontSize="14" Foreground="Black" Text="Мг-й расход м³/ч:" />
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480A}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480A,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
 
@@ -4126,7 +4154,7 @@
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480B}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>
                 <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Мг-й расход м³/ч:"  FontSize="14" Foreground="Black" />
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480B}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480B,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
 
