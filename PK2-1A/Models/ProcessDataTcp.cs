@@ -610,6 +610,10 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         //public Single  { get { return getValue<Single>(); } }
         public Single ZagrDietilAminK480_Doza  { get { return getValue<Single>(); } }//ad134
         public Single WE_D470A_analog { get { return getValue<Single>(); } } //136
+        public Single emis200_summ_k480A { get { return getValue<Single>(); } }//138
+        public Single emis200_FlowMeter_k480A { get { return getValue<Single>(); } }//140
+        public Single emis200_summ_k480B { get { return getValue<Single>(); } }//142
+        public Single emis200_FlowMeter_k480B { get { return getValue<Single>(); } }//144
         public UInt16 zap3 { get { return getValue<UInt16>(); } }
 
         public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последним ,служит для определения успешного чтения регистров
