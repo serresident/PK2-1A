@@ -34,8 +34,7 @@ namespace belofor.Models
         public bool VK480B_7_SQL { get { return getValue<bool>(); } }// ad= 11 mv110_16dn_1 _ch 2
 
         public bool WVR404A_SQH { get { return getValue<bool>(); } }// ad= 12 mv110_16dn_1 _ch 3
-        public bool WVR404A_SQL { get { return getValue<bool>(); } }// ad= 13 mv110_16dn_1 _ch 4
-
+        public bool WVR404A_SQL { get { return getValue<bool>(); } }// ad= 13 mv110_16dn_1 _ch
         public bool VD460A_SQH { get { return getValue<bool>(); } }// ad= 14 mv110_16dn_1 _ch 5
         public bool VD460A_SQL { get { return getValue<bool>(); } }// ad= 15 mv110_16dn_1 _ch 6
 
@@ -610,9 +609,13 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         //public Single  { get { return getValue<Single>(); } }
         public Single ZagrDietilAminK480_Doza  { get { return getValue<Single>(); } }//ad134
         public Single WE_D470A_analog { get { return getValue<Single>(); } } //136
+        [ArchivAttribute("Счетчик воды на МЭК K480A")]
         public Single emis200_summ_k480A { get { return getValue<Single>(); } }//138
+        [ArchivAttribute("Мг-й расход K480A")]
         public Single emis200_FlowMeter_k480A { get { return getValue<Single>(); } }//140
+        [ArchivAttribute("Счетчик воды на МЭК K480B")]
         public Single emis200_summ_k480B { get { return getValue<Single>(); } }//142
+        [ArchivAttribute("Мг-й расход K480B")]
         public Single emis200_FlowMeter_k480B { get { return getValue<Single>(); } }//144
         public UInt16 zap3 { get { return getValue<UInt16>(); } }
 

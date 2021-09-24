@@ -109,14 +109,18 @@ namespace belofor
             containerRegistry.RegisterForNavigation<MnemonicView>("MnemonicView");
             containerRegistry.RegisterForNavigation<MnemonicToolView>("MnemonicToolView");
 
-            containerRegistry.RegisterForNavigation<ArchivView>("ArchivView");
-            containerRegistry.RegisterForNavigation<ArchivToolView>("ArchivToolView");
+            //containerRegistry.RegisterForNavigation<ArchivView>("ArchivView");
+            //containerRegistry.RegisterForNavigation<ArchivToolView>("ArchivToolView");
 
             containerRegistry.RegisterForNavigation<JournalView>("JournalView");
             containerRegistry.RegisterForNavigation<JournalToolView>("JournalToolView");
 
             containerRegistry.RegisterForNavigation<SettingView>("SettingView");
             containerRegistry.RegisterForNavigation<SettingToolView>("SettingToolView");
+
+
+            containerRegistry.RegisterForNavigation<LogicView>("LogicView");
+            containerRegistry.RegisterForNavigation<LogicToolView>("LogicToolView");
 
             // Dialog
             //containerRegistry.RegisterDialog<SettingsDialog, SettingsDialogViewModel>("settings");
@@ -130,11 +134,14 @@ namespace belofor
             ViewModelLocationProvider.Register<MnemonicView>(() => Container.Resolve<MnemonicViewModel>());
             ViewModelLocationProvider.Register<MnemonicToolView>(() => Container.Resolve<MnemonicViewModel>());
 
-            ViewModelLocationProvider.Register<ArchivView>(() => Container.Resolve<ArchivViewModel>());
-            ViewModelLocationProvider.Register<ArchivToolView>(() => Container.Resolve<ArchivViewModel>());
+            //ViewModelLocationProvider.Register<ArchivView>(() => Container.Resolve<ArchivViewModel>());
+            //ViewModelLocationProvider.Register<ArchivToolView>(() => Container.Resolve<ArchivViewModel>());
 
             ViewModelLocationProvider.Register<SettingView>(() => Container.Resolve<SettingViewModel>());
             ViewModelLocationProvider.Register<SettingToolView>(() => Container.Resolve<SettingViewModel>());
+
+            ViewModelLocationProvider.Register<LogicView>(() => Container.Resolve<LogicViewModel>());
+            ViewModelLocationProvider.Register<LogicToolView>(() => Container.Resolve<LogicViewModel>());
 
             //ViewModelLocationProvider.Register<JournalView>(() => Container.Resolve<JournalViewModel>());
             //ViewModelLocationProvider.Register<JournalToolView>(() => Container.Resolve<JournalViewModel>());
@@ -150,8 +157,9 @@ namespace belofor
 
          regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("MnemonicView", "MnemonicToolView", "Мнемосхема"));
             //regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("ArchivView", "ArchivToolView", "Архив"));
-            //regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("JournalView", "JournalToolView", "Журнал"));
+          //  regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("JournalView", "JournalToolView", "Журнал"));
             regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("SettingView", "SettingToolView", "Настройки" ));
+            regionManager.RegisterViewWithRegion("NavigationRegion", () => nav("LogicView", "LogicToolView", "Стадии"));
 
             regionManager.RequestNavigate("ContentRegion", "MnemonicView");
 

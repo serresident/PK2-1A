@@ -1170,7 +1170,7 @@
 
 
         </WPF:Valve>
-        <WPF:Motor Height="30" Canvas.Left="306" Canvas.Top="253" Width="43" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="306" Canvas.Top="253" Width="43" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard  Critical="{c:Binding not PD.NS_422M_sost}" Active="{Binding PD.NS_422M_sost}" />
             </WPF:Motor.States>
@@ -1310,7 +1310,7 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NC_610M_Sost}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <WPF:Motor Height="30" Canvas.Left="450" Canvas.Top="381" Width="42" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="450" Canvas.Top="381" Width="42" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard Critical="{c:Binding not PD.NC_610M_Sost}" Active="{Binding PD.NC_610M_Sost}" />
             </WPF:Motor.States>
@@ -1761,7 +1761,7 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{Binding PD.NC_K450A_sost}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <WPF:Motor Height="30" Canvas.Left="536" Canvas.Top="87" Width="42" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="536" Canvas.Top="87" Width="42" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard  Critical="{c:Binding not PD.NC_K450A_sost}" Active="{Binding PD.NC_K450A_sost}" />
             </WPF:Motor.States>
@@ -2099,7 +2099,7 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{c:Binding PD.NC_K480B_Cur_FRQ &gt;\= 1}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <WPF:Motor Height="30" Canvas.Left="1330" Canvas.Top="415" Width="42" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="1330" Canvas.Top="415" Width="42" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard Critical="{c:Binding not PD.NC_K480B_Cur_FRQ &gt;\= 1 }" Active="{c:Binding PD.NC_K480B_Cur_FRQ &gt;\= 1}" />
             </WPF:Motor.States>
@@ -2263,7 +2263,7 @@
             </WPF:Fan.States>
         </WPF:Fan>
         <TextBlock Canvas.Left="1093" TextWrapping="Wrap" Text="K460B" Canvas.Top="872" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <WPF:Motor Height="30" HeaderPadding="10,-10,0,0" Canvas.Left="1102" Canvas.Top="806" Width="43" Header="~" FontSize="32" >
+        <WPF:Motor Height="30" HeaderPadding="14,3,0,0" Canvas.Left="1102" Canvas.Top="806" Width="43" Header="M" FontSize="14" >
             <WPF:Motor.States>
                 <WPF:StatesStandard Critical="{c:Binding not PD.NS_K460B_sost}" Active="{Binding PD.NS_K460B_sost}" />
             </WPF:Motor.States>
@@ -3427,7 +3427,7 @@
                 <behaviors:Valve_status isOpenValve="{Binding PD.FV_K480B_SQH}" isCloseValve="{Binding PD.FV_K480B_SQL}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <WPF:Motor Height="30" HeaderPadding="10,-10,0,0" Canvas.Left="983" Canvas.Top="806" Width="43" Header="~" FontSize="32" >
+        <WPF:Motor Height="30" HeaderPadding="14,3,0,0" Canvas.Left="983" Canvas.Top="806" Width="43" Header="M" FontSize="14" >
             <WPF:Motor.States>
                 <WPF:StatesStandard Critical="{c:Binding not PD.NS_K460A_sost}" Active="{Binding PD.NS_K460A_sost}" />
             </WPF:Motor.States>
@@ -3845,7 +3845,7 @@
 
 
         <TextBlock Canvas.Left="1627"   TextWrapping="Wrap" Canvas.Top="185" Height="14" Width="200" RenderTransformOrigin="0.06,0.643" ><Run Language="ru-ru" Text="Поддержание зад. давл-я нагн-я"/></TextBlock>
-        <WPF:Motor Height="30" Canvas.Left="126" Canvas.Top="394" Width="43" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="126" Canvas.Top="394" Width="43" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard  Critical="{c:Binding not PD.NS_631A_M_Sost}" Active="{Binding PD.NS_631A_M_Sost}" />
             </WPF:Motor.States>
@@ -3863,7 +3863,7 @@
 
 
         </WPF:Motor>
-        <WPF:Motor Height="30" Canvas.Left="125" Canvas.Top="225" Width="43" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="125" Canvas.Top="225" Width="43" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard Critical="{c:Binding not PD.NS_603M_sost}" Active="{Binding PD.NS_603M_sost}" />
             </WPF:Motor.States>
@@ -3881,7 +3881,7 @@
 
 
         </WPF:Motor>
-        <WPF:Motor Height="30" Canvas.Left="125" Canvas.Top="68" Width="43" Header="~" FontSize="32" HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="125" Canvas.Top="68" Width="43" Header="M" FontSize="14" HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
                 <WPF:StatesStandard Critical="{c:Binding not PD.NS_521M_sost}" Active="{Binding PD.NS_521M_sost}" />
             </WPF:Motor.States>
@@ -4024,9 +4024,9 @@
                 <WPF:StatesBitmask State4Bitmask="1" Value="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1}" />
             </WPF:Fan.States>
         </WPF:Fan>
-        <WPF:Motor Height="30" Canvas.Left="788" Canvas.Top="415" Width="42" Header="~" FontSize="32"  HeaderPadding="10,-10,0,0">
+        <WPF:Motor Height="30" Canvas.Left="788" Canvas.Top="415" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Critical="{c:Binding  not PD.NS_K480A_sost}" Active="{c:Binding PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost}" />
+                <WPF:StatesStandard Critical="{c:Binding  not PD.NS_K480A_sost}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost)}" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
@@ -4165,7 +4165,7 @@
         </GroupBox>
 
 
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -4178,7 +4178,7 @@
             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
 
-        </xctk:WindowContainer>
+        </xctk:WindowContainer>-->
 
     </Canvas>
 

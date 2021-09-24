@@ -207,6 +207,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\LogicToolView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LogicView .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\SettingToolView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -276,16 +284,19 @@
     <Compile Include="Models\ModbusWriteItem.cs" />
     <Compile Include="Models\ProcessData.cs" />
     <Compile Include="Models\ProcessDataTcp.cs" />
+    <Compile Include="Models\LogicData.cs" />
     <Compile Include="Models\ThermoChartPoint.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Repositories\ArchivRepository.cs" />
     <Compile Include="Repositories\JournalRepository.cs" />
     <Compile Include="Services\ArchivService.cs" />
     <Compile Include="Services\BackGroundService.cs" />
+    <Compile Include="Services\LogicService.cs" />
     <Compile Include="Services\JournalService.cs" />
     <Compile Include="Services\ModbusTcpService.cs" />
     <Compile Include="Services\PeriodicalTaskStarter.cs" />
     <Compile Include="ViewModels\ArchivViewModel.cs" />
+    <Compile Include="ViewModels\LogicViewModel .cs" />
     <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="ViewModels\JournalViewModel.cs" />
     <Compile Include="ViewModels\MnemonicViewModel.cs" />
@@ -334,6 +345,12 @@
     </Compile>
     <Compile Include="Views\ChildWindows\WaterLoading.xaml.cs">
       <DependentUpon>WaterLoading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogicToolView.xaml.cs">
+      <DependentUpon>LogicToolView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogicView .xaml.cs">
+      <DependentUpon>LogicView .xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingToolView.xaml.cs">
       <DependentUpon>SettingToolView.xaml</DependentUpon>
