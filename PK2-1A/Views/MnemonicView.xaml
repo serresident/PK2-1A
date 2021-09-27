@@ -741,7 +741,7 @@
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_R521_in_count_}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_R521_in_count_}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
             </Grid>
         </GroupBox>
         <GroupBox Style="{StaticResource HmiGroupBox}" Width="120" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1422" Canvas.Top="839">
@@ -781,7 +781,7 @@
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
             </Grid>
         </GroupBox>
         <Border Background="WhiteSmoke"  BorderThickness="2" BorderBrush="DarkGray" Width="230" Height="155" Canvas.Left="1607" Canvas.Top="184"/>
@@ -1784,8 +1784,8 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="586" Canvas.Top="177" Caption="TE K450A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_K450A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="586" Canvas.Top="215" Caption="QE K450A" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="64" Height="36" Value="{Binding PD.QE_K450A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="586" Canvas.Top="177" Caption="TE K450A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="76" Height="36" Value="{Binding PD.TE_K450A, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="586" Canvas.Top="215" Caption="QE K450A" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="76" Height="36" Value="{Binding PD.QE_K450A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <WPF:Valve Height="40" Canvas.Left="589" RotateAngle="-90" Canvas.Top="77" Width="30" Actor="Diaphram1">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.pHV_K450A_aout/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
@@ -1950,8 +1950,8 @@
                 </TransformGroup>
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="812" Canvas.Top="603" Caption="TE K480A_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="72" Height="36" Value="{Binding PD.TE_480A_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="819" Canvas.Top="562" Caption="QE K480A" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="64" Height="36" Value="{Binding PD.QIY_K480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="814" Canvas.Top="603" Caption="TE K480A_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="40" Value="{Binding PD.TE_480A_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="818" Canvas.Top="560" Caption="QE K480A" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="76" Height="40" Value="{Binding PD.QIY_K480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <TextBlock Canvas.Left="738" TextWrapping="Wrap" Text="K480A" Canvas.Top="636" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Tube Height="21" Canvas.Left="758" Canvas.Top="402" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
@@ -2050,7 +2050,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Морфо-н"/><LineBreak/><Run/></TextBlock>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="734" Canvas.Top="560" Caption="PT 480A" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="77" Height="40" Value="{Binding PD.PT_480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="731" Canvas.Top="560" Caption="PT 480A" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="85" Height="40" Value="{Binding PD.PT_480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <WPF:Tank Height="115" Canvas.Left="1080" Canvas.Top="160" Width="114" GeometryParam2="4*"  GeometryParam1="0.4*" RotateAngle="270" Design="StandingSpherical"  GeometryParam3="*" GeometryParam4="0*">
             <WPF:Tank.RenderTransform>
                 <TransformGroup>
@@ -2061,7 +2061,7 @@
                 </TransformGroup>
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1026" Canvas.Top="476" Caption="TE K480A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1026" Canvas.Top="476" Caption="TE K480A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="76" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="707" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_9_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_9_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
@@ -2122,9 +2122,9 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1358" Canvas.Top="606" Caption="TE K480B_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="72" Height="36" Value="{Binding PD.TE_480B_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1365" Canvas.Top="560" Caption="QE K480B" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="64" Height="36" Value="{Binding PD.QIY_K480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1271" Canvas.Top="561" Caption="PT 480B" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="85" Height="40" Value="{Binding PD.PT_480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1344" Canvas.Top="604" Caption="TE K480B_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="89" Height="40" Value="{Binding PD.TE_480B_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1357" Canvas.Top="560" Caption="QE K480B" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="76" Height="40" Value="{Binding PD.QIY_K480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1269" Canvas.Top="560" Caption="PT 480B" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="85" Height="40" Value="{Binding PD.PT_480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1023" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.FV_K480A_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.FV_K480A_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
@@ -2201,7 +2201,7 @@
 
 
         </WPF:Valve>
-        <TextBlock Canvas.Left="1567" TextWrapping="Wrap" Text="V E461A2" Canvas.Top="78" />
+        <TextBlock Canvas.Left="1565" TextWrapping="Wrap" Text="V E461A2" Canvas.Top="78" />
         <WPF:Valve Height="40" Canvas.Left="1644" Canvas.Top="37" Width="30" Actor="Piston" RotateAngle="0" >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.V_E461A_1_dout }" OnColor1="Green" DefaultColor="Red"/>
@@ -2307,7 +2307,7 @@
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K460A_SQH}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <TextBlock Canvas.Left="1427" TextWrapping="Wrap" Text="FV K460A" Canvas.Top="807" />
+        <TextBlock Canvas.Left="1425" TextWrapping="Wrap" Text="FV K460A" Canvas.Top="808" />
         <TextBlock Canvas.Left="1274" TextWrapping="Wrap" Text="K480B" Canvas.Top="636" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Tube Height="12" Canvas.Left="897" Canvas.Top="776" Width="38" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
@@ -3445,7 +3445,7 @@
 
 
         </WPF:Motor>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1563" Canvas.Top="476" Caption="TE K480B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_K480B_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1563" Canvas.Top="476" Caption="TE K480B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="78" Height="36" Value="{Binding PD.TE_K480B_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <WPF:Pump  Height="106"  Canvas.Left="1705" Canvas.Top="249" Width="51" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
 
 
@@ -3457,7 +3457,7 @@
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
         <TextBlock Canvas.Left="1681"   TextWrapping="Wrap" Text="P726" Canvas.Top="316" Height="33" Width="45" />
-        <Controls:ValueBlock FontFamily="Proxy 1"  Canvas.Left="1622" Canvas.Top="204" Caption="PIT P726" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="77" Height="40" Value="{Binding PD.P_P726, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1"  Canvas.Left="1612" Canvas.Top="204" Caption="PIT P726" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="88" Height="40" Value="{Binding PD.P_P726, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <Controls:NumPadUpDown ToolTip="Уставка давления кг/см3"
             Width="88"
             Height="30"
@@ -3465,7 +3465,8 @@
             EnterClosesNumPad="True"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF7E7E7E"
+            Foreground="LawnGreen"
+             Background="Black"
             Increment="1"
             Minimum="-1"
             Precision="0"
@@ -3797,9 +3798,9 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="884" Canvas.Top="196" Caption="TE E482" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_482, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="884" Canvas.Top="196" Caption="TE E482" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="68" Height="36" Value="{Binding PD.TE_482, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1414" Canvas.Top="180" Caption="TE E481" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_E481, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="884" Canvas.Top="237" Caption="TE E482_2" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_E482_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="884" Canvas.Top="237" Caption="TE E482_2" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="69" Height="36" Value="{Binding PD.TE_E482_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1414" Canvas.Top="223" Caption="TE E481_2" Unit="ºC"   ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="64" Height="36" Value="{Binding PD.TE_E481_Distil, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
 
         <WPF:Label   ItemDeterminationValue="{c:Binding (PD.NC_K480A_Cur_FRQ less 0) ? 0 : 1}" Height="36" FontWeight="Bold" Content="NC_K480A"  Canvas.Left="604" Canvas.Top="475" Width="194"  Design="Arrowed" DefaultText="{Binding PD.NC_K480A_Cur_FRQ,StringFormat=\{0:0\}Гц}" ArrowWidth="5"  >
@@ -4026,7 +4027,7 @@
         </WPF:Fan>
         <WPF:Motor Height="30" Canvas.Left="788" Canvas.Top="415" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0">
             <WPF:Motor.States>
-                <WPF:StatesStandard Critical="{c:Binding  not PD.NS_K480A_sost}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost)}" />
+                <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
             </WPF:Motor.States>
             <Behaviors:Interaction.Behaviors>
                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
@@ -4134,9 +4135,9 @@
 
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480A}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480A}"  FontSize="14"  Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
                 <TextBlock Grid.Row="1" TextWrapping="Wrap"  FontSize="14" Foreground="Black" Text="Мг-й расход м³/ч:" />
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480A,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480A,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
             </Grid>
         </GroupBox>
 
@@ -4158,9 +4159,9 @@
 
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480B}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480B}"  FontSize="14"  Foreground="LawnGreen" Background="Black" TextAlignment="Center"/>
                 <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Мг-й расход м³/ч:"  FontSize="14" Foreground="Black" />
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480B,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480B,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="LawnGreen" Background="Black" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
 

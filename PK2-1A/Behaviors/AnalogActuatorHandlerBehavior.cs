@@ -182,6 +182,7 @@ namespace belofor.Behaviors
                 popupNumPadUpDown.Maximum = MaxValue;
                 popupNumPadUpDown.EnterClosesNumPad = true;
                 popupNumPadUpDown.UpdateValueOnEnterKey = true;
+              //  popupNumPadUpDown.Foreground = Brushes.Black;
                 Binding binding2 = new Binding();
                 binding2.Source = this;
                 binding2.Path = new PropertyPath("Out");
@@ -227,7 +228,7 @@ namespace belofor.Behaviors
 
                 popupPanel.PlacementTarget = this.AssociatedObject;
                 popupPanel.Placement = PlacementMode;
-              
+          //    popupPanel.MouseMove += new MouseEventHandler(pop_MouseMove);
 
                 handleControlBehavior = new OptionsBehavior();
                 handleControlBehavior.FeedbackOnPressed = true;
@@ -271,6 +272,24 @@ namespace belofor.Behaviors
             }
 
 
+        }
+
+
+        private void OnUIReady(object sender, System.EventArgs e)
+        {
+            popupPanel.Width = ((Canvas)popupPanel.Parent).ActualWidth;
+            popupPanel.Height = ((Canvas)popupPanel.Parent).ActualHeight;
+           
+        }
+
+        void pop_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                popupPanel.PlacementRectangle = new Rect(new Point(e.GetPosition((Canvas)popupPanel.Parent).X,
+                    e.GetPosition((Canvas)popupPanel.Parent).Y), new Point(1, 1));
+
+            }
         }
 
 

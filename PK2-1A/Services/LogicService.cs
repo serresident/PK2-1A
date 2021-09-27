@@ -27,7 +27,7 @@ namespace belofor.Services
 
         Dictionary<string, string> _journal;
         Dictionary<string, string> values;
-
+        int state_bel_ocd_480A;
         bool firstInit;
 
 
@@ -48,8 +48,9 @@ namespace belofor.Services
         //Rr6qESotEniwmvQg7--eNjdQ6oHTzErVZbY1N67ndKX_orFsvTaRIyFVkKjnzuVsEoY4ckzvX1362MYe_au-dg==
         public void Worker()
         {
-           ld.
-           
+            
+
+
          }
 
 

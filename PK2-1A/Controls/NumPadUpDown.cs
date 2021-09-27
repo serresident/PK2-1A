@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Media;
 using Xceed.Wpf.Toolkit;
 
 namespace belofor.Controls
@@ -122,8 +123,10 @@ namespace belofor.Controls
         {
             Keyboard.AddKeyDownHandler(this, OnKeyDown);
             Mouse.AddPreviewMouseDownOutsideCapturedElementHandler(this, OnMouseDownOutsideCapturedElement);
+            this.Foreground = Brushes.LawnGreen;
+            this.Background = Brushes.Black;
 
-           
+
         }
 
         #endregion //Constructors
