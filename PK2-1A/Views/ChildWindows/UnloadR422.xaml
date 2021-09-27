@@ -217,7 +217,7 @@
             EnterClosesNumPad="True"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF7E7E7E"
+            
             Increment="1"
             Minimum="-1"
             Precision="0"
@@ -238,7 +238,7 @@
             EnterClosesNumPad="True"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF7E7E7E"
+            
             Increment="0.1"
             Minimum="-1"
             Precision="1"

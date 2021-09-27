@@ -151,7 +151,7 @@
 
             <!--<TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Время[мин]" VerticalAlignment="Center" FontSize="16"/>
 
-                        <controls:NumPadUpDown Grid.Column="1" AutoMoveFocus="True" TabIndex="-1" FormatString="F0" Width="80" Height="25" Increment="1" Minimum="0" Maximum="50" EnterClosesNumPad="True" UpdateValueOnEnterKey="True" Foreground="#FF7E7E7E" FontSize="14" FontWeight="Bold" >
+                        <controls:NumPadUpDown Grid.Column="1" AutoMoveFocus="True" TabIndex="-1" FormatString="F0" Width="80" Height="25" Increment="1" Minimum="0" Maximum="50" EnterClosesNumPad="True" UpdateValueOnEnterKey="True"  FontSize="14" FontWeight="Bold" >
                             <Behaviors:Interaction.Behaviors>
                                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Time_Nitrogen_Purge_41D}" />
                             </Behaviors:Interaction.Behaviors>
@@ -211,7 +211,7 @@
             EnterClosesNumPad="True"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF7E7E7E"
+            
             Increment="1"
             Minimum="-1"
             Precision="0"

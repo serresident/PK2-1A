@@ -112,7 +112,7 @@
                                 <behaviors:BindingBehavior  Value="{Binding PD.Weight_water_for_loading_59A, StringFormat=\{0:0.###\}, Mode=TwoWay}" />
                             </Behaviors:Interaction.Behaviors>
                         </WPF:TextBox>-->
-        <controls:NumPadUpDown FontSize="16" FontWeight="Bold" EnterClosesNumPad="True" UpdateValueOnEnterKey="True" Precision="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="120" Height="30" Increment="1" Minimum="-1" Foreground="#FF7E7E7E" Grid.Column="0" Grid.Row="3" Margin="15,0,0,0">
+        <controls:NumPadUpDown FontSize="16" FontWeight="Bold" EnterClosesNumPad="True" UpdateValueOnEnterKey="True" Precision="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="120" Height="30" Increment="1" Minimum="-1"  Grid.Column="0" Grid.Row="3" Margin="15,0,0,0">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.ZagrVodaComm_DozaZad}" />
             </Behaviors:Interaction.Behaviors>
@@ -184,7 +184,7 @@
 
                         <!--<TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Время[мин]" VerticalAlignment="Center" FontSize="16"/>
 
-                        <controls:NumPadUpDown Grid.Column="1" AutoMoveFocus="True" TabIndex="-1" FormatString="F0" Width="80" Height="25" Increment="1" Minimum="0" Maximum="50" EnterClosesNumPad="True" UpdateValueOnEnterKey="True" Foreground="#FF7E7E7E" FontSize="14" FontWeight="Bold" >
+                        <controls:NumPadUpDown Grid.Column="1" AutoMoveFocus="True" TabIndex="-1" FormatString="F0" Width="80" Height="25" Increment="1" Minimum="0" Maximum="50" EnterClosesNumPad="True" UpdateValueOnEnterKey="True"  FontSize="14" FontWeight="Bold" >
                             <Behaviors:Interaction.Behaviors>
                                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Time_Nitrogen_Purge_41D}" />
                             </Behaviors:Interaction.Behaviors>

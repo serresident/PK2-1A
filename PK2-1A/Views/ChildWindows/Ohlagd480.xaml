@@ -187,7 +187,7 @@
             EnterClosesNumPad="True"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF7E7E7E"
+            
             Increment="1"
             Minimum="-15"
             Precision="1"

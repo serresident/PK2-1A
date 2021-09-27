@@ -761,7 +761,7 @@
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K460_in_count_}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K460_in_count_}"  FontSize="14"  Background="Black" Foreground="LawnGreen" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
         <GroupBox Style="{StaticResource HmiGroupBox}" Width="120" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1680" Canvas.Top="348">
@@ -781,7 +781,7 @@
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_,StringFormat=\{0:0\}}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
             </Grid>
         </GroupBox>
         <Border Background="WhiteSmoke"  BorderThickness="2" BorderBrush="DarkGray" Width="230" Height="155" Canvas.Left="1607" Canvas.Top="184"/>
@@ -4166,7 +4166,7 @@
         </GroupBox>
 
 
-        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -4179,7 +4179,7 @@
             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
 
-        </xctk:WindowContainer>-->
+        </xctk:WindowContainer>
 
     </Canvas>
 
