@@ -81,7 +81,7 @@
         <converters1:PowerPercentConverter x:Key="PowerPercentConverter" />
     </UserControl.Resources>
 
-    <Canvas Background="#FFF9EFDA" >
+    <Canvas x:Name="ContentCanvas" Background="#FFF9EFDA" >
 
         <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
 

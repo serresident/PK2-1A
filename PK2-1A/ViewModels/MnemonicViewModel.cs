@@ -383,4 +383,6 @@ namespace belofor.ViewModels
            // chartUpdater.Stop();
         }
     }
+
+
 }
