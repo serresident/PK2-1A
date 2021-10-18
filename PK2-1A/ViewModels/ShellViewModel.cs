@@ -29,6 +29,9 @@ namespace belofor.ViewModels
         private PeriodicalTaskStarter archivTask = new PeriodicalTaskStarter(TimeSpan.FromSeconds(3));
         private readonly ArchivService archivService;
 
+        private PeriodicalTaskStarter logicTask= new PeriodicalTaskStarter(TimeSpan.FromMilliseconds(100));
+        private readonly LogicService logicService;
+
         public User User { get; set; }
 
         const string title = "Схема производства Белофоров";
@@ -50,7 +53,7 @@ namespace belofor.ViewModels
 
         public DelegateCommand ShowSettingsDialogCommand { get; private set; }
 
-        public ShellViewModel(IDialogService dialogService, IEventAggregator eventAggregator, User user, ModbusTcpService modbusTcpService, ArchivService archivService, JournalService journalService)
+        public ShellViewModel(IDialogService dialogService, IEventAggregator eventAggregator, User user, ModbusTcpService modbusTcpService, ArchivService archivService, JournalService journalService,LogicService logicService)
         {
             this.dialogService = dialogService;
             this.eventAggregator = eventAggregator;
@@ -58,6 +61,7 @@ namespace belofor.ViewModels
             this.modbusTcpService = modbusTcpService;
             this.archivService = archivService;
             this.journalService = journalService;
+            this.logicService = logicService;
 
             ShowSettingsDialogCommand = new DelegateCommand(ShowSettingsDialog, () => User.IsAuthorized).ObservesProperty(() => User.IsAuthorized); ;
 
@@ -87,13 +91,14 @@ namespace belofor.ViewModels
             modbusTask.Start(() => modbusTcpService.Worker(), () => modbusTcpService.AfterStop());
             archivTask.Start(() => archivService.Worker(), null);
             journalTask.Start(() => journalService.Worker(), null);
+            logicTask.Start(() => logicService.Worker(), null);
         }
 
         internal void OnClosing()
         {
             journalTask.Stop();
             archivTask.Stop();
-
+            logicTask.Stop();
             modbusTcpService.ConnectedChangedHandler -= ConnectedChanged;
             modbusTask.Stop();
         }

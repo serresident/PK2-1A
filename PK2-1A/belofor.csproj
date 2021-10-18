@@ -277,6 +277,7 @@
       <DependentUpon>PasswordDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\PasswordDialogViewModel.cs" />
+    <Compile Include="Events\ModbusMasterReadCompleted.cs" />
     <Compile Include="Helpers\MethodBindingExtension.cs" />
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
     <Compile Include="Models\ArchivItem.cs" />

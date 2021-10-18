@@ -1,4 +1,5 @@
-﻿using System;
+﻿using belofor.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,18 @@ namespace belofor.Views
         {
             InitializeComponent();
         }
+
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as LogicViewModel).Subscribe();
+        }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as LogicViewModel).Unsubscribe();
+        }
     }
+
+
 }

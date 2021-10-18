@@ -12,6 +12,17 @@
 
     <xctk:BusyIndicator IsBusy="{Binding IsBusy}" >
         <Grid>
+          
+            <TabControl>
+                <TabItem Header="Белофор ОЦД 2-3 конденсации">
+                    <Canvas Background="#FFF9EFDA">
+                        
+                    </Canvas>
+                </TabItem>
+                <TabItem Header="2">
+
+                </TabItem>
+            </TabControl>
 
         </Grid>
     </xctk:BusyIndicator>

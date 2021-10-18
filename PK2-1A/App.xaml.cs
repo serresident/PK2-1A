@@ -99,11 +99,13 @@ namespace belofor
            // containerRegistry.RegisterSingleton<ModbusMasterService>();
             containerRegistry.RegisterSingleton<ArchivService>();
             containerRegistry.RegisterSingleton<JournalService>();
+            containerRegistry.RegisterSingleton<LogicService>();
 
             // Shared View Model
             containerRegistry.RegisterSingleton<MnemonicViewModel>();
             containerRegistry.RegisterSingleton<ArchivViewModel>();
             containerRegistry.RegisterSingleton<JournalViewModel>();
+            containerRegistry.RegisterSingleton<LogicViewModel>();
 
             // Navigation
             containerRegistry.RegisterForNavigation<MnemonicView>("MnemonicView");

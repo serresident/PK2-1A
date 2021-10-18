@@ -10,11 +10,17 @@ using belofor.Attributes;
 using belofor.Helpers;
 using belofor.Models;
 using belofor.Repositories;
+using Prism.Events;
+using belofor.Events;
+using System.Windows;
 
 namespace belofor.ViewModels
 {
 	public class LogicViewModel : BindableBase
 	{
+
+
+		IEventAggregator eventAggregator;
 		// Token: 0x1700000D RID: 13
 		// (get) Token: 0x06000072 RID: 114 RVA: 0x000038A4 File Offset: 0x00001AA4
 		// (set) Token: 0x06000073 RID: 115 RVA: 0x000038BC File Offset: 0x00001ABC
@@ -45,6 +51,8 @@ namespace belofor.ViewModels
 			}
 		}
 
+
+
 		// Token: 0x1700000F RID: 15
 		// (get) Token: 0x06000076 RID: 118 RVA: 0x00003904 File Offset: 0x00001B04
 		// (set) Token: 0x06000077 RID: 119 RVA: 0x0000391C File Offset: 0x00001B1C
@@ -61,14 +69,39 @@ namespace belofor.ViewModels
 		}
 
 		// Token: 0x06000078 RID: 120 RVA: 0x00003932 File Offset: 0x00001B32
-		public LogicViewModel(ProcessDataTcp pd, JournalRepository journalRepository)
+		public LogicViewModel(ProcessDataTcp pd, JournalRepository journalRepository, IEventAggregator eventAggregator)
 		{
 			this.PD = pd;
+			this.eventAggregator = eventAggregator;
+
+		}
+		public void Subscribe()
+		{
+			
+			eventAggregator.GetEvent<ModbusMasterReadCompleted>().Subscribe(notifyProcessDataChanged);
+			
+
 		}
 
-		// Token: 0x06000079 RID: 121 RVA: 0x00003944 File Offset: 0x00001B44
-		public void OnLoading()
+		public void Unsubscribe()
 		{
+
+
+			eventAggregator.GetEvent<ModbusMasterReadCompleted>().Unsubscribe(notifyProcessDataChanged);
+		
+
+		}
+
+
+
+
+			// Token: 0x06000079 RID: 121 RVA: 0x00003944 File Offset: 0x00001B44
+			public void OnLoading()
+
+
+		{
+
+			eventAggregator.GetEvent<ModbusMasterReadCompleted>().Subscribe(notifyProcessDataChanged);
 			//Task.Factory.StartNew(delegate ()
 			//{
 			//	this.IsBusy = true;
@@ -92,8 +125,13 @@ namespace belofor.ViewModels
 			//}, TaskScheduler.FromCurrentSynchronizationContext());
 		}
 
-		// Token: 0x04000038 RID: 56
-		private ObservableRangeCollection<JournalItem> journalItems;
+        private void notifyProcessDataChanged()
+        {
+            throw new NotImplementedException();
+        }
+
+        // Token: 0x04000038 RID: 56
+        private ObservableRangeCollection<JournalItem> journalItems;
 
 		// Token: 0x04000039 RID: 57
 		private ProcessDataTcp _pd;
