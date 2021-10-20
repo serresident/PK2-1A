@@ -68,7 +68,14 @@ namespace belofor.ViewModels
 			}
 		}
 
+
 		// Token: 0x06000078 RID: 120 RVA: 0x00003932 File Offset: 0x00001B32
+
+		public LogicViewModel() //fix
+		{
+			
+
+		}
 		public LogicViewModel(ProcessDataTcp pd, JournalRepository journalRepository, IEventAggregator eventAggregator)
 		{
 			this.PD = pd;
@@ -127,7 +134,7 @@ namespace belofor.ViewModels
 
         private void notifyProcessDataChanged()
         {
-            throw new NotImplementedException();
+          
         }
 
         // Token: 0x04000038 RID: 56

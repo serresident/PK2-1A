@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using belofor.Models;
+using Prism.Events;
+using belofor.Events;
 
 namespace belofor.Services
 {
@@ -34,13 +36,13 @@ namespace belofor.Services
 
         private readonly ModbusClient _modbusClient;
         private readonly ProcessData _processData;
-
+        IEventAggregator _eventAggregator;
         object locker = new object();
 
-        public ModbusTcpService(ProcessDataTcp processData)
+        public ModbusTcpService(ProcessDataTcp processData, IEventAggregator eventAggregator) 
         {
             _processData = processData;
-
+            _eventAggregator = eventAggregator;
             _modbusClient = new ModbusClient(ModbusClientIP, ModbusPort);
 
             _modbusClient.ConnectedChanged += connectedChanged;
@@ -154,6 +156,7 @@ namespace belofor.Services
                 }
 
                 _processData.ExternalSet(requestResult.ToArray());
+                _eventAggregator.GetEvent<ModbusMasterReadCompleted>().Publish();
 
                 requestResult.Clear();
 
