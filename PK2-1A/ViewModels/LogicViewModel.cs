@@ -12,7 +12,7 @@ using Xceed.Wpf.Toolkit;
 
 namespace belofor.ViewModels
 {
-    public class MnemonicViewModel : BindableBase
+    public class LogicViewModel : BindableBase
     {
         private Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -23,10 +23,10 @@ namespace belofor.ViewModels
         private readonly ArchivRepository archivRepository;
 
         public DelegateCommand WaterLoadingStartCommand { get; private set; }
-        public DelegateCommand WaterLoadingStopCommand { get; private set; }
-
+        public DelegateCommand WaterLoadingStopCommand { get; private set; }     
+        
         public DelegateCommand HotWaterLoadingStartCommand { get; private set; }
-        public DelegateCommand HotWaterLoadingStopCommand { get; private set; }
+        public DelegateCommand HotWaterLoadingStopCommand { get; private set; }      
 
         public DelegateCommand Hot480WaterLoadingStartCommand { get; private set; }
         public DelegateCommand Hot480WaterLoadingStopCommand { get; private set; }
@@ -92,7 +92,7 @@ namespace belofor.ViewModels
             set { SetProperty(ref unloadFromR422WndStatus, value); }
         }
 
-        // охлаждение 480
+                    // охлаждение 480
         private WindowState ohlagd480WndStatus = WindowState.Closed;
         public WindowState Ohlagd480WndStatus
         {
@@ -168,7 +168,7 @@ namespace belofor.ViewModels
             get { return isBusy; }
             set { SetProperty(ref isBusy, value); }
         }
-        public MnemonicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository)
+        public LogicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository)
         {
             PD = pd;
             this.archivRepository = archivRepository;
@@ -207,28 +207,28 @@ namespace belofor.ViewModels
 
 
 
-            //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
+             chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromMilliseconds(50));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         }
 
-        private bool canWaterLoadingStart() { return !PD.ZagrVodaComm_Start; }
-        private void waterLoadingStart() => PD.ZagrVodaComm_Start = true;
+        private bool canWaterLoadingStart() {return !PD.ZagrVodaComm_Start ; }
+        private void waterLoadingStart() =>  PD.ZagrVodaComm_Start = true;
         private bool canWaterLoadingStop() { return PD.ZagrVodaComm_Start; }
         private void waterLoadingStop() => PD.ZagrVodaComm_Start = false;
 
         private bool canHotWaterLoadingStart() { return !PD.ZagrKond460Comm_Start; }
-        private void hotwaterLoadingStart() => PD.ZagrKond460Comm_Start = true;
-        private bool canHotWaterLoadingStop() { return PD.ZagrKond460Comm_Start; }
+        private void hotwaterLoadingStart() =>  PD.ZagrKond460Comm_Start = true;
+        private bool canHotWaterLoadingStop() {return PD.ZagrKond460Comm_Start; } 
         private void hotwaterLoadingStop() => PD.ZagrKond460Comm_Start = false;
 
         private bool canHot480WaterLoadingStart() { return !PD.ZagrKond480Comm_Start; }
-        private void hot480waterLoadingStart() => PD.ZagrKond480Comm_Start = true;
-        private bool canHot480WaterLoadingStop() { return PD.ZagrKond480Comm_Start; }
+        private void hot480waterLoadingStart() =>  PD.ZagrKond480Comm_Start = true;
+        private bool canHot480WaterLoadingStop() {return PD.ZagrKond480Comm_Start; } 
         private void hot480waterLoadingStop() => PD.ZagrKond480Comm_Start = false;
 
         private bool canUnloadFromR422Start() { return !PD.fromR422_xStart; }
-        private void unloadFromR422Start() => PD.fromR422_xStart = true;
-        private bool canUnloadFromR422Stop() { return PD.fromR422_xStart; }
+        private void unloadFromR422Start() =>  PD.fromR422_xStart = true;
+        private bool canUnloadFromR422Stop() {return PD.fromR422_xStart; } 
         private void unloadFromR422stop() => PD.fromR422_xStart = false;
 
         private bool canOhlagd480Start() { return !PD.Ohlagd480_Start; }
@@ -272,7 +272,7 @@ namespace belofor.ViewModels
                 var t = new Thread(() =>
                 {
                     IsBusy = true;
-
+                    
                     internalUpdater.Start(() => internalUpdate(), null);
 
                     List<ThermoChartPoint> _points = new List<ThermoChartPoint>();
@@ -280,7 +280,7 @@ namespace belofor.ViewModels
 
                     var dataPoints = archivRepository.GetMeasurements(DateTime.Now.AddHours(-5), DateTime.Now);
                     if (dataPoints == null) // повторяем запрос если возникло исключение
-                        dataPoints = archivRepository.GetMeasurements(DateTime.Now.AddHours(-5), DateTime.Now);
+                    dataPoints = archivRepository.GetMeasurements(DateTime.Now.AddHours(-5), DateTime.Now);
 
 
                     //foreach (KeyValuePair<DateTime, Dictionary<string, string>> entry in dataPoints)
@@ -307,8 +307,8 @@ namespace belofor.ViewModels
 
                     Points = new ObservableRangeCollection<ThermoChartPoint>(_points);
 
-                    //  chartUpdater.Start(() => updateChart(), null);
-
+                  chartUpdater.Start(() => updateChart(), null);
+                    
                     IsBusy = false;
                 });
 
@@ -322,33 +322,75 @@ namespace belofor.ViewModels
 
         }
 
+        private bool start_recept;
+        public bool Start_recept
+        {
+            get { return start_recept; }
+            set { SetProperty(ref start_recept, value); }
+        }
+       
+        private int state;
+        public int State
+        {
+            get { return state; }
+            set { SetProperty(ref state, value); }
+        }
+
+        private float setPh_st1_1_A;
+        public float SetPh_st1_1_A
+        {
+            get { return setPh_st1_1_A; }
+            set { SetProperty(ref setPh_st1_1_A, value); }
+        }
+
+        private float setPh_zadDdoza_st1_1_A;
+        public float SetPh_zadDoza_st1_1_A
+        {
+            get { return setPh_zadDdoza_st1_1_A; }
+            set { SetProperty(ref setPh_zadDdoza_st1_1_A, value); }
+        }
+        int n;
         private void updateChart()
         {
-            //App.Current.Dispatcher?.Invoke(() =>
-            //{
-            //    Points.Add(new ThermoChartPoint()
-            //    {
-            //        DTS = DateTime.Now,
-            //        TE_1_1A = PD.TE_1_1A,
-            //        TE_2_1A = PD.TE_2_1A,
-            //        TE_3_1A = PD.TE_3_1A,
-            //        TE_4_1A = PD.TE_4_1A
-            //    });
+            switch (n)
+            {
+                case 0:
+                    if (Start_recept)
+                    {
+                        // PD.NC_K480A_mode = true;
+                        // PD.NC_K480BA_ain_auto = 50;
+                        PD.RegPH480A_pH_zad = SetPh_st1_1_A;
+                        PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
+                        PD.RegPH480A_Start = true;
+                        n = 1;
+                        state = 1;
+                    }
+                       
+                    break;
 
-            //    IEnumerable<ThermoChartPoint> deletedItem = (from p in Points where p.DTS < DateTime.Now.AddHours(-5) select p).ToList();
-            //    if (deletedItem.Count() > 0)
-            //        Points.RemoveRange(deletedItem);
+                case 1:
 
-            //});
+                    break;
+                default:
+                    break;
+
+                    if(!start_recept&&n!=0)
+                    {
+                        PD.RegPH480A_Start = false;
+                        // PD.NC_K480A_mode = true;
+                        // PD.NC_K480BA_ain_auto = 0;
+                        n = 0;
+                    }
+            }
         }
 
         private void internalUpdate()
         {
             WaterLoadingStartCommand.RaiseCanExecuteChanged();
-            WaterLoadingStopCommand.RaiseCanExecuteChanged();
+            WaterLoadingStopCommand.RaiseCanExecuteChanged(); 
 
             HotWaterLoadingStartCommand.RaiseCanExecuteChanged();
-            HotWaterLoadingStopCommand.RaiseCanExecuteChanged();
+            HotWaterLoadingStopCommand.RaiseCanExecuteChanged();  
 
             Hot480WaterLoadingStartCommand.RaiseCanExecuteChanged();
             Hot480WaterLoadingStopCommand.RaiseCanExecuteChanged();
@@ -377,10 +419,10 @@ namespace belofor.ViewModels
 
         }
 
-        ~MnemonicViewModel()
+        ~LogicViewModel()
         {
             internalUpdater.Stop();
-            // chartUpdater.Stop();
+           // chartUpdater.Stop();
         }
     }
 

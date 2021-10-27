@@ -298,10 +298,10 @@
     <Compile Include="Services\ModbusTcpService.cs" />
     <Compile Include="Services\PeriodicalTaskStarter.cs" />
     <Compile Include="ViewModels\ArchivViewModel.cs" />
-    <Compile Include="ViewModels\LogicViewModel .cs" />
+    <Compile Include="ViewModels\MnemonicViewModel.cs" />
     <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="ViewModels\JournalViewModel.cs" />
-    <Compile Include="ViewModels\MnemonicViewModel.cs" />
+    <Compile Include="ViewModels\LogicViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ArchivToolView.xaml.cs">
       <DependentUpon>ArchivToolView.xaml</DependentUpon>
