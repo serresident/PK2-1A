@@ -210,11 +210,11 @@ namespace belofor.ViewModels
              chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromMilliseconds(50));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         }
-
-        private bool canWaterLoadingStart() {return !PD.ZagrVodaComm_Start ; }
-        private void waterLoadingStart() =>  PD.ZagrVodaComm_Start = true;
-        private bool canWaterLoadingStop() { return PD.ZagrVodaComm_Start; }
-        private void waterLoadingStop() => PD.ZagrVodaComm_Start = false;
+        //команды на кнопким
+        private bool canWaterLoadingStart() {return !PD.ZagrVodaComm_Start ; }// проверяем доступность кнопким
+        private void waterLoadingStart() =>  PD.ZagrVodaComm_Start = true; // предаем старт  на плк
+        private bool canWaterLoadingStop() { return PD.ZagrVodaComm_Start; } // проверяем доступность кнопким
+        private void waterLoadingStop() => PD.ZagrVodaComm_Start = false;// предаем стоп  на плк
 
         private bool canHotWaterLoadingStart() { return !PD.ZagrKond460Comm_Start; }
         private void hotwaterLoadingStart() =>  PD.ZagrKond460Comm_Start = true;
@@ -371,16 +371,16 @@ namespace belofor.ViewModels
                 case 1:
 
                     break;
-                default:
-                    break;
+              
 
-                    if(!start_recept&&n!=0)
-                    {
-                        PD.RegPH480A_Start = false;
-                        // PD.NC_K480A_mode = true;
-                        // PD.NC_K480BA_ain_auto = 0;
-                        n = 0;
-                    }
+                
+            }
+            if (!Start_recept && n != 0)
+            {
+                PD.RegPH480A_Start = false;
+                // PD.NC_K480A_mode = true;
+                // PD.NC_K480BA_ain_auto = 0;
+                n = 0;
             }
         }
 
