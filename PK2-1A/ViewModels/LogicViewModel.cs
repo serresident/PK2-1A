@@ -350,6 +350,7 @@ namespace belofor.ViewModels
             set { SetProperty(ref setPh_zadDdoza_st1_1_A, value); }
         }
         int n;
+
         private void updateChart()
         {
             switch (n)
@@ -363,12 +364,15 @@ namespace belofor.ViewModels
                         PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
                         PD.RegPH480A_Start = true;
                         n = 1;
-                        state = 1;
+                        State = 1;
                     }
                        
                     break;
 
                 case 1:
+                    PD.RegPH480A_pH_zad = SetPh_st1_1_A;
+                    PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
+
 
                     break;
               
@@ -381,6 +385,7 @@ namespace belofor.ViewModels
                 // PD.NC_K480A_mode = true;
                 // PD.NC_K480BA_ain_auto = 0;
                 n = 0;
+                State = 0;
             }
         }
 

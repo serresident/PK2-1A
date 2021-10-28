@@ -26,9 +26,10 @@
 
                     <Grid ShowGridLines="True" Height="800" Width="1200">
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition />
-                            <RowDefinition/>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="200"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -49,15 +50,15 @@
         Grid.Column="1" 
         Grid.Row="0" 
         Grid.RowSpan="4" 
-        BorderThickness="4"
-        BorderBrush="{c:Binding '(State==1) ? media.Brushes.LawnGreen :media.Brushes.Transparent' }"        
+        BorderThickness="8"
+        BorderBrush="{c:Binding '(State==1) ? media:Brushes.Green : media:Brushes.Transparent' }"         
         Background="Transparent"/>
 
                         <Grid Grid.Row="2" Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition  />
 
-                                <RowDefinition  Height="56"/>
+                                <RowDefinition  Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
 
                             </Grid.RowDefinitions>
@@ -85,9 +86,7 @@
                            FontWeight="Bold"
                            Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
 
-
                                 <Controls:NumPadUpDown
-                   
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -97,7 +96,6 @@
             EnterClosesNumPad="True"
             FontSize="16"
             FontWeight="Bold"
-            
             Increment="0.1"
             Minimum="0"
             Precision="1"
@@ -124,7 +122,7 @@
             Precision="1"
             UpdateValueOnEnterKey="True">
                                     <Behaviors:Interaction.Behaviors>
-                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480A_DozaZad}" />
+                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_zadDoza_st1_1_A}" />
                                     </Behaviors:Interaction.Behaviors>
                                 </Controls:NumPadUpDown>
 
@@ -213,6 +211,8 @@
             </Expander>-->
 
                         </Grid>
+                        <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Foreground="Black" Text="Поддержание PH"  FontSize="20" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" />
 
 
 
@@ -226,6 +226,32 @@
                 UncheckedContent = "ВЫКЛ"
                 CheckedBackground="DarkSeaGreen"
                 UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
+                    <WPF:Label  Height="36" Content="NC_K480B" FontWeight="Bold" Foreground="Black" Canvas.Top="110" Width="162"  Design="Arrowed" ItemDeterminationValue="{c:Binding (PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" Canvas.Left="2" >
+                        <WPF:Label.States>
+                            <WPF:StatesStandard  Critical="{c:Binding (PD.NC_K480B_Cur_FRQ less 0)}"  Active="{c:Binding (PD.NC_K480B_Cur_FRQ &gt; 0)}"/>
+                        </WPF:Label.States>
+
+                        <WPF:Label.Colors>
+                            <WPF:ControlColors >
+                                <WPF:ControlColors.DefaultColoring>
+                                    <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
+
+                                    <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ less) ? \'Green\':\'Green\''}" />-->
+                                </WPF:ControlColors.DefaultColoring>
+                                <WPF:ControlColors.State1Coloring>
+                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGray"  />
+                                </WPF:ControlColors.State1Coloring>
+                                <WPF:ControlColors.State4Coloring>
+                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
+                                </WPF:ControlColors.State4Coloring>
+                            </WPF:ControlColors>
+                        </WPF:Label.Colors>
+
+                        <WPF:Label.Items>
+                            <WPF:ValueTextItem Text="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}"  Value="1"/>
+                            <WPF:ValueTextItem  Text="Нет связи c ПЧ" Value="0"/>
+                        </WPF:Label.Items>
+                    </WPF:Label>
                     <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                         <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                         <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
