@@ -8,20 +8,21 @@
              xmlns:WPF="clr-namespace:AITSW.PCPANEL.WPF;assembly=PCPANEL_WPF_Controls"
              xmlns:behaviors="clr-namespace:belofor.Behaviors"
              xmlns:Controls="clr-namespace:belofor.Controls"
+             xmlns:media ="clr-namespace:System.Windows.Media;assembly=PresentationCore"
              xmlns:converters1="clr-namespace:belofor.Converters"
              xmlns:helpers="clr-namespace:belofor.Helpers"
              xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding" xmlns:child="clr-namespace:belofor.Views.ChildWindows"
     x:Class="belofor.Views.LogicView"
              
              mc:Ignorable="d" 
-             d:DesignHeight="1920" d:DesignWidth="1080">
+             d:DesignHeight="1080" d:DesignWidth="1920">
 
-    <xctk:BusyIndicator IsBusy="{Binding IsBusy}" >
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy}"  >
 
 
-        <TabControl>
-            <TabItem Header="Белофор ОЦД 2-3 конденсации K480A">
-                <Canvas Background="#FFF9EFDA" >
+        <TabControl  >
+            <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
+                <Canvas Background="#FFF9EFDA"   >
 
                     <Grid ShowGridLines="True" Height="800" Width="1200">
                         <Grid.RowDefinitions>
@@ -49,8 +50,169 @@
         Grid.Row="0" 
         Grid.RowSpan="4" 
         BorderThickness="4"
-        BorderBrush="DarkGreen"         
+        BorderBrush="{c:Binding '(State==1) ? media.Brushes.LawnGreen :media.Brushes.Transparent' }"        
         Background="Transparent"/>
+
+                        <Grid Grid.Row="2" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  />
+
+                                <RowDefinition  Height="56"/>
+                                <RowDefinition Height="Auto"/>
+
+                            </Grid.RowDefinitions>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="49" />
+                                    <RowDefinition Height="132" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  Width="140"/>
+                                    <ColumnDefinition  Width="140"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="114"/>
+
+                                <TextBlock Text="Зад. доза  щелочи: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
+
+
+                                <Controls:NumPadUpDown
+                   
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                    <Behaviors:Interaction.Behaviors>
+                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_zadDoza_st1_1_A}" />
+                                    </Behaviors:Interaction.Behaviors>
+                                </Controls:NumPadUpDown>
+
+                                <Controls:NumPadUpDown
+                    
+            Grid.Row="3"
+            Grid.Column="0"
+            Height="30"
+            Margin="5,7,15,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            
+            Increment="0.1"
+            Minimum="-1"
+            Precision="1"
+            UpdateValueOnEnterKey="True">
+                                    <Behaviors:Interaction.Behaviors>
+                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480A_DozaZad}" />
+                                    </Behaviors:Interaction.Behaviors>
+                                </Controls:NumPadUpDown>
+
+
+
+
+
+
+
+
+
+
+                            </Grid>
+                            <!--<Border
+                Grid.RowSpan="2"
+                Grid.Column="1"
+               
+                Margin="3"
+                Background="LemonChiffon"
+                BorderBrush="#FFD19922"
+                BorderThickness="1">
+                <oxy:Plot
+                    
+                    Background="Transparent"
+                    ClipToBounds="True"
+                    PlotAreaBorderColor="Gray"
+                    TextColor="Gray">
+                    <oxy:Plot.Axes>
+                        <oxy:DateTimeAxis
+                            AxislineColor="Gray"
+                            IsAxisVisible="True"
+                            IsPanEnabled="False"
+                            IsZoomEnabled="False"
+                            Position="Bottom"
+                            StringFormat="HH:mm"
+                            TicklineColor="Gray" />
+                        <oxy:LinearAxis
+                            AxislineColor="Gray"
+                            IsAxisVisible="True"
+                            IsPanEnabled="False"
+                            IsZoomEnabled="False"
+                            Maximum="130"
+                            Minimum="0"
+                            Position="Left"
+                            TicklineColor="Gray" />
+                    </oxy:Plot.Axes>
+                    <oxy:LineSeries
+                        Title="WE D470"
+                        DataFieldX="DTS"
+                        DataFieldY="TE_1_1A"
+                        ItemsSource="{Binding Points}"
+                        StrokeThickness="2"
+                        Color="Violet" />
+
+                    <oxy:LineSeries
+                        Title="pH K480A"
+                        DataFieldX="DTS"
+                        DataFieldY="TE_1_1A"
+                        ItemsSource="{Binding Points}"
+                        StrokeThickness="2"
+                        Color="Green" />
+
+
+                </oxy:Plot>
+            </Border>-->
+                            <!--<Expander Grid.Row="3" Header="Дополнительный параметры" FontSize="24" Grid.ColumnSpan="2">
+                <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+              
+                    
+                        <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition  Height="30"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="135*"  />
+                        <ColumnDefinition Width="88*"/>
+                        <ColumnDefinition Width="223*" />
+                    </Grid.ColumnDefinitions>
+                   
+                        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Column="0" Text="Предвар. закр-е :" Margin="0,0,159,0"/>
+                    </Grid>
+                </ScrollViewer>
+            </Expander>-->
+
+                        </Grid>
 
 
 
@@ -63,7 +225,7 @@
                CheckedContent = "ВКЛ"
                 UncheckedContent = "ВЫКЛ"
                 CheckedBackground="DarkSeaGreen"
-                UncheckedBackground ="LightPink" Canvas.Left="387" Canvas.Top="412"/>
+                UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
                     <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                         <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                         <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
