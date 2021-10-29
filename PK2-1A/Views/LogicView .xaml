@@ -23,30 +23,39 @@
         <TabControl  >
             <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
                 <Canvas Background="#FFF9EFDA"   >
-
-                    <Grid ShowGridLines="True" Height="800" Width="1200">
+                    <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50" />
-                            <RowDefinition Height="100"/>
-                            <RowDefinition Height="140"/>
-                            <RowDefinition Height="200"/>
                             <RowDefinition/>
+                            <RowDefinition/>
+
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-
-
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Text="1"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <Border 
+
+                        <Grid ShowGridLines="True"  Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+
+
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Text="1"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Border 
         Grid.Column="1" 
         Grid.Row="0" 
         Grid.RowSpan="4" 
@@ -54,39 +63,37 @@
         BorderBrush="{c:Binding '(State==1) ? media:Brushes.Green : media:Brushes.Transparent' }"         
         Background="Transparent"/>
 
-                        <Grid Grid.Row="2" Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition  />
-
-                                <RowDefinition  Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-
-                            </Grid.RowDefinitions>
-
-
-
-                            <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                            <Grid Grid.Row="2" Grid.Column="1">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="49" />
-                                    <RowDefinition Height="132" />
+                                    <RowDefinition  />
+
+                                    <RowDefinition  Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+
                                 </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition  Width="140"/>
-                                    <ColumnDefinition  Width="140"/>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="140"/>
+                                        <ColumnDefinition  Width="140"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                <TextBlock Text="Зад. доза  щелочи: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
-                           FontWeight="Bold"
-                           Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
-
-                                <Controls:NumPadUpDown
+                                    <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -100,17 +107,21 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                    <Behaviors:Interaction.Behaviors>
-                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_zadDoza_st1_1_A}" />
-                                    </Behaviors:Interaction.Behaviors>
-                                </Controls:NumPadUpDown>
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st1_1_A}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
 
-                                <Controls:NumPadUpDown
+                                    <TextBlock Text="Зад. доза  щелочи: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
+
+                                    <Controls:NumPadUpDown
                     
             Grid.Row="3"
             Grid.Column="0"
             Height="30"
-            Margin="5,7,15,0"
+            Margin="5,0,15,0"
             VerticalAlignment="Top"
             VerticalContentAlignment="Center"
             EnterClosesNumPad="True"
@@ -121,10 +132,33 @@
             Minimum="-1"
             Precision="1"
             UpdateValueOnEnterKey="True">
-                                    <Behaviors:Interaction.Behaviors>
-                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_zadDoza_st1_1_A}" />
-                                    </Behaviors:Interaction.Behaviors>
-                                </Controls:NumPadUpDown>
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_zadDoza_st1_1_A}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
+
+                                    <TextBlock Text="Таймаут PH , мин.: " Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="156" Grid.ColumnSpan="2" />
+
+                                    <Controls:NumPadUpDown
+            Grid.Row="5"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_time_Ph_st1_A}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
 
 
 
@@ -133,91 +167,19 @@
 
 
 
+
+
+                                </Grid>
 
 
                             </Grid>
-                            <!--<Border
-                Grid.RowSpan="2"
-                Grid.Column="1"
-               
-                Margin="3"
-                Background="LemonChiffon"
-                BorderBrush="#FFD19922"
-                BorderThickness="1">
-                <oxy:Plot
-                    
-                    Background="Transparent"
-                    ClipToBounds="True"
-                    PlotAreaBorderColor="Gray"
-                    TextColor="Gray">
-                    <oxy:Plot.Axes>
-                        <oxy:DateTimeAxis
-                            AxislineColor="Gray"
-                            IsAxisVisible="True"
-                            IsPanEnabled="False"
-                            IsZoomEnabled="False"
-                            Position="Bottom"
-                            StringFormat="HH:mm"
-                            TicklineColor="Gray" />
-                        <oxy:LinearAxis
-                            AxislineColor="Gray"
-                            IsAxisVisible="True"
-                            IsPanEnabled="False"
-                            IsZoomEnabled="False"
-                            Maximum="130"
-                            Minimum="0"
-                            Position="Left"
-                            TicklineColor="Gray" />
-                    </oxy:Plot.Axes>
-                    <oxy:LineSeries
-                        Title="WE D470"
-                        DataFieldX="DTS"
-                        DataFieldY="TE_1_1A"
-                        ItemsSource="{Binding Points}"
-                        StrokeThickness="2"
-                        Color="Violet" />
-
-                    <oxy:LineSeries
-                        Title="pH K480A"
-                        DataFieldX="DTS"
-                        DataFieldY="TE_1_1A"
-                        ItemsSource="{Binding Points}"
-                        StrokeThickness="2"
-                        Color="Green" />
+                            <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Foreground="Black" Text="Поддержание PH"  FontSize="19" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
 
-                </oxy:Plot>
-            </Border>-->
-                            <!--<Expander Grid.Row="3" Header="Дополнительный параметры" FontSize="24" Grid.ColumnSpan="2">
-                <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
-              
-                    
-                        <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30" />
-                        <RowDefinition  Height="30"/>
-                        <RowDefinition Height="Auto"/>
-
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="135*"  />
-                        <ColumnDefinition Width="88*"/>
-                        <ColumnDefinition Width="223*" />
-                    </Grid.ColumnDefinitions>
-                   
-                        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Column="0" Text="Предвар. закр-е :" Margin="0,0,159,0"/>
-                    </Grid>
-                </ScrollViewer>
-            </Expander>-->
 
                         </Grid>
-                        <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Foreground="Black" Text="Поддержание PH"  FontSize="20" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" />
-
-
-
-                    </Grid>
-                    <xctk:ToggleSwitch Width="64" Margin="5,0,0,5" Height="25" Grid.Row="0" Grid.Column="3"    
+                        <xctk:ToggleSwitch Width="64" Margin="26,48,775,-40" Height="25" Grid.Row="1"    
                   CornerRadius="2"
                  IsChecked="{Binding Start_recept ,Mode=TwoWay}"
                 ThumbHeight = "25"
@@ -226,33 +188,25 @@
                 UncheckedContent = "ВЫКЛ"
                 CheckedBackground="DarkSeaGreen"
                 UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
-                    <WPF:Label  Height="36" Content="NC_K480B" FontWeight="Bold" Foreground="Black" Canvas.Top="110" Width="162"  Design="Arrowed" ItemDeterminationValue="{c:Binding (PD.NC_K480B_Cur_FRQ less 0) ? 0 : 1}"  DefaultText="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5" Canvas.Left="2" >
-                        <WPF:Label.States>
-                            <WPF:StatesStandard  Critical="{c:Binding (PD.NC_K480B_Cur_FRQ less 0)}"  Active="{c:Binding (PD.NC_K480B_Cur_FRQ &gt; 0)}"/>
-                        </WPF:Label.States>
 
-                        <WPF:Label.Colors>
-                            <WPF:ControlColors >
-                                <WPF:ControlColors.DefaultColoring>
-                                    <WPF:ColoringColor Frequency="0.5" Color1="LightBlue" />
-
-                                    <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.P726_Cur_FRQ less) ? \'Green\':\'Green\''}" />-->
-                                </WPF:ControlColors.DefaultColoring>
-                                <WPF:ControlColors.State1Coloring>
-                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGray"  />
-                                </WPF:ControlColors.State1Coloring>
-                                <WPF:ControlColors.State4Coloring>
-                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
-                                </WPF:ControlColors.State4Coloring>
-                            </WPF:ControlColors>
-                        </WPF:Label.Colors>
-
-                        <WPF:Label.Items>
-                            <WPF:ValueTextItem Text="{Binding PD.NC_K480B_Cur_FRQ, StringFormat=\{0\}Гц}"  Value="1"/>
-                            <WPF:ValueTextItem  Text="Нет связи c ПЧ" Value="0"/>
-                        </WPF:Label.Items>
-                    </WPF:Label>
-                    <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                        <!--<ScrollViewer Grid.Row="1">
+                            <ListView ItemsSource="{Binding MessageList}" FontSize="16" AlternationCount="2" >
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Дата"
+                            DisplayMemberBinding="{Binding Key, StringFormat='dd-MM-yyyy HH:mm:ss'}" />
+                                        <GridViewColumn Header="Сообщение" Width="800">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Value}" Foreground="DarkRed" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </ScrollViewer>-->
+                        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                         <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                         <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                         <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -266,6 +220,8 @@
                         <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
 
                     </xctk:WindowContainer>-->
+
+                    </Grid>
                 </Canvas>
             </TabItem>
             <TabItem Header="2"/>

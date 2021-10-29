@@ -336,20 +336,37 @@ namespace belofor.ViewModels
             set { SetProperty(ref state, value); }
         }
 
-        private float setPh_st1_1_A;
+        private float setPh_st1_1_A=7.5f;
         public float SetPh_st1_1_A
         {
             get { return setPh_st1_1_A; }
             set { SetProperty(ref setPh_st1_1_A, value); }
         }
 
-        private float setPh_zadDdoza_st1_1_A;
+        private float setPh_zadDdoza_st1_1_A=500;
         public float SetPh_zadDoza_st1_1_A
         {
             get { return setPh_zadDdoza_st1_1_A; }
             set { SetProperty(ref setPh_zadDdoza_st1_1_A, value); }
         }
+
+        private float set_time_Ph_st1_A=1;
+        public float Set_time_Ph_st1_A 
+        {
+            get { return set_time_Ph_st1_A; }
+            set { SetProperty(ref set_time_Ph_st1_A, value); }
+        }
+
+        private String statusOut ;
+
+        public String StatusOut
+        {
+            get { return statusOut; }
+            set { SetProperty(ref statusOut, value); }
+        }
         int n;
+        DateTime time_last;
+        DateTime exposur_time;
 
         private void updateChart()
         {
@@ -365,14 +382,33 @@ namespace belofor.ViewModels
                         PD.RegPH480A_Start = true;
                         n = 1;
                         State = 1;
+                        time_last = DateTime.Now;
+                        StatusOut = "Запущен алгорит белофор оцд апп.K480А";
+
+
                     }
                        
                     break;
 
-                case 1:
+                case 1 :
+
                     PD.RegPH480A_pH_zad = SetPh_st1_1_A;
                     PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
 
+                    
+
+                    if (!(SetPh_st1_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st1_1_A + 0.5f))
+                        time_last = DateTime.Now;
+
+                    if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A* 60)
+                    {
+                        if((DateTime.Now-exposur_time).TotalSeconds > 60)
+                        n = 2;
+                    }
+                    else
+                    {
+                        exposur_time = DateTime.Now;
+                    }
 
                     break;
               
