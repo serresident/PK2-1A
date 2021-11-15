@@ -379,7 +379,8 @@ namespace belofor.ViewModels
                         // PD.NC_K480BA_ain_auto = 50;
                         PD.RegPH480A_pH_zad = SetPh_st1_1_A;
                         PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
-                        PD.RegPH480A_Start = true;
+                        RegPh480aStart();
+
                         n = 1;
                         State = 1;
                         time_last = DateTime.Now;
