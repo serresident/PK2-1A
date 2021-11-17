@@ -475,9 +475,11 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
 
         public bool pHV_K610_mode { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=218
 
-        public bool ResetCount_FV521 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-        public bool ResetCount_FV460 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
-        public bool ResetCount_FV480 { get { return getValue<bool>(); } set { setValue<bool>(value); } }
+        public bool ResetCount_FV521 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=219
+        public bool ResetCount_FV460 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=220
+        public bool ResetCount_FV480 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=221
+        public bool ZagrAnilin480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad222
+        public bool ZagrAnilin480_IsEnablePredictClose { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad223
         #endregion
 
         // Inputs Registers
@@ -617,7 +619,9 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single emis200_summ_k480B { get { return getValue<Single>(); } }//142
         [ArchivAttribute("Мг-й расход K480B")]
         public Single emis200_FlowMeter_k480B { get { return getValue<Single>(); } }//144
-        public UInt16 zap3 { get { return getValue<UInt16>(); } }
+
+        public Single ZagrDietilAminK480_Doza2 { get { return getValue<Single>(); } }//ad146
+        public Single ZagrAnilin_Doza { get { return getValue<Single>(); } }//ad148
 
         public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последним ,служит для определения успешного чтения регистров
         } //ad=82 
@@ -849,6 +853,15 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single InceptControl { get { return getValue<Single>(); } set { setValue<Single>(value); } }//287
         public Single pHV_K610_ain_man { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=289
         public Single pHV_K610_ain_auto { get { return getValue<Single>(); } set { setValue<Single>(value); } }//ad=291
+
+
+        public Single ZagrAnilin480_DozaZad { get { return getValue<Single>(); } set { setValue<Single>(value); } }//293
+        public Single ZagrAnilin480_Xnom { get { return getValue<Single>(); } set { setValue<Single>(value); } }//295
+        public Single ZagrAnilin480_Wmin { get { return getValue<Single>(); } set { setValue<Single>(value); } }//297
+        public Single ZagrAnilin_weightPredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//299
+        public UInt16 ZagrAnilin480_status { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//300
+        public UInt16 ZagrAnilin480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//301
+        public Single ZagrAnilin480_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//302
 
         #endregion
     }

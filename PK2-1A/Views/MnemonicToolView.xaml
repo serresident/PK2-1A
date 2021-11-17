@@ -7,7 +7,7 @@
              xmlns:conv="clr-namespace:belofor.Converters" 
              xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" >
+             d:DesignHeight="450" d:DesignWidth="1600" >
     <UserControl.Resources>
         <conv:WindowsStatetToBoolConverter x:Key="WindowsStatetToBoolConverter"/>
 
@@ -441,7 +441,7 @@
 
         </ToggleButton>
 
-        <ToggleButton  Content="Загр. Диэтила- &#xA; мина в K480" IsChecked="{Binding ZagrDietilAmin480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked" Margin="5,0,0,0">
+        <ToggleButton  Content="Загр. Диэтила- &#xA; мина в K480" IsChecked="{Binding ZagrDietilAmin480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked" Margin="5,0,5,0">
 
             <!--<Behaviors:Interaction.Triggers>
                 <Behaviors:EventTrigger EventName="Checked">
@@ -467,6 +467,48 @@
 
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding PD.ZagrDietilAminK480_Start}" Value="true" >
+                            <Setter Property="OverridesDefaultStyle" Value="true"/>
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+                            <Setter Property="Foreground" Value="{StaticResource GreenTextForegroundBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource GreenBrush}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource GreenBorderBrush}"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Padding" Value="3"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Template" Value="{StaticResource GreenToggleButtonTemplate}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ToggleButton.Style>
+
+        </ToggleButton>
+        <ToggleButton  Content="Загр. Анили- &#xA; на в K480" IsChecked="{Binding ZagrAnilin480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked" Margin="0,0,5,0">
+
+            <!--<Behaviors:Interaction.Triggers>
+                <Behaviors:EventTrigger EventName="Checked">
+                    <Behaviors:InvokeCommandAction Command="{Binding Path=ShowToolWndCommand}" CommandParameter="{x:Static proxy:ToolWnd.WaterLoading}"/>
+                </Behaviors:EventTrigger>
+                <Behaviors:EventTrigger EventName="Unchecked">
+                    <Behaviors:InvokeCommandAction Command="{Binding Path=HideToolWndCommand}" CommandParameter="{x:Static proxy:ToolWnd.WaterLoading}"/>
+                </Behaviors:EventTrigger>
+            </Behaviors:Interaction.Triggers>-->
+            <!--<ToggleButton Content="Загрузка воды в &#xa;       мерники" IsChecked="{Binding ProxyMnemonic1Tool.WaterLoadingWnd, Mode=OneWay, Converter={StaticResource WindowsStatetToBoolConverter}}" Width="130" HorizontalContentAlignment="Center" Height="40" Margin="0,0,5,0" >-->
+            <ToggleButton.Style>
+                <Style TargetType="{x:Type ToggleButton}">
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+                    <Setter Property="Foreground" Value="{StaticResource TextForegroundBrush}"/>
+                    <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="3"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Template" Value="{StaticResource SimpleToggleButtonTemplate}"/>
+
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding PD.ZagrAnilin480_Start}" Value="true" >
                             <Setter Property="OverridesDefaultStyle" Value="true"/>
                             <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
                             <Setter Property="Foreground" Value="{StaticResource GreenTextForegroundBrush}"/>

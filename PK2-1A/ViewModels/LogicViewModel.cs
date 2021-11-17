@@ -335,14 +335,14 @@ namespace belofor.ViewModels
             get { return state; }
             set { SetProperty(ref state, value); }
         }
-
+        // ph уставка на 1 шаге
         private float setPh_st1_1_A=7.5f;
         public float SetPh_st1_1_A
         {
             get { return setPh_st1_1_A; }
             set { SetProperty(ref setPh_st1_1_A, value); }
         }
-
+        // доза на всю стадию
         private float setPh_zadDdoza_st1_1_A=500;
         public float SetPh_zadDoza_st1_1_A
         {
@@ -350,6 +350,8 @@ namespace belofor.ViewModels
             set { SetProperty(ref setPh_zadDdoza_st1_1_A, value); }
         }
 
+
+        // таймаут стабилизации ph
         private float set_time_Ph_st1_A=1;
         public float Set_time_Ph_st1_A 
         {
@@ -357,8 +359,70 @@ namespace belofor.ViewModels
             set { SetProperty(ref set_time_Ph_st1_A, value); }
         }
 
-        private String statusOut ;
 
+
+        // ph уставка на 2 шаге
+        private float setPh_st2_1_A = 7.5f;
+        public float SetPh_st2_1_A
+        {
+            get { return setPh_st2_1_A; }
+            set { SetProperty(ref setPh_st2_1_A, value); }
+        }
+
+        // доза анилина
+        private float doza_anilin_st2_A = 462;
+        public float Doza_anilin_st2_A
+        {
+            get { return doza_anilin_st2_A; }
+            set { SetProperty(ref doza_anilin_st2_A, value); }
+        }
+
+        // % откр клапана анилина
+        private float percent_valve_Anilin  = 80;
+        public float Percent_valve_Anilin
+        {
+            get { return percent_valve_Anilin; }
+            set { SetProperty(ref percent_valve_Anilin, value); }
+        }
+
+        // ph уставка на 3 шаге
+        private float setPh_st3_1_A =7.5f;
+        public float SetPh_st3_1_A
+        {
+            get { return setPh_st3_1_A; }
+            set { SetProperty(ref setPh_st3_1_A, value); }
+        }
+
+        //  доза1 диэтиламин на 3 шаге
+        private float dietilAmin_doza1 = 807f;
+        public float DietilAmin_doza1
+        {
+            get { return dietilAmin_doza1; }
+            set { SetProperty(ref dietilAmin_doza1, value); }
+        }
+
+
+        // доза2 диэтиламин на 3 шаге
+        private float dietilAmin_doza2 = 200f;
+        public float DietilAmin_doza2
+        {
+            get { return dietilAmin_doza1; }
+            set { SetProperty(ref dietilAmin_doza1, value); }
+        }
+
+        //  Температура диэтиламин для дозы2 на 3 шаге
+        private float dietilAmin_Tnagr = 60f;
+        public float DietilAmin_Tnagr
+        {
+            get { return dietilAmin_Tnagr; }
+            set { SetProperty(ref dietilAmin_Tnagr, value); }
+        }
+
+
+
+
+        private String statusOut ;
+        // текущий статус
         public String StatusOut
         {
             get { return statusOut; }
@@ -377,6 +441,7 @@ namespace belofor.ViewModels
                     {
                         // PD.NC_K480A_mode = true;
                         // PD.NC_K480BA_ain_auto = 50;
+                      
                         PD.RegPH480A_pH_zad = SetPh_st1_1_A;
                         PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
                         RegPh480aStart();
@@ -395,16 +460,36 @@ namespace belofor.ViewModels
 
                     PD.RegPH480A_pH_zad = SetPh_st1_1_A;
                     PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
+                    StatusOut = "ШАГ 1.Выполняется  доведение ph";
 
-                    
 
                     if (!(SetPh_st1_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st1_1_A + 0.5f))
                         time_last = DateTime.Now;
+                    else
+                        StatusOut = "ШАГ 1.Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now-time_last).TotalSeconds).ToString( " 0 ")+"секунд";
 
-                    if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A* 60)
+                    if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A * 60)
                     {
-                        if((DateTime.Now-exposur_time).TotalSeconds > 60)
-                        n = 2;
+                        StatusOut = "ШАГ 1.Завершение, по истечению " + ((DateTime.Now - exposur_time).TotalSeconds).ToString(" 0 ") + " секунд переход к шагу 2";
+                        if ((DateTime.Now - exposur_time).TotalSeconds > 0)
+                        {
+                            n = 2;
+                            StatusOut = "ШАГ 1.Завершение переход к шагу 2";
+
+
+                            // предварительные дествия для перехода
+                            PD.ZagrAnilin480_Nemk = 0;
+                            PD.ZagrAnilin480_DozaZad = Doza_anilin_st2_A;
+                            PD.ZagrAnilin480_Xnom = Percent_valve_Anilin;
+                            PD.ZagrAnilin480_Start = true;
+
+
+
+
+
+                            State = 2;
+                            StatusOut = "ШАГ 2.Загрузка Анилина. Ожидание окончания";
+                        }
                     }
                     else
                     {
@@ -412,17 +497,75 @@ namespace belofor.ViewModels
                     }
 
                     break;
-              
+                case 2:
+                   
+                    PD.ZagrAnilin480_DozaZad = Doza_anilin_st2_A;
+                    PD.ZagrAnilin480_Xnom = Percent_valve_Anilin;
 
-                
+                    PD.RegPH480A_pH_zad = SetPh_st2_1_A;
+
+                    if (!(SetPh_st2_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st2_1_A + 0.5f) || PD.ZagrAnilin480_Start)
+                    {
+                        time_last = DateTime.Now;
+                        if(!PD.ZagrAnilin480_Start)
+                        StatusOut = "ШАГ 2.Ожидание фиксация стабилизации ph";
+                    }
+                    else
+                        if (!PD.ZagrAnilin480_Start)
+                        StatusOut = "ШАГ 2.Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
+                   
+                        
+
+                    if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A * 60 && !PD.ZagrAnilin480_Start)
+                    {
+                        StatusOut = "ШАГ 2.Завершение, идет выстой, по истечению " + ((60-(DateTime.Now - exposur_time).TotalSeconds)).ToString(" 0 ") + " секунд переход к шагу 3";
+                        if ((DateTime.Now - exposur_time).TotalSeconds > 60)
+                        {
+                            n = 3;
+                            State = 3;
+
+                            // предварительные дествия для перехода
+                            PD.RegPH480A_pH_zad = SetPh_st3_1_A;
+                            PD.ZagrDietilAminK480_Nemk = 0;
+                            PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza1;
+                            PD.ZagrDietilAminK480_DozaZad2 = DietilAmin_doza2;
+                            PD.ZagrDietilAminK480_Tnagr = DietilAmin_Tnagr;
+                            PD.ZagrDietilAminK480_Start = true;
+
+                        }
+                    }
+                    else
+                    exposur_time = DateTime.Now;
+
+                    break;
+
+                case 3:
+                    StatusOut = "ШАГ 3. Загр. первой дозы ДиэтилАмина.";
+                    PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza1;
+                    PD.ZagrDietilAminK480_DozaZad2 = DietilAmin_doza2;
+                    PD.ZagrDietilAminK480_Tnagr = DietilAmin_Tnagr;
+
+                    break;
+
+
+
             }
-            if (!Start_recept && n != 0)
+
+            if (Start_recept && n != 0)
+            {
+                PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
+            }
+                if (!Start_recept && n != 0)
             {
                 PD.RegPH480A_Start = false;
                 // PD.NC_K480A_mode = true;
                 // PD.NC_K480BA_ain_auto = 0;
+
+                PD.ZagrAnilin480_Start = false;
+
                 n = 0;
                 State = 0;
+                StatusOut = "Алгорит белофор оцд апп.K480А прерван оператором";
             }
         }
 
@@ -458,6 +601,9 @@ namespace belofor.ViewModels
 
             ZagrDietilAmin480StartCommand.RaiseCanExecuteChanged();
             ZagrDietilAmin480StopCommand.RaiseCanExecuteChanged();
+
+            //ZagrAnilin480StartCommand.RaiseCanExecuteChanged();
+           // ZagrAnilin480StopCommand.RaiseCanExecuteChanged();
 
         }
 

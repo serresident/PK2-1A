@@ -53,6 +53,9 @@ namespace belofor.ViewModels
         public DelegateCommand ZagrDietilAmin480StartCommand { get; private set; }
         public DelegateCommand ZagrDietilAmin480StopCommand { get; private set; }
 
+        public DelegateCommand ZagrAnilin480StartCommand { get; private set; }
+        public DelegateCommand ZagrAnilin480StopCommand { get; private set; }
+
 
 
         private ObservableRangeCollection<ThermoChartPoint> points;
@@ -146,6 +149,15 @@ namespace belofor.ViewModels
             set { SetProperty(ref zagrDietilAmin480WndStatus, value); }
         }
 
+        //анилин в 480
+
+        private WindowState zagrAnilin480WndStatus = WindowState.Closed;
+        public WindowState ZagrAnilin480WndStatus
+        {
+            get { return zagrAnilin480WndStatus; }
+            set { SetProperty(ref zagrAnilin480WndStatus, value); }
+        }
+
 
         //термоцикл
         private WindowState thermoCycl_1AWndStatus = WindowState.Closed;
@@ -206,6 +218,10 @@ namespace belofor.ViewModels
             ZagrDietilAmin480StopCommand = new DelegateCommand(ZagrDietilAmin480stop, canZagrDietilAmin480Stop);
 
 
+            ZagrAnilin480StartCommand = new DelegateCommand(ZagrAnilin480Start, canZagrAnilin480Start);
+            ZagrAnilin480StopCommand = new DelegateCommand(ZagrAnilin480stop, canZagrAnilin480Stop);
+
+
 
             //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
@@ -263,6 +279,11 @@ namespace belofor.ViewModels
         private void ZagrDietilAmin480Start() => PD.ZagrDietilAminK480_Start = true;
         private bool canZagrDietilAmin480Stop() { return PD.ZagrDietilAminK480_Start; }
         private void ZagrDietilAmin480stop() => PD.ZagrDietilAminK480_Start = false;
+
+        private bool canZagrAnilin480Start() { return !PD.ZagrAnilin480_Start; }
+        private void ZagrAnilin480Start() => PD.ZagrAnilin480_Start = true;
+        private bool canZagrAnilin480Stop() { return PD.ZagrAnilin480_Start; }
+        private void ZagrAnilin480stop() => PD.ZagrAnilin480_Start = false;
 
 
         public void OnLoading()
@@ -374,6 +395,9 @@ namespace belofor.ViewModels
 
             ZagrDietilAmin480StartCommand.RaiseCanExecuteChanged();
             ZagrDietilAmin480StopCommand.RaiseCanExecuteChanged();
+
+            ZagrAnilin480StartCommand.RaiseCanExecuteChanged();
+            ZagrAnilin480StopCommand.RaiseCanExecuteChanged();
 
         }
 
