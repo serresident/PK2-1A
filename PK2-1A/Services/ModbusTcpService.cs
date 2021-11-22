@@ -46,7 +46,7 @@ namespace belofor.Services
             _modbusClient = new ModbusClient(ModbusClientIP, ModbusPort);
 
             _modbusClient.ConnectedChanged += connectedChanged;
-            _processData.RequestModbusWrite = requestModbusWrite;
+            _processData.RequestModbusWrite += requestModbusWrite;
 
         }
 

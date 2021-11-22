@@ -301,7 +301,7 @@
                             <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Text="Предвар. закр-е :"></TextBlock>
                         <xctk:ToggleSwitch Width="64" Margin="0,0,0,5" Height="25" Grid.Row="0" Grid.Column="1"    
                   CornerRadius="2"
-                 IsChecked="{Binding PD.ZagrDietilK480_IsEnablePredictClose ,Mode=TwoWay}"
+                 IsChecked="{Binding PD.ZagrDietilK480_IsEnablePredictClose }"
                 ThumbHeight = "25"
                 ThumbWidth = "24"
               VerticalAlignment="Center"
