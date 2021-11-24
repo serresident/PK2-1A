@@ -68,6 +68,7 @@ namespace belofor.Views
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             (this.DataContext as ShellViewModel).OnClosing();
+
         }
 
         [DllImport("user32.dll")]

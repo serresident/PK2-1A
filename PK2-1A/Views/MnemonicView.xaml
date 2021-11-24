@@ -1945,7 +1945,7 @@
                 </TransformGroup>
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="814" Canvas.Top="603" Caption="TE K480A_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="40" Value="{Binding PD.TE_480A_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="803" Canvas.Top="603" Caption="TE K480A_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="91" Height="40" Value="{Binding PD.TE_480A_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="818" Canvas.Top="560" Caption="QE K480A" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="76" Height="40" Value="{Binding PD.QIY_K480A, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <TextBlock Canvas.Left="738" TextWrapping="Wrap" Text="K480A" Canvas.Top="636" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Tube Height="21" Canvas.Left="758" Canvas.Top="402" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
@@ -4161,7 +4161,7 @@
         </GroupBox>
 
 
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -4175,7 +4175,7 @@
             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
 
-        </xctk:WindowContainer>
+        </xctk:WindowContainer>-->
 
     </Canvas>
 
