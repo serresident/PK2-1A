@@ -630,7 +630,7 @@ namespace belofor.ViewModels
                     {
                         time_last = DateTime.Now;
                         if (PD.TE_K480A_1 >= DietilAmin_Tnagr)
-                        StatusOut = "ШАГ 5.Ожидание фиксация стабилизации ph";
+                        StatusOut = "ШАГ 4.Ожидание фиксация стабилизации ph";
                     }
                     else
 
