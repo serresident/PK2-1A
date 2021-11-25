@@ -23,20 +23,7 @@
         <TabControl  >
             <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
                 <Canvas Background="#FFF9EFDA"   >
-                    <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
-                        <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
-                        <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
-                        <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
-                        <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгрузка из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
-                        <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
-                        <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-                        <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-                        <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="644" Canvas.Top="509" />
-                        <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
-                        <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                    </xctk:WindowContainer>
+               
                     <WPF:Motor  Height="30" Canvas.Left="24" Canvas.Top="66" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0" Margin="52,28,58,42" >
                         <WPF:Motor.States>
                             <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
@@ -865,6 +852,8 @@
                 UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
 
                         <TextBlock Text="{Binding StatusOut}"  Grid.Row="1" FontSize="24"  Foreground="Green"/>
+                        
+                        
 
                         <!--<ScrollViewer Grid.Row="1">
                             <ListView ItemsSource="{Binding MessageList}" FontSize="16" AlternationCount="2" >
@@ -883,7 +872,22 @@
                                 </ListView.View>
                             </ListView>
                         </ScrollViewer>-->
-                    
+
+                        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
+                            <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
+                            <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
+                            <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгрузка из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
+                            <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
+                            <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
+                            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
+                            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="644" Canvas.Top="509" />
+                            <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
+                            <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
+                            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
+                            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
+                        </xctk:WindowContainer>-->
+
 
                     </Grid>
                 </Canvas>
