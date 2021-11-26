@@ -54,7 +54,7 @@ namespace belofor.ViewModels
         LogicViewModel recept;
         public DelegateCommand ShowSettingsDialogCommand { get; private set; }
 
-        public ShellViewModel(LogicViewModel recept, IDialogService dialogService, IEventAggregator eventAggregator, User user, ModbusTcpService modbusTcpService, ArchivService archivService, JournalService journalService,LogicService logicService)
+        public ShellViewModel( IDialogService dialogService, IEventAggregator eventAggregator, User user, ModbusTcpService modbusTcpService, ArchivService archivService, JournalService journalService,LogicService logicService)
         {
             this.dialogService = dialogService;
             this.eventAggregator = eventAggregator;
@@ -63,7 +63,7 @@ namespace belofor.ViewModels
             this.archivService = archivService;
             this.journalService = journalService;
             this.logicService = logicService;
-            this.recept = recept;
+          
 
             ShowSettingsDialogCommand = new DelegateCommand(ShowSettingsDialog, () => User.IsAuthorized).ObservesProperty(() => User.IsAuthorized); ;
 
@@ -98,7 +98,7 @@ namespace belofor.ViewModels
 
         internal void OnClosing()
         {
-            recept.stop_recept();
+           
             
             journalTask.Stop();
             archivTask.Stop();

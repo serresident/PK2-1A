@@ -22,8 +22,9 @@
 
         <TabControl  >
             <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
+                <ScrollViewer CanContentScroll="True" >
                 <Canvas Background="#FFF9EFDA"   >
-               
+
                     <WPF:Motor  Height="30" Canvas.Left="24" Canvas.Top="66" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0" Margin="52,28,58,42" >
                         <WPF:Motor.States>
                             <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
@@ -74,7 +75,6 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-
                         <Grid ShowGridLines="True"  Grid.Row="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
@@ -82,7 +82,7 @@
                                 <RowDefinition Height="200"/>
                                 <RowDefinition Height="200"/>
                                 <RowDefinition Height="200"/>
-                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="130"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -110,7 +110,7 @@
                             <TextBlock Text="1.3"  FontSize="24" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Text="1.4"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Text="2.1 (стадия 3)"  FontSize="24" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="2.2"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Text="2.2(дегаз-я"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Text="2.3"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                             <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -220,9 +220,6 @@
                                     <RowDefinition Height="Auto"/>
 
                                 </Grid.RowDefinitions>
-
-
-
                                 <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30" />
@@ -261,12 +258,12 @@
                                         </Behaviors:Interaction.Behaviors>
                                     </Controls:NumPadUpDown>
 
-                                    <TextBlock Text="Таймаут PH , мин.: " Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                                    <TextBlock Text="Таймаут PH , мин.: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="156" Grid.ColumnSpan="2" />
 
                                     <Controls:NumPadUpDown
-            Grid.Row="5"
+            Grid.Row="3"
             Grid.Column="0"
             Height="30"
             Margin="4,0,16,0"
@@ -283,21 +280,7 @@
                                             <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_time_Ph_st1_A}" />
                                         </Behaviors:Interaction.Behaviors>
                                     </Controls:NumPadUpDown>
-
-
-
-
-
-
-
-
-
-
                                 </Grid>
-
-
-
-
                             </Grid>
 
 
@@ -365,7 +348,6 @@
 
 
                             </Grid>
-
                             <Grid Grid.Row="3" Grid.Column="2">
                                 <Grid.RowDefinitions>
                                     <RowDefinition  />
@@ -374,9 +356,6 @@
                                     <RowDefinition Height="Auto"/>
 
                                 </Grid.RowDefinitions>
-
-
-
                                 <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30" />
@@ -392,14 +371,9 @@
                                         <ColumnDefinition  Width="40"/>
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-
-
-
-
                                     <TextBlock Text="Зад. доза  Анил.: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
-
                                     <Controls:NumPadUpDown
                     
             Grid.Row="1"
@@ -417,14 +391,12 @@
             Precision="1"
             UpdateValueOnEnterKey="True">
                                         <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_zadDoza_st1_1_A}" />
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Doza_anilin_st2_A}" />
                                         </Behaviors:Interaction.Behaviors>
                                     </Controls:NumPadUpDown>
-
                                     <TextBlock Text="% откр.кл-на: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
-
                                     <Controls:NumPadUpDown
                     
             Grid.Row="3"
@@ -445,21 +417,7 @@
                                             <behaviors:ModbusBindingBehavior InternalValue="{Binding Percent_valve_Anilin}" />
                                         </Behaviors:Interaction.Behaviors>
                                     </Controls:NumPadUpDown>
-
-
-
-
-
-
-
-
-
-
                                 </Grid>
-
-
-
-
                             </Grid>
 
                             <Grid Grid.Row="2" Grid.Column="3">
@@ -526,7 +484,6 @@
 
 
                             </Grid>
-
                             <Grid Grid.Row="4" Grid.Column="3">
                                 <Grid.RowDefinitions>
                                     <RowDefinition  />
@@ -589,7 +546,6 @@
 
 
                             </Grid>
-
                             <Grid Grid.Row="4" Grid.Column="3">
                                 <Grid.RowDefinitions>
                                     <RowDefinition  />
@@ -714,7 +670,6 @@
 
 
                             </Grid>
-
                             <Grid Grid.Row="4" Grid.Column="4">
                                 <Grid.RowDefinitions>
                                     <RowDefinition  />
@@ -778,10 +733,10 @@
 
 
                                 </Grid>
-   
+
                             </Grid>
 
-                            <Grid Grid.Row="4" Grid.Column="5">
+                            <Grid  Grid.Row="4" Grid.Column="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition  />
 
@@ -833,6 +788,129 @@
                                 </Grid>
 
                             </Grid>
+                            <Grid  Grid.Row="2" Grid.Column="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  />
+
+                                    <RowDefinition  Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+
+                                </Grid.RowDefinitions>
+
+
+
+                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="140"/>
+                                        <ColumnDefinition  Width="40"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="уставка PH " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="114"/>
+
+                                    <Controls:NumPadUpDown
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st5_1_A}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
+
+                                </Grid>
+
+                            </Grid>
+                            <Grid  Grid.Row="5" Grid.Column="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="140"/>
+                                        <ColumnDefinition  Width="40"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text=" % кл-на для дег-и " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+
+                                    <Controls:NumPadUpDown
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_ValveSteam}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
+
+                                        <TextBlock Text=" Т.нач. дегаз. " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+
+                                        <Controls:NumPadUpDown
+            Grid.Row="3"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding T_degaz}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+
+                                    </Grid>
+
+                            </Grid>
 
                             <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,66,0,0" />
@@ -841,6 +919,7 @@
 
 
                         </Grid>
+
                         <xctk:ToggleSwitch Width="64" Margin="26,48,775,-40" Height="25" Grid.Row="1"    
                   CornerRadius="2"
                  IsChecked="{Binding Start_recept ,Mode=TwoWay}"
@@ -850,10 +929,7 @@
                 UncheckedContent = "ВЫКЛ"
                 CheckedBackground="DarkSeaGreen"
                 UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
-
                         <TextBlock Text="{Binding StatusOut}"  Grid.Row="1" FontSize="24"  Foreground="Green"/>
-                        
-                        
 
                         <!--<ScrollViewer Grid.Row="1">
                             <ListView ItemsSource="{Binding MessageList}" FontSize="16" AlternationCount="2" >
@@ -873,7 +949,7 @@
                             </ListView>
                         </ScrollViewer>-->
 
-                        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -886,11 +962,12 @@
                             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        </xctk:WindowContainer>-->
+                        </xctk:WindowContainer>
 
 
                     </Grid>
                 </Canvas>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="2"/>
 

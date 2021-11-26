@@ -426,8 +426,8 @@ namespace belofor.ViewModels
         private float dietilAmin_doza2 = 200f;
         public float DietilAmin_doza2
         {
-            get { return dietilAmin_doza1; }
-            set { SetProperty(ref dietilAmin_doza1, value); }
+            get { return dietilAmin_doza2; }
+            set { SetProperty(ref dietilAmin_doza2, value); }
         }
 
         //  Температура диэтиламин для дозы2 на 3 шаге
@@ -446,12 +446,29 @@ namespace belofor.ViewModels
             set { SetProperty(ref setPh_st4_1_A, value); }
         }
 
-        // ph уставка на 5 шаге
+
+        // ph уставка на 2,1 шаге
         private float setPh_st5_1_A = 8.5f;
         public float SetPh_st5_1_A
         {
             get { return setPh_st5_1_A; }
             set { SetProperty(ref setPh_st5_1_A, value); }
+        }
+
+        // % прикрытия клапана шаг 2,1
+        private float set_ValveSteam = 40f;
+        public float Set_ValveSteam
+        {
+            get { return set_ValveSteam; }
+            set { SetProperty(ref set_ValveSteam, value); }
+        }
+
+        // Тдегазации шаг 2.1
+        private float t_degaz = 67f;
+        public float T_degaz
+        {
+            get { return t_degaz; }
+            set { SetProperty(ref t_degaz, value); }
         }
 
 
@@ -475,6 +492,7 @@ namespace belofor.ViewModels
                 case 0:
                     if (Start_recept)
                     {
+                        stop_recept();
                          PD.NC_K480A_mode = false;
                          PD.NC_K480BA_ain_auto = 50;
                       
@@ -534,7 +552,7 @@ namespace belofor.ViewModels
 
                     break;
                 case 2:
-
+                   
                     if (PD.ZagrAnilin480_DozaZad != Doza_anilin_st2_A) PD.ZagrAnilin480_DozaZad = Doza_anilin_st2_A;
                     if (PD.ZagrAnilin480_Xnom != Percent_valve_Anilin) PD.ZagrAnilin480_Xnom = Percent_valve_Anilin;
 
@@ -565,7 +583,7 @@ namespace belofor.ViewModels
                             if (PD.ZagrDietilAminK480_Nemk != 0) PD.ZagrDietilAminK480_Nemk = 0;
                             if (PD.ZagrDietilAminK480_DozaZad1 != DietilAmin_doza1) PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza1;
                             if (PD.ZagrDietilAminK480_DozaZad2 != DietilAmin_doza2) PD.ZagrDietilAminK480_DozaZad2 = DietilAmin_doza2;
-                            if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = DietilAmin_Tnagr;
+                            if (PD.ZagrDietilAminK480_Tnagr != 60) PD.ZagrDietilAminK480_Tnagr = 60;
                             if (PD.ZagrDietilAminK480_Start != true) PD.ZagrDietilAminK480_Start = true;
 
                         }
@@ -577,29 +595,16 @@ namespace belofor.ViewModels
 
                 case 3:
                     StatusOut = "ШАГ 3. Загр. первой дозы ДиэтилАмина.";
+                    if (PD.RegPH480A_pH_zad != SetPh_st3_1_A) PD.RegPH480A_pH_zad = SetPh_st3_1_A;
                     if (PD.ZagrDietilAminK480_DozaZad1 != DietilAmin_doza1) PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza1;
+
                     if (PD.ZagrDietilAminK480_status == 3)
                     {
                         if (PD.ZagrDietilAminK480_Start != false) PD.ZagrDietilAminK480_Start = false;
 
                     }
-
-                        if (!(SetPh_st3_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st3_1_A + 0.5f) || PD.ZagrDietilAminK480_Start)
-                        {
-                            time_last = DateTime.Now;
-                            if (!PD.ZagrDietilAminK480_Start)
-                                StatusOut = "ШАГ 3.Ожидание фиксация стабилизации ph";
-                        }
-                        else
-                       if (!PD.ZagrDietilAminK480_Start)
-                            StatusOut = "ШАГ 3.Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
-
-
-
-                        if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A * 60 && !PD.ZagrDietilAminK480_Start)
-                        {
-                            StatusOut = "ШАГ 3.Завершение, идет выстой, по истечению " + ((60 - (DateTime.Now - exposur_time).TotalSeconds)).ToString(" 0 ") + " секунд переход к шагу 3";
-                            if ((DateTime.Now - exposur_time).TotalSeconds > 0)
+                    
+                    if (!PD.ZagrDietilAminK480_Start)
                             {
                             StatusOut = "ШАГ 4.Нагрев ,ожидание достижения уставки.";
                                 n = 4;
@@ -612,9 +617,9 @@ namespace belofor.ViewModels
                             PD.TVK480A_ain_auto = 100;
 
                              }
-                         }
+                         
                     break;
-                case 4:
+                case 4: // ожидание 60гр. после первой дозы ДЭА
 
                     //if(PD.TE_K480A_1>= DietilAmin_Tnagr)
                     //{
@@ -623,30 +628,19 @@ namespace belofor.ViewModels
                     //    State = 5;
                     //}
                     //else
-                    if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = DietilAmin_Tnagr;
-                    StatusOut = "ШАГ 5.Нагрев ,ожидание достижения уставки.";
+                    if (PD.RegPH480A_pH_zad != SetPh_st4_1_A) PD.RegPH480A_pH_zad = SetPh_st4_1_A;
+                    if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = 60;
+                    StatusOut = "ШАГ 4.Нагрев ,ожидание достижения уставки.";
 
-                    if (!(SetPh_st4_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st4_1_A + 0.5f) || PD.TE_K480A_1 >= DietilAmin_Tnagr)
-                    {
-                        time_last = DateTime.Now;
+                  
+
+                   // if ( PD.TE_K480A_1 >= DietilAmin_Tnagr)
                         if (PD.TE_K480A_1 >= DietilAmin_Tnagr)
-                        StatusOut = "ШАГ 4.Ожидание фиксация стабилизации ph";
-                    }
-                    else
-
-                  if (!PD.ZagrDietilAminK480_Start)
-                        StatusOut = "ШАГ 5.Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
-
-
-
-                    if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A * 60 && PD.TE_K480A_1 >= DietilAmin_Tnagr)
-                    {
-                        StatusOut = "ШАГ 4.Завершение, идет выстой, по истечению " + ((60 - (DateTime.Now - exposur_time).TotalSeconds)).ToString(" 0 ") + " секунд переход к шагу 3";
-                        if ((DateTime.Now - exposur_time).TotalSeconds > 0)
                         {
-                            StatusOut = "ШАГ 5.Нагрев ,ожидание достижения уставки.";
-                            n = 6;
-                            State = 6;
+                      
+                           
+                            n = 5;
+                            State = 5;
                             // предварительные дествия для перехода
                             if (PD.RegPH480A_pH_zad != SetPh_st5_1_A) PD.RegPH480A_pH_zad = SetPh_st5_1_A;
                             if (PD.ZagrDietilAminK480_Nemk != 0) PD.ZagrDietilAminK480_Nemk = 0;
@@ -655,54 +649,67 @@ namespace belofor.ViewModels
                           //  if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = DietilAmin_Tnagr;
                             if (PD.ZagrDietilAminK480_Start != true) PD.ZagrDietilAminK480_Start = true;
 
-                        }
+                        
                     }
 
 
                     break;
                    
-                case 5:
+                case 5:// загр второй дозы ДЭА
 
-                    if (PD.ZagrDietilAminK480_DozaZad2 != DietilAmin_doza2) PD.ZagrDietilAminK480_DozaZad2= DietilAmin_doza2;
+                    if (PD.ZagrDietilAminK480_DozaZad1 != DietilAmin_doza2) PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza2;
 
-                    if(PD.ZagrDietilAminK480_status ==1)
-                        StatusOut = "ШАГ 5. Загрузка дозы2. ожидание завершения.";
+                    
+
+                    if (PD.RegPH480A_pH_zad != SetPh_st5_1_A) PD.RegPH480A_pH_zad = SetPh_st5_1_A;
 
                     if (PD.ZagrDietilAminK480_status == 3)
                     {
                         if (PD.ZagrDietilAminK480_Start != false) PD.ZagrDietilAminK480_Start = false;
                     }
 
-                    if (!(SetPh_st5_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st5_1_A + 0.5f) || PD.ZagrDietilAminK480_Start)
+                    if (PD.TE_K480A_1 >= 72 && !PD.ZagrDietilAminK480_Start)
                     {
-                        time_last = DateTime.Now;
+
                         if (!PD.ZagrDietilAminK480_Start)
-                            StatusOut = "ШАГ 4.Ожидание фиксация стабилизации ph";
-                    }
-                    else
-                        
-                    if (!PD.ZagrDietilAminK480_Start)
-                        StatusOut = "ШАГ 4.Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
-
-
-
-                    if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A * 60 && !PD.ZagrAnilin480_Start)
-                    {
-                        StatusOut = "ШАГ 4.Завершение, идет выстой, по истечению " + ((60 - (DateTime.Now - exposur_time).TotalSeconds)).ToString(" 0 ") + " секунд переход к шагу 3";
-                        if ((DateTime.Now - exposur_time).TotalSeconds > 0)
                         {
-                            StatusOut = "ШАГ 5.Нагрев ,ожидание достижения уставки.";
+                            StatusOut = "ШАГ 2.2 Нагрев ,ожидание достижения уставки.";
                             n = 6;
                             State = 6;
                             // переход на следущий шаг
-                            PD.VK480A_2_mode = false;           // открытие слива  конденсата
-                            PD.VK480A_2_control_auto = true;
-
-                            PD.TVK480A_mode = false;
-                            PD.TVK480A_ain_auto = 100;
+                          
 
                         }
                     }
+                    else
+                        StatusOut=PD.ZagrDietilAminK480_Start ? "ШАГ 2.1 Ожидание заверш. загрузки ДЭА доза2" : 
+                            "ШАГ 2.1 Ожидание  нагрева до 72 гр.";
+
+                    
+                        // PD.TVK480A_ain_auto = (PD.TE_K480A_1 >= 67)? set_ValveSteam: 100f;
+
+                    if(PD.TE_K480A_1 >= T_degaz)
+                    {
+                        if (PD.TVK480A_ain_auto != Set_ValveSteam)
+                            PD.TVK480A_ain_auto = Set_ValveSteam;
+                    }
+                    else
+                    {
+                        if (PD.TVK480A_ain_auto != 100)
+                            PD.TVK480A_ain_auto = 100;
+
+                    }
+
+
+
+
+
+
+                    break;
+
+                case 6:
+
+
 
 
 
@@ -735,11 +742,17 @@ namespace belofor.ViewModels
                 State = 0;
                 StatusOut = "Алгорит белофор оцд апп.K480А прерван оператором";
             }
+            // аварийные блокировки
+            //if (Start_recept)
+            //{
+            //    if ((PD.TE_K480A_2 - PD.TE_K480A_1) >= 0.5)
+            //       if (PD.TVK480A_ain_auto !=0) PD.TVK480A_ain_auto = 0;
+            //}
+          
         }
       public  void stop_recept()
         {
-            if (!Start_recept && n != 0)
-            {
+         
 
 
                 PD.RegPH480A_Start = false;    // шаг1
@@ -759,7 +772,7 @@ namespace belofor.ViewModels
                 State = 0;
                 StatusOut = "Алгорит белофор оцд апп.K480А прерван оператором";
                 Thread.Sleep(500);
-            }
+            
         }
 
         private void internalUpdate()
