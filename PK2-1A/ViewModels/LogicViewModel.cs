@@ -610,7 +610,7 @@ namespace belofor.ViewModels
                     {
                         time_last = DateTime.Now;
                         if(!PD.ZagrAnilin480_Start)
-                         Send_Log(StatusOut = "ШАГ 1.2Ожидание фиксация стабилизации ph");
+                         Send_Log(StatusOut = "ШАГ 1.2 Ожидание фиксация стабилизации ph");
                     }
                     else
                         if (!PD.ZagrAnilin480_Start)
@@ -725,7 +725,7 @@ namespace belofor.ViewModels
 
                         if (!PD.ZagrDietilAminK480_Start)
                         {
-                             Send_Log(StatusOut = "ШАГ 2.1 Нагрев ,ожидание достижения уставки.");
+                             Send_Log(StatusOut = "ШАГ 2.2 Нагрев ,ожидание достижения уставки.");
                             n = 6;
                             State = 6;
                             // переход на следущий шаг
