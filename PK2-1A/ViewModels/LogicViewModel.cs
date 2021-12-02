@@ -473,6 +473,32 @@ namespace belofor.ViewModels
             set { SetProperty(ref t_degaz, value); }
         }
 
+        // объем воды на перегонку A
+        private float volume_water_A  = 67f;
+        public float Volume_water_A
+        {
+            get { return volume_water_A; }
+            set { SetProperty(ref volume_water_A, value); }
+        }
+
+        // время  на перегонку A
+        private float time_per_A = 67f;
+        public float Time_per_A
+        {
+            get { return time_per_A; }
+            set { SetProperty(ref time_per_A, value); }
+        }
+
+
+        //  T  перегона А
+        private float t_per_A = 67f;
+        public float T_per_A
+        {
+            get { return t_per_A; }
+            set { SetProperty(ref t_per_A, value); }
+        }
+
+
 
 
 

@@ -480,6 +480,8 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public bool ResetCount_FV480 { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad=221
         public bool ZagrAnilin480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad222
         public bool ZagrAnilin480_IsEnablePredictClose { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad223
+        public bool PID_ON_Tperegon_A { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad224
+        public bool PID_ON_FqPeregon_A { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad225
         #endregion
 
         // Inputs Registers
@@ -862,6 +864,16 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public UInt16 ZagrAnilin480_status { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//300
         public UInt16 ZagrAnilin480_Nemk { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//301
         public Single ZagrAnilin480_setDeegrePredictClose { get { return getValue<Single>(); } set { setValue<Single>(value); } }//302
+          
+        public Single Tzad_peregon_A { get { return getValue<Single>(); } set { setValue<Single>(value); } }//304
+        public Single KP_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//306
+        public Single TN_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//308
+        public Single TV_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//310
+
+        public Single Fqzad_peregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//312
+        public Single KP_fq_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//314
+        public Single TN_fq_Tpregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//316
+        public Single TV_fq_Tpregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//318
 
         #endregion
     }
