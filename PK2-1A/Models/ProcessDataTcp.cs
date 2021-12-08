@@ -870,10 +870,13 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single TN_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//308
         public Single TV_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//310
 
-        public Single Fqzad_peregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//312
-        public Single KP_fq_pregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//314
-        public Single TN_fq_Tpregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//316
-        public Single TV_fq_Tpregon_A{ get { return getValue<Single>(); } set { setValue<Single>(value); } }//318
+        public Single Vol_Water_perA { get { return getValue<Single>(); } set { setValue<Single>(value); } }//312
+        public Single Kp_fq_perA { get { return getValue<Single>(); } set { setValue<Single>(value); } }//314
+
+        public Single Ki_fq_per_A { get { return getValue<Single>(); } set { setValue<Single>(value); } }//316
+        public UInt16 time_perA { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//318
+        public UInt16 empty2 { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }//319
+
 
         #endregion
     }

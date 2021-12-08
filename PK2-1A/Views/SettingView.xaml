@@ -16,9 +16,9 @@
     <xctk:BusyIndicator IsBusy="{Binding IsBusy}" >
         <Grid >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -76,7 +76,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -95,7 +95,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -116,7 +116,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -135,7 +135,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="100"
@@ -158,7 +158,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -179,7 +179,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -202,7 +202,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -223,7 +223,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -246,7 +246,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -267,7 +267,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -291,7 +291,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -312,7 +312,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -334,7 +334,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -355,7 +355,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="100"
@@ -374,7 +374,7 @@
             <Grid Grid.Row="1" Grid.Column="1"  Margin="8,5,5,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="Auto"/>
 
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -413,7 +413,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -432,7 +432,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -453,7 +453,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -472,7 +472,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="100"
@@ -495,7 +495,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -516,7 +516,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -539,7 +539,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -560,7 +560,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -583,7 +583,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -604,7 +604,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -628,7 +628,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="5"
@@ -649,7 +649,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -671,7 +671,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="1"
                     Minimum="0"
                     Maximum="100"
@@ -692,7 +692,7 @@
                     FontSize="16"
                      
                     FontWeight="Bold"
-                    Foreground="#FF7E7E7E" Margin="5,0,0,0"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
                     Increment="0.1"
                     Minimum="0"
                     Maximum="100"
@@ -702,6 +702,146 @@
                         <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480B_Kx}" />
                     </b:Interaction.Behaviors>
                 </Controls:NumPadUpDown>
+
+            </Grid>
+
+            <Border  VerticalAlignment="Top" Height="600" Margin="5,5,5,5" Grid.Row="1" Grid.Column="2"  Background="#FFDDDCC8" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3 ">
+
+            </Border>
+            <Grid Grid.Row="1" Grid.Column="2"  Margin="8,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="36"/>
+                </Grid.RowDefinitions>
+                <TextBlock  FontSize="14" FontWeight="Black"  HorizontalAlignment="Center" Foreground="Blue" Text="Перегонка МЭК K480A" Grid.ColumnSpan="2" Grid.Row="0" Height="24"/>
+
+                <TextBlock FontStyle="Italic" FontSize="14" HorizontalAlignment="Center" Text=" парам. ПИД рег. Т дист. МЭК" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top"  />
+                <TextBlock FontWeight="Bold" FontSize="14"  Text="Kp" Grid.ColumnSpan="1" Grid.Row="2" VerticalAlignment="Center" />
+
+                <Controls:NumPadUpDown  
+                    Grid.Column="1"   Grid.Row="2"
+                    Height="24" 
+                    VerticalContentAlignment="Center"
+                    EnterClosesNumPad="True"
+                    FontSize="16"
+                     
+                    FontWeight="Bold"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
+                    Increment="1"
+                    Minimum="0"
+                    Maximum="100"
+                    Precision="0"
+                    UpdateValueOnEnterKey="True"  CultureInfo="ru-RU">
+                    <b:Interaction.Behaviors>
+                        <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.KP_pregon_A}" />
+                    </b:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+                <TextBlock FontWeight="Bold" FontSize="14"  Text="Ki " Grid.ColumnSpan="1" Grid.Row="3" VerticalAlignment="Center" />
+                <Controls:NumPadUpDown  
+                    Grid.Column="1"   Grid.Row="3"
+                    Height="24"
+                    VerticalContentAlignment="Center"
+                    EnterClosesNumPad="True"
+                    FontSize="16"
+                     
+                    FontWeight="Bold"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
+                    Increment="0.1"
+                    Minimum="0"
+                    Maximum="5"
+                    Precision="1"
+                    UpdateValueOnEnterKey="True"  CultureInfo="ru-RU">
+                    <b:Interaction.Behaviors>
+                        <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.TN_pregon_A}" />
+                    </b:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+
+                <TextBlock FontWeight="Bold" FontSize="14"  Text="Kd " Grid.ColumnSpan="1" Grid.Row="4" VerticalAlignment="Center" />
+                <Controls:NumPadUpDown  
+                    Grid.Column="1"   Grid.Row="4"
+                    Height="24"
+                    VerticalContentAlignment="Center"
+                    EnterClosesNumPad="True"
+                    FontSize="16"
+                     
+                    FontWeight="Bold"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
+                    Increment="0.1"
+                    Minimum="0"
+                    Maximum="5"
+                    Precision="1"
+                    UpdateValueOnEnterKey="True"  CultureInfo="ru-RU">
+                    <b:Interaction.Behaviors>
+                        <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.TV_pregon_A}" />
+                    </b:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+
+                <TextBlock FontStyle="Italic" FontSize="14" HorizontalAlignment="Center" Text="  парам. ПИ рег. мг.расх. воды." Grid.ColumnSpan="2" Grid.Row="5" VerticalAlignment="Top"  />
+               
+                <TextBlock FontWeight="Bold" FontSize="14"  Text="Kp" Grid.ColumnSpan="1" Grid.Row="6" VerticalAlignment="Center" />
+                <Controls:NumPadUpDown  
+                    Grid.Column="1"   Grid.Row="6"
+                    Height="24" 
+                    VerticalContentAlignment="Center"
+                    EnterClosesNumPad="True"
+                    FontSize="16"
+                     
+                    FontWeight="Bold"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
+                    Increment="1"
+                    Minimum="0"
+                    Maximum="100"
+                    Precision="0"
+                    UpdateValueOnEnterKey="True"  CultureInfo="ru-RU">
+                    <b:Interaction.Behaviors>
+                        <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Kp_fq_perA}" />
+                    </b:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+              
+                <TextBlock FontWeight="Bold" FontSize="14"  Text="Ki " Grid.ColumnSpan="1" Grid.Row="7" VerticalAlignment="Center" />
+                <Controls:NumPadUpDown  
+                    Grid.Column="1"   Grid.Row="7"
+                    Height="24"
+                    VerticalContentAlignment="Center"
+                    EnterClosesNumPad="True"
+                    FontSize="16"
+                     
+                    FontWeight="Bold"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
+                    Increment="0.1"
+                    Minimum="0"
+                    Maximum="5"
+                    Precision="1"
+                    UpdateValueOnEnterKey="True"  CultureInfo="ru-RU">
+                    <b:Interaction.Behaviors>
+                        <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Ki_fq_per_A}" />
+                    </b:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+
 
             </Grid>
 

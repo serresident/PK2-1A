@@ -77,14 +77,15 @@
                         </Grid.ColumnDefinitions>
                         <Grid ShowGridLines="True"  Grid.Row="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="100"/>
-                                <RowDefinition Height="200"/>
-                                <RowDefinition Height="200"/>
-                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="140"/>
                                 <RowDefinition Height="130"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="130"/>
+                                    <RowDefinition Height="130"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition  Width="140"/>
@@ -105,12 +106,12 @@
         BorderBrush="{c:Binding (State\=\=3) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
                             <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="1.1(стадия 2)"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="1.2"  FontSize="24" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="1.3"  FontSize="24" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="1.4"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="2.1 (стадия 3)"  FontSize="24" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="2.2(дегаз-я"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.1(вкл.меш.&#xA;дов-е ph)"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.2 (загр.&#xA;анилина)"  FontSize="24" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.3 (загр.&#xA;ДЭА доза1)"  FontSize="24" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Text="1.4 (нагр. до 60)"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.1 (загр.&#xA;ДЭА доза2)"  FontSize="24" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.2(пер-ка&#xA; МЭК)"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Text="2.3"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                             <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -913,7 +914,7 @@
                             </Grid>
 
                             <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,66,0,0" />
+                                <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
                             <TextBlock Foreground="Black" Text="Загрузка &#xA; Диэтиламина"  FontSize="19" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"  />
                             <TextBlock Foreground="Black" Text="Нагрев K480A"  FontSize="19" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center"  />
 
@@ -949,7 +950,7 @@
                             </ListView>
                         </ScrollViewer>-->
 
-                        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -962,7 +963,7 @@
                             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        </xctk:WindowContainer>
+                        </xctk:WindowContainer>-->
 
 
                     </Grid>
