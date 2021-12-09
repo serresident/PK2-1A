@@ -167,6 +167,36 @@ namespace belofor.ViewModels
             set { SetProperty(ref thermoCycl_1AWndStatus, value); }
         }
 
+        // счетчик воды
+        private Single count_emis_A;
+        public Single Count_emis_A
+        {
+            get { return count_emis_A; }
+            set { SetProperty(ref count_emis_A, value); }
+        }
+
+        // счетчик воды
+        private bool reset_A = true;
+        public bool Reset_A
+        {
+            get { return reset_A; }
+            set { SetProperty(ref reset_A, value); }
+        }
+        // счетчик воды
+        private Single count_emis_B;
+        public Single Count_emis_B
+        {
+            get { return count_emis_B; }
+            set { SetProperty(ref count_emis_B, value); }
+        }
+
+        private bool reset_B=true;
+        public bool Reset_B
+        {
+            get { return reset_B; }
+            set { SetProperty(ref reset_B, value); }
+        }
+
         private ProcessDataTcp _pd;
         public ProcessDataTcp PD
         {
@@ -223,7 +253,7 @@ namespace belofor.ViewModels
 
 
 
-            //   chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(10));
+              chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
         }
 
@@ -285,7 +315,8 @@ namespace belofor.ViewModels
         private bool canZagrAnilin480Stop() { return PD.ZagrAnilin480_Start; }
         private void ZagrAnilin480stop() => PD.ZagrAnilin480_Start = false;
 
-
+        Single mem_count1;
+        Single mem_count2;
         public void OnLoading()
         {
             if (!initVM)
@@ -302,6 +333,7 @@ namespace belofor.ViewModels
                     var dataPoints = archivRepository.GetMeasurements(DateTime.Now.AddHours(-5), DateTime.Now);
                     if (dataPoints == null) // повторяем запрос если возникло исключение
                         dataPoints = archivRepository.GetMeasurements(DateTime.Now.AddHours(-5), DateTime.Now);
+
 
 
                     //foreach (KeyValuePair<DateTime, Dictionary<string, string>> entry in dataPoints)
@@ -365,6 +397,41 @@ namespace belofor.ViewModels
 
         private void internalUpdate()
         {
+
+
+            if (Reset_A && PD.emis200_summ_k480A>0)
+            {
+                mem_count1 = PD.emis200_summ_k480A;
+                Reset_A = false;
+            }
+            else
+            {
+                if ((PD.emis200_summ_k480A - mem_count1) >= 0)
+                    Count_emis_A = PD.emis200_summ_k480A - mem_count1;
+            }
+
+            if (Reset_B && PD.emis200_summ_k480B > 0)
+            {
+                mem_count2 = PD.emis200_summ_k480B;
+                Reset_B = false;
+            }
+            else
+            {
+                if((PD.emis200_summ_k480B - mem_count2)>=0)
+                Count_emis_B = PD.emis200_summ_k480B - mem_count2;
+            }
+
+            if (Reset_B && PD.emis200_summ_k480B > 0)
+            {
+                mem_count2 = PD.emis200_summ_k480B;
+                Reset_B = false;
+            }
+            else
+            {
+                if ((PD.emis200_summ_k480B - mem_count2) >= 0)
+                    Count_emis_B = PD.emis200_summ_k480B - mem_count2;
+            }
+
             WaterLoadingStartCommand.RaiseCanExecuteChanged();
             WaterLoadingStopCommand.RaiseCanExecuteChanged();
 

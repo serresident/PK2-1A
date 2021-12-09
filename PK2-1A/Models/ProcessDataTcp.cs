@@ -625,15 +625,17 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single ZagrDietilAminK480_Doza2 { get { return getValue<Single>(); } }//ad146
         public Single ZagrAnilin_Doza { get { return getValue<Single>(); } }//ad148
 
-        public UInt16 JOURNAL { get { return getValue<UInt16>(); }  //ad108  должен быть последним ,служит для определения успешного чтения регистров
-        } //ad=82 
+        public UInt16 JOURNAL = 13;
+            //ad108  должен быть последним ,служит для определения успешного чтения регистров
+         //ad=82 
+       
 
-#endregion
+        #endregion
 
-// Holdings Registers
-#region Holdings Registers
-//******************line1_1 ********************      
-//mu 110 8i ad=5       
+        // Holdings Registers
+        #region Holdings Registers
+        //******************line1_1 ********************      
+        //mu 110 8i ad=5       
         public UInt16 NC_P412_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 1 _ch 1 
           //mu 110 8i ad=5        //mu 110 8i ad=5        //mu 110 8i ad=5       	//mu 110 8i ad=5       
         public UInt16 NC_610M_aout { get { return getValue<UInt16>(); } set { setValue<UInt16>(value); } }  // ad= 2 _ch 2 

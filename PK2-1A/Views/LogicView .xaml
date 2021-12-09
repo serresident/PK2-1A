@@ -23,100 +23,100 @@
         <TabControl  >
             <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
                 <ScrollViewer CanContentScroll="True" >
-                <Canvas Background="#FFF9EFDA"   >
+                    <Canvas Background="#FFF9EFDA"   >
 
-                    <WPF:Motor  Height="30" Canvas.Left="24" Canvas.Top="66" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0" Margin="52,28,58,42" >
-                        <WPF:Motor.States>
-                            <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
-                        </WPF:Motor.States>
-                        <Behaviors:Interaction.Behaviors>
-                            <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
-                            <behaviors:AnalogActuatorHandlerBehavior VSpacing="-10"  Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
+                        <WPF:Motor  Height="30" Canvas.Left="62" Canvas.Top="40" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0" Margin="52,28,58,42" >
+                            <WPF:Motor.States>
+                                <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
+                            </WPF:Motor.States>
+                            <Behaviors:Interaction.Behaviors>
+                                <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
+                                <behaviors:AnalogActuatorHandlerBehavior VSpacing="-10"  Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
 
-                        </Behaviors:Interaction.Behaviors>
-                        <WPF:Motor.Colors>
-                            <WPF:ControlColors>
-                                <WPF:ControlColors.State4Coloring>
-                                    <WPF:ColoringColor Color1="#FF39A234"/>
-                                </WPF:ControlColors.State4Coloring>
-                                <WPF:ControlColors.State1Coloring>
-                                    <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
-                                </WPF:ControlColors.State1Coloring>
-                            </WPF:ControlColors>
-                        </WPF:Motor.Colors>
+                            </Behaviors:Interaction.Behaviors>
+                            <WPF:Motor.Colors>
+                                <WPF:ControlColors>
+                                    <WPF:ControlColors.State4Coloring>
+                                        <WPF:ColoringColor Color1="#FF39A234"/>
+                                    </WPF:ControlColors.State4Coloring>
+                                    <WPF:ControlColors.State1Coloring>
+                                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                                    </WPF:ControlColors.State1Coloring>
+                                </WPF:ControlColors>
+                            </WPF:Motor.Colors>
 
 
 
-                    </WPF:Motor>
-                    <WPF:Valve Height="40" RotateAngle="0"  Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*" Canvas.Left="122" Canvas.Top="783"  >
-                        <Behaviors:Interaction.Behaviors>
-                            <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480A_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                            <behaviors:Valve_status RotareAnggeClose="180" RotareAnggeOpen="0" HSpacing="-1" HSpacing1="13" VSpacing="23" VSpacing1="23" isOpenValve="{Binding PD.TVK480A_SQH, Mode=OneWay}" isCloseValve="{Binding PD.TVK480A_SQL, Mode=OneWay}" />
-                            <!--<behaviors:Valve_status isOpenValve="{Binding PD.TVK480A_SQH}" isCloseValve="{Binding PD.TVK480A_SQL}" />-->
-                            <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
-                        </Behaviors:Interaction.Behaviors>
-                    </WPF:Valve>
-                    <WPF:Label  Height="18" RotateAngle="0" Content="" Canvas.Left="172" Canvas.Top="798" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
-                        <WPF:Label.Colors>
-                            <WPF:ControlColors>
-                                <WPF:ControlColors.DefaultColoring>
-                                    <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
-                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
-                                </WPF:ControlColors.DefaultColoring>
-                            </WPF:ControlColors>
-                        </WPF:Label.Colors>
-                    </WPF:Label>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Grid ShowGridLines="True"  Grid.Row="0">
+                        </WPF:Motor>
+                        <WPF:Valve Height="40" RotateAngle="0"  Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*" Canvas.Left="90" Canvas.Top="492"  >
+                            <Behaviors:Interaction.Behaviors>
+                                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480A_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
+                                <behaviors:Valve_status RotareAnggeClose="180" RotareAnggeOpen="0" HSpacing="-1" HSpacing1="13" VSpacing="23" VSpacing1="23" isOpenValve="{Binding PD.TVK480A_SQH, Mode=OneWay}" isCloseValve="{Binding PD.TVK480A_SQL, Mode=OneWay}" />
+                                <!--<behaviors:Valve_status isOpenValve="{Binding PD.TVK480A_SQH}" isCloseValve="{Binding PD.TVK480A_SQL}" />-->
+                                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
+                            </Behaviors:Interaction.Behaviors>
+                        </WPF:Valve>
+                        <WPF:Label  Height="18" RotateAngle="0" Content="" Canvas.Left="140" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+                            <WPF:Label.Colors>
+                                <WPF:ControlColors>
+                                    <WPF:ControlColors.DefaultColoring>
+                                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
+                                    </WPF:ControlColors.DefaultColoring>
+                                </WPF:ControlColors>
+                            </WPF:Label.Colors>
+                        </WPF:Label>
+                        <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="40"/>
-                                <RowDefinition Height="140"/>
-                                <RowDefinition Height="130"/>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="130"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid ShowGridLines="True"  Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="64" />
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="140"/>
                                     <RowDefinition Height="130"/>
+                                    <RowDefinition Height="70"/>
+                                    <RowDefinition Height="130"/>
+                                    <RowDefinition Height="190"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition  Width="140"/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition  Width="140"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
 
 
-                            </Grid.ColumnDefinitions>
-                            <Border 
+                                </Grid.ColumnDefinitions>
+                                <Border 
         Grid.Column="3" 
       
         Grid.RowSpan="6" 
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=3) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
-                            <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="1.1(вкл.меш.&#xA;дов-е ph)"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="1.2 (загр.&#xA;анилина)"  FontSize="24" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="1.3 (загр.&#xA;ДЭА доза1)"  FontSize="24" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="1.4 (нагр. до 60)"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.4 (нагр. до 60)"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="2.1 (загр.&#xA;ДЭА доза2)"  FontSize="24" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="2.2(пер-ка&#xA; МЭК)"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="2.3"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.3"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-                            <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-                            <Border 
+                                <Border 
         Grid.Column="1" 
         Grid.Row="0" 
         Grid.RowSpan="6" 
@@ -124,57 +124,57 @@
         BorderBrush="{c:Binding (State\=\=1) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
 
-                            <Border 
+                                <Border 
         Grid.Column="2" 
         Grid.Row="0" 
         Grid.RowSpan="6" 
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=2) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
-                            <Border  Grid.Column="4"  Grid.RowSpan="6" 
+                                <Border  Grid.Column="4"  Grid.RowSpan="6" 
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=4) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
 
-                            <Border  Grid.Column="5"  Grid.RowSpan="6" 
+                                <Border  Grid.Column="5"  Grid.RowSpan="6" 
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=5) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
 
-                            <Border  Grid.Column="6"  Grid.RowSpan="6" 
+                                <Border  Grid.Column="6"  Grid.RowSpan="6" 
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=6) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
 
-                            <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,10,3" >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="49" />
-                                    <RowDefinition Height="132" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition  Width="140"/>
-                                    <ColumnDefinition  Width="140"/>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,10,3" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="49" />
+                                        <RowDefinition Height="132" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="140"/>
+                                        <ColumnDefinition  Width="140"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="Рег. pH:" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center" FontSize="20"
+                                    <TextBlock Text="Рег. pH:" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center"   HorizontalAlignment="Center" FontSize="20"
                            FontWeight="Bold"
                            Foreground="Black" Height="26" Width="76"/>
 
 
-                                <TextBlock Text="Загр.щел-чи: " Grid.Row="2"  VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20"
+                                    <TextBlock Text="Загр.щел-чи: " Grid.Row="2"  VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20"
                            FontWeight="Bold"
                            Foreground="#FF646464" Margin="8,0,0,0" Height="26" Width="132"/>
 
-                                <TextBlock Text="Зад. доза &#xA; щелочи: " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"
+                                    <TextBlock Text="Зад. доза &#xA; щелочи: " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="blue" Margin="28,0,0,0" Height="44" Width="77"/>
 
 
-                                <TextBlock  Grid.Column="1"
+                                    <TextBlock  Grid.Column="1"
                             Grid.Row="1" 
                             Height="28"
                             FontSize="20"
@@ -182,7 +182,7 @@
                             Foreground="LawnGreen"
                             Text="{Binding PD.QIY_K480A, FallbackValue=???, StringFormat=\{0:0.0 \}}"   
                             VerticalAlignment="Center"   TextAlignment="Left" Background="Black" RenderTransformOrigin="0.329,0.607"    />
-                                <TextBlock Grid.Column="1"  
+                                    <TextBlock Grid.Column="1"  
                            Grid.Row="2" 
                            Height="28"
                            FontSize="20"
@@ -191,7 +191,7 @@
                            Text="{Binding PD.RegPH480A_doza, FallbackValue=???, StringFormat=\{0:0.0 кг\}}"    
                            VerticalAlignment="Center"   TextAlignment="Left" Background="Black"  />
 
-                                <Controls:NumPadUpDown
+                                    <Controls:NumPadUpDown
                     
             Grid.Row="3"
             Grid.Column="1"
@@ -207,40 +207,40 @@
             Minimum="-1"
             Precision="1"
             UpdateValueOnEnterKey="True">
-                                    <Behaviors:Interaction.Behaviors>
-                                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480A_DozaZad}" />
-                                    </Behaviors:Interaction.Behaviors>
-                                </Controls:NumPadUpDown>
-                            </Grid>
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480A_DozaZad}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
+                                </Grid>
 
-                            <Grid Grid.Row="2" Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="2" Grid.Column="1">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -254,16 +254,16 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st1_1_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st1_1_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
-                                    <TextBlock Text="Таймаут PH , мин.: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                                        <TextBlock Text="Таймаут PH , мин.: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="156" Grid.ColumnSpan="2" />
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="3"
             Grid.Column="0"
             Height="30"
@@ -277,45 +277,45 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_time_Ph_st1_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_time_Ph_st1_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
 
 
-                            <Grid Grid.Row="2" Grid.Column="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="2" Grid.Column="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -329,53 +329,53 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st2_1_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st2_1_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
 
 
 
 
 
+
+
+
+
+                                    </Grid>
 
 
 
 
                                 </Grid>
-
-
-
-
-                            </Grid>
-                            <Grid Grid.Row="3" Grid.Column="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="3" Grid.Column="2">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Зад. доза  Анил.: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Зад. доза  Анил.: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
                     
             Grid.Row="1"
             Grid.Column="0"
@@ -391,14 +391,14 @@
             Minimum="-1"
             Precision="1"
             UpdateValueOnEnterKey="True">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Doza_anilin_st2_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
-                                    <TextBlock Text="% откр.кл-на: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding Doza_anilin_st2_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+                                        <TextBlock Text="% откр.кл-на: " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="blue" Height="44" Width="146" Grid.ColumnSpan="2" Margin="7,1,0,0" Grid.RowSpan="2"/>
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
                     
             Grid.Row="3"
             Grid.Column="0"
@@ -414,44 +414,44 @@
             Minimum="-1"
             Precision="1"
             UpdateValueOnEnterKey="True">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Percent_valve_Anilin}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding Percent_valve_Anilin}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
 
-                            <Grid Grid.Row="2" Grid.Column="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="2" Grid.Column="3">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -465,57 +465,57 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st3_1_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st3_1_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
 
 
 
 
 
+
+
+
+
+                                    </Grid>
 
 
 
 
                                 </Grid>
-
-
-
-
-                            </Grid>
-                            <Grid Grid.Row="4" Grid.Column="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="4" Grid.Column="3">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Доза 1: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Доза 1: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -529,52 +529,52 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_doza1}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_doza1}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
 
 
 
+
+
+
+
+                                    </Grid>
 
 
 
 
                                 </Grid>
-
-
-
-
-                            </Grid>
-                            <Grid Grid.Row="4" Grid.Column="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,93" >
+                                <Grid Grid.Row="4" Grid.Column="3">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
 
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Доза 1: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,93" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Доза 1: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -588,56 +588,56 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_doza1}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_doza1}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
 
 
 
+
+
+
+
+                                    </Grid>
 
 
 
 
                                 </Grid>
 
-
-
-
-                            </Grid>
-
-                            <Grid Grid.Row="2" Grid.Column="4">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="2" Grid.Column="4">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Заданный pH: " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -651,57 +651,57 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st4_1_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st4_1_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
 
 
 
 
 
+
+
+
+
+                                    </Grid>
 
 
 
 
                                 </Grid>
-
-
-
-
-                            </Grid>
-                            <Grid Grid.Row="4" Grid.Column="4">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid Grid.Row="4" Grid.Column="4">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Т. загр: Дозы2 " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Т. загр: Дозы2 " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -715,10 +715,10 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_Tnagr}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_Tnagr}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
 
 
@@ -732,42 +732,42 @@
 
 
 
+
+                                    </Grid>
 
                                 </Grid>
 
-                            </Grid>
-
-                            <Grid  Grid.Row="4" Grid.Column="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid  Grid.Row="4" Grid.Column="5">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Доза2 " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Доза2 " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -781,45 +781,45 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_doza2}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding DietilAmin_doza2}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+
+                                    </Grid>
 
                                 </Grid>
-
-                            </Grid>
-                            <Grid  Grid.Row="2" Grid.Column="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  />
-
-                                    <RowDefinition  Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-
-                                </Grid.RowDefinitions>
-
-
-
-                                <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                <Grid  Grid.Row="2" Grid.Column="5">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
+                                        <RowDefinition  />
+
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="уставка PH " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+
+
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="уставка PH " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="114"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -833,41 +833,41 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st5_1_A}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding SetPh_st5_1_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+
+                                    </Grid>
 
                                 </Grid>
-
-                            </Grid>
-                            <Grid  Grid.Row="5" Grid.Column="5">
+                                <Grid  Grid.Row="5" Grid.Column="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition  />
                                         <RowDefinition  Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
-                                
+
                                     <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="30" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="140"/>
-                                        <ColumnDefinition  Width="40"/>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text=" % кл-на для дег-и " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text=" % кл-на для дег-и " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
 
-                                    <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="1"
             Grid.Column="0"
             Height="30"
@@ -881,10 +881,10 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-                                        <Behaviors:Interaction.Behaviors>
-                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_ValveSteam}" />
-                                        </Behaviors:Interaction.Behaviors>
-                                    </Controls:NumPadUpDown>
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding Set_ValveSteam}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
 
                                         <TextBlock Text=" Т.нач. дегаз. " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
@@ -911,17 +911,114 @@
 
                                     </Grid>
 
+                                </Grid>
+
+                                <Grid  Grid.Row="6" Grid.Column="6">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="140"/>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <TextBlock Text=" Объем воды, Л " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+                                        <Controls:NumPadUpDown
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Vol_Water_perA}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+
+
+                                        <TextBlock Text="Время долива, Мин." Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+                                        <Controls:NumPadUpDown
+            Grid.Row="3"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.time_perA}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+
+                                        <TextBlock Text=" Т дистил., ℃" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+                                        <Controls:NumPadUpDown
+            Grid.Row="5"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Tzad_peregon_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+                                        
+                                        
+
+                                    </Grid>
+
+                                </Grid>
+
+                                <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                                <TextBlock Foreground="Black" Text="Загрузка &#xA; Диэтиламина"  FontSize="19" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"  />
+                                <TextBlock Foreground="Black" Text="Нагрев K480A"  FontSize="19" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center"  />
+                                <TextBlock Foreground="Black" Text="Перегонка МЭК"  FontSize="19" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Center"  />
+
+
                             </Grid>
 
-                            <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
-                            <TextBlock Foreground="Black" Text="Загрузка &#xA; Диэтиламина"  FontSize="19" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"  />
-                            <TextBlock Foreground="Black" Text="Нагрев K480A"  FontSize="19" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center"  />
-
-
-                        </Grid>
-
-                        <xctk:ToggleSwitch Width="64" Margin="26,48,775,-40" Height="25" Grid.Row="1"    
+                            <xctk:ToggleSwitch Width="64" Margin="26,48,775,-40" Height="25" Grid.Row="1"    
                   CornerRadius="2"
                  IsChecked="{Binding Start_recept ,Mode=TwoWay}"
                 ThumbHeight = "25"
@@ -930,9 +1027,9 @@
                 UncheckedContent = "ВЫКЛ"
                 CheckedBackground="DarkSeaGreen"
                 UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
-                        <TextBlock Text="{Binding StatusOut}"  Grid.Row="1" FontSize="24"  Foreground="Green"/>
+                            <TextBlock Text="{Binding StatusOut}"  Grid.Row="1" FontSize="24"  Foreground="Green"/>
 
-                        <!--<ScrollViewer Grid.Row="1">
+                            <!--<ScrollViewer Grid.Row="1">
                             <ListView ItemsSource="{Binding MessageList}" FontSize="16" AlternationCount="2" >
                                 <ListView.View>
                                     <GridView>
@@ -950,7 +1047,7 @@
                             </ListView>
                         </ScrollViewer>-->
 
-                        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                            <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -966,8 +1063,8 @@
                         </xctk:WindowContainer>-->
 
 
-                    </Grid>
-                </Canvas>
+                        </Grid>
+                    </Canvas>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="2"/>
