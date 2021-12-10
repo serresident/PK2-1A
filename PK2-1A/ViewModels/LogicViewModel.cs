@@ -757,7 +757,7 @@ namespace belofor.ViewModels
 
                             // переход на следущий шаг
                             PD.PID_ON_Tperegon_A = true;
-                            PD.start = true;
+                            PD.start_LoadWater_perA = true;
 
                         }
                     }
@@ -830,6 +830,7 @@ namespace belofor.ViewModels
                 PD.TVK480A_ain_auto = 0;
 
                 PD.PID_ON_Tperegon_A = false;
+                PD.start_LoadWater_perA = false;
 
                 n = 0;
                 State = 0;

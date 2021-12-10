@@ -630,7 +630,7 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
 
         public Single Volume_R461 { get { return getValue<Single>(); } }//ad152
 
-        public UInt16 JOURNAL = 13;
+        public UInt16 JOURNAL = 13;//  заглушка проверки , убирает защиту от записи в бд при обрыви связи с плк
             //ad108  должен быть последним ,служит для определения успешного чтения регистров
          //ad=82 
        

@@ -1509,7 +1509,7 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="268" Canvas.Top="650" Caption="LT 461" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="65" Height="40" Value="{Binding PD.LT_R461, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="268" Canvas.Top="650" Caption="LT 461" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="65" Height="40" Value="{Binding PD.LT_R461, Mode=OneWay, StringFormat=\{0:0#\}}" Background="Black"/>
         <TextBlock Canvas.Left="287" TextWrapping="Wrap" Text="R461" Canvas.Top="691" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <WPF:Frame HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="74" Width="41" 
             Design="SquareGlass" Foreground="White" BevelWidth="5" GlassEffectOffset="0.2" Canvas.Left="338" Canvas.Top="650" >
@@ -1573,7 +1573,7 @@
             </WPF:Tube.Colors>
         </WPF:Tube>
         <TextBlock Canvas.Left="822" TextWrapping="Wrap" Text="R201B" Canvas.Top="114" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="812" Canvas.Top="73" Caption="WE R201B" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="78" Height="40" Value="{Binding PD.WE_R201B_rs, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="812" Canvas.Top="73" Caption="WE R201B" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="78" Height="40" Value="{Binding PD.WE_R201B_rs, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
         <WPF:Tube Height="18" Canvas.Left="975" Canvas.Top="44" Width="20" Design="Arc90" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
@@ -1619,7 +1619,7 @@
             </WPF:Tube.Colors>
         </WPF:Tube>
         <TextBlock Canvas.Left="966" TextWrapping="Wrap" Text="R402B" Canvas.Top="114" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="956" Canvas.Top="74" Caption="WE R402B" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="78" Height="40" Value="{Binding PD.WE_R402B_rs, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="956" Canvas.Top="74" Caption="WE R402B" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="78" Height="40" Value="{Binding PD.WE_R402B_rs, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
         <WPF:Tube Height="18" Canvas.Left="1160" Width="19" Design="Arc90" FlangeLayout="None" Canvas.Top="44">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
@@ -1665,7 +1665,7 @@
             </WPF:Tube.Colors>
         </WPF:Tube>
         <TextBlock Canvas.Left="1150" TextWrapping="Wrap" Text="R404A" Canvas.Top="114" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1140" Canvas.Top="73" Caption="WE R404A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="76" Height="40" Value="{Binding PD.WE_R404A_rs, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1140" Canvas.Top="73" Caption="WE R404A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="76" Height="40" Value="{Binding PD.WE_R404A_rs, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
         <WPF:Tube  Design="Vertical" Height="78" Canvas.Left="1258" Canvas.Top="69" Width="88" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
@@ -1675,8 +1675,8 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1262" Canvas.Top="73" Caption="WE R403" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="78" Height="40" Value="{Binding PD.WE_R403_rs, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
-        <WPF:Tube  Design="Vertical" Height="78" Canvas.Left="1380" Canvas.Top="69" Width="88" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1262" Canvas.Top="73" Caption="WE R403" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="78" Height="40" Value="{Binding PD.WE_R403_rs, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
+        <WPF:Tube  Design="Vertical" Height="78" Canvas.Left="1380" Canvas.Top="69" Width="102" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -1696,8 +1696,8 @@
         </WPF:Valve>
         <TextBlock Canvas.Left="1056" TextWrapping="Wrap" Canvas.Top="51" ><Run Text="WVR404A"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1275" TextWrapping="Wrap" Text="R403" Canvas.Top="114" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <TextBlock Canvas.Left="1402" TextWrapping="Wrap" Text="R481" Canvas.Top="114" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1385" Canvas.Top="74" Caption="LE 481" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="77" Height="40" Value="{Binding PD.LE_R481, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <TextBlock Canvas.Left="1386" TextWrapping="Wrap" Text="R481" Canvas.Top="114" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1382" Canvas.Top="74" Caption="LE 481" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="57" Height="40" Value="{Binding PD.LE_R481, Mode=OneWay, StringFormat=\{0:0#\}}" Background="Black"/>
         <TextBlock Canvas.Left="228" TextWrapping="Wrap" Text="ЛХУ" Canvas.Top="871" Height="33" Width="45" />
         <WPF:Fan Height="53" Canvas.Left="307" Canvas.Top="806" Width="49" Design="Blower1">
             <WPF:Fan.Colors>
@@ -1842,7 +1842,7 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <TextBlock Canvas.Left="516" TextWrapping="Wrap" Text="К450A" Canvas.Top="252" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="573" Canvas.Top="253" Caption="WE K450A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="94" Height="40" Value="{Binding PD.WE_K450A, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="573" Canvas.Top="253" Caption="WE K450A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="94" Height="40" Value="{Binding PD.WE_K450A, Mode=OneWay, StringFormat=\{0:0\}}" Background="Black"/>
         <WPF:Arrow Height="12" Canvas.Left="667" RotateAngle="90" Canvas.Top="40" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
@@ -1905,7 +1905,7 @@
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="293" Canvas.Top="125" Caption="LT 137" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="56" Height="40" Value="{Binding PD.LT_R137, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="293" Canvas.Top="125" Caption="LT 137" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="56" Height="40" Value="{Binding PD.LT_R137, Mode=OneWay, StringFormat=\{0:0#\}}" Background="Black"/>
         <WPF:Valve Height="40" Canvas.Left="465" Canvas.Top="187" Width="30" Actor="Piston"  RotateAngle="90                    " >
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding not PD.TV_K450A_dout }" OnColor1="Green" DefaultColor="Red"/>
@@ -2140,7 +2140,7 @@
             </WPF:Arrow.Colors>
         </WPF:Arrow>
         <TextBlock Canvas.Left="1800" TextWrapping="Wrap" Canvas.Top="302" Height="36" Width="45" ><Run Text="Гор.&#xA; Вода"/><LineBreak/><Run/></TextBlock>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="985" Canvas.Top="176" Caption="WE D470" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="77" Height="40" Value="{Binding PD.WE_D470, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="985" Canvas.Top="176" Caption="WE D470" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="77" Height="40" Value="{Binding PD.WE_D470, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
         <WPF:Tube Height="48" Canvas.Left="1547" Canvas.Top="104" Width="158" FlangeLayout="None">
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
@@ -2321,7 +2321,7 @@
             </WPF:Tube.Colors>
         </WPF:Tube>
         <TextBlock Canvas.Left="820" TextWrapping="Wrap" Text="D460A" Canvas.Top="766" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="820" Canvas.Top="724" Caption="WE D460A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="77" Height="40" Value="{Binding PD.WE_D460A, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="820" Canvas.Top="724" Caption="WE D460A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="77" Height="40" Value="{Binding PD.WE_D460A, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
         <TextBlock Canvas.Left="921" TextWrapping="Wrap" Text="V D460A" Canvas.Top="789" />
         <WPF:Tube Height="12" Canvas.Left="957" Canvas.Top="777" Width="136" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
@@ -3595,7 +3595,7 @@
                 </TransformGroup>
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1122" Canvas.Top="173" Caption="WE D470A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="76" Height="40" Value="{Binding PD.WE_D470A_rs, Mode=OneWay, StringFormat=\{0:0.0##\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1122" Canvas.Top="173" Caption="WE D470A" Unit="кг" ValueColor="LawnGreen" Foreground="#FFCA75FB" Width="76" Height="40" Value="{Binding PD.WE_D470A_rs, Mode=OneWay, StringFormat=\{0:0##\}}" Background="Black"/>
         <WPF:Tube  Design="Vertical" Height="23" Canvas.Left="1098" Canvas.Top="271" Width="124" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
@@ -3607,7 +3607,7 @@
         </WPF:Tube>
         <TextBlock Canvas.Left="1134" TextWrapping="Wrap" Text="D470A" Canvas.Top="272" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <TextBlock Canvas.Left="1000" TextWrapping="Wrap" Text="D470" Canvas.Top="274" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1081" Canvas.Top="899" Caption="TE K460B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="36" Value="{Binding PD.TE_K460B, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1081" Canvas.Top="899" Caption="TE K460B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="36" Value="{Binding PD.TE_K460B, Mode=OneWay, StringFormat=\{0:0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <WPF:Tube Height="12" Canvas.Left="1377" Canvas.Top="217" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
             <Behaviors:Interaction.Behaviors>
@@ -4188,6 +4188,31 @@
             UncheckedContent = "Сброс"
             CheckedBackground="Green"
             UncheckedBackground ="LightPink" Canvas.Left="1144" Canvas.Top="680"/>
+        <WPF:Frame HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="73" Width="36" 
+                   Design="SquareGlass" Foreground="White" BevelWidth="5" GlassEffectOffset="0.2" Canvas.Left="1441" Canvas.Top="72" >
+            <WPF:Frame.Colors>
+                <WPF:ControlColors AuxiliaryColor1="DarkGray">
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Black" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Frame.Colors>
+            <WPF:HVLevelIndicator Margin="0,7,0,6" Orientation="Vertical" Layout="OverlappingScale" StrokeThickness="0.5" 
+                                  LayoutStrip1Size="16" LayoutStrip2Size="0" LayoutStrip3Size="0.5*" FontSize="8" Header="%" 
+                                  HorizontalHeaderAlignment="Right" VerticalHeaderAlignment="Bottom" HeaderPadding="0,0,5,-4"
+                                  CurrentValue="{Binding PD.LE_R481}" >
+                <WPF:HVLevelIndicator.Colors>
+                    <WPF:ControlColors AuxiliaryColor1="Transparent">
+                        <WPF:ControlColors.DefaultColoring>
+                            <WPF:ColoringColor Color1="DeepSkyBlue" />
+                        </WPF:ControlColors.DefaultColoring>
+                    </WPF:ControlColors>
+                </WPF:HVLevelIndicator.Colors>
+                <WPF:HVLevelIndicator.OptionsScale>
+                    <WPF:OptionsScale TickFrequency="25" MajorTickFrequency="25"/>
+                </WPF:HVLevelIndicator.OptionsScale>
+            </WPF:HVLevelIndicator>
+        </WPF:Frame>
 
 
         <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
