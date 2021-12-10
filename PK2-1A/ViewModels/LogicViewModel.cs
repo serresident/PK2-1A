@@ -754,8 +754,10 @@ namespace belofor.ViewModels
                              Send_Log(StatusOut = "ШАГ 2.2 Нагрев ,ожидание достижения уставки.");
                             n = 6;
                             State = 6;
+
                             // переход на следущий шаг
-                          
+                            PD.PID_ON_Tperegon_A = true;
+                            PD.start = true;
 
                         }
                     }
@@ -793,7 +795,12 @@ namespace belofor.ViewModels
 
                 case 6:
 
+                    if (PD.TE_K480A_2>=PD.TE_480A_1+0.5f )
+                        PD.PID_ON_Tperegon_A = false;
+                    else PD.PID_ON_Tperegon_A = true;
 
+                    if (PD.QIY_K480A < 7.8)
+                        Start_recept=false;
 
 
 
@@ -821,6 +828,8 @@ namespace belofor.ViewModels
                 PD.VK480A_2_control_auto = false;
                 PD.TVK480A_mode = false;
                 PD.TVK480A_ain_auto = 0;
+
+                PD.PID_ON_Tperegon_A = false;
 
                 n = 0;
                 State = 0;

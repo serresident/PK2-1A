@@ -17,28 +17,6 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Text="ПЕРЕХВАТ управления с ПЛК1:  "></TextBlock>
-        <xctk:ToggleSwitch Width="64" Margin="5,0,5,0" Height="25" Grid.Row="0" Grid.Column="1"    
-                  CornerRadius="2"
-                 IsChecked="{Binding PD.Intercept_plc1 ,Mode=TwoWay}"
-                ThumbHeight = "25"
-                ThumbWidth = "24"
-              VerticalAlignment="Center"
-               CheckedContent = "ВКЛ"
-                UncheckedContent = "ВЫКЛ"
-                CheckedBackground="DarkSeaGreen"
-                UncheckedBackground ="LightPink"></xctk:ToggleSwitch>
-        <TextBlock FontWeight="Bold" FontSize="12"  Foreground="Blue" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Text="ПЕРЕХВАТ  управления с ПЛК2:  "></TextBlock>
-        <xctk:ToggleSwitch Width="64" Margin="5,0,0,5" Height="25" Grid.Row="0" Grid.Column="3"    
-                  CornerRadius="2"
-                 IsChecked="{Binding PD.Intercept_plc2 ,Mode=TwoWay}"
-                ThumbHeight = "25"
-                ThumbWidth = "24"
-              VerticalAlignment="Center"
-               CheckedContent = "ВКЛ"
-                UncheckedContent = "ВЫКЛ"
-                CheckedBackground="DarkSeaGreen"
-                UncheckedBackground ="LightPink"></xctk:ToggleSwitch>
 
 
 

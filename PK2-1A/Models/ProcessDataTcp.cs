@@ -481,7 +481,8 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public bool ZagrAnilin480_Start { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad222
         public bool ZagrAnilin480_IsEnablePredictClose { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad223
         public bool PID_ON_Tperegon_A { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad224
-        public bool PID_ON_FqPeregon_A { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad225
+        public bool start_LoadWater_perA { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad225
+        public bool pause_LoadWater_perA { get { return getValue<bool>(); } set { setValue<bool>(value); } }//ad226
         #endregion
 
         // Inputs Registers
@@ -624,6 +625,10 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
 
         public Single ZagrDietilAminK480_Doza2 { get { return getValue<Single>(); } }//ad146
         public Single ZagrAnilin_Doza { get { return getValue<Single>(); } }//ad148
+
+        public Single ZagrVodi_perA { get { return getValue<Single>(); } }//ad150
+
+        public Single Volume_R461 { get { return getValue<Single>(); } }//ad152
 
         public UInt16 JOURNAL = 13;
             //ad108  должен быть последним ,служит для определения успешного чтения регистров
