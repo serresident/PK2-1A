@@ -990,7 +990,17 @@
                                                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Tzad_peregon_A}" />
                                             </Behaviors:Interaction.Behaviors>
                                         </Controls:NumPadUpDown>
-                                        <Expander Grid.Row="7" Header="Детали">
+                                    <xctk:ToggleSwitch Width="160" Margin="0,5,0,5" Height="25" Grid.Row="1"    
+                                                       
+                  CornerRadius="2"
+                 IsChecked="{Binding Start_recept ,Mode=TwoWay}"
+                ThumbHeight = "25"
+                ThumbWidth = "24"
+               CheckedContent = "подтвердить"
+                UncheckedContent = "подтвердить перевод на R481"
+                CheckedBackground="DarkSeaGreen"
+                UncheckedBackground ="LightPink"/>
+                                    <Expander Grid.Row="7" Header="Детали">
                                             <StackPanel>
             <TextBlock Text="TE_E482_2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
             <TextBlock
@@ -1070,7 +1080,7 @@
                             </ListView>
                         </ScrollViewer>-->
 
-                            <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                            <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -1083,7 +1093,7 @@
                             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        </xctk:WindowContainer>
+                        </xctk:WindowContainer>-->
 
 
                         </Grid>

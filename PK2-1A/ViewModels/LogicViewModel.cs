@@ -498,6 +498,14 @@ namespace belofor.ViewModels
             set { SetProperty(ref t_per_A, value); }
         }
 
+        //  подтверждение перевода r481
+        private bool  next = false;
+        public bool Next
+        {
+            get { return next; }
+            set { SetProperty(ref next, value); }
+        }
+
 
 
 
@@ -807,11 +815,14 @@ namespace belofor.ViewModels
 
                     if(PD.TE_480A_1>=97)
                     {
-                        Send_Log(StatusOut = " ШАГ 2.2 Достижение темп. 97гр, завершение ");
+                      
                         PD.PID_ON_Tperegon_A = false;
                         PD.start_LoadWater_perA = false;
-
+                        Send_Log(StatusOut = " ШАГ 2.2 Достижение темп. 97гр, оповещение оператора о НЕОБХОДИМОСТИ перевода отгона в емкость промфракции R481 ");
+                        n = 7;
                     }
+                    break;
+                case 7:
 
 
                     break;
