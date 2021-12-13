@@ -22,8 +22,10 @@
 
         <TabControl  >
             <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
-                <ScrollViewer CanContentScroll="True" >
-                    <Canvas Background="#FFF9EFDA"   >
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Canvas Background="#FFF9EFDA" Height="auto" Width="auto" >
+                  
+
 
                         <WPF:Motor  Height="30" Canvas.Left="62" Canvas.Top="40" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0" Margin="52,28,58,42" >
                             <WPF:Motor.States>
@@ -31,7 +33,7 @@
                             </WPF:Motor.States>
                             <Behaviors:Interaction.Behaviors>
                                 <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
-                                <behaviors:AnalogActuatorHandlerBehavior VSpacing="-10"  Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
+                                <behaviors:AnalogActuatorHandlerBehavior   Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
 
                             </Behaviors:Interaction.Behaviors>
                             <WPF:Motor.Colors>
@@ -66,6 +68,7 @@
                                 </WPF:ControlColors>
                             </WPF:Label.Colors>
                         </WPF:Label>
+                            
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -98,13 +101,7 @@
 
 
                                 </Grid.ColumnDefinitions>
-                                <Border 
-        Grid.Column="3" 
-      
-        Grid.RowSpan="6" 
-        BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=3) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
+                               
                                 <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="1.1(вкл.меш.&#xA;дов-е ph)"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Text="1.2 (загр.&#xA;анилина)"  FontSize="24" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -115,6 +112,8 @@
                                 <TextBlock Text="2.3"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                                 <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                               
 
                                 <Border 
         Grid.Column="1" 
@@ -131,6 +130,15 @@
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=2) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
+
+                                <Border 
+        Grid.Column="3" 
+      
+        Grid.RowSpan="6" 
+        BorderThickness="8"
+        BorderBrush="{c:Binding (State\=\=3) ? media:Brushes.Green : media:Brushes.Transparent}"         
+        Background="Transparent"/>
+                                
                                 <Border  Grid.Column="4"  Grid.RowSpan="6" 
         BorderThickness="8"
         BorderBrush="{c:Binding (State\=\=4) ? media:Brushes.Green : media:Brushes.Transparent}"         
@@ -283,7 +291,6 @@
                                         </Controls:NumPadUpDown>
                                     </Grid>
                                 </Grid>
-
 
                                 <Grid Grid.Row="2" Grid.Column="2">
                                     <Grid.RowDefinitions>
@@ -913,31 +920,10 @@
 
                                 </Grid>
 
-                                <Grid  Grid.Row="6" Grid.Column="6">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition  />
-                                        <RowDefinition  Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                       
-                                    </Grid.RowDefinitions>
+                                <StackPanel  Grid.Row="6" Grid.Column="6">
 
-                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,10,3" >
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="30" />
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition  Width="Auto"/>
-                                           
-                                          
-                                        </Grid.ColumnDefinitions>
-                                        
+                               
+
                                         <TextBlock Text=" Объем воды, Л " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
@@ -986,7 +972,7 @@
                                         <TextBlock Text=" Т дистил., ℃" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
-            <Controls:NumPadUpDown
+                                        <Controls:NumPadUpDown
             Grid.Row="5"
             Grid.Column="0"
             Height="30"
@@ -1000,32 +986,51 @@
             Minimum="0"
             Precision="1"
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
-             <Behaviors:Interaction.Behaviors>
-             <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Tzad_peregon_A}" />
-             </Behaviors:Interaction.Behaviors>
-             </Controls:NumPadUpDown>
-                                        <Expander Grid.Row="7">
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Tzad_peregon_A}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+                                        <Expander Grid.Row="7" Header="Детали">
                                             <StackPanel>
-              <TextBlock Text=" Т дистил., ℃" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
-              FontWeight="Bold"
-                           Foreground="Green" Height="21" Width="167" />
-                                                <TextBlock
+            <TextBlock Text="TE_E482_2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
+            <TextBlock
             
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="24"
             FontWeight="Bold"
-            Foreground="DarkGreen"
-            Text="{Binding PD.TE_K480A_2, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
-                                                
-                                                
-                                            </StackPanel>
+            Foreground="red"
+            Text="{Binding PD.TE_E482_2, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
+
+                                            <TextBlock Text="Загр. воды" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
+                                            <TextBlock
+            
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="DeepSkyBlue"
+            Text="{Binding PD.ZagrVodi_perA, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
+
+                                            <TextBlock Text="Объем МЭК R461" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
+                                            <TextBlock
+            
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="DarkViolet"
+            Text="{Binding PD.Volume_R461, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
+
+
+
+
+
+                                        </StackPanel>
                                         </Expander>
-                                        
 
-                                    </Grid>
 
-                                </Grid>
+                                </StackPanel>
 
                                 <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
@@ -1065,7 +1070,7 @@
                             </ListView>
                         </ScrollViewer>-->
 
-                            <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                            <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -1078,12 +1083,16 @@
                             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        </xctk:WindowContainer>-->
+                        </xctk:WindowContainer>
 
 
                         </Grid>
-                    </Canvas>
+                   
+
+                </Canvas>
                 </ScrollViewer>
+
+
             </TabItem>
             <TabItem Header="2"/>
 

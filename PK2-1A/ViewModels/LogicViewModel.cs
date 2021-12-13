@@ -795,13 +795,23 @@ namespace belofor.ViewModels
 
                 case 6:
 
-                    if (PD.TE_K480A_2>=PD.TE_480A_1+0.5f )
+                    if (PD.TE_K480A_2 >= PD.TE_480A_1 + 0.5f)
+                    {
                         PD.PID_ON_Tperegon_A = false;
+                        Send_Log(StatusOut = " ШАГ 2.2 Превышение Темп. паров, отключение подачи пара ");
+                    }
                     else PD.PID_ON_Tperegon_A = true;
 
                     if (PD.QIY_K480A < 7.8)
                         Start_recept=false;
 
+                    if(PD.TE_480A_1>=97)
+                    {
+                        Send_Log(StatusOut = " ШАГ 2.2 Достижение темп. 97гр, завершение ");
+                        PD.PID_ON_Tperegon_A = false;
+                        PD.start_LoadWater_perA = false;
+
+                    }
 
 
                     break;
@@ -832,9 +842,13 @@ namespace belofor.ViewModels
                 PD.PID_ON_Tperegon_A = false;
                 PD.start_LoadWater_perA = false;
 
-                n = 0;
+             
                 State = 0;
                  Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А  прерван оператором");
+                if(n==6)
+                    Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А, аварийное завершение, падение ph ниже 7,8");
+
+                n = 0;
             }
             // аварийные блокировки
             //if (Start_recept)
