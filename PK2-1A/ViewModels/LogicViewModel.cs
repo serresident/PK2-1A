@@ -11,6 +11,8 @@ using belofor.Services;
 using Xceed.Wpf.Toolkit;
 using InfluxDB.Client;
 using InfluxDB.Client.Api.Domain;
+using Prism.Services.Dialogs;
+using belofor.Dialogs;
 
 namespace belofor.ViewModels
 {
@@ -21,6 +23,8 @@ namespace belofor.ViewModels
         private bool initVM;
         private PeriodicalTaskStarter chartUpdater;
         private PeriodicalTaskStarter internalUpdater;
+        private readonly IDialogService dialogService;
+        NextDialog dialog ;
 
         private readonly ArchivRepository archivRepository;
 
@@ -182,8 +186,9 @@ namespace belofor.ViewModels
             get { return isBusy; }
             set { SetProperty(ref isBusy, value); }
         }
-        public LogicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository)
+        public LogicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository, IDialogService dialogService)
         {
+            this.dialogService = dialogService;
             PD = pd;
             this.archivRepository = archivRepository;
 
@@ -226,6 +231,8 @@ namespace belofor.ViewModels
 
             chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromMilliseconds(50));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
+
+            dialog = new NextDialog();
         }
         //команды на кнопким
         private bool canWaterLoadingStart() {return !PD.ZagrVodaComm_Start ; }// проверяем доступность кнопким
@@ -473,6 +480,17 @@ namespace belofor.ViewModels
             set { SetProperty(ref t_degaz, value); }
         }
 
+
+        //  T_off  перегона А
+        private float t_on_per_A = 72;
+        public float T_On_per_A
+        {
+            get { return t_on_per_A; }
+            set { SetProperty(ref t_on_per_A, value); }
+        }
+
+
+
         // объем воды на перегонку A
         private float volume_water_A  = 67f;
         public float Volume_water_A
@@ -496,6 +514,23 @@ namespace belofor.ViewModels
         {
             get { return t_per_A; }
             set { SetProperty(ref t_per_A, value); }
+        }
+
+
+        //  T_off  перегона А
+        private float t_off_per_A = 97.0f;
+        public float T_off_per_A
+        {
+            get { return t_off_per_A; }
+            set { SetProperty(ref t_off_per_A, value); }
+        }
+
+        //  PH_avar  перегона А
+        private float pH_avar_per_A = 7.8f;
+        public float PH_avar_per_A
+        {
+            get { return pH_avar_per_A; }
+            set { SetProperty(ref pH_avar_per_A, value); }
         }
 
         //  подтверждение перевода r481
@@ -754,7 +789,7 @@ namespace belofor.ViewModels
                         if (PD.ZagrDietilAminK480_Start != false) PD.ZagrDietilAminK480_Start = false;
                     }
 
-                    if (PD.TE_K480A_1 >= 72 && !PD.ZagrDietilAminK480_Start)
+                    if (PD.TE_K480A_1 >= T_On_per_A && !PD.ZagrDietilAminK480_Start)
                     {
 
                         if (!PD.ZagrDietilAminK480_Start)
@@ -772,7 +807,7 @@ namespace belofor.ViewModels
                     else
                     {
                         StatusOut = PD.ZagrDietilAminK480_Start ? "ШАГ 2.1 Ожидание заверш. загрузки ДЭА доза2" :
-                           "ШАГ 2.1 Ожидание  нагрева до 72 гр.";
+                           "ШАГ 2.1 Ожидание  нагрева до "+ T_On_per_A+" гр.";
                        if (!(PD.TE_K480A_1 >= T_degaz)) Send_Log(StatusOut);
 
                     }
@@ -810,16 +845,18 @@ namespace belofor.ViewModels
                     }
                     else PD.PID_ON_Tperegon_A = true;
 
-                    if (PD.QIY_K480A < 7.8)
+                    if (PD.QIY_K480A < PH_avar_per_A)
                         Start_recept=false;
 
-                    if(PD.TE_480A_1>=97)
+                    if(PD.TE_480A_1>= T_off_per_A)
                     {
                       
                         PD.PID_ON_Tperegon_A = false;
                         PD.start_LoadWater_perA = false;
                         Send_Log(StatusOut = " ШАГ 2.2 Достижение темп. 97гр, оповещение оператора о НЕОБХОДИМОСТИ перевода отгона в емкость промфракции R481 ");
+                     //   dialogService.ShowDialog("next");
                         n = 7;
+                      
                     }
                     break;
                 case 7:
@@ -830,12 +867,12 @@ namespace belofor.ViewModels
 
 
             }
-
+           
             //if (Start_recept && n != 0)
             //{
             //    PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
             //}
-                if (!Start_recept && n != 0)
+            if (!Start_recept && n != 0)
             {
                 PD.RegPH480A_Start = false;    // шаг1
                 PD.NC_K480A_mode = false;
@@ -844,7 +881,7 @@ namespace belofor.ViewModels
                 PD.ZagrAnilin480_Start = false;// шаг2
                 PD.ZagrDietilAminK480_Start = false; // шаг3
 
-
+                ShowDialog();
                 PD.VK480A_2_mode = false;           // шаг4
                 PD.VK480A_2_control_auto = false;
                 PD.TVK480A_mode = false;
@@ -869,12 +906,30 @@ namespace belofor.ViewModels
             //}
           
         }
-      public  void stop_recept()
+
+        public string Title;
+        private void ShowDialog()
         {
-         
+            var message = "This is a message that should be shown in the dialog.";
+            //using the dialog service as-is
+            dialogService.ShowDialog("password", new DialogParameters(), r =>
+            {
+                if (r.Result == ButtonResult.None)
+                    Title = "Result is None";
+                else if (r.Result == ButtonResult.OK)
+                    Title = "Result is OK";
+                else if (r.Result == ButtonResult.Cancel)
+                    Title = "Result is Cancel";
+                else
+                    Title = "I Don't know what you did!?";
+            }, "password");
+        }
+        public  void stop_recept()
+        {
 
 
-                PD.RegPH480A_Start = false;    // шаг1
+          
+;                PD.RegPH480A_Start = false;    // шаг1
                 PD.NC_K480A_mode = false;
                 PD.NC_K480BA_ain_auto = 0;
 

@@ -115,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Dialogs\NextDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\PasswordDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -277,9 +281,13 @@
     <Compile Include="Converters\BoolToNumConverter.cs" />
     <Compile Include="Converters\PowerPercentConverter.cs" />
     <Compile Include="Converters\WindowsStatetToBoolConverter.cs" />
+    <Compile Include="Dialogs\NextDialog.xaml.cs">
+      <DependentUpon>NextDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\PasswordDialog.xaml.cs">
       <DependentUpon>PasswordDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\NextDialogViewModel.cs" />
     <Compile Include="Dialogs\PasswordDialogViewModel.cs" />
     <Compile Include="Events\ModbusMasterReadCompleted.cs" />
     <Compile Include="Helpers\MethodBindingExtension.cs" />

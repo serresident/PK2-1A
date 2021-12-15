@@ -85,7 +85,7 @@
                                     <RowDefinition Height="140"/>
                                     <RowDefinition Height="130"/>
                                     <RowDefinition Height="70"/>
-                                    <RowDefinition Height="130"/>
+                                    <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
@@ -896,7 +896,6 @@
                                         <TextBlock Text=" Т.нач. дегаз. " Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
                            Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
-
                                         <Controls:NumPadUpDown
             Grid.Row="3"
             Grid.Column="0"
@@ -913,6 +912,29 @@
             UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
                                             <Behaviors:Interaction.Behaviors>
                                                 <behaviors:ModbusBindingBehavior InternalValue="{Binding T_degaz}" />
+                                            </Behaviors:Interaction.Behaviors>
+                                        </Controls:NumPadUpDown>
+
+
+                                        <TextBlock Text=" Т.нач. пер-ки. " Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+                                        <Controls:NumPadUpDown
+            Grid.Row="5"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                            <Behaviors:Interaction.Behaviors>
+                                                <behaviors:ModbusBindingBehavior InternalValue="{Binding T_On_per_A}" />
                                             </Behaviors:Interaction.Behaviors>
                                         </Controls:NumPadUpDown>
 
@@ -990,7 +1012,28 @@
                                                 <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.Tzad_peregon_A}" />
                                             </Behaviors:Interaction.Behaviors>
                                         </Controls:NumPadUpDown>
-                                    <xctk:ToggleSwitch Width="160" Margin="0,5,0,5" Height="25" Grid.Row="1"    
+                                    <TextBlock Text=" Т завер. пер-ки, ℃" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+                                    <Controls:NumPadUpDown
+            Grid.Row="5"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding T_off_per_A}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
+                                    <xctk:ToggleSwitch Width="160" Margin="0,5,0,0" Height="25" Grid.Row="1"    
                                                        
                   CornerRadius="2"
                  IsChecked="{Binding Start_recept ,Mode=TwoWay}"
@@ -1000,9 +1043,30 @@
                 UncheckedContent = "подтвердить перевод на R481"
                 CheckedBackground="DarkSeaGreen"
                 UncheckedBackground ="LightPink"/>
-                                    <Expander Grid.Row="7" Header="Детали">
+            <Expander Grid.Row="7" Header="Детали">
                                             <StackPanel>
-            <TextBlock Text="TE_E482_2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
+                                            <TextBlock Text=" PH авар.зав. пер-ки, ед-ц" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="21" Width="167" Grid.ColumnSpan="2"/>
+                                            <Controls:NumPadUpDown
+            Grid.Row="5"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                                <Behaviors:Interaction.Behaviors>
+                                                    <behaviors:ModbusBindingBehavior InternalValue="{Binding PH_avar_per_A}" />
+                                                </Behaviors:Interaction.Behaviors>
+                                            </Controls:NumPadUpDown>
+                                            <TextBlock Text="TE_E482_2" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
             <TextBlock
             
             HorizontalAlignment="Center"
@@ -1080,7 +1144,7 @@
                             </ListView>
                         </ScrollViewer>-->
 
-                            <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                            <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -1093,7 +1157,7 @@
                             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        </xctk:WindowContainer>-->
+                        </xctk:WindowContainer>
 
 
                         </Grid>

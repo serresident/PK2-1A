@@ -4215,7 +4215,7 @@
         </WPF:Frame>
 
 
-        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -4228,8 +4228,7 @@
             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-
-        </xctk:WindowContainer>-->
+        </xctk:WindowContainer>
 
     </Canvas>
 
