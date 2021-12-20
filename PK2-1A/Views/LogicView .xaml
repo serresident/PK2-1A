@@ -20,36 +20,14 @@
     <xctk:BusyIndicator IsBusy="{Binding IsBusy}"  >
 
 
-        <TabControl  >
+        <TabControl >
             <TabItem Header="Белофор ОЦД 2-3 конденсации K480A" >
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <Canvas Background="#FFF9EFDA" Height="auto" Width="auto" >
+
+                <Canvas Background="#FFF9EFDA" Width="auto" Height="auto" >
                   
 
 
-                        <WPF:Motor  Height="30" Canvas.Left="62" Canvas.Top="40" Width="42" Header="M" FontSize="14"  HeaderPadding="14,3,0,0" Margin="52,28,58,42" >
-                            <WPF:Motor.States>
-                                <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
-                            </WPF:Motor.States>
-                            <Behaviors:Interaction.Behaviors>
-                                <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
-                                <behaviors:AnalogActuatorHandlerBehavior   Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
-
-                            </Behaviors:Interaction.Behaviors>
-                            <WPF:Motor.Colors>
-                                <WPF:ControlColors>
-                                    <WPF:ControlColors.State4Coloring>
-                                        <WPF:ColoringColor Color1="#FF39A234"/>
-                                    </WPF:ControlColors.State4Coloring>
-                                    <WPF:ControlColors.State1Coloring>
-                                        <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
-                                    </WPF:ControlColors.State1Coloring>
-                                </WPF:ControlColors>
-                            </WPF:Motor.Colors>
-
-
-
-                        </WPF:Motor>
+                     
                         <WPF:Valve Height="40" RotateAngle="0"  Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*" Canvas.Left="90" Canvas.Top="492"  >
                             <Behaviors:Interaction.Behaviors>
                                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480A_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
@@ -69,16 +47,17 @@
                             </WPF:Label.Colors>
                         </WPF:Label>
                             
-                        <Grid>
+                        <Grid Height="auto"  >
                             <Grid.RowDefinitions>
-                                <RowDefinition/>
+                                <RowDefinition Height="920"/>
                                 <RowDefinition/>
 
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Grid ShowGridLines="True"  Grid.Row="0">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="0"  Grid.Column="0" Name="tab"   >
+                            <Grid ShowGridLines="True"   Height="Auto">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="64" />
                                     <RowDefinition Height="40"/>
@@ -87,6 +66,7 @@
                                     <RowDefinition Height="70"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
@@ -151,7 +131,7 @@
 
                                 <Border  Grid.Column="6"  Grid.RowSpan="6" 
         BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=6) ? media:Brushes.Green : media:Brushes.Transparent}"         
+        BorderBrush="{c:Binding State\=\=6) ? media:Brushes.Green : media:Brushes.Transparent}"         
         Background="Transparent"/>
 
                                 <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,10,3" >
@@ -1033,17 +1013,7 @@
                                             <behaviors:ModbusBindingBehavior InternalValue="{Binding T_off_per_A}" />
                                         </Behaviors:Interaction.Behaviors>
                                     </Controls:NumPadUpDown>
-                                    <xctk:ToggleSwitch Width="160" Margin="0,5,0,0" Height="25" Grid.Row="1"    
-                                                       
-                  CornerRadius="2"
-                 IsChecked="{Binding Start_recept ,Mode=TwoWay}"
-                ThumbHeight = "25"
-                ThumbWidth = "24"
-               CheckedContent = "подтвердить"
-                UncheckedContent = "подтвердить перевод на R481"
-                CheckedBackground="DarkSeaGreen"
-                UncheckedBackground ="LightPink"/>
-            <Expander Grid.Row="7" Header="Детали">
+                                    <Expander Grid.Row="7" Header="Детали">
                                             <StackPanel>
                                             <TextBlock Text=" PH авар.зав. пер-ки, ед-ц" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
                            FontWeight="Bold"
@@ -1105,7 +1075,32 @@
 
 
                                 </StackPanel>
+                                
+                                <Canvas Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,5,0,0">
+                                <WPF:Motor  Height="30" Width="60"   Header="M" FontSize="14"  HeaderPadding="25,3,0,1"  >
+                                    <WPF:Motor.States>
+                                        <WPF:StatesStandard Critical="{c:Binding  not (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" Active="{c:Binding (PD.NC_K480A_Cur_FRQ &gt;\= 1 or PD.NS_K480A_sost )}" />
+                                    </WPF:Motor.States>
+                                    <Behaviors:Interaction.Behaviors>
+                                        <!--<behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.NC_M610_mode}" Out="{Binding PD.NC_M610_control_man}"/>-->
+                                        <behaviors:AnalogActuatorHandlerBehavior   Units="Гц" MaxValue="50"  IsMan="{Binding PD.NC_K480A_mode}" Out="{Binding PD.NC_K480A_ain_man}"/>
 
+                                    </Behaviors:Interaction.Behaviors>
+                                    <WPF:Motor.Colors>
+                                        <WPF:ControlColors>
+                                            <WPF:ControlColors.State4Coloring>
+                                                <WPF:ColoringColor Color1="#FF39A234"/>
+                                            </WPF:ControlColors.State4Coloring>
+                                            <WPF:ControlColors.State1Coloring>
+                                                <WPF:ColoringColor Frequency="0.5" Color1="Red"  />
+                                            </WPF:ControlColors.State1Coloring>
+                                        </WPF:ControlColors>
+                                    </WPF:Motor.Colors>
+
+
+
+                                </WPF:Motor>
+                                </Canvas>
                                 <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; Диэтиламина"  FontSize="19" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"  />
@@ -1114,17 +1109,30 @@
 
 
                             </Grid>
-
-                            <xctk:ToggleSwitch Width="64" Margin="26,48,775,-40" Height="25" Grid.Row="1"    
-                  CornerRadius="2"
-                 IsChecked="{Binding Start_recept ,Mode=TwoWay}"
-                ThumbHeight = "25"
-                ThumbWidth = "24"
-               CheckedContent = "ВКЛ"
-                UncheckedContent = "ВЫКЛ"
-                CheckedBackground="DarkSeaGreen"
-                UncheckedBackground ="LightPink" Canvas.Left="44" Canvas.Top="892"/>
-                            <TextBlock Text="{Binding StatusOut}"  Grid.Row="1" FontSize="24"  Foreground="Green"/>
+                        </ScrollViewer>
+                        <StackPanel Grid.Row="1" Background="AliceBlue"  Name="stackpanel">
+                               <xctk:ToggleSwitch Width="64"  Height="25"   
+                                CornerRadius="2"
+                                IsChecked="{Binding Start_recept ,Mode=TwoWay}"
+                                ThumbHeight = "25"
+                                ThumbWidth = "24"
+                                CheckedContent = "ВКЛ"
+                                UncheckedContent = "ВЫКЛ"
+                                CheckedBackground="DarkSeaGreen"
+                                 UncheckedBackground ="LightPink" 
+                                                  HorizontalAlignment="Left"/>    
+                               <TextBlock Text="{Binding StatusOut}"   FontSize="24"  Foreground="Green"/>
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <!--<Setter Property="Visibility" Value="Hidden"/>-->
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=tab, Path=IsMouseOver}" Value="True">
+                                            <Setter Property="Visibility" Value="Hidden" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                        </StackPanel>
 
                             <!--<ScrollViewer Grid.Row="1">
                             <ListView ItemsSource="{Binding MessageList}" FontSize="16" AlternationCount="2" >
@@ -1145,7 +1153,7 @@
                         </ScrollViewer>-->
 
                             <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
-                            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
+                            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="203" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
                             <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгрузка из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -1164,7 +1172,7 @@
                    
 
                 </Canvas>
-                </ScrollViewer>
+             
 
 
             </TabItem>

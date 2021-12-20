@@ -13,6 +13,10 @@ using InfluxDB.Client;
 using InfluxDB.Client.Api.Domain;
 using Prism.Services.Dialogs;
 using belofor.Dialogs;
+using User = belofor.Models.User;
+using Prism.Events;
+using System.Windows;
+using WindowState = Xceed.Wpf.Toolkit.WindowState;
 
 namespace belofor.ViewModels
 {
@@ -24,7 +28,7 @@ namespace belofor.ViewModels
         private PeriodicalTaskStarter chartUpdater;
         private PeriodicalTaskStarter internalUpdater;
         private readonly IDialogService dialogService;
-        NextDialog dialog ;
+        
 
         private readonly ArchivRepository archivRepository;
 
@@ -186,9 +190,17 @@ namespace belofor.ViewModels
             get { return isBusy; }
             set { SetProperty(ref isBusy, value); }
         }
-        public LogicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository, IDialogService dialogService)
+        public DelegateCommand ShowSettingsDialogCommand { get; private set; }
+
+        public User User { get; set; }
+
+        public LogicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository, IDialogService dialogService, IEventAggregator eventAggregator, User user)
         {
+            this.User = user;
             this.dialogService = dialogService;
+
+            User.isAuthorized = true;
+            ShowSettingsDialogCommand = new DelegateCommand(ShowDialog, () => User.IsAuthorized).ObservesProperty(() => User.IsAuthorized); ;
             PD = pd;
             this.archivRepository = archivRepository;
 
@@ -231,8 +243,9 @@ namespace belofor.ViewModels
 
             chartUpdater = new PeriodicalTaskStarter(TimeSpan.FromMilliseconds(50));
             internalUpdater = new PeriodicalTaskStarter(TimeSpan.FromSeconds(1));
+           // ShowDialog();
 
-            dialog = new NextDialog();
+
         }
         //команды на кнопким
         private bool canWaterLoadingStart() {return !PD.ZagrVodaComm_Start ; }// проверяем доступность кнопким
@@ -541,10 +554,26 @@ namespace belofor.ViewModels
             set { SetProperty(ref next, value); }
         }
 
+        // результат выбор из диалога
+        private int dialog_return = 0;
+        public int Dialog_return
+        {
+            get { return dialog_return; }
+            set { SetProperty(ref dialog_return, value); }
+        }
+
+        // заголовок диалогового окна
+        private string dialogTitle="Выберите действие";
+        public string DialogTitle
+        {
+            get { return dialogTitle; }
+            set { SetProperty(ref dialogTitle, value); }
+        }
+        
 
 
 
-
+        bool check_one;
         private String statusOut ;
         // текущий статус
         public String StatusOut
@@ -838,32 +867,68 @@ namespace belofor.ViewModels
 
                 case 6:
 
-                    if (PD.TE_K480A_2 >= PD.TE_480A_1 + 0.5f)
-                    {
-                        PD.PID_ON_Tperegon_A = false;
-                        Send_Log(StatusOut = " ШАГ 2.2 Превышение Темп. паров, отключение подачи пара ");
-                    }
-                    else PD.PID_ON_Tperegon_A = true;
+                   
 
                     if (PD.QIY_K480A < PH_avar_per_A)
                         Start_recept=false;
 
-                    if(PD.TE_480A_1>= T_off_per_A)
+                    if(PD.TE_480A_1< T_off_per_A)
                     {
-                      
-                        PD.PID_ON_Tperegon_A = false;
-                        PD.start_LoadWater_perA = false;
-                        Send_Log(StatusOut = " ШАГ 2.2 Достижение темп. 97гр, оповещение оператора о НЕОБХОДИМОСТИ перевода отгона в емкость промфракции R481 ");
-                     //   dialogService.ShowDialog("next");
-                        n = 7;
-                      
+                        if (PD.TE_K480A_2 >= PD.TE_480A_1 + 0.5f)
+                        {
+                            if (PD.PID_ON_Tperegon_A) PD.PID_ON_Tperegon_A = false;
+                            Send_Log(StatusOut = " ШАГ 2.2 Превышение Темп. паров, отключение подачи пара ");
+                        }
+                        else
+                          if (!PD.PID_ON_Tperegon_A) PD.PID_ON_Tperegon_A = true;
+
+                    }
+                    else
+                    {
+                        if (!check_one)
+                        {
+                            DialogTitle = "Для продолжения работы алгоритма  НЕОБХОДИМО перевести отгон в емкость промфракции R481! \n Для подтверждения перевода отгонав в емкость  R481  нажмите \'Продолжить\' \n или завершите выполнение алгоритма,  нажав  \'Завершить\' .";
+                            Application.Current.Dispatcher.InvokeAsync(() =>
+                            {
+                                ShowDialog();
+                            });
+                            check_one = true;
+                        }
+                        if (PD.PID_ON_Tperegon_A) PD.PID_ON_Tperegon_A = false;
+
+                        if (PD.start_LoadWater_perA) PD.start_LoadWater_perA = false;
+
+                        Send_Log(StatusOut = "ШАГ 2.2 Достижение темп. 97гр, оповещение оператора о НЕОБХОДИМОСТИ перевода отгона в емкость промфракции R481 ");
+
+                        if (Next)
+                        {
+                            n = 7;
+                            Next = false;
+                            check_one = false;
+                            Dialog_return = 0;// сброс  обратной связи диалогового окна
+                            Send_Log(StatusOut = "ШАГ 2.2 подтвержден перевод на R481 ");
+                            DialogTitle = "Продолжить регулирование PH ?";
+                            ShowDialog();
+                        }
+
                     }
                     break;
+
                 case 7:
 
+                    if(Next)
+                     PD.RegPH480A_Start = true;
+                    else
+                     PD.RegPH480A_Start = false;
+                    n= 8;
 
                     break;
 
+                case 8:
+                    if (PD.LE_R481 >= 0)
+                        ;
+
+                    break;
 
 
             }
@@ -880,8 +945,8 @@ namespace belofor.ViewModels
 
                 PD.ZagrAnilin480_Start = false;// шаг2
                 PD.ZagrDietilAminK480_Start = false; // шаг3
-
-                ShowDialog();
+              
+               
                 PD.VK480A_2_mode = false;           // шаг4
                 PD.VK480A_2_control_auto = false;
                 PD.TVK480A_mode = false;
@@ -893,10 +958,13 @@ namespace belofor.ViewModels
              
                 State = 0;
                  Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А  прерван оператором");
-                if(n==6)
-                    Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А, аварийное завершение, падение ph ниже 7,8");
-
+                if(n==6&& Dialog_return<0)
+                Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А, аварийное завершение, падение ph ниже 7,8");
+                if (n == 6 && Dialog_return > 1)
+                Send_Log(StatusOut = "Алгорит завершен оператором ,  по окончанию  шага 2.2");
                 n = 0;
+                check_one = false;
+                Dialog_return = 0;
             }
             // аварийные блокировки
             //if (Start_recept)
@@ -910,19 +978,36 @@ namespace belofor.ViewModels
         public string Title;
         private void ShowDialog()
         {
+
             var message = "This is a message that should be shown in the dialog.";
             //using the dialog service as-is
-            dialogService.ShowDialog("password", new DialogParameters(), r =>
+        
+            dialogService.ShowDialog("next", new DialogParameters($"message={DialogTitle}"), r =>
             {
                 if (r.Result == ButtonResult.None)
-                    Title = "Result is None";
+                {
+                    Next = true;
+                    Start_recept = false;
+                    Dialog_return = 2;
+                }
                 else if (r.Result == ButtonResult.OK)
-                    Title = "Result is OK";
+                {
+                    Next = true;
+                    Dialog_return = 1;
+                }
                 else if (r.Result == ButtonResult.Cancel)
-                    Title = "Result is Cancel";
-                else
-                    Title = "I Don't know what you did!?";
-            }, "password");
+                {
+                    Next = false;
+                    Start_recept = false;
+                    Dialog_return = 3;
+                }
+                //else
+                //{
+                //    Next = false;
+                //    Start_recept = false;
+                //}
+            });
+           // dialogService.ShowDialog("password");
         }
         public  void stop_recept()
         {
@@ -944,7 +1029,7 @@ namespace belofor.ViewModels
 
                 n = 0;
                 State = 0;
-                 Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А авт.сброс");
+                Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А авт.сброс");
                 Thread.Sleep(500);
             
         }
@@ -990,7 +1075,7 @@ namespace belofor.ViewModels
         ~LogicViewModel()
         {
             internalUpdater.Stop();
-          chartUpdater.Stop();
+            chartUpdater.Stop();
             stop_recept();
         }
     }

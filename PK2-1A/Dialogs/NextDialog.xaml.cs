@@ -25,10 +25,7 @@ namespace belofor.Dialogs
             InitializeComponent();
         }
 
-        private void WatermarkPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            (this.DataContext as PasswordDialogViewModel).Password = _watermarkPasswordBox.Password;
-        }
+    
 
     }
 }

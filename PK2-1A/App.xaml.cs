@@ -126,8 +126,8 @@ namespace belofor
 
             // Dialog
             //containerRegistry.RegisterDialog<SettingsDialog, SettingsDialogViewModel>("settings");
-       containerRegistry.RegisterDialog<PasswordDialog, PasswordDialogViewModel>("password");
-            containerRegistry.RegisterDialog<NextDialog, NextDialogViewModel>("next");
+     //  containerRegistry.RegisterDialog<PasswordDialog, PasswordDialogViewModel>("password");
+     containerRegistry.RegisterDialog<NextDialog, NextDialogViewModel>("next");
 
         }
 

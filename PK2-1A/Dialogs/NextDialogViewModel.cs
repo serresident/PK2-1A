@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace belofor.Dialogs
 {
@@ -15,7 +17,14 @@ namespace belofor.Dialogs
         public DelegateCommand<string> CloseDialogCommand =>
             _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand<string>(CloseDialog));
 
-        public string Title => "Авторизация";
+        public string Title => "Небходимо действие оператора";
+
+        private string _message;
+        public string Message
+        {
+            get { return _message; }
+            set { SetProperty(ref _message, value); }
+        }
 
         private string _password;
         public string Password
@@ -35,7 +44,8 @@ namespace belofor.Dialogs
             else if (parameter?.ToLower() == "false")
                 result = ButtonResult.Cancel;
 
-            RaiseRequestClose(new DialogResult(result, new DialogParameters($"password={Password}")));
+            RaiseRequestClose(new DialogResult(result));
+           
         }
 
         public virtual void RaiseRequestClose(IDialogResult dialogResult)
@@ -55,7 +65,7 @@ namespace belofor.Dialogs
 
         public void OnDialogOpened(IDialogParameters parameters)
         {
-            //throw new NotImplementedException();
+            Message = parameters.GetValue<string>("message");
         }
     }
 

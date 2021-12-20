@@ -25,6 +25,8 @@ namespace belofor.Views
         {
             InitializeComponent();
         }
+
+      
         //private void UserControl_Loaded(object sender, RoutedEventArgs e)
         //{
         //    (this.DataContext as LogicViewModel).Subscribe();
