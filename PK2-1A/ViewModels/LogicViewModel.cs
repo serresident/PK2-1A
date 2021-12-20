@@ -569,7 +569,58 @@ namespace belofor.ViewModels
             get { return dialogTitle; }
             set { SetProperty(ref dialogTitle, value); }
         }
-        
+
+        // уровень R481
+        private float setLevel_R481 = 50;
+        public float SetLevel_R481
+        {
+            get { return setLevel_R481; }
+            set { SetProperty(ref setLevel_R481, value); }
+        }
+
+       // время выдержки
+        private double setTime_viderzhA = 60;
+        public double SetTime_viderzhA
+        {
+            get { return setTime_viderzhA; }
+            set { SetProperty(ref setTime_viderzhA, value); }
+        }
+
+        // время выдержки
+        private double lastTime_viderzhA ;
+        public double LastTime_viderzhA
+        {
+            get { return lastTime_viderzhA; }
+            set { SetProperty(ref lastTime_viderzhA, value); }
+        }
+
+
+        // Температура охл-е
+        private double t_ohlazhd_A;
+        public double T_ohlazhd_A
+        {
+            get { return t_ohlazhd_A; }
+            set { SetProperty(ref t_ohlazhd_A, value); }
+        }
+
+        // время отстаивания
+        private double setTime_otstoi_A = 180;
+        public double SetTime_otstoi_A
+        {
+            get { return setTime_otstoi_A; }
+            set { SetProperty(ref setTime_otstoi_A, value); }
+        }
+
+        // время отстаивания осталось
+        private double lastTime_otstoi_A;
+        public double LastTime_otstoi_A
+        {
+            get { return lastTime_otstoi_A; }
+            set { SetProperty(ref lastTime_otstoi_A, value); }
+        }
+
+        DateTime time_mem ;
+
 
 
 
@@ -668,7 +719,7 @@ namespace belofor.ViewModels
                             if ((DateTime.Now - exposur_time).TotalSeconds > 0)
                             {
                                 n = 2;
-                                Send_Log(StatusOut = "ШАГ 1.1 Завершение переход к шагу 2");
+                               // Send_Log(StatusOut = "ШАГ 1.1 Завершение переход к шагу 2");
 
 
                                 // предварительные дествия для перехода
@@ -744,7 +795,7 @@ namespace belofor.ViewModels
                     break;
 
                 case 3:
-                     Send_Log(StatusOut = "ШАГ 1.3 Загр. первой дозы ДиэтилАмина.");
+                     Send_Log(StatusOut = "ШАГ 1.3 Загр. первой дозы ДиэтилАмина, (контроль уставки " + DietilAmin_doza1 + ")");
                     if (PD.RegPH480A_pH_zad != SetPh_st3_1_A) PD.RegPH480A_pH_zad = SetPh_st3_1_A;
                     if (PD.ZagrDietilAminK480_DozaZad1 != DietilAmin_doza1) PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza1;
 
@@ -756,7 +807,7 @@ namespace belofor.ViewModels
                     
                     if (!PD.ZagrDietilAminK480_Start)
                             {
-                             Send_Log(StatusOut = "ШАГ 1.4 Нагрев ,ожидание достижения уставки.");
+                             Send_Log(StatusOut = "ШАГ 1.4 Нагрев  ,ожидание достижения уставки (контроль уставки "+ DietilAmin_Tnagr+")");
                                 n = 4;
                                 State = 4;
                             // переход на следущий шаг
@@ -779,17 +830,17 @@ namespace belofor.ViewModels
                     //}
                     //else
                     if (PD.RegPH480A_pH_zad != SetPh_st4_1_A) PD.RegPH480A_pH_zad = SetPh_st4_1_A;
-                    if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = 60;
-                     Send_Log(StatusOut = "ШАГ 1.4. Нагрев ,ожидание достижения уставки.");
+                    if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = 60; // заглушка для запуска загрузки ДЭА
+                   //  Send_Log(StatusOut = "ШАГ 1.4. Нагрев 2 ,ожидание достижения уставки.");
 
                   
 
                    // if ( PD.TE_K480A_1 >= DietilAmin_Tnagr)
                         if (PD.TE_K480A_1 >= DietilAmin_Tnagr)
                         {
-                      
-                           
-                            n = 5;
+                        Send_Log(StatusOut = "ШАГ 2.1 Загр. второй дозы ДиэтилАмина, (контроль уставки " + DietilAmin_doza2 + ")");
+
+                        n = 5;
                             State = 5;
                             // предварительные дествия для перехода
                             if (PD.RegPH480A_pH_zad != SetPh_st5_1_A) PD.RegPH480A_pH_zad = SetPh_st5_1_A;
@@ -870,7 +921,12 @@ namespace belofor.ViewModels
                    
 
                     if (PD.QIY_K480A < PH_avar_per_A)
-                        Start_recept=false;
+                    {
+                        Start_recept = false;
+                        Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А, аварийное завершение, падение ph ниже 7,8");
+
+                    }
+                        
 
                     if(PD.TE_480A_1< T_off_per_A)
                     {
@@ -900,39 +956,132 @@ namespace belofor.ViewModels
 
                         Send_Log(StatusOut = "ШАГ 2.2 Достижение темп. 97гр, оповещение оператора о НЕОБХОДИМОСТИ перевода отгона в емкость промфракции R481 ");
 
-                        if (Next)
+                        if (Dialog_return == 1)
                         {
-                            n = 7;
+                            
                             Next = false;
                             check_one = false;
                             Dialog_return = 0;// сброс  обратной связи диалогового окна
-                            Send_Log(StatusOut = "ШАГ 2.2 подтвержден перевод на R481 ");
+                            Send_Log(StatusOut = "ШАГ 2.3 подтвержден перевод на R481 ");
                             DialogTitle = "Продолжить регулирование PH ?";
-                            ShowDialog();
+                            Application.Current.Dispatcher.InvokeAsync(() =>
+                            {
+                                ShowDialog();
+                            });
+                            n = 7;
                         }
-
+                        else if (Dialog_return == 2)
+                            Start_recept = false;
                     }
                     break;
 
                 case 7:
 
-                    if(Next)
-                     PD.RegPH480A_Start = true;
-                    else
-                     PD.RegPH480A_Start = false;
-                    n= 8;
+                    if(Dialog_return == 1)
+                    {
+                        PD.RegPH480A_Start = true;
+                        Send_Log(StatusOut = "ШАГ 2.3 подтверждено продолжение ph регулирования");
+                        PD.TVK480A_mode = false;
+                        PD.TVK480A_ain_auto = 100;
+                        n = 8;
+                    }
+                    else if(Dialog_return == 2)
+                    {
+                        PD.RegPH480A_Start = false;
+                        Send_Log(StatusOut = "ШАГ 2.3 подтверждено завершение ph регулирования");
+                        PD.TVK480A_mode = false;
+                        PD.TVK480A_ain_auto = 100;
+                        n = 8;
+                    }
+                     
+
+                  
+
 
                     break;
 
                 case 8:
-                    if (PD.LE_R481 >= 0)
-                        ;
+                    if (PD.LE_R481 >= SetLevel_R481)
+                    {
+                        Send_Log(StatusOut = "ШАГ 2.3 достижение заданного  значения уровня R481, переход на шаг 2.4");
+                        PD.TVK480A_mode = false; // пар
+                        PD.TVK480A_ain_auto = 0;
+
+                        PD.FV_K480B_mode = false;  // подача воды
+                        PD.FV_K480B_reg_ain_auto = 0;
+
+                        PD.VK480A_2_mode = false;  // конденсат
+                        PD.VK480A_2_control_auto = true;
+                        n = 9;
+                        time_mem=DateTime.Now;
+                        Send_Log(StatusOut = "ШАГ 2.4 Выдержка. Заданное время выдержки "+ SetTime_viderzhA + " минут");
+
+                    }
+                    else
+                        Send_Log(StatusOut = "ШАГ 2.3 ожидание достижения заданного  значения уровня R481");
 
                     break;
+
+                case 9:
+                    LastTime_viderzhA = SetTime_viderzhA - (DateTime.Now - time_mem).TotalMinutes;
+                  if (  (DateTime.Now - time_mem).TotalMinutes> SetTime_viderzhA)
+                    {
+                        Send_Log(StatusOut = "ШАГ 2.4 Выдержка завершение, контроль устаки,заданное время выдержки " + SetTime_viderzhA + " минут");
+                        LastTime_viderzhA = 0;
+
+                        //переход на следущий шаг охлаждение
+
+                        PD.VK480A_2_mode = false;  // конденсат
+                        PD.VK480A_2_control_auto = false;
+
+                        PD.VK480A_3_mode=false;  // вход в рубашку
+                        PD.VK480A_3_control_auto = true;
+                        
+                        PD.VK480A_5_mode = false; // выход с рубашки
+                        PD.VK480A_5_control_auto = true;
+                        Send_Log(StatusOut = "ШАГ 2.5 Охлаждение, контроль устаки,Т охл " + T_ohlazhd_A + " гр.");
+
+                        time_mem = DateTime.Now;
+
+                        n = 10;
+                    }    
+                    break;
+
+                case 10:
+
+                   
+                    if (PD.TE_480A_1 <= T_ohlazhd_A)
+                    {
+                        Send_Log(StatusOut = "ШАГ 2.5 Охлаждение,завершение контроль устаки,Т охл " + T_ohlazhd_A + " гр.");
+                        PD.NC_K480A_mode = false; 
+                        PD.NC_K480BA_ain_auto = 0;
+
+                        PD.VK480A_3_mode = false;  // вход в рубашку
+                        PD.VK480A_3_control_auto = false;
+
+                        PD.VK480A_5_mode = false; // выход с рубашки
+                        PD.VK480A_5_control_auto = false;
+                        n = 11;
+                        Send_Log(StatusOut = "ШАГ 2.6 Отстаивание, контроль устаки,Время  " + SetTime_otstoi_A + " мин.");
+                    }
+                    break;
+                case 11:
+
+                    LastTime_otstoi_A = SetTime_viderzhA - (DateTime.Now - time_mem).TotalMinutes;
+                    if ((DateTime.Now - time_mem).TotalMinutes > SetTime_otstoi_A)
+                    {
+                        Send_Log(StatusOut = "ШАГ 2.6 Отстаивание.Завершение, контроль устаки,Время  " + SetTime_otstoi_A + " мин.");
+                        LastTime_otstoi_A = 0;
+
+                    }
+                        break;
+
+                   
 
 
             }
            
+
             //if (Start_recept && n != 0)
             //{
             //    PD.RegPH480A_DozaZad = SetPh_zadDoza_st1_1_A;
@@ -955,11 +1104,22 @@ namespace belofor.ViewModels
                 PD.PID_ON_Tperegon_A = false;
                 PD.start_LoadWater_perA = false;
 
-             
+                PD.VK480A_2_mode = false;  // конденсат
+                PD.VK480A_2_control_auto = false;
+
+                PD.VK480A_3_mode = false;  // вход в рубашку
+                PD.VK480A_3_control_auto = false;
+
+                PD.VK480A_5_mode = false; // выход с рубашки
+                PD.VK480A_5_control_auto = false;
+
+
                 State = 0;
-                 Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А  прерван оператором");
-                if(n==6&& Dialog_return<0)
-                Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А, аварийное завершение, падение ph ниже 7,8");
+                if(!(n == 6 && Dialog_return > 1) && (PD.QIY_K480A < PH_avar_per_A))
+                Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А  прерван оператором (шаг алгоритма n="+n+")");
+
+                //if(n==6&& Dialog_return<1)
+                //Send_Log(StatusOut = "Алгорит белофор оцд апп.K480А, аварийное завершение, падение ph ниже 7,8");
                 if (n == 6 && Dialog_return > 1)
                 Send_Log(StatusOut = "Алгорит завершен оператором ,  по окончанию  шага 2.2");
                 n = 0;
@@ -986,7 +1146,7 @@ namespace belofor.ViewModels
             {
                 if (r.Result == ButtonResult.None)
                 {
-                    Next = true;
+                    Next = false;
                     Start_recept = false;
                     Dialog_return = 2;
                 }
@@ -1009,6 +1169,7 @@ namespace belofor.ViewModels
             });
            // dialogService.ShowDialog("password");
         }
+
         public  void stop_recept()
         {
 

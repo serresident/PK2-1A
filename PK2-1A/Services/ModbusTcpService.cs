@@ -62,13 +62,13 @@ namespace belofor.Services
                 {
                     lock (locker)
                     {
-                        if (!requestToWrite.IsEmpty)
+                        if (!requestToWrite.IsEmpty)// проверка на вызов setproperty
                         {
                             ModbusWriteItem obj;
                             requestToWrite.TryDequeue(out obj);
-                            if (obj.Distination == Distination.COIL)
+                            if (obj.Distination == Distination.COIL) //  Coils
                                 _modbusClient.WriteSingleCoil(obj.Addr, (bool)(obj.Val));
-                            else
+                            else // holdingRegs
                                 _modbusClient.WriteMultipleRegisters(obj.Addr, (int[])obj.Val);
 
                         }
