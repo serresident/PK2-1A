@@ -881,7 +881,7 @@ namespace belofor.ViewModels
                             // переход на следущий шаг
                             PD.PID_ON_Tperegon_A = true;
                             PD.start_LoadWater_perA = true;
-
+                            State = 6;
                         }
                     }
                     else
@@ -984,6 +984,7 @@ namespace belofor.ViewModels
                         PD.TVK480A_mode = false;
                         PD.TVK480A_ain_auto = 100;
                         n = 8;
+                        State = 8;
                     }
                     else if(Dialog_return == 2)
                     {
@@ -992,6 +993,7 @@ namespace belofor.ViewModels
                         PD.TVK480A_mode = false;
                         PD.TVK480A_ain_auto = 100;
                         n = 8;
+                        State = 8;
                     }
                      
 
@@ -1015,7 +1017,7 @@ namespace belofor.ViewModels
                         n = 9;
                         time_mem=DateTime.Now;
                         Send_Log(StatusOut = "ШАГ 2.4 Выдержка. Заданное время выдержки "+ SetTime_viderzhA + " минут");
-
+                        State = 9;
                     }
                     else
                         Send_Log(StatusOut = "ШАГ 2.3 ожидание достижения заданного  значения уровня R481");
@@ -1044,6 +1046,7 @@ namespace belofor.ViewModels
                         time_mem = DateTime.Now;
 
                         n = 10;
+                        State =10;
                     }    
                     break;
 
@@ -1062,16 +1065,25 @@ namespace belofor.ViewModels
                         PD.VK480A_5_mode = false; // выход с рубашки
                         PD.VK480A_5_control_auto = false;
                         n = 11;
+                        State = 11;
+                        time_mem=DateTime.Now;
+
                         Send_Log(StatusOut = "ШАГ 2.6 Отстаивание, контроль устаки,Время  " + SetTime_otstoi_A + " мин.");
                     }
                     break;
                 case 11:
 
-                    LastTime_otstoi_A = SetTime_viderzhA - (DateTime.Now - time_mem).TotalMinutes;
+                    LastTime_otstoi_A = SetTime_otstoi_A - (DateTime.Now - time_mem).TotalMinutes;
                     if ((DateTime.Now - time_mem).TotalMinutes > SetTime_otstoi_A)
                     {
                         Send_Log(StatusOut = "ШАГ 2.6 Отстаивание.Завершение, контроль устаки,Время  " + SetTime_otstoi_A + " мин.");
                         LastTime_otstoi_A = 0;
+                        DialogTitle = "Завершены 2-3 конденсации производства Белофора ОЦД, разрешается разделение массы на слои";
+                        Application.Current.Dispatcher.InvokeAsync(() =>
+                        {
+                            ShowDialog();
+                        });
+                        start_recept = false;
 
                     }
                         break;

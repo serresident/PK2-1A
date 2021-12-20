@@ -28,14 +28,7 @@
 
 
 
-                    <WPF:Valve Height="40" RotateAngle="0"  Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*" Canvas.Left="90" Canvas.Top="492"  >
-                        <Behaviors:Interaction.Behaviors>
-                            <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480A_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                            <behaviors:Valve_status RotareAnggeClose="180" RotareAnggeOpen="0" HSpacing="-1" HSpacing1="13" VSpacing="23" VSpacing1="23" isOpenValve="{Binding PD.TVK480A_SQH, Mode=OneWay}" isCloseValve="{Binding PD.TVK480A_SQL, Mode=OneWay}" />
-                            <!--<behaviors:Valve_status isOpenValve="{Binding PD.TVK480A_SQH}" isCloseValve="{Binding PD.TVK480A_SQL}" />-->
-                            <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
-                        </Behaviors:Interaction.Behaviors>
-                    </WPF:Valve>
+                  
                     <WPF:Label  Height="18" RotateAngle="0" Content="" Canvas.Left="140" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
                         <WPF:Label.Colors>
                             <WPF:ControlColors>
@@ -47,16 +40,16 @@
                         </WPF:Label.Colors>
                     </WPF:Label>
 
-                    <Grid Height="auto"  >
+                    <Grid Height="auto"  Width="auto" >
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="920"/>
+                            <RowDefinition Height="920" />
                             <RowDefinition/>
 
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1920"/>
                         </Grid.ColumnDefinitions>
-                        <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="0"  Grid.Column="0" Name="tab"   >
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"   HorizontalScrollBarVisibility="Auto"  Grid.Row="0"  Grid.Column="0" Name="tab"   >
                             <Grid ShowGridLines="True"   Height="Auto">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="64" />
@@ -68,78 +61,94 @@
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition/>
                                     <RowDefinition/>
+                                    <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition  Width="140"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="160"/>
+                                    <ColumnDefinition Width="160"/>
+                                    <ColumnDefinition Width="150"/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                
 
 
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="1.1(вкл.меш.&#xA;дов-е ph)"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="1.2 (загр.&#xA;анилина)"  FontSize="24" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="1.3 (загр.&#xA;ДЭА доза1)"  FontSize="24" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="1.4 (нагр. до 60)"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="2.1 (загр.&#xA;ДЭА доза2)"  FontSize="24" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="2.2(пер-ка&#xA; МЭК в R461)"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="2.3(пер-ка&#xA; МЭК в R481)"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="2.4(выдер-ка)"  FontSize="24" Grid.Row="0" Grid.Column="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="2.5(охл-е)"  FontSize="24" Grid.Row="0" Grid.Column="9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                <TextBlock Text="2.6(отстаивание)"  FontSize="24" Grid.Row="0" Grid.Column="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-                                <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
 
 
                                 <Border 
         Grid.Column="1" 
         Grid.Row="0" 
-        Grid.RowSpan="6" 
+        Grid.RowSpan="10" 
         BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=1) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
-
+        Background="{c:Binding (State\=\=1) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+        />
                                 <Border 
         Grid.Column="2" 
         Grid.Row="0" 
-        Grid.RowSpan="6" 
+        Grid.RowSpan="10" 
         BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=2) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
-
+        Background="{c:Binding (State\=\=2) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+        />
                                 <Border 
         Grid.Column="3" 
       
-        Grid.RowSpan="6" 
+        Grid.RowSpan="10" 
         BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=3) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
-
-                                <Border  Grid.Column="4"  Grid.RowSpan="6" 
+        Background="{c:Binding (State\=\=3) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="4"  Grid.RowSpan="10" 
         BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=4) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
-
-                                <Border  Grid.Column="5"  Grid.RowSpan="6" 
+        Background="{c:Binding (State\=\=4) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="5"  Grid.RowSpan="10" 
         BorderThickness="8"
-        BorderBrush="{c:Binding (State\=\=5) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
-
-                                <Border  Grid.Column="6"  Grid.RowSpan="6" 
+        Background="{c:Binding (State\=\=5) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="6"  Grid.RowSpan="10" 
         BorderThickness="8"
-        BorderBrush="{c:Binding State\=\=6) ? media:Brushes.Green : media:Brushes.Transparent}"         
-        Background="Transparent"/>
+        Background="{c:Binding (State\=\=6) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="7"  Grid.RowSpan="10" 
+        BorderThickness="8"
+        Background="{c:Binding (State\=\=8) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="8"  Grid.RowSpan="10" 
+        BorderThickness="8"
+        Background="{c:Binding (State\=\=9) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="9"  Grid.RowSpan="10" 
+        BorderThickness="8"
+        Background="{c:Binding (State\=\=10) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
+                                <Border  Grid.Column="10"  Grid.RowSpan="10" 
+        BorderThickness="8"
+        Background="{c:Binding (State\=\=11) ? media:Brushes.LightGreen : media:Brushes.Transparent}"         
+       />
 
+
+                                <TextBlock Text="Шаг"  FontSize="24" Grid.Row="0"  Grid.Column="0"   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.1(вкл.меш.&#xA;дов-е ph)"  FontSize="24" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.2 (загр.&#xA;анилина)"  FontSize="24" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.3 (загр.&#xA;ДЭА доза1)"  FontSize="24" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="1.4 (нагр.&#xA; до 60)"  FontSize="24" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.1 (загр.&#xA;ДЭА доза2)"  FontSize="24" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.2(пер-ка&#xA; МЭК в R461)"  FontSize="24" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.3(пер-ка&#xA; МЭК в R481)"  FontSize="24" Grid.Row="0" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.4&#xA;(выдер-ка)"  FontSize="24" Grid.Row="0" Grid.Column="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.5(охл-е)"  FontSize="24" Grid.Row="0" Grid.Column="9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="2.6(отстаивание)"  FontSize="24" Grid.Row="0" Grid.Column="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                                <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                               
                                 <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,10,3" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30" />
@@ -1163,7 +1172,7 @@
             VerticalAlignment="Center"
             FontSize="24"
             FontWeight="Bold"
-            Foreground="red"
+            Foreground="DarkCyan"
             Text="{Binding LastTime_viderzhA, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
 
 
@@ -1177,6 +1186,8 @@
                                 </StackPanel>
 
                                 <StackPanel  Grid.Row="8" Grid.Column="9">
+
+                           
 
 
 
@@ -1203,7 +1214,7 @@
                                     </Controls:NumPadUpDown>
 
 
-                                    <TextBlock Text="Осталось минут" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
+                                    <TextBlock Text="TE_K480A_1" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
                                     <TextBlock
             
             HorizontalAlignment="Center"
@@ -1211,7 +1222,56 @@
             FontSize="24"
             FontWeight="Bold"
             Foreground="red"
-            Text="{Binding LastTime_viderzhA, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
+            Text="{Binding PD.TE_K480A_1 , StringFormat=\{0:0.0##\}, FallbackValue=???}" />
+
+
+
+
+
+
+
+
+
+                                </StackPanel>
+
+                                <StackPanel  Grid.Row="9" Grid.Column="10">
+
+
+
+
+
+                                    <TextBlock Text="Время от-я, Мин " Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Height="Auto" Width="167" Grid.ColumnSpan="2"/>
+                                    <Controls:NumPadUpDown
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="30"
+            Margin="4,0,16,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            Increment="0.1"
+            Minimum="0"
+            Precision="1"
+            UpdateValueOnEnterKey="True" CultureInfo="ru-RU">
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:ModbusBindingBehavior InternalValue="{Binding SetTime_otstoi_A}" />
+                                        </Behaviors:Interaction.Behaviors>
+                                    </Controls:NumPadUpDown>
+
+
+                                    <TextBlock Text="Осталось минут" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Foreground="black" Height="21" Width="167" />
+                                    <TextBlock
+            
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="DarkCyan"
+            Text="{Binding LastTime_otstoi_A, StringFormat=\{0:0.0##\}, FallbackValue=???}" />
 
 
 
@@ -1248,14 +1308,24 @@
 
                                     </WPF:Motor>
                                 </Canvas>
-                                <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Canvas Grid.Row="5">
+                                    <WPF:Valve Height="40" RotateAngle="0"  Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*" Canvas.Left="126" Canvas.Top="40"   >
+                                        <Behaviors:Interaction.Behaviors>
+                                            <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480A_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
+                                            <behaviors:Valve_status RotareAnggeClose="180" RotareAnggeOpen="0" HSpacing="-1" HSpacing1="13" VSpacing="23" VSpacing1="23" isOpenValve="{Binding PD.TVK480A_SQH, Mode=OneWay}" isCloseValve="{Binding PD.TVK480A_SQL, Mode=OneWay}" />
+                                            <!--<behaviors:Valve_status isOpenValve="{Binding PD.TVK480A_SQH}" isCloseValve="{Binding PD.TVK480A_SQL}" />-->
+                                            <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
+                                        </Behaviors:Interaction.Behaviors>
+                                    </WPF:Valve>
+                                </Canvas>
+                               
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; Диэтиламина"  FontSize="19" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Нагрев K480A"  FontSize="19" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Перегонка МЭК"  FontSize="19" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Выдержка"  FontSize="19" Grid.Row="7" VerticalAlignment="Top" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Охлаждение"  FontSize="19" Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Center"  />
-                                <TextBlock Foreground="Black" Text="Отстаивание"  FontSize="19" Grid.Row="8" VerticalAlignment="Top" HorizontalAlignment="Center"  />
+                                <TextBlock Foreground="Black" Text="Отстаивание"  FontSize="19" Grid.Row="9" VerticalAlignment="Top" HorizontalAlignment="Center"  />
 
 
                             </Grid>
@@ -1287,25 +1357,9 @@
                             </StackPanel.Style>-->
                         </StackPanel>
 
-                        <!--<ScrollViewer Grid.Row="1">
-                            <ListView ItemsSource="{Binding MessageList}" FontSize="16" AlternationCount="2" >
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Header="Дата"
-                            DisplayMemberBinding="{Binding Key, StringFormat='dd-MM-yyyy HH:mm:ss'}" />
-                                        <GridViewColumn Header="Сообщение" Width="800">
-                                            <GridViewColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding Value}" Foreground="DarkRed" />
-                                                </DataTemplate>
-                                            </GridViewColumn.CellTemplate>
-                                        </GridViewColumn>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                        </ScrollViewer>-->
+                 
 
-                        <!--<xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="203" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
@@ -1318,7 +1372,7 @@
                             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
                             <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                        </xctk:WindowContainer>-->
+                        </xctk:WindowContainer>
 
 
                     </Grid>
