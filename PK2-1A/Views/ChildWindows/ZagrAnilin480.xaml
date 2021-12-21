@@ -13,7 +13,7 @@
     xmlns:local="clr-namespace:belofor.Views.ChildWindows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-    Background="Wheat"
+    Background="AliceBlue"
     ResizeMode="NoResize"
     WindowBackground="LightGray"
     mc:Ignorable="d" Width="240" Height="290">

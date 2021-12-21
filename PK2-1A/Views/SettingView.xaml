@@ -842,6 +842,26 @@
                     </b:Interaction.Behaviors>
                 </Controls:NumPadUpDown>
 
+                <TextBlock FontWeight="Bold" FontSize="14"  Text="time " Grid.ColumnSpan="1" Grid.Row="8" VerticalAlignment="Center" />
+                <Controls:NumPadUpDown  
+                    Grid.Column="1"   Grid.Row="8"
+                    Height="24"
+                    VerticalContentAlignment="Center"
+                    EnterClosesNumPad="True"
+                    FontSize="16"
+                     
+                    FontWeight="Bold"
+                    Foreground="LawnGreen" Margin="5,0,0,0"
+                    Increment="0.1"
+                    Minimum="0"
+                    Maximum="5"
+                    Precision="1"
+                    UpdateValueOnEnterKey="True"  CultureInfo="ru-RU">
+                    <b:Interaction.Behaviors>
+                        <Behaviors:ModbusBindingBehavior InternalValue="{Binding PD.time_perA}" />
+                    </b:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+
 
             </Grid>
 

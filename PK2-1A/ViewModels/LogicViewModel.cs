@@ -620,7 +620,7 @@ namespace belofor.ViewModels
         }
 
         DateTime time_mem ;
-
+        HLTrigger_OFF tr_state_1_4=new HLTrigger_OFF() ;
 
 
 
@@ -690,8 +690,13 @@ namespace belofor.ViewModels
                         n = 1;
                         State = 1;
                         time_last = DateTime.Now;
-                         Send_Log(StatusOut = "Запущен алгорит белофор оцд апп.K480А");
-                       
+                        Send_Log(StatusOut = "Запущен алгорит белофор оцд апп.K480А");
+                        Send_Log("ШАГ 1. Параметры рег. PH. старт \n" +
+                          "Уставка ph:" + SetPh_st1_1_A + "\n" +
+                          "Доза щел.:" + SetPh_zadDoza_st1_1_A + "\n" +
+                          "Время фикс. стаб.:" + Set_time_Ph_st1_A + "\n"
+                          );
+
 
                     }
                        
@@ -708,6 +713,7 @@ namespace belofor.ViewModels
 
                     {
                         time_last = DateTime.Now;
+                      
                         Send_Log(StatusOut = "ШАГ 1.Выполняется  доведение ph");
                     }
                     else
@@ -733,14 +739,25 @@ namespace belofor.ViewModels
 
 
                                 State = 2;
-                                Send_Log(StatusOut = "ШАГ 1.2 Загрузка Анилина. Ожидание окончания");
+                            StatusOut = "ШАГ 1.2 Загрузка Анилина. Ожидание окончания";
+                                Send_Log("ШАГ 1.2 Загрузка Анилина. Ожидание заверш. \n" +
+                     "Уставка ph:" + SetPh_st2_1_A + "\n" +
+                     "Процент кл.:" + Percent_valve_Anilin + "\n" +
+                     "Доза Анилина.:" + Doza_anilin_st2_A + "\n" +
+                     "Время фикс. стаб.:" + Set_time_Ph_st1_A + "\n"
+                     );
                             }
                         }
                         else
                         {
                             StatusOut = "ШАГ 1.1 Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
-                            Send_Log("ШАГ 1.1 Фиксация стабилизации ph");
-                           exposur_time = DateTime.Now;
+                           // Send_Log("ШАГ 1.1 Фиксация стабилизации ph");
+                            Send_Log( "ШАГ 1.1 Фиксация стабилизации pH \n" +
+                          "Уставка ph:" + SetPh_st1_1_A + "\n" +
+                          "Доза щел.:" + SetPh_zadDoza_st1_1_A + "\n" +
+                          "Время фикс. стаб.:" + Set_time_Ph_st1_A + "\n"
+                          );
+                            exposur_time = DateTime.Now;
                         }
                     }
                        
@@ -755,17 +772,33 @@ namespace belofor.ViewModels
 
                     if (PD.RegPH480A_pH_zad != SetPh_st2_1_A) PD.RegPH480A_pH_zad = SetPh_st2_1_A;
 
+                    if (tr_state_1_4.Check(PD.ZagrAnilin480_Start))
+                    {
+                        Send_Log("ШАГ 1.2 Загрузка Анилина завершена. Ожидание Фиксация стабилизации ph \n" +
+                           "Уставка ph:" + SetPh_st2_1_A + "\n" +
+                           "Процент кл.:" + Percent_valve_Anilin + "\n" +
+                           "Доза Анилина.:" + Doza_anilin_st2_A + "\n" +
+                           "Время фикс. стаб.:" + Set_time_Ph_st1_A + "\n");
+                        StatusOut = "ШАГ 1.2 Загрузка Анилина завершена.Ожидание фиксация стабилизации ph";
+                    }
+
                     if (!(SetPh_st2_1_A - 0.5f <= PD.QIY_K480A && PD.QIY_K480A <= SetPh_st2_1_A + 0.5f) || PD.ZagrAnilin480_Start)
                     {
                         time_last = DateTime.Now;
-                        if(!PD.ZagrAnilin480_Start)
-                         Send_Log(StatusOut = "ШАГ 1.2 Ожидание фиксация стабилизации ph");
+                       
+                        if (!PD.ZagrAnilin480_Start)
+                        {
+                            StatusOut = "ШАГ 1.2 Ожидание фиксация стабилизации ph";
+                           
+                        }
+                       
                     }
                     else
                         if (!PD.ZagrAnilin480_Start)
                     {
-                        Send_Log(StatusOut = "ШАГ 1.2 Фиксация стабилизации ph");
-                        StatusOut = "ШАГ 1.2 Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
+                        //Send_Log(StatusOut = "ШАГ 1.2 Фиксация стабилизации ph");
+                        Send_Log("ШАГ 1.2  Фиксация стабилизации ph ");
+                        StatusOut = "ШАГ 1.2   Фиксация стабилизации ph, осталось" + ((Set_time_Ph_st1_A * 60) - (DateTime.Now - time_last).TotalSeconds).ToString(" 0 ") + "секунд";
                     }
                         
                    
@@ -773,11 +806,13 @@ namespace belofor.ViewModels
 
                     if ((DateTime.Now - time_last).TotalSeconds >= Set_time_Ph_st1_A * 60 && !PD.ZagrAnilin480_Start)
                     {
-                         Send_Log(StatusOut = "ШАГ 1.2 Завершение, идет выстой, по истечению " + ((60-(DateTime.Now - exposur_time).TotalSeconds)).ToString(" 0 ") + " секунд переход к шагу 3");
+                        // Send_Log(StatusOut = "ШАГ 1.2 Завершение, идет выстой, по истечению " + ((60-(DateTime.Now - exposur_time).TotalSeconds)).ToString(" 0 ") + " секунд переход к шагу 3");
                         if ((DateTime.Now - exposur_time).TotalSeconds > 0)
                         {
+                           // Send_Log("ШАГ 1.2 Произведена Фиксация стабилизации ph ");
                             n = 3;
                             State = 3;
+
 
                             // предварительные дествия для перехода
                             if (PD.RegPH480A_pH_zad != SetPh_st3_1_A) PD.RegPH480A_pH_zad = SetPh_st3_1_A;
@@ -786,6 +821,12 @@ namespace belofor.ViewModels
                             if (PD.ZagrDietilAminK480_DozaZad2 != DietilAmin_doza2) PD.ZagrDietilAminK480_DozaZad2 = DietilAmin_doza2;
                             if (PD.ZagrDietilAminK480_Tnagr != 60) PD.ZagrDietilAminK480_Tnagr = 60;
                             if (PD.ZagrDietilAminK480_Start != true) PD.ZagrDietilAminK480_Start = true;
+                            StatusOut = "ШАГ 1.3 Загр.  дозы1 ДЭА";
+                            Send_Log( "ШАГ 1.3 Загр.  дозы1 ДЭА: \n" +
+                            "Уставка ph:" + SetPh_st3_1_A + "\n" +
+                            "ДЭА Доза1.:" + DietilAmin_doza1 + "\n" +
+                            "Т. нагрева .:" + DietilAmin_Tnagr + "\n" 
+);
 
                         }
                     }
@@ -795,7 +836,7 @@ namespace belofor.ViewModels
                     break;
 
                 case 3:
-                     Send_Log(StatusOut = "ШАГ 1.3 Загр. первой дозы ДиэтилАмина, (контроль уставки " + DietilAmin_doza1 + ")");
+                    // Send_Log(StatusOut = "ШАГ 1.3 Загр. первой дозы ДиэтилАмина, (контроль уставки " + DietilAmin_doza1 + ")");
                     if (PD.RegPH480A_pH_zad != SetPh_st3_1_A) PD.RegPH480A_pH_zad = SetPh_st3_1_A;
                     if (PD.ZagrDietilAminK480_DozaZad1 != DietilAmin_doza1) PD.ZagrDietilAminK480_DozaZad1 = DietilAmin_doza1;
 
@@ -807,8 +848,14 @@ namespace belofor.ViewModels
                     
                     if (!PD.ZagrDietilAminK480_Start)
                             {
-                             Send_Log(StatusOut = "ШАГ 1.4 Нагрев  ,ожидание достижения уставки (контроль уставки "+ DietilAmin_Tnagr+")");
-                                n = 4;
+                        //  Send_Log(StatusOut = "ШАГ 1.4 Нагрев  ,ожидание достижения уставки (контроль уставки "+ DietilAmin_Tnagr+")");
+                        StatusOut = "ШАГ 1.4 Заверш. загр. дозы2 ДЭА. Нагрев  ,ожидание достижения Т.";
+                            Send_Log("ШАГ 1.4 Заверш. загр. дозы2 ДЭА. Нагрев  ,ожидание достижения Т.: \n" +
+                            "Уставка ph:" + SetPh_st4_1_A + "\n" +
+                            "Доза1.:" + DietilAmin_doza1 + "\n" +
+                            "Т. загр 2й дозы.:" + DietilAmin_Tnagr + "\n"
+                             );
+                        n = 4;
                                 State = 4;
                             // переход на следущий шаг
                             PD.VK480A_2_mode = false;           // открытие слива  конденсата
@@ -838,7 +885,13 @@ namespace belofor.ViewModels
                    // if ( PD.TE_K480A_1 >= DietilAmin_Tnagr)
                         if (PD.TE_K480A_1 >= DietilAmin_Tnagr)
                         {
+                        StatusOut = "ШАГ 1.4 Завершен Нагрев.";
+                        Send_Log("ШАГ 1.4 Завершен Нагрев. : \n" +
+                        "Уставка ph:" + SetPh_st4_1_A + "\n" +                 
+                        "Т. загр 2й дозы.:" + DietilAmin_Tnagr + "\n"
+                         );
                         Send_Log(StatusOut = "ШАГ 2.1 Загр. второй дозы ДиэтилАмина, (контроль уставки " + DietilAmin_doza2 + ")");
+
 
                         n = 5;
                             State = 5;
@@ -849,8 +902,12 @@ namespace belofor.ViewModels
                             //if (PD.ZagrDietilAminK480_DozaZad2 != DietilAmin_doza2) PD.ZagrDietilAminK480_DozaZad2 = DietilAmin_doza2;
                           //  if (PD.ZagrDietilAminK480_Tnagr != DietilAmin_Tnagr) PD.ZagrDietilAminK480_Tnagr = DietilAmin_Tnagr;
                             if (PD.ZagrDietilAminK480_Start != true) PD.ZagrDietilAminK480_Start = true;
+                        StatusOut = "ШАГ 2.1 Загр. второй дозы ДиэтилАмина ";
+                        Send_Log( "ШАГ 2.1 Загр. второй дозы ДиэтилАмина : \n" +
+"Уставка ph:" + SetPh_st5_1_A + "\n" +
+"Доза 2.:" + DietilAmin_doza2 + "\n"
+);
 
-                        
                     }
 
 
@@ -970,7 +1027,7 @@ namespace belofor.ViewModels
                             });
                             n = 7;
                         }
-                        else if (Dialog_return == 2)
+                        else if (Dialog_return > 1)
                             Start_recept = false;
                     }
                     break;
@@ -986,7 +1043,7 @@ namespace belofor.ViewModels
                         n = 8;
                         State = 8;
                     }
-                    else if(Dialog_return == 2)
+                    else if(Dialog_return > 1)
                     {
                         PD.RegPH480A_Start = false;
                         Send_Log(StatusOut = "ШАГ 2.3 подтверждено завершение ph регулирования");
@@ -1053,7 +1110,7 @@ namespace belofor.ViewModels
                 case 10:
 
                    
-                    if (PD.TE_480A_1 <= T_ohlazhd_A)
+                    if (PD.TE_480A_1 < T_ohlazhd_A)
                     {
                         Send_Log(StatusOut = "ШАГ 2.5 Охлаждение,завершение контроль устаки,Т охл " + T_ohlazhd_A + " гр.");
                         PD.NC_K480A_mode = false; 
@@ -1076,14 +1133,15 @@ namespace belofor.ViewModels
                     LastTime_otstoi_A = SetTime_otstoi_A - (DateTime.Now - time_mem).TotalMinutes;
                     if ((DateTime.Now - time_mem).TotalMinutes > SetTime_otstoi_A)
                     {
-                        Send_Log(StatusOut = "ШАГ 2.6 Отстаивание.Завершение, контроль устаки,Время  " + SetTime_otstoi_A + " мин.");
+                        Send_Log( "ШАГ 2.6 Отстаивание.Завершение, контроль устаки,Время  " + SetTime_otstoi_A + " мин.");
                         LastTime_otstoi_A = 0;
                         DialogTitle = "Завершены 2-3 конденсации производства Белофора ОЦД, разрешается разделение массы на слои";
                         Application.Current.Dispatcher.InvokeAsync(() =>
                         {
                             ShowDialog();
                         });
-                        start_recept = false;
+                        StatusOut = "Завершены 2-3 конденсации производства Белофора ОЦД, разрешается разделение массы на слои";
+                        Start_recept = false;
 
                     }
                         break;
@@ -1159,7 +1217,7 @@ namespace belofor.ViewModels
                 if (r.Result == ButtonResult.None)
                 {
                     Next = false;
-                    Start_recept = false;
+                   // Start_recept = false;
                     Dialog_return = 2;
                 }
                 else if (r.Result == ButtonResult.OK)
@@ -1170,7 +1228,7 @@ namespace belofor.ViewModels
                 else if (r.Result == ButtonResult.Cancel)
                 {
                     Next = false;
-                    Start_recept = false;
+                  //  Start_recept = false;
                     Dialog_return = 3;
                 }
                 //else
@@ -1252,6 +1310,31 @@ namespace belofor.ViewModels
             stop_recept();
         }
     }
+
+    internal class  HLTrigger_OFF
+   {
+
+
+        bool prevV = false;
+
+        public bool Check(bool tVal)
+    {
+        if (!tVal && prevV)
+        {
+            prevV = tVal;
+            return true;
+        }
+        else
+        {
+            prevV = tVal;
+            return false;
+        }
+
+    }
+
+    
+    
+}
 
 
 }

@@ -28,17 +28,8 @@
 
 
 
-                  
-                    <WPF:Label  Height="18" RotateAngle="0" Content="" Canvas.Left="140" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
-                        <WPF:Label.Colors>
-                            <WPF:ControlColors>
-                                <WPF:ControlColors.DefaultColoring>
-                                    <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
-                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
-                                </WPF:ControlColors.DefaultColoring>
-                            </WPF:ControlColors>
-                        </WPF:Label.Colors>
-                    </WPF:Label>
+
+
 
                     <Grid Height="auto"  Width="auto" >
                         <Grid.RowDefinitions>
@@ -75,7 +66,7 @@
                                     <ColumnDefinition Width="150"/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
-                                
+
 
 
                                 </Grid.ColumnDefinitions>
@@ -148,7 +139,7 @@
                                 <TextBlock Text="2.6(отстаивание)"  FontSize="24" Grid.Row="0" Grid.Column="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                                 <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                               
+
                                 <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,10,3" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30" />
@@ -1187,7 +1178,7 @@
 
                                 <StackPanel  Grid.Row="8" Grid.Column="9">
 
-                           
+
 
 
 
@@ -1317,8 +1308,18 @@
                                             <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480A_mode}" Out="{Binding PD.TVK480A_ain_man}"/>
                                         </Behaviors:Interaction.Behaviors>
                                     </WPF:Valve>
+                                    <WPF:Label  Height="18" RotateAngle="0" Content=""  Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5" Canvas.Left="177" Canvas.Top="35">
+                                        <WPF:Label.Colors>
+                                            <WPF:ControlColors>
+                                                <WPF:ControlColors.DefaultColoring>
+                                                    <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                                                    <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
+                                                </WPF:ControlColors.DefaultColoring>
+                                            </WPF:ControlColors>
+                                        </WPF:Label.Colors>
+                                    </WPF:Label>
                                 </Canvas>
-                               
+
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; анилина"  FontSize="19" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Загрузка &#xA; Диэтиламина"  FontSize="19" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"  />
                                 <TextBlock Foreground="Black" Text="Нагрев K480A"  FontSize="19" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center"  />
@@ -1347,7 +1348,9 @@
                             <TextBlock Text="{Binding StatusOut}"   FontSize="24"  Foreground="Green"/>
                             <!--<StackPanel.Style>
                                 <Style TargetType="StackPanel">
-                                    --><!--<Setter Property="Visibility" Value="Hidden"/>--><!--
+                                    -->
+                            <!--<Setter Property="Visibility" Value="Hidden"/>-->
+                            <!--
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding ElementName=tab, Path=IsMouseOver}" Value="True">
                                             <Setter Property="Visibility" Value="Hidden" />
@@ -1357,21 +1360,21 @@
                             </StackPanel.Style>-->
                         </StackPanel>
 
-                 
+
 
                         <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
-                            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загрузка арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="203" Canvas.Top="30" />
-                            <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загрузка гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
+                            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загр. арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
+                            <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загр. гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
-                            <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгрузка из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
+                            <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгр. из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
                             <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
                             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-                            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загрузка щелочи /регулировка pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-                            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загрузка щелочи /регулировка pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="644" Canvas.Top="509" />
-                            <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
-                            <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка ДиэтилАмина K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-                            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загрузка Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
+                            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
+                            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="644" Canvas.Top="509" />
+                            <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="1472" Canvas.Top="728" />
+                            <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1642" Canvas.Top="380" />
+                            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. ДЭА K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1349" Canvas.Top="238" />
+                            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1014" Canvas.Top="499" />
                         </xctk:WindowContainer>
 
 

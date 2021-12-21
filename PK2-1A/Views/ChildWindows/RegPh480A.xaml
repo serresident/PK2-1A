@@ -17,7 +17,7 @@
     Height="450"
     d:DesignHeight="250"
     d:DesignWidth="300"
-    Background="Wheat"
+    Background="AliceBlue"
     ResizeMode="NoResize"
     WindowBackground="LightGray"
     mc:Ignorable="d">

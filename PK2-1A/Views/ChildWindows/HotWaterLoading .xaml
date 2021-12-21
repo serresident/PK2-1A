@@ -14,7 +14,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
     d:DesignHeight="220"
-    Background="Wheat"
+    Background="AliceBlue"
     ResizeMode="NoResize"
     WindowBackground="LightGray"
     mc:Ignorable="d" Width="417.393">
