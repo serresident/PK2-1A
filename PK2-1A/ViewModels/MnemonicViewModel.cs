@@ -197,6 +197,22 @@ namespace belofor.ViewModels
             set { SetProperty(ref reset_B, value); }
         }
 
+     
+        // счетчик Мэк 450
+        private Single сount_fq450_mek;
+        public Single Count_fq450_mek
+        {
+            get { return сount_fq450_mek; }
+            set { SetProperty(ref сount_fq450_mek, value); }
+        }
+
+        private bool reset_fq450 = true;
+        public bool Reset_fq450
+        {
+            get { return reset_fq450; }
+            set { SetProperty(ref reset_fq450, value); }
+        }
+
         private ProcessDataTcp _pd;
         public ProcessDataTcp PD
         {
@@ -317,6 +333,7 @@ namespace belofor.ViewModels
 
         Single mem_count1;
         Single mem_count2;
+        Single mem_count3;
         public void OnLoading()
         {
             if (!initVM)
@@ -394,14 +411,60 @@ namespace belofor.ViewModels
 
             //});
         }
-
+        Single save=0;
+       
         private void internalUpdate()
         {
 
+            // счетчик разности  МЭК K610A c обходом обнуления ( при обнуление сохраняет разницу и прибавляет)
+            if (Reset_fq450 && PD.FQ_K450A_MEK_in_count > 0)
+            {
+                if (mem_count3 == 0)
+                {
+                    mem_count3 = Convert.ToSingle(To_Config.ReadRetane("mem_count3"));
+                }
+                else
+                {
+                    mem_count3 = PD.FQ_K450A_MEK_in_count;
+                    To_Config.WriteRetane(mem_count1, "mem_count3");
+                }
 
+                Reset_fq450 = false;
+                save = 0;
+            }
+            else
+            {
+                if ((PD.FQ_K450A_MEK_in_count - mem_count3) >= 0)
+                {
+
+                    if (PD.FQ_K450A_MEK_in_count != 0)
+                        Count_fq450_mek =( Math.Abs(PD.FQ_K450A_MEK_in_count - mem_count3) + save );
+                    else
+                        save = Count_fq450_mek;
+                }
+                    
+                else 
+                {
+                    save = Count_fq450_mek;
+                    mem_count3 = 0;
+                }
+                   
+            }
+           
+
+            // счетчик разности  вода K480A
             if (Reset_A && PD.emis200_summ_k480A>0)
             {
-                mem_count1 = PD.emis200_summ_k480A;
+                if(mem_count1==0)
+                {
+                    mem_count1 = Convert.ToSingle(To_Config.ReadRetane("mem_count1"));
+                }
+                else
+                {
+                    mem_count1 = PD.emis200_summ_k480A;
+                    To_Config.WriteRetane(mem_count1, "mem_count1");
+                }
+                
                 Reset_A = false;
             }
             else
@@ -410,26 +473,30 @@ namespace belofor.ViewModels
                     Count_emis_A = PD.emis200_summ_k480A - mem_count1;
             }
 
-            if (Reset_B && PD.emis200_summ_k480B > 0)
+            // счетчик разности  вода K480B
+            if (Reset_B && PD.emis200_summ_k480B > 0) 
             {
-                mem_count2 = PD.emis200_summ_k480B;
-                Reset_B = false;
-            }
-            else
-            {
-                if((PD.emis200_summ_k480B - mem_count2)>=0)
-                Count_emis_B = PD.emis200_summ_k480B - mem_count2;
-            }
-
-            if (Reset_B && PD.emis200_summ_k480B > 0)
-            {
-                mem_count2 = PD.emis200_summ_k480B;
+                if(mem_count2==0)
+                {
+                    mem_count2 =Convert.ToSingle( To_Config.ReadRetane("mem_count2"));
+                }
+                else
+                {
+                 mem_count2 = PD.emis200_summ_k480B;
+                 To_Config.WriteRetane(mem_count2, "mem_count2");
+                }
+               
+                
                 Reset_B = false;
             }
             else
             {
                 if ((PD.emis200_summ_k480B - mem_count2) >= 0)
+                {
                     Count_emis_B = PD.emis200_summ_k480B - mem_count2;
+                    
+                }
+                   
             }
 
             WaterLoadingStartCommand.RaiseCanExecuteChanged();

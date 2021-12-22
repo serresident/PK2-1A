@@ -17,6 +17,7 @@ using User = belofor.Models.User;
 using Prism.Events;
 using System.Windows;
 using WindowState = Xceed.Wpf.Toolkit.WindowState;
+using System.Configuration;
 
 namespace belofor.ViewModels
 {
@@ -1205,7 +1206,67 @@ namespace belofor.ViewModels
           
         }
 
+
+
+        static string ReadRetane(string name)
+        {
+            string result = null;
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+                result = appSettings[name] ?? "Not Found";
+                // result = "1";
+                //MessageBox.Show(result);
+            }
+            catch (ConfigurationErrorsException e)
+            {
+                // MessageBox.Show(e.ToString()); 
+              //  logger.Error("ReadSetting" + e.ToString());
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// суммирует передаваемое значение к значению параметра в app.config (сумматор)
+        /// </summary>
+        /// <param name="value">значение</param>
+        /// <param name="nameTag">имя</param>
+        /// <returns></returns>
+        public void  WriteRetane(double value, string nameTag)
+        {
+
+           
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+              
+
+                if (settings[nameTag] == null)
+                {
+                    settings.Add(nameTag, value.ToString());
+                }
+                else
+                {
+                    settings[nameTag].Value = value.ToString();
+                }
+
+                configFile.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+
+            }
+            catch (ConfigurationErrorsException e)
+            {
+                //  MessageBox.Show("Error writing app settings" + e.Message);
+            }
+
+            //logger.Info(total+" total "+nameTag);
+            
+
+        }
         public string Title;
+
         private void ShowDialog()
         {
 

@@ -309,6 +309,7 @@
     <Compile Include="Services\JournalService.cs" />
     <Compile Include="Services\ModbusTcpService.cs" />
     <Compile Include="Services\PeriodicalTaskStarter.cs" />
+    <Compile Include="To_Config.cs" />
     <Compile Include="ViewModels\ArchivViewModel.cs" />
     <Compile Include="ViewModels\MnemonicViewModel.cs" />
     <Compile Include="ViewModels\SettingViewModel.cs" />

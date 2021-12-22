@@ -29,7 +29,7 @@
                             <!--Header area-->
                             <Border
                                 Grid.Row="0"
-                                Background="#FFF2F2CF"
+                                Background="#481BD68D"
                                 BorderBrush="#FF775318"
                                 BorderThickness="1"
                                 CornerRadius="2,2,0,0" >
@@ -41,7 +41,7 @@
                             <!-- Main client area -->
                             <Border
                                 Grid.Row="1"
-                                Background="#FFDDDCC8"
+                                Background="#DCDFE6E2"
                                 BorderBrush="#FF775318"
                                 BorderThickness="1,0,1,3"
                                 CornerRadius="0,0,2,2" >
@@ -721,63 +721,85 @@
         <TextBlock Canvas.Left="8" TextWrapping="Wrap" Text="Арт. вода" Canvas.Top="934"/>
         <GroupBox Style="{StaticResource HmiGroupBox}" Width="120" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="64" Canvas.Top="796">
             <GroupBox.Header>
-                <TextBlock><Run Text="FQ_R521" /><LineBreak/><Run Text="литров"/></TextBlock>
+                <TextBlock Text="FQ_R521, Л" />
             </GroupBox.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <!--<RowDefinition />-->
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <!--<ColumnDefinition />-->
-                </Grid.ColumnDefinitions>
-
-                <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
-                <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
-                <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
+            <StackPanel>
                 <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_R521_in_count_}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
-            </Grid>
+                <xctk:ToggleSwitch Width="64" Height="24"    
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV521, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Margin="0,3,0,0"/>
+            </StackPanel>
         </GroupBox>
         <GroupBox Style="{StaticResource HmiGroupBox}" Width="120" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1422" Canvas.Top="839">
             <GroupBox.Header>
-                <TextBlock><Run Text="FQ_460" /><LineBreak/><Run Text="Литров"/></TextBlock>
+                <TextBlock Text="FQ_460, Л"/>
             </GroupBox.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <!--<RowDefinition />-->
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <!--<ColumnDefinition />-->
-                </Grid.ColumnDefinitions>
+            <StackPanel>
+               
 
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
                 <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K460_in_count_}"  FontSize="14"  Background="Black" Foreground="LawnGreen" TextAlignment="Center"/>
-            </Grid>
+                <xctk:ToggleSwitch Width="64" Height="24"    
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV460, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Margin="0,3,0,0"/>
+             
+            </StackPanel>
         </GroupBox>
         <GroupBox Style="{StaticResource HmiGroupBox}" Width="120" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1680" Canvas.Top="348">
             <GroupBox.Header>
-                <TextBlock><Run Text="FQ_480" /><LineBreak/><Run Text="Литров"/></TextBlock>
+                <TextBlock Text="FQ_480, Л"/>
             </GroupBox.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <!--<RowDefinition />-->
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <!--<ColumnDefinition />-->
-                </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_,StringFormat=\{0:0\}}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
+                <xctk:ToggleSwitch Width="64" Height="24"    
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV480, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Canvas.Left="1703" Canvas.Top="422"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Style="{StaticResource HmiGroupBox}" Width="120" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="398" Canvas.Top="644">
+            <GroupBox.Header>
+                <TextBlock Text="FQ K610, Л"/>
+        
+            </GroupBox.Header>
+            <StackPanel>
+
 
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding FQ_R521_in_count.Value, StringFormat=\{0:N0\}}"  FontSize="14"  Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding PD.FQ_K480_in_count_,StringFormat=\{0:0\}}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
-            </Grid>
+                <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding Count_fq450_mek}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
+               
+                <xctk:ToggleSwitch Width="64" Height="24"   
+            Margin="0,3,0,0"
+            CornerRadius="2"
+            IsChecked="{Binding PD.ResetCount_FV521, Mode=TwoWay}"
+            ThumbHeight = "25"
+            ThumbWidth = "20"
+            CheckedContent = "Успешно"
+            UncheckedContent = "Сброс"
+            CheckedBackground="Green"
+            UncheckedBackground ="LightPink" Canvas.Left="454" Canvas.Top="812"/>
+            </StackPanel>
         </GroupBox>
         <Border Background="WhiteSmoke"  BorderThickness="2" BorderBrush="DarkGray" Width="230" Height="155" Canvas.Left="1607" Canvas.Top="184"/>
         <WPF:Tube Height="18" Canvas.Left="104" Canvas.Top="70" Width="27" Design="Arc90" FlangeLayout="None">
@@ -1468,21 +1490,21 @@
             </WPF:Tube.Colors>
         </WPF:Tube>
         <TextBlock Canvas.Left="84" TextWrapping="Wrap" Text="R470" Canvas.Top="732" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <WPF:Tube Height="12" Canvas.Left="377" Canvas.Top="705" Width="30" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+        <WPF:Tube Height="12" Canvas.Left="378" Canvas.Top="740" Width="30" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <WPF:Tube Height="12" Canvas.Left="457" Canvas.Top="712" Width="16" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
+        <WPF:Tube Height="12" Canvas.Left="458" Canvas.Top="747" Width="16" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
-        <WPF:Pump  Height="54"  Canvas.Left="419" Canvas.Top="684" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
+        <WPF:Pump  Height="54"  Canvas.Left="420" Canvas.Top="719" Width="24" Design="Vertical" RenderTransformOrigin="0.5,0.5"  RotateAngle="270">
 
 
             <Behaviors:Interaction.Behaviors>
@@ -1490,8 +1512,8 @@
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="417" TextWrapping="Wrap" Text="P461" Canvas.Top="726" />
-        <WPF:Arrow Height="12" Canvas.Left="475" Canvas.Top="712" Width="12" RenderTransformOrigin="0.5,0.5">
+        <TextBlock Canvas.Left="418" TextWrapping="Wrap" Text="P461" Canvas.Top="761" />
+        <WPF:Arrow Height="12" Canvas.Left="476" Canvas.Top="747" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -1500,7 +1522,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <WPF:Tube  Design="Vertical" Height="80" Canvas.Left="276" Canvas.Top="646" Width="105" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
+        <WPF:Tube  Design="Vertical" Height="112" Canvas.Left="276" Canvas.Top="646" Width="105" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -1511,7 +1533,7 @@
         </WPF:Tube>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="268" Canvas.Top="650" Caption="LT 461" Unit="%"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="65" Height="40" Value="{Binding PD.LT_R461, Mode=OneWay, StringFormat=\{0:0#\}}" Background="Black"/>
         <TextBlock Canvas.Left="287" TextWrapping="Wrap" Text="R461" Canvas.Top="691" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
-        <WPF:Frame HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="74" Width="41" 
+        <WPF:Frame HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="103" Width="41" 
             Design="SquareGlass" Foreground="White" BevelWidth="5" GlassEffectOffset="0.2" Canvas.Left="338" Canvas.Top="650" >
             <WPF:Frame.Colors>
                 <WPF:ControlColors AuxiliaryColor1="DarkGray">
@@ -1536,7 +1558,7 @@
                 </WPF:HVLevelIndicator.OptionsScale>
             </WPF:HVLevelIndicator>
         </WPF:Frame>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="406" Canvas.Top="656" Caption="FQ K610" Unit="Л"  ValueColor="LawnGreen" Foreground="DeepSkyBlue"  Width="84" Height="40" Value="{Binding PD.FQ_K450A_MEK_in_count, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="136" Canvas.Top="626" Caption="FQ K610" Unit="Л"  ValueColor="LawnGreen" Foreground="DeepSkyBlue"  Width="84" Height="40" Value="{Binding PD.FQ_K450A_MEK_in_count, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <WPF:Tube Height="12" Canvas.Left="768" Width="16" RenderTransformOrigin="0.5,0.5" FlangeLayout="None" Canvas.Top="36">
 
             <Behaviors:Interaction.Behaviors>
@@ -1925,7 +1947,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Tube  Design="Vertical" Height="145" Canvas.Left="716" Canvas.Top="515" Width="194" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
+        <WPF:Tube  Design="Vertical" Height="145" Canvas.Left="718" Canvas.Top="515" Width="188" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0">
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -4085,92 +4107,24 @@
             CheckedBackground="Green"
             UncheckedBackground ="LightPink" Canvas.Left="695" Canvas.Top="147"/>
         <TextBlock Canvas.Left="691" TextWrapping="Wrap" Canvas.Top="172" Height="29" RenderTransformOrigin="0.54,3.158" Width="101" ><Run Text="Промывка pH "/><LineBreak/><Run Text="метра  "/><Run Language="ru-by" Text="ап."/><Run Text="K450A"/><LineBreak/><Run/></TextBlock>
-        <xctk:ToggleSwitch Width="64" Height="24"    
-            CornerRadius="2"
-            IsChecked="{Binding PD.ResetCount_FV521, Mode=TwoWay}"
-            ThumbHeight = "25"
-            ThumbWidth = "20"
-            CheckedContent = "Успешно"
-            UncheckedContent = "Сброс"
-            CheckedBackground="Green"
-            UncheckedBackground ="LightPink" Canvas.Left="85" Canvas.Top="867"/>
-        <xctk:ToggleSwitch Width="64" Height="24"    
-            CornerRadius="2"
-            IsChecked="{Binding PD.ResetCount_FV460, Mode=TwoWay}"
-            ThumbHeight = "25"
-            ThumbWidth = "20"
-            CheckedContent = "Успешно"
-            UncheckedContent = "Сброс"
-            CheckedBackground="Green"
-            UncheckedBackground ="LightPink" Canvas.Left="1442" Canvas.Top="913"/>
-        <xctk:ToggleSwitch Width="64" Height="24"    
-            CornerRadius="2"
-            IsChecked="{Binding PD.ResetCount_FV480, Mode=TwoWay}"
-            ThumbHeight = "25"
-            ThumbWidth = "20"
-            CheckedContent = "Успешно"
-            UncheckedContent = "Сброс"
-            CheckedBackground="Green"
-            UncheckedBackground ="LightPink" Canvas.Left="1703" Canvas.Top="422"/>
-        <GroupBox Style="{StaticResource HmiGroupBox}" Width="149" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="569" Canvas.Top="546" Height="148" ToolTip="Расходомер воды при дистиляции МЭК">
+     
+     
+        <GroupBox Style="{StaticResource HmiGroupBox}" Width="149" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="565" Canvas.Top="546" Height="148" ToolTip="Расходомер воды при дистиляции МЭК">
             <GroupBox.Header>
                 <TextBlock><Run Text="FQ_2_K480A м³" /></TextBlock>
             </GroupBox.Header>
-            <Grid Margin="1,0,-1,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <!--<ColumnDefinition />-->
-                </Grid.ColumnDefinitions>
+            <StackPanel Margin="1,0,-1,0">
+        
 
                 <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
                 <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480A}"  FontSize="14"  Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
                 <TextBlock Grid.Row="1" TextWrapping="Wrap"  FontSize="14" Foreground="Black" Text="Мг-й расход м³/ч:" />
-                <TextBlock Grid.Row="3" TextWrapping="Wrap"  FontSize="14" Foreground="Black" Text="mem+ счетчик ,м³" />
+              
                 <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480A,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
+                <TextBlock Grid.Row="3" TextWrapping="Wrap"  FontSize="14" Foreground="Black" Text="mem+ счетчик ,м³" />
                 <TextBlock Grid.Row="4" TextWrapping="Wrap" Text="{Binding Count_emis_A,StringFormat=\{0:0.000\}}"  FontSize="14" Foreground="LawnGreen" Background="Black"  TextAlignment="Center"/>
-            </Grid>
-        </GroupBox>
-
-        <GroupBox Style="{StaticResource HmiGroupBox}" Width="139" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1112" Canvas.Top="546" Height="130" ToolTip="Расходомер воды при дистиляции МЭК">
-            <GroupBox.Header>
-                <TextBlock Text="FQ_2_K480B м³"/>
-            </GroupBox.Header>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <!--<ColumnDefinition />-->
-                </Grid.ColumnDefinitions>
-
-                <!--<TextBlock Grid.Row="1"  TextWrapping="Wrap" Text="Уст"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
-                <!--<TextBlock Grid.Row="1" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SP_F67Z.Value, StringFormat=\{0:N0\}}"  FontSize="14" Foreground="Blue" TextAlignment="Center"/>-->
-                <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480B}"  FontSize="14"  Foreground="LawnGreen" Background="Black" TextAlignment="Center"/>
-                <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Мг-й расход м³/ч:"  FontSize="14" Foreground="Black" />
-                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480B,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="LawnGreen" Background="Black" TextAlignment="Center"/>
-
-                <TextBlock Grid.Row="4"  TextWrapping="Wrap" Text="{Binding Count_emis_B,StringFormat=\{0:0.000\}}"  FontSize="14"  Foreground="LawnGreen" Background="Black" TextAlignment="Center" Height="19" VerticalAlignment="Bottom"/>
-                <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="mem+ счетчик ,м³"  FontSize="14" Foreground="Black" />
-
-
-            </Grid>
-        </GroupBox>
-        <xctk:ToggleSwitch Width="64" Height="24"    
+                <xctk:ToggleSwitch Width="64" Height="24"    
             CornerRadius="2"
             IsChecked="{Binding Reset_A, Mode=TwoWay}"
             ThumbHeight = "25"
@@ -4178,8 +4132,21 @@
             CheckedContent = "Сброс"
             UncheckedContent = "Сброс"
             CheckedBackground="Green"
-            UncheckedBackground ="LightPink" Canvas.Left="603" Canvas.Top="698"/>
-        <xctk:ToggleSwitch Width="64" Height="24"    
+            UncheckedBackground ="LightPink" Margin="0,3,0,0"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Style="{StaticResource HmiGroupBox}" Width="139" BorderBrush="#FF0E78B8" BorderThickness="2" Foreground="#FF272525" Canvas.Left="1112" Canvas.Top="546" Height="151" ToolTip="Расходомер воды при дистиляции МЭК">
+            <GroupBox.Header>
+                <TextBlock Text="FQ_2_K480B м³"/>
+            </GroupBox.Header>
+            <StackPanel>
+                <TextBlock Grid.Row="0"  TextWrapping="Wrap" Text="{Binding PD.emis200_summ_k480B}"  FontSize="14"  Foreground="LawnGreen" Background="Black" TextAlignment="Center"/>
+                <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Мг-й расход м³/ч:"  FontSize="14" Foreground="Black" />
+                <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding PD.emis200_FlowMeter_k480B,StringFormat=\{0:0.00\}}"  FontSize="14" Foreground="LawnGreen" Background="Black" TextAlignment="Center"/>
+                <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="mem+ счетчик ,м³"  FontSize="14" Foreground="Black" />
+                <TextBlock Grid.Row="4"  TextWrapping="Wrap" Text="{Binding Count_emis_B,StringFormat=\{0:0.000\}}"  FontSize="14"  Foreground="LawnGreen" Background="Black" TextAlignment="Center" Height="19" VerticalAlignment="Bottom"/>
+                <xctk:ToggleSwitch Width="64" Height="24"    
             CornerRadius="2"
             IsChecked="{Binding Reset_B, Mode=TwoWay}"
             ThumbHeight = "25"
@@ -4187,7 +4154,11 @@
             CheckedContent = "Сброс"
             UncheckedContent = "Сброс"
             CheckedBackground="Green"
-            UncheckedBackground ="LightPink" Canvas.Left="1144" Canvas.Top="680"/>
+            UncheckedBackground ="LightPink" Margin="0,3,0,0"/>
+            </StackPanel>
+        </GroupBox>
+      
+       
         <WPF:Frame HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="73" Width="36" 
                    Design="SquareGlass" Foreground="White" BevelWidth="5" GlassEffectOffset="0.2" Canvas.Left="1441" Canvas.Top="72" >
             <WPF:Frame.Colors>
@@ -4215,20 +4186,22 @@
         </WPF:Frame>
 
 
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+        <xctk:WindowContainer Width="1918" Height="1000" Visibility="hidden" >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загр. арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загр. гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
             <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгр. из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
             <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
             <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="644" Canvas.Top="509" />
+            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="332" Canvas.Top="309" />
+            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="646" Canvas.Top="309" />
             <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
             <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. ДЭА K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
+            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. ДЭА K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="985" Canvas.Top="514" />
+            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="60" Canvas.Top="293" />
         </xctk:WindowContainer>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="252" Canvas.Top="715" Caption="Объем" Unit="Л"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="83" Height="40" Value="{Binding PD.Volume_R461, Mode=OneWay,StringFormat=\{0:0.000\}}" Background="Black"/>
+
 
     </Canvas>
 
