@@ -582,6 +582,7 @@ public bool ZagrDietilAminK480_IsEnablePredictClose { get { return getValue<bool
         public Single FQ_K450A_MEK_in_count_{ get { return getValue<Single>(); } } //ad=101
         [ArchivAttribute("Давление насоса P_726")]
         public Single P_P726{ get { return getValue<Single>(); } }//ad=103
+        [ArchivAttribute("Выход на delta cp2000 P726")]
         public Single P726_OUT_Frq{ get { return getValue<Single>(); } } //ad=105
 
         public UInt16 P726_status { get { return getValue<UInt16>(); } }//ad=107
