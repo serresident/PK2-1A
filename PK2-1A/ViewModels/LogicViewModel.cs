@@ -200,8 +200,8 @@ namespace belofor.ViewModels
             this.User = user;
             this.dialogService = dialogService;
 
-            User.isAuthorized = true;
-            ShowSettingsDialogCommand = new DelegateCommand(ShowDialog, () => User.IsAuthorized).ObservesProperty(() => User.IsAuthorized); ;
+           
+            
             PD = pd;
             this.archivRepository = archivRepository;
 

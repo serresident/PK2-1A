@@ -24,10 +24,11 @@ namespace belofor.Views
     {
         private Uri navViewUri, toolViewUri;
         private IRegionManager regionManager;
-        public NavigationItemView(IRegionManager regionManager, string uri, string toolUri, string caption)
+        ShellViewModel shell;
+        public NavigationItemView(IRegionManager regionManager, string uri, string toolUri, string caption, ShellViewModel shell)
         {
             InitializeComponent();
-
+            this.shell= shell;
             this.regionManager = regionManager;
             this.navViewUri = new Uri(uri, UriKind.Relative);
             this.toolViewUri = new Uri(toolUri, UriKind.Relative);
@@ -56,12 +57,27 @@ namespace belofor.Views
                 regionManager.RequestNavigate("ToolRegion", toolViewUri);
             }
 
+            if (navViewUri.ToString() == "SettingView" && shell.User.IsAuthorized)
+            {
+                NavigateRadioButton.IsEnabled = true;
+            }
+            else if(navViewUri.ToString() == "SettingView")
+            {
+                NavigateRadioButton.IsEnabled = false;
+            }
         }
 
 
         private void NavigateTo_Click(object sender, RoutedEventArgs e)
         {
-            regionManager.RequestNavigate("ContentRegion", navViewUri);
+            if (navViewUri.ToString() == "SettingView" && shell.User.IsAuthorized)
+            {
+                regionManager.RequestNavigate("ContentRegion", navViewUri);
+            }
+            else if (navViewUri.ToString() != "SettingView")
+            {
+                regionManager.RequestNavigate("ContentRegion", navViewUri);
+            }
         }
 
         public static Window FindParentWindow(DependencyObject child)

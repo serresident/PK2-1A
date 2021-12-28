@@ -73,6 +73,8 @@ namespace belofor.ViewModels
         {
 
             dialogService.ShowDialog("settings");
+          
+
         }
 
         internal void InputPassword()
