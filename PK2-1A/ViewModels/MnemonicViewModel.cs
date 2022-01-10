@@ -426,7 +426,7 @@ namespace belofor.ViewModels
                 else
                 {
                     mem_count3 = PD.FQ_K450A_MEK_in_count;
-                    To_Config.WriteRetane(mem_count1, "mem_count3");
+                    To_Config.WriteRetane(mem_count3, "mem_count3");
                 }
 
                 Reset_fq450 = false;
@@ -434,6 +434,9 @@ namespace belofor.ViewModels
             }
             else
             {
+                if (Reset_fq450)// откидываем кнопку
+                    Reset_fq450 = false;
+
                 if ((PD.FQ_K450A_MEK_in_count - mem_count3) >= 0)
                 {
 
