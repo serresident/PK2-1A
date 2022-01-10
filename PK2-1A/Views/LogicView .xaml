@@ -139,6 +139,7 @@
                                 <TextBlock Text="2.6(отстаивание)"  FontSize="24" Grid.Row="0" Grid.Column="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                                 <TextBlock Foreground="Green" Text="50 Гц"  FontSize="24" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Foreground="red" Text="ВЫКЛ/ 0 Гц"  FontSize="24" Grid.Row="1" Grid.Column="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                                 <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,10,3" >
                                     <Grid.RowDefinitions>
@@ -1362,7 +1363,7 @@
 
 
 
-                        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible" >
+                        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Collapsed" >
                             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загр. арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
                             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загр. гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
                             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
