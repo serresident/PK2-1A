@@ -1207,7 +1207,7 @@ namespace belofor.ViewModels
         }
 
 
-
+        
         static string ReadRetane(string name)
         {
             string result = null;

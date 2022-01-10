@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace belofor
-{
+{/// <summary>
+////Чтение и запись значения  по тегу в app.config
+/// </summary>
     internal static class To_Config
     {
 
