@@ -15,7 +15,7 @@
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:convertors="clr-namespace:AITSW.WPFValueConverters;assembly=WPFValueConverters" xmlns:conv="clr-namespace:belofor.Converters"
     Width="600"
     Height="450"
-    d:DesignHeight="250"
+    d:DesignHeight="300"
     d:DesignWidth="300"
     Background="AliceBlue"
     ResizeMode="NoResize"
@@ -91,7 +91,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition  />
-           
+
             </Grid.ColumnDefinitions>
 
 
@@ -140,6 +140,11 @@
                            Foreground="LawnGreen"
                            Text="{Binding PD.RegPH480A_doza, StringFormat=\{0:0.0 кг\}, FallbackValue=???}"    
                            VerticalAlignment="Center"   TextAlignment="Left" Background="Black"  />
+                <TextBlock Text="Коэф. масш. &#10; откр. кл-на: " Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="Blue" Margin="0,3,0,0" Height="46" Width="130"/>
+
+
 
 
                 <Controls:NumPadUpDown
@@ -181,6 +186,26 @@
             UpdateValueOnEnterKey="True">
                     <Behaviors:Interaction.Behaviors>
                         <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480A_DozaZad}" />
+                    </Behaviors:Interaction.Behaviors>
+                </Controls:NumPadUpDown>
+                <Controls:NumPadUpDown
+                     IsEnabled="{Binding PD.RegPH480A_Start, Converter={StaticResource BooleanNegateConverter}}"
+            Grid.Row="4"
+            Grid.Column="1"
+            Height="30"
+            Margin="5,7,15,0"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            EnterClosesNumPad="True"
+            FontSize="16"
+            FontWeight="Bold"
+            
+            Increment="0.1"
+            Minimum="-1"
+            Precision="1"
+            UpdateValueOnEnterKey="True">
+                    <Behaviors:Interaction.Behaviors>
+                        <behaviors:ModbusBindingBehavior InternalValue="{Binding PD.RegPH480A_Kx}" />
                     </Behaviors:Interaction.Behaviors>
                 </Controls:NumPadUpDown>
 
