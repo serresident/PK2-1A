@@ -1568,7 +1568,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <WPF:Tube  Design="Vertical" Height="112" Canvas.Left="276" Canvas.Top="646" Width="105" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
+        <WPF:Tube  Design="Vertical" Height="126" Canvas.Left="276" Canvas.Top="646" Width="105" FlangeLayout="Begin" FlangeThickness="0" FlangeWidth="0" >
             <WPF:Tube.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -3090,7 +3090,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <TextBlock Canvas.Left="745" TextWrapping="Wrap" Canvas.Top="346" Height="18" RenderTransformOrigin="0.559,0.528" >
+        <TextBlock Canvas.Left="759" TextWrapping="Wrap" Canvas.Top="357" Height="18" RenderTransformOrigin="0.559,0.528" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3098,7 +3098,7 @@
                     <RotateTransform Angle="-90"/>
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Диэт.Ам."/><LineBreak/><Run/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="ДЭА"/><LineBreak/><Run/></TextBlock>
         <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="635" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_8_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_8_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
@@ -4316,7 +4316,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <TextBlock Canvas.Left="929" TextWrapping="Wrap" Canvas.Top="359" Height="18" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="922" TextWrapping="Wrap" Canvas.Top="354" Height="18" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -4324,7 +4324,7 @@
                     <RotateTransform Angle="-90"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Language="ru-ru" Text="ДЭА"/></TextBlock>
+            </TextBlock.RenderTransform><Run Language="ru-ru" Text="Диэтил"/></TextBlock>
         <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="887" Canvas.Top="368" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_10_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_10_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
@@ -4381,6 +4381,43 @@
 
         </WPF:Valve>
         <TextBlock Canvas.Left="1134" TextWrapping="Wrap" Text="D470A" Canvas.Top="272" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
+        <TextBlock Canvas.Left="838" FontSize="10" Background="White" Foreground="Black" Text="ДЭА" Canvas.Top="133"/>
+        <TextBlock Canvas.Left="984" FontSize="10" Background="White" Foreground="Black" Text="Анилин" Canvas.Top="133"/>
+        <TextBlock Canvas.Left="984" FontSize="10" Background="White" Foreground="Black" Text="Анилин" Canvas.Top="133"/>
+        <TextBlock Canvas.Left="1156" FontSize="10" Background="White" Foreground="Black" Text="Морфолин" Canvas.Top="133"/>
+        <TextBlock Canvas.Left="1274" FontSize="10" Background="White" Foreground="Black" Text="Диэтил" Canvas.Top="133"/>
+        <TextBlock Canvas.Left="1037" FontSize="10" Background="White" Foreground="Black" Text="Щелочь" Canvas.Top="220"/>
+        <TextBlock Canvas.Left="1174" FontSize="10" Background="White" Foreground="Black" Text="Щелочь" Canvas.Top="216"/>
+        <TextBlock Canvas.Left="304" FontSize="10" Background="White" Foreground="Black" Canvas.Top="756"><Run Language="ru-ru" Text="МЭК"/></TextBlock>
+        <WPF:Tube Height="134" Canvas.Left="1503" Canvas.Top="68" Width="102" FlangeLayout="None"  FlangeThickness="0" FlangeWidth="0" Design="Vertical" >
+            <WPF:Tube.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </WPF:Tube.Background>
+            <WPF:Tube.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Gray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Tube.Colors>
+        </WPF:Tube>
+        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible"  >
+            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загр. арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
+            <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загр. гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
+            <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
+            <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгр. из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
+            <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
+            <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
+            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="332" Canvas.Top="309" />
+            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="646" Canvas.Top="309" />
+            <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
+            <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
+            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. ДЭА K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="985" Canvas.Top="514" />
+            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="60" Canvas.Top="293" />
+        </xctk:WindowContainer>
 
 
     </Canvas>
