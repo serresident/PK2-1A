@@ -441,7 +441,7 @@
 
         </ToggleButton>
 
-        <ToggleButton  Content="Загр. Диэтила- &#xA; мина в K480" IsChecked="{Binding ZagrDietilAmin480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked" Margin="5,0,5,0">
+        <ToggleButton  Content="Загр. ДЭА &#xA;  в K480" IsChecked="{Binding ZagrDietilAmin480WndStatus, Converter={StaticResource WindowsStatetToBoolConverter}, Mode=TwoWay}" Width="83" HorizontalContentAlignment="Center" Height="40" Checked="ToggleButton_Checked" Margin="5,0,5,0">
 
             <!--<Behaviors:Interaction.Triggers>
                 <Behaviors:EventTrigger EventName="Checked">

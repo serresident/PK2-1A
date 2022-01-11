@@ -82,6 +82,29 @@
         <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
 
         <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
+        <WPF:Tube Height="39" Canvas.Left="1137" Canvas.Top="326" Width="10" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None" RotateAngle="180                   ">
+            <WPF:Tube.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WPF:Tube.RenderTransform>
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_2_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+
+        </WPF:Tube>
+
+        <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
+        <WPF:Tube Height="18" Canvas.Left="934" Canvas.Top="448" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+
+        <!--<Border Background="Transparent"  BorderThickness="2" BorderBrush="black" Width="268" Height="311" Canvas.Left="445" Canvas.Top="9"/>-->
         <WPF:Tube Height="15" Canvas.Left="1555" Canvas.Top="141" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.VK480B_1_SQH}" OnColor1="Gold"/>
@@ -383,7 +406,7 @@
 
         <WPF:Tube Height="18" Canvas.Left="1048" Canvas.Top="314" Width="54" Design="Arc90"  RotateAngle="270" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480A_SQH}" OnColor1="DarkRed"/>
+                <behaviors:DigitalOnStatusBehavior  OnStatus="{c:Binding (PD.FV_K480A_reg_aout_/10 &gt;1 || PD.FV_K480A_SQH)}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
@@ -394,7 +417,7 @@
         </WPF:Tube>
         <WPF:Tube Height="21" Canvas.Left="1067" Canvas.Top="447" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480A_SQH}" OnColor1="DarkRed"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding (PD.FV_K480A_reg_aout_/10 &gt;1 || PD.FV_K480A_SQH)}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
 
@@ -1426,7 +1449,7 @@
 
         </WPF:Valve>
         <TextBlock Canvas.Left="58" TextWrapping="Wrap" Text="P450" Canvas.Top="900" />
-        <WPF:Label FontWeight="Bold" Height="28" Content="NC_P412" Canvas.Left="394" Canvas.Top="326" Width="107" Design="Arrowed" DefaultText="{c:Binding PD.NC_P412_aout/10, StringFormat=\{0\}Гц}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" FontWeight="Bold" Height="28" Content="NC_P412" Canvas.Left="394" Canvas.Top="326" Width="107" Design="Arrowed" DefaultText="{c:Binding PD.NC_P412_aout/10*0.5, StringFormat=\{0\}Гц}" ArrowWidth="5">
             <WPF:Label.States>
                 <WPF:StatesStandard    Active="{c:Binding (PD.NC_P412_sost)}"/>
             </WPF:Label.States>
@@ -1690,7 +1713,7 @@
                 <behaviors:DigitalActuatorHandlerBehavior_switcher PlacementMode="Bottom" HSpacing="30" VSpacing="0"  CheckedLabel="Стоп" UncheckedLabel="Стоп"  Out="{Binding PD.NS_P461_control_man}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Pump>
-        <TextBlock Canvas.Left="1120" TextWrapping="Wrap" Text="P404A" Canvas.Top="53" />
+        <TextBlock Canvas.Left="1121" TextWrapping="Wrap" Text="P404A" Canvas.Top="54" />
         <WPF:Arrow Height="12" Canvas.Left="1051" RotateAngle="0" Canvas.Top="36" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
@@ -1922,7 +1945,7 @@
 
 
         </WPF:Tube>
-        <WPF:Label  Height="28" Content="" Canvas.Left="263" Canvas.Top="443" Width="74" Design="Arrowed" DefaultText="{Binding PD.GE_pHV_K610, StringFormat=\{0\}%}" ArrowWidth="5">
+        <WPF:Label ToolTip="Сигнал обратной связи  ИМ" Height="28" Content="" Canvas.Left="263" Canvas.Top="443" Width="74" Design="Arrowed" DefaultText="{Binding PD.GE_pHV_K610, StringFormat=\{0\}%}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -2059,7 +2082,7 @@
         </WPF:Arrow>
         <WPF:Tube Height="119" Canvas.Left="1067" Canvas.Top="305" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480A_SQH}" OnColor1="DarkRed"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding (PD.FV_K480A_reg_aout_/10 &gt;1 || PD.FV_K480A_SQH)}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Valve Height="40" Canvas.Left="1045" RotateAngle="-90" Canvas.Top="416" Width="30" Actor="Diaphram1">
@@ -2104,7 +2127,7 @@
             </WPF:Tank.RenderTransform>
         </WPF:Tank>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1026" Canvas.Top="476" Caption="TE K480A" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="76" Height="36" Value="{Binding PD.TE_K480A_2, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="707" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_9_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_9_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="707" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_9_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_9_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -2113,7 +2136,7 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="562" Canvas.Top="33" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.pHV_K450A_aout/10, StringFormat=\{0\}%}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="562" Canvas.Top="33" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.pHV_K450A_aout/10, StringFormat=\{0\}%}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -2125,7 +2148,7 @@
         <WPF:Tube Height="12" Canvas.Left="1075" Canvas.Top="296" Width="613" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
 
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480A_SQH}" OnColor1="DarkRed"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding (PD.FV_K480A_reg_aout_/10 &gt;1 || PD.FV_K480A_SQH)}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
 
         </WPF:Tube>
@@ -2167,7 +2190,7 @@
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1344" Canvas.Top="604" Caption="TE K480B_1" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="89" Height="40" Value="{Binding PD.TE_480B_1, Mode=OneWay, StringFormat=\{0:0.0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1357" Canvas.Top="560" Caption="QE K480B" Unit="PH"  ValueColor="LawnGreen" Foreground="LightGreen"  Width="76" Height="40" Value="{Binding PD.QIY_K480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1269" Canvas.Top="560" Caption="PT 480B" Unit="кг/см2" ValueColor="LawnGreen" Foreground="#FF9ACDF5" Width="85" Height="40" Value="{Binding PD.PT_480B, Mode=OneWay, StringFormat=\{0:0.0#\}}" Background="Black"/>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1023" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.FV_K480A_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.FV_K480A_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1023" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.FV_K480A_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.FV_K480A_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -2453,7 +2476,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="897" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="897" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480A_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480A_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -2726,10 +2749,10 @@
         <WPF:Valve Height="40" Canvas.Left="1464" RotateAngle="-90" Canvas.Top="551" Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.TVK480B_aout_/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                <!--<behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480B_mode}" Out="{Binding PD.TVK480B_ain_man}"/>-->
+                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.TVK480B_mode}" Out="{Binding PD.TVK480B_ain_man}"/>
 
 
-                <!--<behaviors:Valve_status isOpenValve="{Binding PD.TVK480B_SQH}" isCloseValve="{Binding PD.TVK480B_SQL}" />-->
+                <behaviors:Valve_status isOpenValve="{Binding PD.TVK480B_SQH}" isCloseValve="{Binding PD.TVK480B_SQL}" />
                 <behaviors:Valve_status  isOpenValve="{Binding PD.TVK480B_SQH, Mode=OneWay}" isCloseValve="{Binding PD.TVK480B_SQL, Mode=OneWay}" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
@@ -2743,7 +2766,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Label  Height="24" RotateAngle="-90" Content="" Canvas.Left="1441" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480B_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480B_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="24" RotateAngle="-90" Content="" Canvas.Left="1441" Canvas.Top="506" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.TVK480B_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.TVK480B_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3022,7 +3045,7 @@
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Азот"/><LineBreak/><Run/></TextBlock>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="812" Canvas.Top="370" Width="62" Design="Arrowed"  DefaultText="{c:Binding PD.GE_VK480A_7, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480A_7_aout_ &gt;1 or PD.GE_VK480A_7&gt;1 ) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Сигнал обратной связи  ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="812" Canvas.Top="370" Width="62" Design="Arrowed"  DefaultText="{c:Binding PD.GE_VK480A_7, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480A_7_aout_ &gt;1 or PD.GE_VK480A_7&gt;1 ) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3076,7 +3099,7 @@
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Диэт.Ам."/><LineBreak/><Run/></TextBlock>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="635" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_8_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_8_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="635" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_8_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_8_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3112,7 +3135,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Label    Height="18" RotateAngle="-90" Content="" Canvas.Left="563" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.VK480A_1_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480A_1_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}"  ArrowWidth="5">
+        <WPF:Label  ToolTip="Управляющий сигнал подаваемый на ИМ"  Height="18" RotateAngle="-90" Content="" Canvas.Left="561" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.VK480A_1_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480A_1_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}"  ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3133,10 +3156,10 @@
         </WPF:Tube>
         <WPF:Tube Height="21" Canvas.Left="1602" Canvas.Top="447" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480B_SQH}" OnColor1="DarkRed"/>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding (PD.FV_K480B_reg_aout_/10 &gt;1 || PD.FV_K480B_SQH)}" OnColor1="DarkRed"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Tube Height="17" Canvas.Left="1293" Canvas.Top="447" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="17" Canvas.Left="1281" Canvas.Top="447" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
@@ -3177,19 +3200,12 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <WPF:Tube Height="21" Canvas.Left="1293" Canvas.Top="402" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+        <WPF:Tube Height="21" Canvas.Left="1281" Canvas.Top="402" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
                 <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
-        <WPF:Valve Height="40" Canvas.Left="1271" RotateAngle="-90                    " Canvas.Top="416" Width="30" Actor="Diaphram1">
-            <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding PD.V_K480B_9_aout/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
-                <behaviors:Valve_status isOpenValve="{Binding PD.V_K480B_9_SQH}" isCloseValve="{Binding PD.V_K480B_9_SQL}" />
-                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.V_K480B_9_mode}" Out="{Binding PD.V_K480B_9_ain_man}"/>
-            </Behaviors:Interaction.Behaviors>
-        </WPF:Valve>
-        <TextBlock Canvas.Left="1287" TextWrapping="Wrap" Text="V K480B-9" Canvas.Top="424" RenderTransformOrigin="0.5,0.5" >
+        <TextBlock Canvas.Left="1238" TextWrapping="Wrap" Text="V K480B-9" Canvas.Top="421" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3199,7 +3215,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Arrow Height="12" Canvas.Left="1292" RotateAngle="90" Canvas.Top="387" Width="12" RenderTransformOrigin="0.5,0.5">
+        <WPF:Arrow Height="12" Canvas.Left="1280" RotateAngle="90" Canvas.Top="387" Width="12" RenderTransformOrigin="0.5,0.5">
             <WPF:Arrow.Colors>
                 <WPF:ControlColors >
                     <WPF:ControlColors.DefaultColoring>
@@ -3257,7 +3273,7 @@
                     <RotateTransform Angle="-90"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Из R403"/><LineBreak/><Run/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Диэтил"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1527" TextWrapping="Wrap" Canvas.Top="345" Height="18" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -3267,16 +3283,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Морфо-н"/><LineBreak/><Run/></TextBlock>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1242" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480B_9_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480B_9_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
-            <WPF:Label.Colors>
-                <WPF:ControlColors>
-                    <WPF:ControlColors.DefaultColoring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Label.Colors>
-        </WPF:Label>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1558" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.FV_K480B_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.FV_K480B_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1558" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.FV_K480B_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.FV_K480B_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3286,17 +3293,7 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1424" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480B_10_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480B_10_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
-            <WPF:Label.Colors>
-                <WPF:ControlColors>
-                    <WPF:ControlColors.DefaultColoring>
-                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
-                    </WPF:ControlColors.DefaultColoring>
-                </WPF:ControlColors>
-            </WPF:Label.Colors>
-        </WPF:Label>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1494" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.GE_VK480B_7, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.GE_VK480B_7 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1424" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480B_10_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480B_10_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3397,7 +3394,7 @@
                 </WPF:ControlColors>
             </WPF:Arrow.Colors>
         </WPF:Arrow>
-        <TextBlock Canvas.Left="1278" TextWrapping="Wrap" Canvas.Top="344" Height="18" RenderTransformOrigin="0.559,0.528" >
+        <TextBlock Canvas.Left="1281" TextWrapping="Wrap" Canvas.Top="355" Height="18" RenderTransformOrigin="0.559,0.528" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -3405,8 +3402,8 @@
                     <RotateTransform Angle="-90"/>
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Диэт.Ам."/><LineBreak/><Run/></TextBlock>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1171" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480B_8_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480B_8_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+            </TextBlock.RenderTransform><Run Text="ДЭА"/><LineBreak/><Run/></TextBlock>
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1171" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480B_8_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480B_8_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3442,7 +3439,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1098" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.VK480B_1_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480B_1_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1098" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.VK480B_1_reg_aout_/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480B_1_reg_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3461,7 +3458,7 @@
         </WPF:Tube>
         <WPF:Tube Height="122" Canvas.Left="1602" Canvas.Top="302" RotateAngle="180" Width="10" FlangeWidth="3" FlangeThickness="2" Design="VerticalRoundEnd" FlangeLayout="None">
             <Behaviors:Interaction.Behaviors>
-                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.FV_K480B_SQH}" OnColor1="DarkRed"/>
+                <behaviors:DigitalOnStatusBehavior  OnStatus="{c:Binding (PD.FV_K480B_reg_aout_/10 &gt;1 || PD.FV_K480B_SQH)}" OnColor1="DarkRed" />
             </Behaviors:Interaction.Behaviors>
         </WPF:Tube>
         <WPF:Valve Height="40" Canvas.Left="1580"  RotateAngle="-90" Canvas.Top="416" Width="30" Actor="Diaphram1" ActorSize="2*" ValveSize="2*">
@@ -3540,7 +3537,7 @@
                         <WPF:ColoringColor Frequency="0.5" Color1="LightGray"  />
                     </WPF:ControlColors.State1Coloring>
                     <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightSeaGreen" />
                     </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3599,7 +3596,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Из R631A"/><LineBreak/><Run/></TextBlock>
         <TextBlock Canvas.Left="1614"  Foreground="Blue"  TextWrapping="Wrap" Canvas.Top="245" Height="14" Width="98" ><Run Language="ru-ru" Text="Уст. давления"/></TextBlock>
-        <WPF:Label ItemDeterminationValue="{c:Binding (PD.P726_Cur_FRQ less 0) ? 0 : 1}" Height="28" Content="" Canvas.Left="1703" Canvas.Top="212" Width="auto" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5"  >
+        <WPF:Label    FontWeight="Bold" Content="NC_P726" ItemDeterminationValue="{c:Binding (PD.P726_Cur_FRQ less 0) ? 0 : 1}" Height="28"  Canvas.Left="1703" Canvas.Top="212" Width="auto" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_FRQ, StringFormat=\{0\}Гц}" ArrowWidth="5"  >
 
             <WPF:Label.States>
                 <WPF:StatesStandard  Critical="{c:Binding (PD.P726_Cur_FRQ less 0)}"  Active="{c:Binding (PD.P726_Cur_FRQ &gt; 0)}"/>
@@ -3618,7 +3615,7 @@
                         <WPF:ColoringColor Frequency="0.5" Color1="Red" />
                     </WPF:ControlColors.State1Coloring>
                     <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="#FFACE0AC" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightSeaGreen" />
                     </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3628,7 +3625,7 @@
                 <WPF:ValueTextItem Text="Нет связи c ПЧ" Value="0"/>
             </WPF:Label.Items>
         </WPF:Label>
-        <WPF:Label  Height="28" Content="" Canvas.Left="1712" Canvas.Top="245" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_I, StringFormat=\{0\}A}" ArrowWidth="5" >
+        <WPF:Label  Height="28" Content="" Canvas.Left="1712" Canvas.Top="245" Width="74" Design="Arrowed" DefaultText="{Binding PD.P726_Cur_I, StringFormat=\{0\}A}" ArrowWidth="5"  Visibility="{c:Binding '(PD.P726_Cur_I &gt;0) ', FalseToVisibility=Collapsed}" >
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -3660,7 +3657,6 @@
                 </WPF:ControlColors>
             </WPF:Tube.Colors>
         </WPF:Tube>
-        <TextBlock Canvas.Left="1134" TextWrapping="Wrap" Text="D470A" Canvas.Top="272" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <TextBlock Canvas.Left="1000" TextWrapping="Wrap" Text="D470" Canvas.Top="274" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
         <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="1081" Canvas.Top="899" Caption="TE K460B" Unit="ºC"  ValueColor="LawnGreen" Foreground="#FFF9A055"  Width="80" Height="36" Value="{Binding PD.TE_K460B, Mode=OneWay, StringFormat=\{0:0\}}" Background="Black" RenderTransformOrigin="0.558,0.275"/>
         <WPF:Tube Height="12" Canvas.Left="1377" Canvas.Top="217" Width="28" RenderTransformOrigin="0.5,0.5" FlangeLayout="None">
@@ -3875,7 +3871,7 @@
                         <WPF:ColoringColor Frequency="0.5" Color1="LightGray"  />
                     </WPF:ControlColors.State1Coloring>
                     <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightSeaGreen" />
                     </WPF:ControlColors.State4Coloring>
                 </WPF:ControlColors>
             </WPF:Label.Colors>
@@ -3970,7 +3966,7 @@
                     <TranslateTransform X="-2.505" Y="-3.513"/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="Анилин"/><LineBreak/><Run/></TextBlock>
-        <WPF:Label  FontWeight="Bold"  Height="28" Content="NC_K610" Canvas.Left="348" Canvas.Top="412" Width="104" Design="Arrowed" DefaultText="{c:Binding PD.NC_K450A_aout/10, StringFormat=\{0\}Гц}" ArrowWidth="5">
+        <WPF:Label  ToolTip="Управляющий сигнал подаваемый на ИМ" FontWeight="Bold"  Height="28" Content="NC_K610" Canvas.Left="348" Canvas.Top="412" Width="104" Design="Arrowed" DefaultText="{c:Binding PD.NC_610M_aout/10*0.5, StringFormat=\{0\}Гц}" ArrowWidth="5">
             <WPF:Label.States>
                 <WPF:StatesStandard    Active="{c:Binding (PD.NC_610M_Sost)}"/>
             </WPF:Label.States>
@@ -3984,7 +3980,7 @@
                         <WPF:ColoringColor Frequency="0.5" Color1="LightBlue"  />
                     </WPF:ControlColors.State1Coloring>
                     <WPF:ControlColors.State4Coloring>
-                        <WPF:ColoringColor Frequency="0.5" Color1="LightGreen" />
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightSeaGreen" />
                     </WPF:ControlColors.State4Coloring>
 
                 </WPF:ControlColors>
@@ -4096,7 +4092,7 @@
 
 
         </WPF:Motor>
-        <WPF:Label  Height="28" Content="" Canvas.Left="1232" Canvas.Top="514" Width="74" Design="Arrowed" DefaultText="{Binding PD.NC_K480B_Cur_I, StringFormat=\{0\}A}" ArrowWidth="5"  >
+        <WPF:Label  Height="28" Content="" Canvas.Left="1232" Canvas.Top="514" Width="74" Design="Arrowed" DefaultText="{Binding PD.NC_K480B_Cur_I, StringFormat=\{0\}A}" ArrowWidth="5" Visibility="{c:Binding '(PD.NC_K480B_Cur_I &gt;0) ', FalseToVisibility=Collapsed}"  >
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -4217,7 +4213,7 @@
                 </WPF:HVLevelIndicator.OptionsScale>
             </WPF:HVLevelIndicator>
         </WPF:Frame>
-        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="252" Canvas.Top="715" Caption="Объем" Unit="Л"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="83" Height="40" Value="{Binding PD.Volume_R461, Mode=OneWay, StringFormat=\{0:0.000\}}" Background="Black"/>
+        <Controls:ValueBlock FontFamily="Proxy 1" Canvas.Left="252" Canvas.Top="715" Caption="Объем" Unit="Л"  ValueColor="LawnGreen" Foreground="#FF9AE2C9"  Width="83" Height="40" Value="{Binding PD.Volume_R461, Mode=OneWay, StringFormat=\{0:0\}}" Background="Black"/>
         <WPF:Tube Height="78" Canvas.Left="1503" Canvas.Top="68" Width="102" FlangeLayout="None"  FlangeThickness="0" FlangeWidth="0" Design="Vertical" >
             <WPF:Tube.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -4260,7 +4256,7 @@
                 <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.VK480B_7_mode}" Out="{Binding PD.VK480B_7_ain_man}"/>
             </Behaviors:Interaction.Behaviors>
         </WPF:Valve>
-        <WPF:Label  Height="18" RotateAngle="-90" Content="" Canvas.Left="1347" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.GE_VK480B_7, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480B_7_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+        <WPF:Label ToolTip="Сигнал обратной связи  ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1347" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.GE_VK480B_7, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.VK480B_7_aout_/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
             <WPF:Label.Colors>
                 <WPF:ControlColors>
                     <WPF:ControlColors.DefaultColoring>
@@ -4269,20 +4265,122 @@
                 </WPF:ControlColors>
             </WPF:Label.Colors>
         </WPF:Label>
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible"  >
-            <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загр. арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
-            <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загр. гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
-            <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
-            <child:UnloadR422  Left="1000" Top="30" Height="400" Width="560" Caption="Выгр. из R422"  WindowState="{Binding UnloadFromR422WndStatus}" Canvas.Left="882" Canvas.Top="30" />
-            <child:Ohlagd480  Left="1000" Top="30" Height="250" Width="250" Caption="Охлаждение К480A/B"  WindowState="{Binding Ohlagd480WndStatus}" Canvas.Left="882" Canvas.Top="30" />
-            <child:ThermoCycl_1A Left="50" Top="500" Height="400" Width="560" Caption="Термоцикл 1А"  WindowState="{Binding ThermoCycl_1AWndStatus}" Canvas.Left="444" Canvas.Top="210" />
-            <child:RegPh480A Left="400" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480A"  WindowState="{Binding RegPh480aWndStatus}" Canvas.Left="332" Canvas.Top="309" />
-            <child:RegPh480B Left="700" Top="500" Height="240" Width="280" Caption="Загр. щел./рег. pH K480B"  WindowState="{Binding RegPh480bWndStatus}" Canvas.Left="646" Canvas.Top="309" />
-            <child:ZagrMorfolin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Морфолина K480A/B"  WindowState="{Binding ZagrMorfolin480WndStatus}" Canvas.Left="536" Canvas.Top="553" />
-            <child:ZagrDietil480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Диэтила K480A/B"  WindowState="{Binding ZagrDietil480WndStatus}" Canvas.Left="1605" Canvas.Top="45" />
-            <child:ZagrDietilAmin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. ДЭА K480A/B"  WindowState="{Binding ZagrDietilAmin480WndStatus}" Canvas.Left="985" Canvas.Top="514" />
-            <child:ZagrAnilin480 Left="50" Top="500" Height="Auto" Width="240" Caption="Загр. Анилина K480A/B"  WindowState="{Binding ZagrAnilin480WndStatus}" Canvas.Left="60" Canvas.Top="293" />
-        </xctk:WindowContainer>
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="1490" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480B_11_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480B_11_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="959" Canvas.Top="370" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_11_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_11_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
+        <WPF:Tube Height="21" Canvas.Left="934" Canvas.Top="401" Width="10" FlangeWidth="3" FlangeThickness="2" Design="Vertical" FlangeLayout="None">
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{Binding PD.In_SOST_OTS_KL_WV_3_1A_SQH}" OnColor1="Gold"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Tube>
+        <WPF:Valve Height="40" Canvas.Left="912" RotateAngle="270" Canvas.Top="414" Width="30" Actor="Diaphram1"  >
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior  OnStatus="{c:Binding PD.V_K480A_10_aout/10 &gt;\= 1}" OnColor1="Green" DefaultColor="Red"/>
+                <behaviors:Valve_status isOpenValve="{Binding PD.V_K480A_10_SQH}" isCloseValve="{Binding PD.V_K480A_10_SQL}" />
+                <behaviors:AnalogActuatorHandlerBehavior HSpacing="0" VSpacing="0"  IsMan="{Binding PD.V_K480A_10_mode}" Out="{Binding PD.V_K480A_10_ain_man}"/>
+            </Behaviors:Interaction.Behaviors>
+        </WPF:Valve>
+        <TextBlock Canvas.Left="927" TextWrapping="Wrap" Text="V K480A-10" Canvas.Top="418" RenderTransformOrigin="0.5,0.5" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <WPF:Arrow Height="12" Canvas.Left="935" RotateAngle="90" Canvas.Top="386" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="Black" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <TextBlock Canvas.Left="929" TextWrapping="Wrap" Canvas.Top="359" Height="18" RenderTransformOrigin="0.5,0.5" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Language="ru-ru" Text="ДЭА"/></TextBlock>
+        <WPF:Label ToolTip="Управляющий сигнал подаваемый на ИМ" Height="18" RotateAngle="-90" Content="" Canvas.Left="887" Canvas.Top="368" Width="62" Design="Arrowed" DefaultText="{c:Binding PD.V_K480A_10_aout/10, StringFormat=\{0\}%}" Visibility="{c:Binding '(PD.V_K480A_10_aout/10 &gt;1) ', FalseToVisibility=Collapsed}" ArrowWidth="5">
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.DefaultColoring>
+                        <!--<WPF:ColoringColor Frequency="0.5" Color1="{c:Binding '(PD.FV_K480A_reg_aout_/10 >1) ?\'LightGreen\':\'White\''}" />-->
+                        <WPF:ColoringColor Frequency="0.5" Color1="LightGray" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+        </WPF:Label>
+        <TextBlock  Background="White" Canvas.Left="1591" TextWrapping="Wrap" Canvas.Top="367" Height="18" RenderTransformOrigin="0.5,0.5" Width="48" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="     Вода"/><LineBreak/><Run/></TextBlock>
+        <WPF:Arrow Height="12" Canvas.Left="1602" RotateAngle="90" Canvas.Top="392" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="DarkRed" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <TextBlock  Background="White" Canvas.Left="1056" TextWrapping="Wrap" Canvas.Top="370" Height="18" RenderTransformOrigin="0.5,0.5" Width="48" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="     Вода"/><LineBreak/><Run/></TextBlock>
+        <WPF:Arrow Height="12" Canvas.Left="1067" RotateAngle="90" Canvas.Top="395" Width="12" RenderTransformOrigin="0.5,0.5">
+            <WPF:Arrow.Colors>
+                <WPF:ControlColors >
+                    <WPF:ControlColors.DefaultColoring>
+                        <WPF:ColoringColor Color1="DarkRed" />
+                    </WPF:ControlColors.DefaultColoring>
+                </WPF:ControlColors>
+            </WPF:Arrow.Colors>
+        </WPF:Arrow>
+        <WPF:Valve Height="40" Canvas.Left="1283" Canvas.Top="414" Width="30" Actor="Piston"  RotateAngle="90" >
+            <Behaviors:Interaction.Behaviors>
+                <behaviors:DigitalOnStatusBehavior OnStatus="{c:Binding '(PD.V_K480B_9_aout/10 &gt;0) '}" OnColor1="Green" DefaultColor="Red"/>
+                <behaviors:DigitalActuatorHandlerBehavior HSpacing="30" VSpacing="0" IsMan="{Binding PD.V_K480B_9_mode}" Out="{Binding PD.V_K480B_9_ain_man}"/>
+
+            </Behaviors:Interaction.Behaviors>
+
+
+        </WPF:Valve>
+        <TextBlock Canvas.Left="1134" TextWrapping="Wrap" Text="D470A" Canvas.Top="272" FontSize="18" Foreground="#FF484B50" FontWeight="Bold" RenderTransformOrigin="0.733,0.125"/>
 
 
     </Canvas>
