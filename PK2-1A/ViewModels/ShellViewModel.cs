@@ -8,6 +8,7 @@ using belofor.Models;
 using belofor.Services;
 using Microsoft.Web.WebView2.Wpf;
 using System.Threading;
+using belofor.Events;
 
 namespace belofor.ViewModels
 {
@@ -51,6 +52,13 @@ namespace belofor.ViewModels
             get { return plcStatus; }
             set { SetProperty(ref plcStatus, value); }
         }
+
+        private bool iPStatus = false;
+        public bool IPStatus
+        {
+            get { return iPStatus; }
+            set { SetProperty(ref iPStatus, value); }
+        }
         LogicViewModel recept;
         public DelegateCommand ShowSettingsDialogCommand { get; private set; }
 
@@ -75,6 +83,17 @@ namespace belofor.ViewModels
             dialogService.ShowDialog("settings");
           
 
+        }
+
+
+        public void Subscribe()
+        {
+            eventAggregator.GetEvent<TcpConnect>().Subscribe((o) => IPStatus = o);
+        }
+
+        public void Unsubscribe()
+        {
+            eventAggregator.GetEvent<TcpConnect>().Unsubscribe((o) => IPStatus = o);
         }
 
         internal void InputPassword()

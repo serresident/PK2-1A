@@ -27,15 +27,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
 
         <Border BorderBrush="DarkGray" BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="5"/>
         
-        <WPF:Label Grid.Column="0" DefaultText="Работает" Content="Контроллер" Design="Simple" ItemDeterminationValue="{Binding PlcStatus}" HorizontalAlignment="Left" Height="40"  Width="75" Margin="5,5,0,5" LightEmittingUpToState="3" CornerRadius="0" >
+        <WPF:Label Grid.Column="0" DefaultText="Работает" Content="Программа:" Design="Simple" ItemDeterminationValue="{Binding PlcStatus}" HorizontalAlignment="Left" Height="40"  Width="75" Margin="5,5,0,5" LightEmittingUpToState="3" CornerRadius="0" >
 
             <WPF:Label.Style>
                 <Style TargetType="WPF:Label">
@@ -55,6 +55,41 @@
 
             <WPF:Label.Items>
                 <WPF:ValueTextItem Text="Работает" Value="1"/>
+                <WPF:ValueTextItem Text="Остановлена" Value="0"/>
+            </WPF:Label.Items>
+
+            <WPF:Label.Colors>
+                <WPF:ControlColors>
+                    <WPF:ControlColors.State1Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="Red" />
+                    </WPF:ControlColors.State1Coloring>
+                    <WPF:ControlColors.State4Coloring>
+                        <WPF:ColoringColor Frequency="0.5" Color1="#FFACE0AC" />
+                    </WPF:ControlColors.State4Coloring>
+                </WPF:ControlColors>
+            </WPF:Label.Colors>
+
+        </WPF:Label>
+        <WPF:Label Grid.Column="1" DefaultText="Работает" Content="Связь с ПЛК:" Design="Simple" ItemDeterminationValue="{Binding IPStatus}" HorizontalAlignment="Left" Height="40"  Width="75" Margin="5,5,0,5" LightEmittingUpToState="3" CornerRadius="0" >
+
+            <WPF:Label.Style>
+                <Style TargetType="WPF:Label">
+                    <Setter Property="Foreground" Value="Blue"></Setter>
+                    <Style.Triggers>
+                        <Trigger Property="ItemDeterminationValue" Value="0">
+                            <Setter Property="Foreground" Value="Yellow" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </WPF:Label.Style>
+
+            <WPF:Label.States>
+
+                <WPF:StatesStandard Critical="{Binding PlcStatus, Converter={StaticResource BooleanNegateConverter}}" Active="{Binding IPStatus}"/>
+            </WPF:Label.States>
+
+            <WPF:Label.Items>
+                <WPF:ValueTextItem Text="Ок" Value="1"/>
                 <WPF:ValueTextItem Text="Нет связи" Value="0"/>
             </WPF:Label.Items>
 
@@ -71,7 +106,7 @@
 
         </WPF:Label>
 
-        <ContentControl prism:RegionManager.RegionName="ToolRegion"  Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" />
+        <ContentControl prism:RegionManager.RegionName="ToolRegion"  Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" />
 
         <ItemsControl prism:RegionManager.RegionName="NavigationRegion" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="5,0" >
             <ItemsControl.ItemsPanel>

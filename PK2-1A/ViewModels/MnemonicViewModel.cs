@@ -9,6 +9,7 @@ using belofor.Models;
 using belofor.Repositories;
 using belofor.Services;
 using Xceed.Wpf.Toolkit;
+using System.Net.NetworkInformation;
 
 namespace belofor.ViewModels
 {
@@ -226,6 +227,8 @@ namespace belofor.ViewModels
             get { return isBusy; }
             set { SetProperty(ref isBusy, value); }
         }
+
+
         public MnemonicViewModel(ProcessDataTcp pd, ArchivRepository archivRepository)
         {
             PD = pd;
@@ -391,6 +394,31 @@ namespace belofor.ViewModels
             }
 
         }
+        public static bool PingHost(string nameOrAddress)
+        {
+            bool pingable = false;
+            Ping pinger = null;
+
+            try
+            {
+                pinger = new Ping();
+                PingReply reply = pinger.Send(nameOrAddress);
+                pingable = reply.Status == IPStatus.Success;
+            }
+            catch (PingException)
+            {
+                // Discard PingExceptions and return false;
+            }
+            finally
+            {
+                if (pinger != null)
+                {
+                    pinger.Dispose();
+                }
+            }
+
+            return pingable;
+        }
 
         private void updateChart()
         {
@@ -415,6 +443,7 @@ namespace belofor.ViewModels
        
         private void internalUpdate()
         {
+            PingHost("192.168.120.139");
 
             // счетчик разности  МЭК K610A c обходом обнуления ( при обнуление сохраняет разницу и прибавляет)
             if (Reset_fq450 && PD.FQ_K450A_MEK_in_count > 0)

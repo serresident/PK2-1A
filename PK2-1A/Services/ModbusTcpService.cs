@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using belofor.Models;
 using Prism.Events;
 using belofor.Events;
+using System.Net.NetworkInformation;
 
 namespace belofor.Services
 {
@@ -51,9 +52,39 @@ namespace belofor.Services
             _processData.RequestModbusWrite += requestModbusWrite;
 
         }
+        public static bool PingHost(string nameOrAddress)
+        {
+            bool pingable = false;
+            Ping pinger = null;
+
+            try
+            {
+                pinger = new Ping();
+                PingReply reply = pinger.Send(nameOrAddress);
+                pingable = reply.Status == IPStatus.Success;
+            }
+            catch (PingException)
+            {
+                // Discard PingExceptions and return false;
+            }
+            finally
+            {
+                if (pinger != null)
+                {
+                    pinger.Dispose();
+                }
+            }
+
+            return pingable;
+        }
 
         public void Worker()
         {
+            if(PingHost(ModbusClientIP))
+                _eventAggregator.GetEvent<TcpConnect>().Publish(true);
+            else
+                _eventAggregator.GetEvent<TcpConnect>().Publish(false);
+
             List<int> requestResult = new List<int>();
 
             try

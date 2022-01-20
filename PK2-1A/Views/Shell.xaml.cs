@@ -62,12 +62,14 @@ namespace belofor.Views
             }
 
 
+            (this.DataContext as ShellViewModel).Subscribe();
             (this.DataContext as ShellViewModel).OnLoad();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             (this.DataContext as ShellViewModel).OnClosing();
+            (this.DataContext as ShellViewModel).Unsubscribe();
 
         }
 
