@@ -85,7 +85,7 @@
 
             <WPF:Label.States>
 
-                <WPF:StatesStandard Critical="{Binding PlcStatus, Converter={StaticResource BooleanNegateConverter}}" Active="{Binding IPStatus}"/>
+                <WPF:StatesStandard Critical="{Binding IPStatus, Converter={StaticResource BooleanNegateConverter}}" Active="{Binding IPStatus}"/>
             </WPF:Label.States>
 
             <WPF:Label.Items>

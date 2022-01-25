@@ -123,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\ConfigDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\NumPadUpDown.Aero2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -288,7 +292,11 @@
       <DependentUpon>PasswordDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\NextDialogViewModel.cs" />
+    <Compile Include="Dialogs\ConfigViewModel.cs" />
     <Compile Include="Dialogs\PasswordDialogViewModel.cs" />
+    <Compile Include="Dialogs\ConfigDialog.xaml.cs">
+      <DependentUpon>ConfigDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Events\ModbusMasterReadCompleted.cs" />
     <Compile Include="Helpers\MethodBindingExtension.cs" />
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
