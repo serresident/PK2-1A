@@ -3879,7 +3879,7 @@
         <TextBlock FontWeight="Bold" FontSize="24"  Foreground="Blue" Text="ПЕРЕХВАТ управления со старой схемы:  " Canvas.Top="880" Width="552" Canvas.Left="258"/>
         <xctk:ToggleSwitch Width="64" Height="24"    
             CornerRadius="2"
-            IsChecked="{Binding PD.InceptControl, Mode=TwoWay}"
+            IsChecked="{Binding PD.InceptControl, Mode=OneWay}"
             ThumbHeight = "25"
             ThumbWidth = "24"
             CheckedContent = "ВКЛ"
@@ -4408,7 +4408,7 @@
         <TextBlock Canvas.Left="852" TextWrapping="Wrap" Canvas.Top="179" Text="пары"/>
         <TextBlock Canvas.Left="1385" TextWrapping="Wrap" Canvas.Top="262" Text="дистил."/>
         <TextBlock Canvas.Left="1392" TextWrapping="Wrap" Canvas.Top="167" Text="пары"/>
-        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Visible"  >
+        <xctk:WindowContainer Width="1918" Height="1000" Visibility="Collapsed"  >
             <child:WaterLoading  Left="100" Top="30" Height="250" Width="300" Caption="Загр. арт.воды"  WindowState="{Binding WaterLoadingWndStatus}" Canvas.Left="535" Canvas.Top="30" />
             <child:HotWaterLoading  Left="405" Top="30" Height="250" Width="406" Caption="Загр. гор. воды в 460-е "  WindowState="{Binding HotWaterLoadingWndStatus}" Canvas.Left="433" Canvas.Top="30" />
             <child:Hot480WaterLoading  Left="815" Top="30" Height="250" Width="210" Caption="Загр.гор. воды в 480-е "  WindowState="{Binding Hot480WaterLoadingWndStatus}" Canvas.Left="882" Canvas.Top="30" />
